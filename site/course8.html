@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>קורס 8: אוטומציה ותהליכי עבודה חכמים עם AI — אקדמיית AI</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Heebo',sans-serif;background:#0f172a;color:#e2e8f0;line-height:1.8}
+a{color:#38bdf8;text-decoration:none}
+.topbar{background:rgba(15,23,42,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06);padding:16px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.back-btn{padding:8px 20px;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#94a3b8;font-size:.9rem;transition:.2s}
+.back-btn:hover{background:rgba(56,189,248,.1);color:#38bdf8;border-color:rgba(56,189,248,.3)}
+.topbar-title{font-size:.95rem;color:#64748b}
+.course-hero{padding:60px 24px 40px;text-align:center;background:linear-gradient(180deg,#3b0764 0%,#0f172a 100%)}
+.course-badge{display:inline-block;padding:6px 18px;border-radius:50px;font-size:.8rem;font-weight:500;margin-bottom:20px}
+.course-hero h1{font-size:2.4rem;font-weight:800;margin-bottom:12px}
+.course-hero .sub{color:#94a3b8;font-size:1.1rem;max-width:600px;margin:0 auto 24px}
+.meta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.meta-item{background:rgba(255,255,255,.05);padding:6px 16px;border-radius:10px;font-size:.85rem;color:#94a3b8}
+.content{max-width:800px;margin:0 auto;padding:40px 24px 80px}
+.section{margin-bottom:48px}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.section-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.section-head h2{font-size:1.4rem;font-weight:700;color:#f1f5f9}
+.card-box{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:24px;margin-bottom:16px}
+.card-box h3{font-size:1.1rem;font-weight:600;color:#f1f5f9;margin-bottom:12px}
+</style>
+</head>
+<body>
+<nav class="topbar">
+<div style="display:flex;align-items:center;gap:12px">
+<a href="index.html" class="back-btn">→ חזרה לכל הקורסים</a>
+<span class="topbar-title">קורס 8 מתוך 9</span>
+</div>
+</nav>
+<header class="course-hero">
+<span class="course-badge" style="background:rgba(167,139,250,.15);color:#a78bfa">⚡ מתקדם — מנהלים וראשי צוותים</span>
+<h1>אוטומציה ותהליכי עבודה</h1>
+<p class="sub">3 רמות אוטומציה, מיפוי משימות, ספריית פרומפטים — מהאישי לארגוני</p>
+<div class="meta-row">
+<span class="meta-item">⏱ 35 דקות</span>
+<span class="meta-item">👥 מנהלים וראשי צוותים</span>
+<span class="meta-item">📋 3 רמות + תרגילים</span>
+</div>
+</header>
+<main class="content">
+
+<style>
+.auto-table{width:100%;border-collapse:collapse;margin:16px 0}
+.auto-table th{background:rgba(167,139,250,.12);color:#a78bfa;padding:12px 16px;text-align:right;font-weight:600;font-size:.9rem;border-bottom:2px solid rgba(167,139,250,.2)}
+.auto-table td{padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.06);font-size:.9rem;color:#cbd5e1}
+.auto-table tr:hover td{background:rgba(255,255,255,.02)}
+.level-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:24px;margin-bottom:16px;position:relative;overflow:hidden}
+.level-card::before{content:"";position:absolute;top:0;right:0;width:4px;height:100%}
+.level-1::before{background:#34d399}
+.level-2::before{background:#38bdf8}
+.level-3::before{background:#a78bfa}
+.level-num{display:inline-block;width:32px;height:32px;border-radius:50%;text-align:center;line-height:32px;font-weight:700;font-size:.9rem;margin-left:10px}
+.level-1 .level-num{background:rgba(52,211,153,.15);color:#34d399}
+.level-2 .level-num{background:rgba(56,189,248,.15);color:#38bdf8}
+.level-3 .level-num{background:rgba(167,139,250,.15);color:#a78bfa}
+.folder-tree{background:rgba(167,139,250,.06);border:1px solid rgba(167,139,250,.2);border-radius:12px;padding:20px;margin:16px 0;font-family:monospace;direction:ltr;text-align:left;font-size:.9rem;color:#c4b5fd;line-height:1.8;white-space:pre-wrap}
+.question-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:20px;margin-bottom:12px;display:flex;align-items:flex-start;gap:12px}
+.question-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:rgba(167,139,250,.15);color:#a78bfa;font-weight:700;font-size:.85rem;flex-shrink:0}
+.mapping-box{background:rgba(167,139,250,.06);border:1px solid rgba(167,139,250,.2);border-radius:12px;padding:20px;margin:16px 0;font-size:.9rem;color:#cbd5e1;line-height:2.2}
+.flow-step{display:flex;align-items:center;gap:14px;padding:14px 20px;margin-bottom:8px;border-radius:12px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06)}
+.flow-num{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;flex-shrink:0}
+.flow-ai .flow-num{background:rgba(167,139,250,.15);color:#a78bfa}
+.flow-human .flow-num{background:rgba(251,191,36,.15);color:#fbbf24}
+.flow-system .flow-num{background:rgba(52,211,153,.15);color:#34d399}
+.flow-tag{font-size:.7rem;padding:2px 8px;border-radius:6px;font-weight:600;margin-right:8px}
+.flow-ai .flow-tag{background:rgba(167,139,250,.15);color:#a78bfa}
+.flow-human .flow-tag{background:rgba(251,191,36,.15);color:#fbbf24}
+.flow-system .flow-tag{background:rgba(52,211,153,.15);color:#34d399}
+.try-section{background:linear-gradient(135deg,rgba(16,185,129,.08),rgba(56,189,248,.08));border:1px solid rgba(16,185,129,.2);border-radius:16px;padding:28px;margin:32px 0}
+.try-section h3{color:#10b981;font-size:1.15rem;margin-bottom:16px}
+.nav-bottom{display:flex;justify-content:space-between;padding:24px;max-width:800px;margin:0 auto;border-top:1px solid rgba(255,255,255,.06)}
+.nav-btn{padding:12px 28px;border-radius:10px;font-weight:600;transition:.2s}
+.nav-prev{background:rgba(255,255,255,.05);color:#94a3b8}
+.nav-next{background:linear-gradient(135deg,#38bdf8,#818cf8);color:#fff}
+.footer{text-align:center;padding:40px;color:#475569;font-size:.85rem;border-top:1px solid rgba(255,255,255,.04)}
+@media(max-width:600px){.auto-table{font-size:.8rem}.auto-table th,.auto-table td{padding:8px 10px}.flow-step{flex-wrap:wrap}}
+@media print{body{background:#fff;color:#1e293b}.topbar,.nav-bottom{display:none}.course-hero{background:#f5f3ff!important;color:#1e293b}.card-box,.level-card{border:1px solid #e2e8f0;break-inside:avoid}.folder-tree{background:#f5f3ff;border:1px solid #c4b5fd;color:#4c1d95}}
+</style>
+
+<!-- חלק א׳: מה זה אוטומציה עם AI? -->
+<div class="section">
+<div class="section-head">
+<div class="section-icon" style="background:rgba(167,139,250,.15)">⚡</div>
+<h2>חלק א׳: מה זה אוטומציה עם AI?</h2>
+</div>
+
+<div class="card-box">
+<h3>אוטומציה = לגרום למשימות חוזרות לקרות לבד (או כמעט לבד)</h3>
+<p style="color:#94a3b8;font-size:.9rem;margin-bottom:16px">דוגמאות מביטוח לאומי — לפני ואחרי:</p>
+<table class="auto-table">
+<thead>
+<tr><th>תהליך ידני היום</th><th>תהליך אוטומטי עם AI</th></tr>
+</thead>
+<tbody>
+<tr><td>עובד קורא תביעה ומסכם ידנית</td><td>AI מסכם את התביעה ב-30 שניות</td></tr>
+<tr><td>פקיד מחפש נוהל רלוונטי</td><td>AI מוצא את הנוהל ומציג את הסעיף הרלוונטי</td></tr>
+<tr><td>מנהל כותב דוח שבועי</td><td>AI מייצר טיוטת דוח מנתונים</td></tr>
+<tr><td>עובד מנסח 20 מכתבים דומים</td><td>AI מייצר את כולם עם התאמות אישיות</td></tr>
+<tr><td>צוות עונה על אותן שאלות שוב ושוב</td><td>צ׳אטבוט עונה על שאלות נפוצות</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<!-- חלק ב׳: 3 רמות של אוטומציה -->
+<div class="section">
+<div class="section-head">
+<div class="section-icon" style="background:rgba(52,211,153,.15)">📊</div>
+<h2>חלק ב׳: 3 רמות של אוטומציה — מאיפה מתחילים?</h2>
+</div>
+
+<div class="level-card level-1">
+<h3><span class="level-num">1</span> רמה 1: אוטומציה אישית (מתחילים כאן!)</h3>
+<p style="color:#94a3b8;margin-bottom:12px">דברים שכל עובד יכול לעשות לבד, עכשיו:</p>
+<ul style="color:#cbd5e1;padding-right:20px;margin-bottom:16px">
+<li><strong>ספריית פרומפטים:</strong> שמור 10-15 פרומפטים מוכנים למשימות חוזרות</li>
+<li><strong>תבניות מכתבים:</strong> צור תבנית עם AI פעם אחת, השתמש שוב ושוב</li>
+<li><strong>סיכום יומי:</strong> בסוף כל יום, תן ל-AI לסכם את מה שעשית</li>
+</ul>
+<p style="color:#34d399;font-size:.9rem;font-weight:600;margin-bottom:8px">📁 דוגמה — ספריית פרומפטים אישית:</p>
+<div class="folder-tree">📁 הפרומפטים שלי:
+├── סיכום תביעה.txt
+├── מכתב אישור.txt
+├── מכתב דחייה.txt
+├── סיכום ישיבה.txt
+├── תרגום לערבית.txt
+├── ניתוח נתונים חודשי.txt
+└── הכנה לישיבה.txt</div>
+</div>
+
+<div class="level-card level-2">
+<h3><span class="level-num">2</span> רמה 2: אוטומציה צוותית</h3>
+<p style="color:#94a3b8;margin-bottom:12px">דברים שצוות יכול ליישם:</p>
+<ul style="color:#cbd5e1;padding-right:20px">
+<li>מסמך "שאלות נפוצות" שמתעדכן עם AI</li>
+<li>תהליך קליטת עובד חדש עם חומרי הדרכה שנוצרו ב-AI</li>
+<li>דוחות צוותיים אוטומטיים</li>
+</ul>
+</div>
+
+<div class="level-card level-3">
+<h3><span class="level-num">3</span> רמה 3: אוטומציה ארגונית (דורש תמיכת IT)</h3>
+<p style="color:#94a3b8;margin-bottom:12px">פתרונות ברמת הארגון:</p>
+<ul style="color:#cbd5e1;padding-right:20px">
+<li>צ׳אטבוט לתושבים באתר</li>
+<li>מערכת סיכום תביעות אוטומטית</li>
+<li>ניתוב פניות חכם</li>
+<li>מערכת RAG על מאגר הנהלים</li>
+</ul>
+</div>
+</div>
+
+<!-- חלק ג׳: איך לזהות תהליכים לאוטומציה? -->
+<div class="section">
+<div class="section-head">
+<div class="section-icon" style="background:rgba(56,189,248,.15)">🔍</div>
+<h2>חלק ג׳: איך לזהות תהליכים לאוטומציה?</h2>
+</div>
+
+<div class="card-box">
+<h3>שאל את עצמך 4 שאלות:</h3>
+
+<div class="question-card">
+<span class="question-num">1</span>
+<div><strong>האם אני עושה את זה יותר מפעם בשבוע?</strong><br><span style="color:#a78bfa">← מועמד לאוטומציה</span></div>
+</div>
+
+<div class="question-card">
+<span class="question-num">2</span>
+<div><strong>האם זה עוקב אחרי תבנית קבועה?</strong><br><span style="color:#a78bfa">← מועמד מצוין</span></div>
+</div>
+
+<div class="question-card">
+<span class="question-num">3</span>
+<div><strong>האם טעות כאן קריטית?</strong><br><span style="color:#fbbf24">← אם כן, AI עוזר + בקרה אנושית</span></div>
+</div>
+
+<div class="question-card">
+<span class="question-num">4</span>
+<div><strong>כמה זמן זה לוקח לי?</strong><br><span style="color:#a78bfa">← אם יותר מ-15 דקות, שווה לנסות</span></div>
+</div>
+</div>
+
+<div class="card-box">
+<h3>📝 תרגיל מיפוי — רשום 5 משימות חוזרות בעבודה שלך:</h3>
+<div class="mapping-box">
+1. _________________ (כמה זמן? ___ דקות, כמה פעמים בשבוע? ___)<br>
+2. _________________ (כמה זמן? ___ דקות, כמה פעמים בשבוע? ___)<br>
+3. _________________ (כמה זמן? ___ דקות, כמה פעמים בשבוע? ___)<br>
+4. _________________ (כמה זמן? ___ דקות, כמה פעמים בשבוע? ___)<br>
+5. _________________ (כמה זמן? ___ דקות, כמה פעמים בשבוע? ___)<br>
+<br>
+<strong style="color:#a78bfa">עכשיו סמן: איזו מהן הכי מתאימה לאוטומציה עם AI?</strong>
+</div>
+</div>
+</div>
+
+<!-- חלק ד׳: Workflow — שרשור פעולות -->
+<div class="section">
+<div class="section-head">
+<div class="section-icon" style="background:rgba(167,139,250,.15)">🔗</div>
+<h2>חלק ד׳: Workflow — שרשור פעולות</h2>
+</div>
+
+<div class="card-box">
+<h3>רעיון מתקדם: במקום משימה אחת, שרשר כמה משימות</h3>
+<p style="color:#94a3b8;margin-bottom:16px">דוגמה — תהליך טיפול בפנייה:</p>
+
+<div class="flow-step flow-ai">
+<span class="flow-num">1</span>
+<span class="flow-tag">AI</span>
+<span>סיווג הפנייה — תלונה / שאלה / בקשה</span>
+</div>
+
+<div class="flow-step flow-ai">
+<span class="flow-num">2</span>
+<span class="flow-tag">AI</span>
+<span>חילוץ פרטים מרכזיים — מה הנושא, מה הדחיפות</span>
+</div>
+
+<div class="flow-step flow-ai">
+<span class="flow-num">3</span>
+<span class="flow-tag">AI</span>
+<span>מציאת נוהל רלוונטי</span>
+</div>
+
+<div class="flow-step flow-ai">
+<span class="flow-num">4</span>
+<span class="flow-tag">AI</span>
+<span>ניסוח טיוטת תשובה</span>
+</div>
+
+<div class="flow-step flow-human">
+<span class="flow-num">5</span>
+<span class="flow-tag">אדם</span>
+<span>בדיקה, עריכה ואישור</span>
+</div>
+
+<div class="flow-step flow-system">
+<span class="flow-num">6</span>
+<span class="flow-tag">מערכת</span>
+<span>שליחה לתושב</span>
+</div>
+</div>
+</div>
+
+<!-- תרגיל מעשי -->
+<div class="try-section">
+<h3>🎯 תרגיל מעשי — בנה את האוטומציה הראשונה שלך</h3>
+<p>1. בחר משימה חוזרת אחת מהעבודה שלך</p>
+<p>2. כתוב פרומפט שמבצע אותה</p>
+<p>3. נסה אותו 3 פעמים עם קלטים שונים</p>
+<p>4. שמור את הפרומפט הטוב ביותר בקובץ</p>
+<p style="margin-top:12px;color:#94a3b8;font-size:.9rem">💡 טיפ: התחל מהמשימה שלוקחת הכי הרבה זמן ועוקבת אחרי תבנית קבועה</p>
+</div>
+
+</main>
+<nav class="nav-bottom">
+<a href="course7.html" class="nav-btn nav-prev">→ קורס 7: אתיקה ובטיחות</a>
+<a href="course9.html" class="nav-btn nav-next">קורס 9: Claude Code ←</a>
+</nav>
+<footer class="footer">
+<p>מבוסס על הסילבוס של Anthropic — Agents &amp; Workflows + Tool Use</p>
+<p>מותאם לעובדי ביטוח לאומי וממשלת ישראל © 2025</p>
+</footer>
+</body>
+</html>

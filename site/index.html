@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>אקדמיית AI — ביטוח לאומי</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Heebo',sans-serif;background:#0a0a1a;color:#fff}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:linear-gradient(135deg,#0a0a2e 0%,#1a1a4e 30%,#0d2847 60%,#0a1628 100%);position:relative;overflow:hidden;padding:40px 20px}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 50%,rgba(56,189,248,.08) 0%,transparent 50%),radial-gradient(circle at 80% 20%,rgba(139,92,246,.08) 0%,transparent 50%),radial-gradient(circle at 50% 80%,rgba(16,185,129,.06) 0%,transparent 50%)}
+.hero-content{position:relative;z-index:1;max-width:900px}
+.badge{display:inline-block;padding:8px 24px;border-radius:50px;background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.3);color:#38bdf8;font-size:14px;font-weight:500;margin-bottom:30px}
+.hero h1{font-size:3.2rem;font-weight:900;line-height:1.2;margin-bottom:16px}
+.gradient{background:linear-gradient(135deg,#38bdf8,#818cf8,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.subtitle{font-size:1.3rem;color:#94a3b8;line-height:1.7;margin-bottom:20px;font-weight:300}
+.desc{font-size:1.05rem;color:#64748b;line-height:1.8;max-width:700px;margin:0 auto 40px}
+.stats{display:flex;gap:40px;justify-content:center;margin-bottom:50px;flex-wrap:wrap}
+.stat-num{font-size:2.5rem;font-weight:800;background:linear-gradient(135deg,#38bdf8,#818cf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.stat-label{font-size:.9rem;color:#64748b;margin-top:4px}
+.courses-section{padding:80px 20px;max-width:1200px;margin:0 auto}
+.section-title{text-align:center;font-size:2rem;font-weight:700;margin-bottom:12px}
+.section-sub{text-align:center;color:#94a3b8;font-size:1.1rem;margin-bottom:50px}
+</style>
+</head>
+<body>
+<section class="hero">
+<div class="hero-content">
+<div class="badge">🎓 תוכנית הכשרה מקצועית 2025</div>
+<h1>אקדמיית <span class="gradient">AI</span> לשירות הציבורי</h1>
+<p class="subtitle">תוכנית הכשרה מקיפה בבינה מלאכותית לעובדי ביטוח לאומי וממשלת ישראל</p>
+<p class="desc">9 קורסים מעשיים שיעזרו לך לעבוד חכם יותר, לתת שירות טוב יותר לתושבים, ולהוביל חדשנות בארגון — ללא צורך ברקע טכני</p>
+<div class="stats">
+<div class="stat"><div class="stat-num">9</div><div class="stat-label">קורסים</div></div>
+<div class="stat"><div class="stat-num">50+</div><div class="stat-label">תרגילים מעשיים</div></div>
+<div class="stat"><div class="stat-num">80+</div><div class="stat-label">פרומפטים מוכנים</div></div>
+</div>
+<a href="#courses" style="display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#38bdf8,#818cf8);border-radius:12px;color:#fff;text-decoration:none;font-weight:600;font-size:1.1rem;transition:transform .2s">התחילו ללמוד ←</a>
+</div>
+</section>
+<section class="courses-section" id="courses">
+<h2 class="section-title">הקורסים שלנו</h2>
+<p class="section-sub">לחצו על קורס כדי להתחיל ללמוד — כל קורס עומד בפני עצמו</p>
+<div id="grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:24px"></div>
+</section>
+</body>
+</html>
+
+<style>
+.card{background:linear-gradient(145deg,#111827,#1e293b);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:32px;transition:all .3s;cursor:pointer;text-decoration:none;color:#fff;display:block;position:relative;overflow:hidden}
+.card:hover{transform:translateY(-4px);border-color:rgba(56,189,248,.3);box-shadow:0 20px 40px rgba(0,0,0,.3)}
+.card-icon{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;margin-bottom:20px}
+.card-num{position:absolute;top:20px;left:20px;font-size:.8rem;color:#475569;font-weight:600;background:rgba(255,255,255,.05);padding:4px 12px;border-radius:20px}
+.card-level{display:inline-block;padding:4px 12px;border-radius:20px;font-size:.75rem;font-weight:500;margin-bottom:16px}
+.card h3{font-size:1.25rem;font-weight:700;margin-bottom:10px;line-height:1.4}
+.card p{color:#94a3b8;font-size:.95rem;line-height:1.7;margin-bottom:16px}
+.card-meta{display:flex;gap:16px;color:#64748b;font-size:.8rem;flex-wrap:wrap}
+.card-tag{background:rgba(255,255,255,.05);padding:3px 10px;border-radius:8px}
+.footer{text-align:center;padding:60px 20px;color:#475569;font-size:.9rem;border-top:1px solid rgba(255,255,255,.05)}
+.footer a{color:#38bdf8;text-decoration:none}
+</style>
+<script>
+const C=[
+{n:1,icon:"🧠",title:"אוריינות AI ועבודה אחראית",desc:"מה AI יכול ומה לא, מסגרת 4D לעבודה נכונה, כללי אתיקה ובטיחות — הבסיס לכל שאר הקורסים",level:"בסיסי",levelColor:"#10b981",bg:"linear-gradient(135deg,#064e3b,#065f46)",time:"35 דק׳",tags:["כל העובדים","ללא רקע טכני"],file:"course1.html"},
+{n:2,icon:"✍️",title:"הנדסת הנחיות (Prompt Engineering)",desc:"4 עקרונות לפרומפט מוצלח, תגיות XML, ו-8 פרומפטים מוכנים לשימוש יומיומי בביטוח לאומי",level:"בסיסי",levelColor:"#38bdf8",bg:"linear-gradient(135deg,#0c4a6e,#075985)",time:"35 דק׳",tags:["כל העובדים","ישומי מיידי"],file:"course2.html"},
+{n:3,icon:"📊",title:"AI לניתוח נתונים",desc:"ניתוח טבלאות, זיהוי מגמות וחריגות, יצירת דוחות ניהוליים — עם דוגמאות מעולם התביעות",level:"בינוני",levelColor:"#f59e0b",bg:"linear-gradient(135deg,#78350f,#92400e)",time:"35 דק׳",tags:["מנהלים","אנליסטים"],file:"course3.html"},
+{n:4,icon:"📝",title:"AI לכתיבה ותקשורת",desc:"10 תבניות מכתבים מוכנות, הנגשת שפה בירוקרטית, תרגום, סיכומי ישיבות ותוכן לתושבים",level:"בסיסי",levelColor:"#10b981",bg:"linear-gradient(135deg,#064e3b,#065f46)",time:"30 דק׳",tags:["כל העובדים","שימוש יומיומי"],file:"course4.html"},
+{n:5,icon:"🔍",title:"חיפוש ומחקר עם AI",desc:"טכניקת הדבק-ושאל, השוואת נהלים, חילוץ מידע ממסמכים ארוכים, ומבוא ל-RAG",level:"בינוני",levelColor:"#f59e0b",bg:"linear-gradient(135deg,#78350f,#92400e)",time:"30 דק׳",tags:["עובדים מקצועיים","יועצים"],file:"course5.html"},
+{n:6,icon:"💡",title:"AI לחשיבה ופתרון בעיות",desc:"ניתוח SWOT, חשיבה מזוויות, תכנון לאחור, הכנה לישיבות — AI כשותף לחשיבה ניהולית",level:"בינוני",levelColor:"#f59e0b",bg:"linear-gradient(135deg,#78350f,#92400e)",time:"35 דק׳",tags:["מנהלים","מקבלי החלטות"],file:"course6.html"},
+{n:7,icon:"⚖️",title:"אתיקה ובטיחות AI בממשלה",desc:"10 כללי זהב, 4 תרחישים מביטוח לאומי, צ׳קליסט אישי — חובה לכל עובד ממשלתי",level:"בסיסי",levelColor:"#10b981",bg:"linear-gradient(135deg,#064e3b,#065f46)",time:"35 דק׳",tags:["כל העובדים","חובה"],file:"course7.html"},
+{n:8,icon:"⚡",title:"אוטומציה ותהליכי עבודה",desc:"3 רמות אוטומציה, מיפוי משימות, ספריית פרומפטים, שרשור פעולות — מהאישי לארגוני",level:"מתקדם",levelColor:"#a78bfa",bg:"linear-gradient(135deg,#3b0764,#4c1d95)",time:"35 דק׳",tags:["מנהלים","ראשי צוותים"],file:"course8.html"},
+{n:9,icon:"💻",title:"Claude Code — מדריך מעשי",desc:"עוזר פיתוח AI בטרמינל: תיקון באגים, כתיבת טסטים, אוטומציית Git, Agent Skills",level:"מתקדם",levelColor:"#a78bfa",bg:"linear-gradient(135deg,#3b0764,#4c1d95)",time:"40 דק׳",tags:["מפתחים","IT"],file:"course9.html"}
+];
+const g=document.getElementById('grid');
+C.forEach(c=>{
+g.innerHTML+=`<a href="${c.file}" class="card">
+<span class="card-num">קורס ${c.n}</span>
+<div class="card-icon" style="background:${c.bg}">${c.icon}</div>
+<span class="card-level" style="background:${c.levelColor}22;color:${c.levelColor}">${c.level}</span>
+<h3>${c.title}</h3>
+<p>${c.desc}</p>
+<div class="card-meta"><span class="card-tag">⏱ ${c.time}</span>${c.tags.map(t=>`<span class="card-tag">${t}</span>`).join('')}</div>
+</a>`;
+});
+</script>
+<footer class="footer">
+<p>אקדמיית AI לשירות הציבורי — ביטוח לאומי © 2025</p>
+<p style="margin-top:8px">מבוסס על סילבוס הקורסים של <a href="https://anthropic.skilljar.com" target="_blank">Anthropic</a></p>
+</footer>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>קורס 7: אתיקה ובטיחות AI — אקדמיית AI</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Heebo',sans-serif;background:#0f172a;color:#e2e8f0;line-height:1.8}
+a{color:#38bdf8;text-decoration:none}
+.topbar{background:rgba(15,23,42,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06);padding:16px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.back-btn{padding:8px 20px;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#94a3b8;font-size:.9rem;transition:.2s}
+.back-btn:hover{background:rgba(56,189,248,.1);color:#38bdf8;border-color:rgba(56,189,248,.3)}
+.topbar-title{font-size:.95rem;color:#64748b}
+.course-hero{padding:60px 24px 40px;text-align:center;background:linear-gradient(180deg,#064e3b 0%,#0f172a 100%)}
+.course-badge{display:inline-block;padding:6px 18px;border-radius:50px;font-size:.8rem;font-weight:500;margin-bottom:20px}
+.course-hero h1{font-size:2.4rem;font-weight:800;margin-bottom:12px}
+.course-hero .sub{color:#94a3b8;font-size:1.1rem;max-width:600px;margin:0 auto 24px}
+.meta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.meta-item{background:rgba(255,255,255,.05);padding:6px 16px;border-radius:10px;font-size:.85rem;color:#94a3b8}
+.content{max-width:800px;margin:0 auto;padding:40px 24px 80px}
+.section{margin-bottom:48px}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.section-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.section-head h2{font-size:1.4rem;font-weight:700;color:#f1f5f9}
+.card-box{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:24px;margin-bottom:16px}
+.card-box h3{font-size:1.1rem;font-weight:600;color:#f1f5f9;margin-bottom:12px}
+.risk-table{width:100%;border-collapse:collapse;margin:16px 0}
+.risk-table th{background:rgba(16,185,129,.1);color:#10b981;padding:10px 14px;text-align:right;font-weight:600;font-size:.85rem}
+.risk-table td{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.04);font-size:.9rem;color:#cbd5e1}
+</style>
+</head>
+<body>
+<nav class="topbar">
+<div style="display:flex;align-items:center;gap:12px">
+<a href="index.html" class="back-btn">→ חזרה לכל הקורסים</a>
+<span class="topbar-title">קורס 7 מתוך 9</span>
+</div>
+</nav>
+<header class="course-hero">
+<span class="course-badge" style="background:rgba(16,185,129,.15);color:#10b981">⚖️ בסיסי — חובה לכל עובד</span>
+<h1>אתיקה ובטיחות AI בממשלה</h1>
+<p class="sub">10 כללי זהב, תרחישים מביטוח לאומי, צ׳קליסט אישי — חובה לכל עובד ממשלתי</p>
+<div class="meta-row">
+<span class="meta-item">⏱ 35 דקות</span>
+<span class="meta-item">👥 כל העובדים</span>
+<span class="meta-item">📋 10 כללי זהב + צ׳קליסט</span>
+</div>
+</header>
+<main class="content">
+
+
+<style>
+.golden-rule{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:16px 20px;margin-bottom:10px;display:flex;align-items:flex-start;gap:12px}
+.rule-num{width:28px;height:28px;border-radius:50%;background:rgba(16,185,129,.15);color:#10b981;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;flex-shrink:0}
+.scenario{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:24px;margin-bottom:16px}
+.scenario h3{font-size:1.05rem;font-weight:600;color:#f1f5f9;margin-bottom:12px}
+.scenario-bad{background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.15);border-radius:10px;padding:14px;margin-bottom:10px}
+.scenario-bad::before{content:"❌ הבעיה:";display:block;font-weight:600;color:#f87171;margin-bottom:6px;font-size:.85rem}
+.scenario-good{background:rgba(16,185,129,.06);border:1px solid rgba(16,185,129,.15);border-radius:10px;padding:14px}
+.scenario-good::before{content:"✅ הפתרון:";display:block;font-weight:600;color:#34d399;margin-bottom:6px;font-size:.85rem}
+.checklist{list-style:none;padding:0}
+.checklist li{padding:10px 0;border-bottom:1px solid rgba(255,255,255,.04);display:flex;align-items:center;gap:10px;font-size:.95rem}
+.check-icon{width:22px;height:22px;border-radius:6px;border:2px solid rgba(16,185,129,.4);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.try-section{background:linear-gradient(135deg,rgba(16,185,129,.08),rgba(56,189,248,.08));border:1px solid rgba(16,185,129,.2);border-radius:16px;padding:28px;margin:32px 0}
+.try-section h3{color:#10b981;font-size:1.15rem;margin-bottom:16px}
+.nav-bottom{display:flex;justify-content:space-between;padding:24px;max-width:800px;margin:0 auto;border-top:1px solid rgba(255,255,255,.06)}
+.nav-btn{padding:12px 28px;border-radius:10px;font-weight:600;transition:.2s}
+.nav-prev{background:rgba(255,255,255,.05);color:#94a3b8}
+.nav-next{background:linear-gradient(135deg,#38bdf8,#818cf8);color:#fff}
+.footer{text-align:center;padding:40px;color:#475569;font-size:.85rem;border-top:1px solid rgba(255,255,255,.04)}
+@media print{body{background:#fff;color:#1e293b}.topbar,.nav-bottom{display:none}.course-hero{background:#ecfdf5!important;color:#1e293b}.card-box,.scenario,.golden-rule{border:1px solid #e2e8f0;break-inside:avoid}}
+</style>
+
+<div class="section">
+<div class="section-head">
+<div class="section-icon" style="background:rgba(16,185,129,.15)">⚖️</div>
+<h2>חלק א׳: למה אתיקה ב-AI חשובה במיוחד בממשלה?</h2>
+</div>
+<div class="card-box">
+<p>הממשלה שונה מהמגזר הפרטי: אתם משרתים את כל האזרחים ללא אפליה, ההחלטות שלכם משפיעות על חיים, ויש חובת שקיפות ואמון ציבורי.</p>
+</div>
+<div class="card-box">
+<h3>5 סיכונים מרכזיים בשימוש ב-AI בממשלה</h3>
+<table class="risk-table">
+<tr><th>סיכון</th><th>דוגמה</th><th>איך מונעים</th></tr>
+<tr><td>הטיה (Bias)</td><td>AI ממליץ לדחות תביעות מאוכלוסייה מסוימת</td><td>בדיקת תוצאות לפי פילוחים דמוגרפיים</td></tr>
+<tr><td>דליפת מידע</td><td>עובד מזין ת.ז. של תושב לכלי חיצוני</td><td>הנחיות ברורות + כלים מאושרים בלבד</td></tr>
+<tr><td>טעויות עובדתיות</td><td>AI "ממציא" נוהל שלא קיים</td><td>תמיד לאמת מול המקור הרשמי</td></tr>
+<tr><td>חוסר שקיפות</td><td>תושב לא יודע שהתשובה נוצרה ע"י AI</td><td>מדיניות גילוי ברורה</td></tr>
+<tr><td>תלות יתר</td><td>עובדים מפסיקים לחשוב בעצמם</td><td>AI ככלי עזר, לא כמחליט</td></tr>
+</table>
+</div>
+</div>
+
+<div class="section">
+<div class="section-head">
+<div class="section-icon" style="background:rgba(251,191,36,.15)">🏆</div>
+<h2>חלק ב׳: 10 כללי זהב לשימוש ב-AI בביטוח לאומי</h2>
+</div>
+<div class="golden-rule"><span class="rule-num">1</span><div><strong>לעולם אל תזין מידע מזהה</strong> (ת.ז., שם, כתובת, טלפון) לכלי AI חיצוני</div></div>
+<div class="golden-rule"><span class="rule-num">2</span><div><strong>תמיד בדוק את התוצאה</strong> — AI טועה, ובמיוחד בנתונים ספציפיים</div></div>
+<div class="golden-rule"><span class="rule-num">3</span><div><strong>ציין כשתוכן נוצר בעזרת AI</strong> — שקיפות בונה אמון</div></div>
+<div class="golden-rule"><span class="rule-num">4</span><div><strong>אל תשתמש ב-AI לקבלת החלטות</strong> על זכאות ללא בקרה אנושית</div></div>
+<div class="golden-rule"><span class="rule-num">5</span><div><strong>השתמש רק בכלים מאושרים</strong> ע"י מערכות המידע של הארגון</div></div>
+<div class="golden-rule"><span class="rule-num">6</span><div><strong>שמור על הגינות</strong> — בדוק שהתוצאות לא מפלות אוכלוסייה כלשהי</div></div>
+<div class="golden-rule"><span class="rule-num">7</span><div><strong>תעד את השימוש</strong> — רשום מתי ואיך השתמשת ב-AI בתהליך עבודה</div></div>
+<div class="golden-rule"><span class="rule-num">8</span><div><strong>הכשר את הצוות</strong> — אל תניח שכולם יודעים את הכללים</div></div>
+<div class="golden-rule"><span class="rule-num">9</span><div><strong>דווח על בעיות</strong> — אם גילית טעות או הטיה, דווח מיד</div></div>
+<div class="golden-rule"><span class="rule-num">10</span><div><strong>עדכן ולמד</strong> — התחום מתפתח, המדיניות צריכה להתעדכן</div></div>
+</div>
+
+<div class="section">
+<div class="section-head">
+<div class="section-icon" style="background:rgba(239,68,68,.15)">💬</div>
+<h2>חלק ג׳: תרחישים לדיון — מה עושים?</h2>
+</div>
+
+<div class="scenario">
+<h3>תרחיש 1: עובד מזין תביעת נכות מלאה (כולל שם ות.ז.) ל-ChatGPT כדי לקבל סיכום</h3>
+<div class="scenario-bad">דליפת מידע אישי לשרת חיצוני</div>
+<div class="scenario-good">להזין רק את הטקסט ללא פרטים מזהים, או להשתמש בכלי פנימי מאושר</div>
+</div>
+
+<div class="scenario">
+<h3>תרחיש 2: מנהל סניף משתמש ב-AI כדי לדרג עובדים לפי ביצועים</h3>
+<div class="scenario-bad">AI עלול להטות על בסיס נתונים לא מייצגים</div>
+<div class="scenario-good">AI יכול לעזור לארגן נתונים, אבל הדירוג חייב להיות אנושי</div>
+</div>
+
+<div class="scenario">
+<h3>תרחיש 3: צ׳אטבוט באתר ביטוח לאומי אומר לתושב שהוא זכאי לגמלה — אבל הוא לא</h3>
+<div class="scenario-bad">מידע שגוי שיוצר ציפיות ופגיעה באמון</div>
+<div class="scenario-good">כל תשובה של צ׳אטבוט חייבת לכלול הסתייגות + הפניה לבדיקה אנושית</div>
+</div>
+
+<div class="scenario">
+<h3>תרחיש 4: עובדת משתמשת ב-AI לתרגום מכתב לערבית ושולחת בלי בדיקה</h3>
+<div class="scenario-bad">תרגום AI עלול להכיל שגיאות משמעותיות</div>
+<div class="scenario-good">תמיד לתת לדובר שפת אם לבדוק תרגומים רשמיים</div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-head">
+<div class="section-icon" style="background:rgba(16,185,129,.15)">✅</div>
+<h2>צ׳קליסט אישי — לפני כל שימוש ב-AI</h2>
+</div>
+<div class="card-box">
+<ul class="checklist">
+<li><span class="check-icon">☐</span> האם אני משתמש/ת בכלי מאושר?</li>
+<li><span class="check-icon">☐</span> האם הסרתי כל מידע מזהה?</li>
+<li><span class="check-icon">☐</span> האם אבדוק את התוצאה לפני שימוש?</li>
+<li><span class="check-icon">☐</span> האם ברור שזה כלי עזר ולא מחליף שיקול דעת?</li>
+<li><span class="check-icon">☐</span> האם אני שומר/ת על שקיפות?</li>
+</ul>
+</div>
+</div>
+
+<div class="try-section">
+<h3>🎯 תרגיל מעשי — דיון עם עמית/ה</h3>
+<p>חשבו יחד על 3 מצבים בעבודה שלכם שבהם AI יכול לעזור.</p>
+<p style="margin-top:8px">לכל מצב ענו:</p>
+<p>1. מה הסיכון האתי?</p>
+<p>2. איך מתמודדים איתו?</p>
+<p>3. מה הכלל מתוך 10 כללי הזהב שרלוונטי כאן?</p>
+</div>
+
+</main>
+<nav class="nav-bottom">
+<a href="course6.html" class="nav-btn nav-prev">→ קורס 6: חשיבה ופתרון בעיות</a>
+<a href="course8.html" class="nav-btn nav-next">קורס 8: אוטומציה ←</a>
+</nav>
+<footer class="footer">
+<p>מבוסס על הסילבוס של Anthropic — AI Fluency + AI for Educators</p>
+<p>מותאם לעובדי ביטוח לאומי וממשלת ישראל © 2025</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>קורס 1: אוריינות AI — אקדמיית AI</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Heebo',sans-serif;background:#0f172a;color:#e2e8f0;line-height:1.8}
+a{color:#38bdf8;text-decoration:none}
+.topbar{background:rgba(15,23,42,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06);padding:16px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.topbar-right{display:flex;align-items:center;gap:12px}
+.back-btn{padding:8px 20px;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#94a3b8;font-size:.9rem;transition:.2s}
+.back-btn:hover{background:rgba(56,189,248,.1);color:#38bdf8;border-color:rgba(56,189,248,.3)}
+.topbar-title{font-size:.95rem;color:#64748b}
+.course-hero{padding:60px 24px 40px;text-align:center;background:linear-gradient(180deg,#064e3b 0%,#0f172a 100%)}
+.course-badge{display:inline-block;padding:6px 18px;border-radius:50px;font-size:.8rem;font-weight:500;margin-bottom:20px}
+.course-hero h1{font-size:2.4rem;font-weight:800;margin-bottom:12px}
+.course-hero .sub{color:#94a3b8;font-size:1.1rem;max-width:600px;margin:0 auto 24px}
+.meta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.meta-item{background:rgba(255,255,255,.05);padding:6px 16px;border-radius:10px;font-size:.85rem;color:#94a3b8}
+.content{max-width:800px;margin:0 auto;padding:40px 24px 80px}
+.section{margin-bottom:48px}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.section-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.section-head h2{font-size:1.4rem;font-weight:700;color:#f1f5f9}
+.card-box{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:24px;margin-bottom:16px}
+.card-box h3{font-size:1.1rem;font-weight:600;color:#f1f5f9;margin-bottom:12px}
+.green-list,.red-list,.yellow-list{list-style:none;padding:0}
+.green-list li::before{content:"✅ "}
+.red-list li::before{content:"🔴 "}
+.yellow-list li::before{content:"🟡 "}
+.green-list li,.red-list li,.yellow-list li{padding:6px 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.green-list li:last-child,.red-list li:last-child,.yellow-list li:last-child{border:none}
+table{width:100%;border-collapse:collapse;margin:16px 0}
+th{background:rgba(56,189,248,.1);color:#38bdf8;padding:12px 16px;text-align:right;font-weight:600;font-size:.9rem}
+td{padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.06);font-size:.95rem}
+tr:hover td{background:rgba(255,255,255,.02)}
+.prompt-box{background:linear-gradient(135deg,rgba(56,189,248,.05),rgba(139,92,246,.05));border:1px solid rgba(56,189,248,.15);border-radius:12px;padding:20px;margin:12px 0;position:relative}
+.prompt-box::before{content:"💬 פרומפט";position:absolute;top:-10px;right:16px;background:#0f172a;padding:0 8px;font-size:.75rem;color:#38bdf8;font-weight:600}
+.prompt-box p{color:#cbd5e1;font-size:.95rem;direction:rtl}
+.try-section{background:linear-gradient(135deg,rgba(16,185,129,.08),rgba(56,189,248,.08));border:1px solid rgba(16,185,129,.2);border-radius:16px;padding:28px;margin:32px 0}
+.try-section h3{color:#10b981;font-size:1.15rem;margin-bottom:16px}
+.summary-box{background:linear-gradient(135deg,rgba(139,92,246,.08),rgba(56,189,248,.08));border:1px solid rgba(139,92,246,.2);border-radius:16px;padding:28px}
+.summary-box h3{color:#a78bfa;margin-bottom:12px}
+.summary-box ul{list-style:none;padding:0}
+.summary-box li{padding:6px 0;color:#cbd5e1}
+.summary-box li::before{content:"💎 "}
+.nav-bottom{display:flex;justify-content:space-between;padding:24px;max-width:800px;margin:0 auto;border-top:1px solid rgba(255,255,255,.06)}
+.nav-btn{padding:12px 28px;border-radius:10px;font-weight:600;transition:.2s}
+.nav-prev{background:rgba(255,255,255,.05);color:#94a3b8}
+.nav-next{background:linear-gradient(135deg,#38bdf8,#818cf8);color:#fff}
+.nav-btn:hover{transform:translateY(-2px)}
+.footer{text-align:center;padding:40px;color:#475569;font-size:.85rem;border-top:1px solid rgba(255,255,255,.04)}
+@media print{body{background:#fff;color:#1e293b}.topbar,.nav-bottom{display:none}.course-hero{background:#f0fdf4!important;color:#1e293b}.course-hero .sub{color:#475569}.card-box{border:1px solid #e2e8f0;break-inside:avoid}th{background:#f0f9ff}td{border-color:#e2e8f0}.prompt-box{border:1px solid #bae6fd;background:#f0f9ff}.try-section{border:1px solid #a7f3d0;background:#f0fdf4}.summary-box{border:1px solid #c4b5fd;background:#f5f3ff}}
+</style>
+</head>
+<body>
+<nav class="topbar">
+<div class="topbar-right">
+<a href="index.html" class="back-btn">→ חזרה לכל הקורסים</a>
+<span class="topbar-title">קורס 1 מתוך 9</span>
+</div>
+</nav>
+
+<header class="course-hero">
+<span class="course-badge" style="background:rgba(16,185,129,.15);color:#10b981">🧠 בסיסי — לכל העובדים</span>
+<h1>אוריינות AI ועבודה אחראית</h1>
+<p class="sub">מה AI יכול ומה לא, איך לעבוד איתו נכון, ולמה זה חשוב במיוחד בשירות הציבורי</p>
+<div class="meta-row">
+<span class="meta-item">⏱ 35 דקות קריאה</span>
+<span class="meta-item">👥 כל העובדים</span>
+<span class="meta-item">📋 3 תרגילים</span>
+</div>
+</header>
+
+<main class="content">
+</main>
+</body>
+</html>
+<main class="content">
+
+<div class="section">
+<div class="section-head">
+<div class="section-icon" style="background:rgba(16,185,129,.15)">📖</div>
+<h2>חלק א׳: מה זה AI בכלל?</h2>
+</div>
+<div class="card-box">
+<p>AI (בינה מלאכותית) הוא תוכנה שיודעת לעבד טקסט, לנתח מידע ולייצר תוכן — בדומה לעוזר חכם שקורא מהר מאוד ויודע לנסח היטב.</p>
+</div>
+<div class="card-box">
+<h3>✅ מה AI כן יודע לעשות</h3>
+<ul class="green-list">
+<li>לסכם מסמך ארוך בפסקה אחת</li>
+<li>לנסח מכתב לתושב בשפה פשוטה</li>
+<li>לחלץ נתונים מטבלאות ומסמכים</li>
+<li>לענות על שאלות לגבי נהלים (אם מחוברים למאגר)</li>
+<li>לתרגם תוכן בין שפות</li>
+</ul>
+</div>
+<div class="card-box">
+<h3>❌ מה AI לא יודע לעשות</h3>
+<ul class="red-list">
+<li>לקבל החלטות משפטיות או רגולטוריות במקומך</li>
+<li>להבטיח 100% דיוק — תמיד צריך לבדוק</li>
+<li>לגשת למערכות פנימיות (אלא אם חוברו אליו)</li>
+<li>להחליף שיקול דעת מקצועי</li>
+</ul>
+</div>
+</div>
+
+<div class="section">
+<div class="section-head">
+<div class="section-icon" style="background:rgba(56,189,248,.15)">🔄</div>
+<h2>חלק ב׳: מסגרת 4D לעבודה אחראית עם AI</h2>
+</div>
+<div class="card-box">
+<p>מסגרת עבודה מוכחת של Anthropic, מותאמת לעבודה ממשלתית:</p>
+<table>
+<tr><th>שלב</th><th>שם</th><th>מה עושים</th><th>דוגמה מביטוח לאומי</th></tr>
+<tr><td>1</td><td>Discover — גלה</td><td>הבן מה הכלי יכול לעשות</td><td>"בוא נבדוק אם Claude יכול לסכם תביעת נכות"</td></tr>
+<tr><td>2</td><td>Discern — הבחן</td><td>הערך את התוצאה בביקורתיות</td><td>"הסיכום מדויק? חסר משהו קריטי?"</td></tr>
+<tr><td>3</td><td>Direct — כוון</td><td>שפר את ההנחיה שנתת</td><td>"אני צריך שהסיכום יכלול תאריכים ואחוזי נכות"</td></tr>
+<tr><td>4</td><td>Determine — החלט</td><td>קבל החלטה מושכלת</td><td>"הסיכום טוב, אבל ההחלטה הסופית שלי כפקיד"</td></tr>
+</table>
+</div>
+</div>
+
+<div class="section">
+<div class="section-head">
+<div class="section-icon" style="background:rgba(239,68,68,.15)">🛡️</div>
+<h2>חלק ג׳: כללי אתיקה ובטיחות — חובה בממשלה</h2>
+</div>
+<div class="card-box">
+<h3>🔴 אסור בהחלט</h3>
+<ul class="red-list">
+<li>להזין מידע אישי של תושבים (ת.ז., שמות, כתובות) לכלי AI חיצוני</li>
+<li>לסמוך על תשובת AI בלי בדיקה בנוהל/חוק</li>
+<li>להשתמש ב-AI לקבלת החלטות על זכאות ללא בקרה אנושית</li>
+</ul>
+</div>
+<div class="card-box">
+<h3>✅ מותר ומומלץ</h3>
+<ul class="green-list">
+<li>לנסח טיוטות מכתבים (בלי פרטים מזהים)</li>
+<li>לסכם נהלים ארוכים לשפה פשוטה</li>
+<li>לבקש עזרה בניסוח, תרגום, ארגון מידע</li>
+<li>ללמוד נושאים חדשים ולהתעדכן</li>
+</ul>
+</div>
+<div class="card-box">
+<h3>🟡 זהירות</h3>
+<ul class="yellow-list">
+<li>תמיד בדוק תוצאות מול המקור</li>
+<li>אל תניח שהתשובה נכונה רק כי היא נשמעת משכנעת</li>
+<li>שמור על שקיפות — ציין כשתוכן נוצר בעזרת AI</li>
+</ul>
+</div>
+</div>
+
+<div class="try-section">
+<h3>🎯 תרגיל מעשי — נסה עכשיו!</h3>
+<p style="margin-bottom:16px">פתח את <a href="https://claude.ai" target="_blank">claude.ai</a> ונסה:</p>
+<div class="prompt-box" style="margin-bottom:12px">
+<p><strong>תרגיל 1:</strong> העתק פסקה מנוהל פנימי (ללא מידע אישי) ובקש:<br>"סכם את הנוהל הזה ב-3 נקודות עיקריות בשפה פשוטה שתושב יבין"</p>
+</div>
+<div class="prompt-box" style="margin-bottom:12px">
+<p><strong>תרגיל 2:</strong> בקש מ-Claude:<br>"כתוב טיוטת מכתב לתושב שמודיע לו שהתביעה שלו התקבלה, בטון מכבד ובשפה פשוטה"</p>
+</div>
+<div class="prompt-box">
+<p><strong>תרגיל 3:</strong> שאל:<br>"מהם 5 השימושים הכי שימושיים של AI עבור עובד בשירות ציבורי?"</p>
+</div>
+</div>
+
+<div class="summary-box">
+<h3>💎 סיכום — מה לזכור?</h3>
+<ul>
+<li>AI הוא כלי עזר, לא מחליף אותך</li>
+<li>תמיד בדוק, תמיד חשוב בביקורתיות</li>
+<li>אל תזין מידע אישי לכלים חיצוניים</li>
+<li>התחל בקטן, למד מהניסיון, שתף עמיתים</li>
+</ul>
+</div>
+</main>
+
+<nav class="nav-bottom">
+<a href="index.html" class="nav-btn nav-prev">→ כל הקורסים</a>
+<a href="course2.html" class="nav-btn nav-next">קורס 2: הנדסת הנחיות ←</a>
+</nav>
+<footer class="footer">
+<p>מבוסס על הסילבוס של Anthropic — AI Fluency: Framework & Foundations</p>
+<p>מותאם לעובדי ביטוח לאומי וממשלת ישראל © 2025</p>
+</footer>
+</body>
+</html>
