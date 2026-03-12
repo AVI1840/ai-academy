@@ -3,174 +3,123 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>קורס 3: הנדסת הנחיות — אקדמיית AI למגזר הציבורי</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap');
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Heebo',sans-serif;background:#0f172a;color:#e2e8f0;line-height:1.8}
-a{color:#38bdf8;text-decoration:none}
-.topbar{background:rgba(15,23,42,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06);padding:16px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
-.back-btn{padding:8px 20px;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#94a3b8;font-size:.9rem}
-.topbar-title{font-size:.95rem;color:#64748b}
-</style>
-
-<style>
-.course-hero{padding:60px 24px 40px;text-align:center;background:linear-gradient(180deg,#0c4a6e 0%,#0f172a 100%)}
-.course-badge{display:inline-block;padding:6px 18px;border-radius:50px;font-size:.8rem;font-weight:500;margin-bottom:20px}
-.course-hero h1{font-size:2.4rem;font-weight:800;margin-bottom:12px}
-.course-hero .sub{color:#94a3b8;font-size:1.1rem;max-width:600px;margin:0 auto 24px}
-.meta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-.meta-item{background:rgba(255,255,255,.05);padding:6px 16px;border-radius:10px;font-size:.85rem;color:#94a3b8}
-.content{max-width:800px;margin:0 auto;padding:40px 24px 80px}
-.section{margin-bottom:48px}
-.section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px}
-.section-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
-.section-head h2{font-size:1.4rem;font-weight:700;color:#f1f5f9}
-.card-box{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:24px;margin-bottom:16px}
-.card-box h3{font-size:1.1rem;font-weight:600;color:#f1f5f9;margin-bottom:12px}
-.compare{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0}
-.compare-bad{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);border-radius:12px;padding:16px}
-.compare-good{background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);border-radius:12px;padding:16px}
-.compare-bad::before{content:"❌ לא טוב";display:block;font-weight:600;color:#f87171;margin-bottom:8px;font-size:.85rem}
-.compare-good::before{content:"✅ מצוין";display:block;font-weight:600;color:#34d399;margin-bottom:8px;font-size:.85rem}
-.prompt-box{background:linear-gradient(135deg,rgba(56,189,248,.05),rgba(139,92,246,.05));border:1px solid rgba(56,189,248,.15);border-radius:12px;padding:20px;margin:12px 0;position:relative}
-.prompt-box::before{content:"💬 פרומפט מוכן";position:absolute;top:-10px;right:16px;background:#0f172a;padding:0 8px;font-size:.75rem;color:#38bdf8;font-weight:600}
-.prompt-num{display:inline-block;background:rgba(56,189,248,.15);color:#38bdf8;width:28px;height:28px;border-radius:50%;text-align:center;line-height:28px;font-size:.85rem;font-weight:700;margin-left:8px}
-.xml-box{background:rgba(139,92,246,.06);border:1px solid rgba(139,92,246,.2);border-radius:12px;padding:20px;margin:16px 0;font-family:monospace;direction:ltr;text-align:left;font-size:.9rem;color:#c4b5fd;line-height:1.6;white-space:pre-wrap}
-.try-section{background:linear-gradient(135deg,rgba(16,185,129,.08),rgba(56,189,248,.08));border:1px solid rgba(16,185,129,.2);border-radius:16px;padding:28px;margin:32px 0}
-.try-section h3{color:#10b981;font-size:1.15rem;margin-bottom:16px}
-.summary-box{background:linear-gradient(135deg,rgba(139,92,246,.08),rgba(56,189,248,.08));border:1px solid rgba(139,92,246,.2);border-radius:16px;padding:28px}
-.summary-box h3{color:#a78bfa;margin-bottom:12px}
-.summary-box ul{list-style:none;padding:0}
-.summary-box li{padding:6px 0;color:#cbd5e1}
-.summary-box li::before{content:"💎 "}
-.nav-bottom{display:flex;justify-content:space-between;padding:24px;max-width:800px;margin:0 auto;border-top:1px solid rgba(255,255,255,.06)}
-.nav-btn{padding:12px 28px;border-radius:10px;font-weight:600;transition:.2s}
-.nav-prev{background:rgba(255,255,255,.05);color:#94a3b8}
-.nav-next{background:linear-gradient(135deg,#38bdf8,#818cf8);color:#fff}
-.footer{text-align:center;padding:40px;color:#475569;font-size:.85rem;border-top:1px solid rgba(255,255,255,.04)}
-@media(max-width:600px){.compare{grid-template-columns:1fr}}
-@media print{body{background:#fff;color:#1e293b}.topbar,.nav-bottom{display:none}.course-hero{background:#f0f9ff!important;color:#1e293b}.card-box{border:1px solid #e2e8f0;break-inside:avoid}.prompt-box{border:1px solid #bae6fd;background:#f0f9ff}.xml-box{background:#f5f3ff;border:1px solid #c4b5fd;color:#4c1d95}}
-</style>
+<title>יחידה 3: הנדסת הנחיות — המקפצה</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Frank+Ruhl+Libre:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
 </head>
 <body>
-<nav class="topbar">
-<div style="display:flex;align-items:center;gap:12px">
-<a href="index.html" class="back-btn">→ חזרה לכל הקורסים</a>
-<span class="topbar-title">קורס 3 מתוך 12</span>
-</div>
-</nav>
+<nav class="topbar"><div class="topbar-right"><a href="index.html" class="back-btn">→ חזרה למקפצה</a><span class="topbar-title">יחידה 3 מתוך 12</span></div></nav>
+
 <header class="course-hero">
-<span class="course-badge" style="background:rgba(56,189,248,.15);color:#38bdf8">✍️ בסיסי — ישומי מיידי</span>
+<span class="course-badge" style="background:rgba(106,155,204,.1);color:var(--secondary)">✍️ בסיסי — ישומי מיידי</span>
 <h1>הנדסת הנחיות (Prompt Engineering)</h1>
 <p class="sub">איך לשאול את AI נכון כדי לקבל תוצאות מצוינות — עם 8 פרומפטים מוכנים לשימוש</p>
-<div class="meta-row">
-<span class="meta-item">⏱ 35 דקות</span>
-<span class="meta-item">👥 כל עובדי המדינה</span>
-<span class="meta-item">📋 8 פרומפטים מוכנים</span>
-</div>
+<div class="meta-row"><span class="meta-item">⏱ 35 דקות</span><span class="meta-item">👥 כל עובדי המדינה</span><span class="meta-item">📋 8 פרומפטים מוכנים</span></div>
 </header>
 
 <main class="content">
 
 <div class="section">
-<div class="section-head">
-<div class="section-icon" style="background:rgba(56,189,248,.15)">🎯</div>
-<h2>חלק א׳: 4 עקרונות לפרומפט מוצלח</h2>
-</div>
-<div class="card-box">
-<h3>עיקרון 1: היו ברורים וישירים</h3>
+<div class="section-head"><div class="section-icon" style="background:rgba(217,119,87,.1)">🎯</div><h2>חלק א׳: 4 עקרונות לפרומפט מוצלח</h2></div>
+
+<div class="card-box"><h3>1. היו ברורים וישירים</h3>
+<p>ככל שתהיו ספציפיים יותר, כך התוצאה תהיה טובה יותר. אל תניחו ש-AI "מבין" מה אתם רוצים.</p>
 <div class="compare">
-<div class="compare-bad">"תעזור לי עם מכתב"</div>
-<div class="compare-good">"כתוב טיוטת מכתב לאזרח שמודיע על דחיית בקשה, בטון מכבד, עם הסבר על אפשרות ערעור"</div>
-</div>
-</div>
-<div class="card-box">
-<h3>עיקרון 2: תנו הקשר</h3>
+<div class="compare-bad">תעזור לי עם מכתב</div>
+<div class="compare-good">כתוב טיוטת מכתב לאזרח שמודיע על דחיית בקשה, בטון מכבד, עם הסבר על אפשרות ערעור</div>
+</div></div>
+
+<div class="card-box"><h3>2. תנו הקשר</h3>
+<p>ספרו ל-AI מי קהל היעד, מה המטרה, ומה הרקע — בדיוק כמו שהייתם מסבירים לעמית חדש.</p>
 <div class="compare">
-<div class="compare-bad">"סכם את הטקסט"</div>
-<div class="compare-good">"סכם את הנוהל הבא ב-5 נקודות, עבור עובד חדש במשרד שצריך להבין את התהליך מהר"</div>
-</div>
-</div>
-<div class="card-box">
-<h3>עיקרון 3: הגדירו פורמט</h3>
+<div class="compare-bad">סכם את הטקסט</div>
+<div class="compare-good">סכם את הנוהל הזה ב-5 נקודות, עבור עובד חדש במשרד שצריך להבין את התהליך מהר</div>
+</div></div>
+
+<div class="card-box"><h3>3. הגדירו פורמט</h3>
+<p>אמרו ל-AI באיזה מבנה אתם רוצים את התשובה — טבלה, רשימה, פסקאות, או כל פורמט אחר.</p>
 <div class="compare">
-<div class="compare-bad">"תן לי מידע על הנושא"</div>
-<div class="compare-good">"צור טבלה עם 3 עמודות: נושא | סטטוס | פעולה נדרשת"</div>
-</div>
-</div>
-<div class="card-box">
-<h3>עיקרון 4: תנו דוגמה</h3>
+<div class="compare-bad">תן לי מידע על הנושא</div>
+<div class="compare-good">צור טבלה עם 3 עמודות: נושא | סטטוס | פעולה נדרשת</div>
+</div></div>
+
+<div class="card-box"><h3>4. תנו דוגמה</h3>
+<p>כשאתם רוצים סגנון מסוים, הדביקו דוגמה. AI מצוין בחיקוי סגנון קיים.</p>
 <div class="compare">
-<div class="compare-bad">"כתוב תשובה לפנייה"</div>
-<div class="compare-good">"כתוב תשובה לפניית אזרח בסגנון הדוגמה הבאה: [הדביקו דוגמה]"</div>
-</div>
-</div>
+<div class="compare-bad">כתוב תשובה לפנייה</div>
+<div class="compare-good">כתוב תשובה לפניית אזרח בסגנון הדוגמה הבאה: [הדביקו דוגמה]</div>
+</div></div>
 </div>
 
 <div class="section">
-<div class="section-head">
-<div class="section-icon" style="background:rgba(139,92,246,.15)">🏷️</div>
-<h2>חלק ב׳: טכניקת תגיות XML — שדרוג משמעותי</h2>
-</div>
-<div class="card-box">
-<p>שימוש בתגיות עוזר ל-AI להבחין בין חלקים שונים בהנחיה. זה כמו לתת לו טופס מסודר במקום פתק מבולגן:</p>
+<div class="section-head"><div class="section-icon" style="background:rgba(139,108,193,.1)">🏷️</div><h2>חלק ב׳: טכניקת תגיות XML</h2></div>
+<div class="card-box"><h3>למה תגיות XML?</h3>
+<p>תגיות XML עוזרות ל-AI להבחין בין חלקים שונים של ההנחיה — תפקיד, הקשר, משימה ופורמט. זה כמו לשים כותרות ברורות לכל חלק.</p>
 <div class="xml-box">&lt;תפקיד&gt;אתה עוזר מקצועי לעובדי מדינה&lt;/תפקיד&gt;
-&lt;משימה&gt;סכם את הנוהל הבא בשפה פשוטה&lt;/משימה&gt;
-&lt;נוהל&gt;
-[הדביקו כאן את הנוהל]
-&lt;/נוהל&gt;
-&lt;פורמט&gt;3-5 נקודות עיקריות, כל נקודה בשורה נפרדת&lt;/פורמט&gt;</div>
-<p style="color:#94a3b8;font-size:.9rem;margin-top:12px">💡 למה זה עובד? ה-AI מבין בדיוק מה התפקיד שלו, מה המשימה, מה החומר, ומה הפורמט הרצוי.</p>
-</div>
+
+&lt;הקשר&gt;אני עובד במשרד ממשלתי ומטפל בפניות אזרחים&lt;/הקשר&gt;
+
+&lt;משימה&gt;כתוב תשובה מנומסת לאזרח שפנייתו נדחתה, עם הסבר על אפשרות ערעור&lt;/משימה&gt;
+
+&lt;פורמט&gt;מכתב רשמי, 3 פסקאות, טון מכבד ואמפתי&lt;/פורמט&gt;</div>
+<p>לא חייבים להשתמש בתגיות בכל פרומפט. זה שימושי במיוחד כשההנחיה מורכבת.</p></div>
 </div>
 
 <div class="section">
-<div class="section-head">
-<div class="section-icon" style="background:rgba(56,189,248,.15)">📋</div>
-<h2>חלק ג׳: 8 פרומפטים מוכנים לשימוש יומיומי</h2>
-</div>
-<div class="prompt-box"><p><span class="prompt-num">1</span> <strong>סיכום נוהל:</strong><br>"סכם את הנוהל הבא ב-5 נקודות מרכזיות. כתוב בשפה פשוטה שעובד חדש יבין. הנוהל: [הדביקו]"</p></div>
-<div class="prompt-box"><p><span class="prompt-num">2</span> <strong>ניסוח מכתב לאזרח:</strong><br>"כתוב מכתב רשמי אך ידידותי לאזרח בנושא [X]. הטון: מכבד ואמפתי. כלול: סיבה, מה השלב הבא, פרטי קשר"</p></div>
-<div class="prompt-box"><p><span class="prompt-num">3</span> <strong>הסבר שירות ממשלתי:</strong><br>"הסבר בשפה פשוטה מהו השירות [X]. כלול: מי זכאי, מה צריך להגיש, כמה זמן לוקח, לאן פונים"</p></div>
-<div class="prompt-box"><p><span class="prompt-num">4</span> <strong>ניתוח פנייה:</strong><br>"קרא את פניית האזרח הבאה וזהה: 1) מה הבקשה 2) מה הבעיה 3) מה הפעולה הנדרשת. הפנייה: [הדביקו]"</p></div>
-<div class="prompt-box"><p><span class="prompt-num">5</span> <strong>סיכום ישיבה:</strong><br>"על בסיס הנקודות הבאות, כתוב סיכום ישיבה מסודר עם: משתתפים, נושאים, החלטות, משימות. הנקודות: [הדביקו]"</p></div>
-<div class="prompt-box"><p><span class="prompt-num">6</span> <strong>תרגום בירוקרטית לפשוטה:</strong><br>"קח את הטקסט הבירוקרטי הבא וכתוב אותו מחדש בשפה שכל אדם יבין, בלי לאבד את המשמעות: [הדביקו]"</p></div>
-<div class="prompt-box"><p><span class="prompt-num">7</span> <strong>יצירת שאלות נפוצות:</strong><br>"על בסיס הנוהל הבא, צור רשימת 10 שאלות נפוצות שאזרחים עשויים לשאול, עם תשובות קצרות: [הדביקו]"</p></div>
-<div class="prompt-box"><p><span class="prompt-num">8</span> <strong>השוואת נהלים:</strong><br>"השווה בין שני הנהלים הבאים וציין: מה שונה, מה זהה, ומה ההשלכות המעשיות. נוהל א: [הדביקו] נוהל ב: [הדביקו]"</p></div>
+<div class="section-head"><div class="section-icon" style="background:rgba(217,119,87,.1)">💬</div><h2>חלק ג׳: 8 פרומפטים מוכנים לשימוש יומיומי</h2></div>
+
+<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>1. סיכום מסמך:</strong> "סכם את המסמך הבא ב-5 נקודות עיקריות. ציין נתונים מספריים חשובים. קהל יעד: מנהל שצריך להבין את התמונה ב-2 דקות. [הדביקו מסמך]"</p></div>
+
+<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>2. ניסוח מכתב:</strong> "כתוב מכתב רשמי מטעם [גוף] ל[נמען] בנושא [X]. טון: מכבד ומקצועי. אורך: עמוד אחד. כלול: פתיחה, גוף, סיכום, ופרטי קשר."</p></div>
+
+<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>3. הנגשת שפה:</strong> "קח את הטקסט הבא וכתוב אותו מחדש בשפה פשוטה שאזרח ללא רקע מקצועי יבין. שמור על הדיוק. הוסף כותרות משנה. [הדביקו טקסט]"</p></div>
+
+<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>4. הכנת מצגת:</strong> "צור מבנה מצגת של [X] שקפים בנושא [Y]. לכל שקף: כותרת, 3-4 נקודות תבליט, והערה למציג. קהל יעד: [Z]."</p></div>
+
+<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>5. ניתוח SWOT:</strong> "בצע ניתוח SWOT ל[נושא/פרויקט]. לכל קטגוריה (חוזקות, חולשות, הזדמנויות, איומים) ציין 3-4 נקודות עם הסבר קצר."</p></div>
+
+<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>6. סיכום ישיבה:</strong> "סכם את הישיבה הבאה: [הדביקו רשימות]. פורמט: נושא, משתתפים, 5 נקודות עיקריות, החלטות, משימות (מי-מה-מתי)."</p></div>
+
+<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>7. השוואת חלופות:</strong> "השווה בין 3 חלופות ל[X]: [א] [ב] [ג]. לכל חלופה: יתרונות, חסרונות, עלות, זמן, סיכון. הצג בטבלה ותן המלצה מנומקת."</p></div>
+
+<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>8. מייל מקצועי:</strong> "כתוב מייל ל[נמען] בנושא [X]. המייל צריך: subject ברור, פסקת פתיחה קצרה, גוף עם 3 נקודות בתבליטים, קריאה לפעולה. טון: מקצועי וידידותי."</p></div>
 </div>
 
 <div class="try-section">
-<h3>🎯 תרגיל — נסו את טכניקת "לפני ואחרי"</h3>
-<p>1. כתבו פרומפט פשוט וראו את התוצאה</p>
-<p>2. שפרו אותו עם הקשר, פורמט ודוגמה</p>
-<p>3. השוו בין התוצאות — ההבדל ידהים אתכם</p>
-<div style="margin-top:16px">
-<div class="compare">
-<div class="compare-bad">"כתוב מכתב דחייה"</div>
-<div class="compare-good">"כתוב טיוטת מכתב לאזרח שבקשתו נדחתה. הטון: אמפתי ומכבד. כלול: סיבת הדחייה באופן כללי, זכות ערעור, טלפון למוקד. אורך: עד 15 שורות"</div>
+<h3>🎯 נסו בעצמכם</h3>
+<p style="margin-bottom:16px;font-family:'Heebo',sans-serif;font-size:.95rem">בחרו פרומפט מהרשימה, התאימו אותו למשימה אמיתית מהעבודה, ונסו ב-Claude או ChatGPT. שימו לב להבדל בין פרומפט כללי לפרומפט ספציפי.</p>
 </div>
-</div>
+
+<div class="quiz-section">
+<h3>❓ בדקו את עצמכם</h3>
+<div class="quiz-q"><p>1. מהם 4 העקרונות לפרומפט מוצלח?</p><details><summary>הציצו בתשובה</summary><p>בהירות, הקשר, פורמט, ודוגמה.</p></details></div>
+<div class="quiz-q"><p>2. מתי כדאי להשתמש בתגיות XML?</p><details><summary>הציצו בתשובה</summary><p>כשההנחיה מורכבת ויש בה כמה חלקים — תפקיד, הקשר, משימה ופורמט.</p></details></div>
+<div class="quiz-q"><p>3. למה חשוב לציין קהל יעד בפרומפט?</p><details><summary>הציצו בתשובה</summary><p>כי AI מתאים את רמת השפה, הטון והעומק לקהל — מנהל בכיר יקבל סיכום שונה מעובד חדש.</p></details></div>
 </div>
 
 <div class="summary-box">
-<h3>💎 סיכום</h3>
+<h3>💎 סיכום — מה לזכור?</h3>
 <ul>
-<li>ככל שהפרומפט מדויק יותר — התוצאה טובה יותר</li>
-<li>תנו הקשר, פורמט ודוגמה</li>
-<li>השתמשו בתגיות XML למשימות מורכבות</li>
-<li>8 הפרומפטים המוכנים יחסכו לכם זמן מהיום הראשון</li>
+<li>4 עקרונות: בהירות, הקשר, פורמט, דוגמה</li>
+<li>תגיות XML — לפרומפטים מורכבים עם כמה חלקים</li>
+<li>8 פרומפטים מוכנים — העתיקו, התאימו, והשתמשו</li>
+<li>ככל שהפרומפט ספציפי יותר — התוצאה טובה יותר</li>
 </ul>
 </div>
 </main>
 
+<section class="course-complete">
+<button class="complete-btn" id="completeBtn" onclick="toggleComplete()">✓ סיימתי יחידה זו</button><br>
+<button class="share-course-btn" onclick="shareCourse()">📱 שתפו בוואטסאפ</button>
+</section>
 <nav class="nav-bottom">
-<a href="course2.html" class="nav-btn nav-prev">→ קורס 2: מפת המודלים</a>
-<a href="course4.html" class="nav-btn nav-next">קורס 4: כתיבה ותקשורת ←</a>
+<a href="course2.html" class="nav-btn nav-prev">→ יחידה 2: מפת המודלים</a>
+<a href="course4.html" class="nav-btn nav-next">יחידה 4: כתיבה ותקשורת ←</a>
 </nav>
-<footer class="footer">
-<p>מבוסס על Anthropic Claude 101 + OpenAI Prompt Engineering</p>
-<p>מותאם לעובדי המגזר הציבורי בישראל © 2025</p>
-</footer>
+<footer class="site-footer"><p>המקפצה — מבוסס על Anthropic ו-OpenAI | מותאם למובילי AI במגזר הציבורי בישראל © 2025</p></footer>
+<script>const COURSE_ID=3;</script>
+<script src="shared.js"></script>
 </body>
 </html>

@@ -3,58 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>קורס 9: AI לשירות הציבור — אקדמיית AI למגזר הציבורי</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap');
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Heebo',sans-serif;background:#0f172a;color:#e2e8f0;line-height:1.8}a{color:#38bdf8;text-decoration:none}
-.topbar{background:rgba(15,23,42,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06);padding:16px 24px;display:flex;align-items:center;position:sticky;top:0;z-index:100}
-.back-btn{padding:8px 20px;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#94a3b8;font-size:.9rem}.topbar-title{font-size:.95rem;color:#64748b;margin-right:12px}
-.course-hero{padding:60px 24px 40px;text-align:center;background:linear-gradient(180deg,#78350f 0%,#0f172a 100%)}
-.course-badge{display:inline-block;padding:6px 18px;border-radius:50px;font-size:.8rem;font-weight:500;margin-bottom:20px}
-.course-hero h1{font-size:2.4rem;font-weight:800;margin-bottom:12px}.course-hero .sub{color:#94a3b8;font-size:1.1rem;max-width:600px;margin:0 auto 24px}
-.meta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}.meta-item{background:rgba(255,255,255,.05);padding:6px 16px;border-radius:10px;font-size:.85rem;color:#94a3b8}
-.content{max-width:800px;margin:0 auto;padding:40px 24px 80px}.section{margin-bottom:48px}
-.section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px}.section-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}.section-head h2{font-size:1.4rem;font-weight:700;color:#f1f5f9}
-.card-box{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:24px;margin-bottom:16px}.card-box h3{font-size:1.1rem;font-weight:600;color:#f1f5f9;margin-bottom:12px}
-.green-list{list-style:none;padding:0}.green-list li::before{content:"✅ "}.green-list li{padding:6px 0;border-bottom:1px solid rgba(255,255,255,.04)}.green-list li:last-child{border:none}
-table{width:100%;border-collapse:collapse;margin:16px 0}th{background:rgba(56,189,248,.1);color:#38bdf8;padding:12px 16px;text-align:right;font-weight:600;font-size:.9rem}td{padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.06);font-size:.95rem}
-.prompt-box{background:linear-gradient(135deg,rgba(56,189,248,.05),rgba(139,92,246,.05));border:1px solid rgba(56,189,248,.15);border-radius:12px;padding:20px;margin:12px 0;position:relative}.prompt-box::before{content:"💬 פרומפט";position:absolute;top:-10px;right:16px;background:#0f172a;padding:0 8px;font-size:.75rem;color:#38bdf8;font-weight:600}.prompt-box p{color:#cbd5e1;font-size:.95rem}
-.try-section{background:linear-gradient(135deg,rgba(16,185,129,.08),rgba(56,189,248,.08));border:1px solid rgba(16,185,129,.2);border-radius:16px;padding:28px;margin:32px 0}.try-section h3{color:#10b981;font-size:1.15rem;margin-bottom:16px}
-.summary-box{background:linear-gradient(135deg,rgba(139,92,246,.08),rgba(56,189,248,.08));border:1px solid rgba(139,92,246,.2);border-radius:16px;padding:28px}.summary-box h3{color:#a78bfa;margin-bottom:12px}.summary-box ul{list-style:none;padding:0}.summary-box li{padding:6px 0;color:#cbd5e1}.summary-box li::before{content:"💎 "}
-.nav-bottom{display:flex;justify-content:space-between;padding:24px;max-width:800px;margin:0 auto;border-top:1px solid rgba(255,255,255,.06)}.nav-btn{padding:12px 28px;border-radius:10px;font-weight:600}.nav-prev{background:rgba(255,255,255,.05);color:#94a3b8}.nav-next{background:linear-gradient(135deg,#38bdf8,#818cf8);color:#fff}
-.footer{text-align:center;padding:40px;color:#475569;font-size:.85rem;border-top:1px solid rgba(255,255,255,.04)}
-@media print{body{background:#fff;color:#1e293b}.topbar,.nav-bottom{display:none}.course-hero{background:#fffbeb!important;color:#1e293b}.card-box{border:1px solid #e2e8f0;break-inside:avoid}.prompt-box{border:1px solid #bae6fd;background:#f0f9ff}}
-</style>
-
+<title>יחידה 9: AI לשירות הציבור — המקפצה</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Frank+Ruhl+Libre:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
 </head>
 <body>
-<nav class="topbar">
-<a href="index.html" class="back-btn">→ חזרה לכל הקורסים</a>
-<span class="topbar-title">קורס 9 מתוך 12</span>
-</nav>
+<nav class="topbar"><div class="topbar-right"><a href="index.html" class="back-btn">→ חזרה למקפצה</a><span class="topbar-title">יחידה 9 מתוך 12</span></div></nav>
+
 <header class="course-hero">
-<span class="course-badge" style="background:rgba(251,191,36,.15);color:#fbbf24">🏛️ ישומי — שירות ציבורי</span>
+<span class="course-badge" style="background:rgba(251,191,36,.1);color:#b8860b">🏛️ ישומי — שירות ציבורי</span>
 <h1>AI לשירות הציבור והנגשת מידע</h1>
 <p class="sub">שיפור חוויית האזרח, הנגשת שירותים, שפה פשוטה, וצ׳אטבוטים ממשלתיים</p>
-<div class="meta-row">
-<span class="meta-item">⏱ 35 דקות</span>
-<span class="meta-item">👥 עובדי שירות ומנהלים</span>
-<span class="meta-item">🏛️ שירות ציבורי</span>
-</div>
+<div class="meta-row"><span class="meta-item">⏱ 35 דקות</span><span class="meta-item">👥 עובדי שירות ומנהלים</span><span class="meta-item">🏛️ שירות ציבורי</span></div>
 </header>
 
 <main class="content">
-
 <div class="section">
-<div class="section-head">
-<div class="section-icon" style="background:rgba(251,191,36,.15)">🏛️</div>
-<h2>חלק א׳: AI כמנוף לשירות ציבורי טוב יותר</h2>
-</div>
-<div class="card-box">
-<p>אזרחים מצפים לשירות מהיר, ברור ונגיש. AI יכול לעזור לנו לתת שירות טוב יותר — לא על ידי החלפת העובד, אלא על ידי שחרור זמן לטיפול אישי ומורכב.</p>
-</div>
-<div class="card-box">
-<h3>איפה AI משפר שירות ציבורי?</h3>
+<div class="section-head"><div class="section-icon" style="background:rgba(251,191,36,.1)">🏛️</div><h2>חלק א׳: AI כמנוף לשירות ציבורי טוב יותר</h2></div>
+<div class="card-box"><p>אזרחים מצפים לשירות מהיר, ברור ונגיש. AI יכול לעזור לנו לתת שירות טוב יותר — לא על ידי החלפת העובד, אלא על ידי שחרור זמן לטיפול אישי ומורכב.</p></div>
+<div class="card-box"><h3>איפה AI משפר שירות ציבורי?</h3>
 <table>
 <tr><th>תחום</th><th>לפני AI</th><th>עם AI</th></tr>
 <tr><td>מענה לשאלות נפוצות</td><td>עובד עונה שוב ושוב</td><td>צ׳אטבוט עונה 24/7, עובד מטפל במורכב</td></tr>
@@ -62,17 +31,12 @@ table{width:100%;border-collapse:collapse;margin:16px 0}th{background:rgba(56,18
 <tr><td>זמן המתנה</td><td>דקות ארוכות בטלפון</td><td>מענה מיידי לשאלות בסיסיות</td></tr>
 <tr><td>ניתוב פניות</td><td>ניתוב ידני, טעויות</td><td>ניתוב אוטומטי חכם</td></tr>
 <tr><td>תרגום</td><td>מסמכים בעברית בלבד</td><td>תרגום מיידי לערבית, רוסית, אמהרית</td></tr>
-</table>
-</div>
+</table></div>
 </div>
 
 <div class="section">
-<div class="section-head">
-<div class="section-icon" style="background:rgba(56,189,248,.15)">📝</div>
-<h2>חלק ב׳: הנגשת מידע ממשלתי</h2>
-</div>
-<div class="card-box">
-<h3>עקרון השפה הפשוטה (Plain Language)</h3>
+<div class="section-head"><div class="section-icon" style="background:rgba(106,155,204,.1)">📝</div><h2>חלק ב׳: הנגשת מידע ממשלתי</h2></div>
+<div class="card-box"><h3>עקרון השפה הפשוטה (Plain Language)</h3>
 <p>אזרחים לא צריכים תואר במשפטים כדי להבין את הזכויות שלהם. AI מצטיין בתרגום שפה בירוקרטית לשפה שכולם מבינים.</p>
 <ul class="green-list">
 <li>תרגום נהלים מורכבים לשפה פשוטה</li>
@@ -80,42 +44,38 @@ table{width:100%;border-collapse:collapse;margin:16px 0}th{background:rgba(56,18
 <li>כתיבת שאלות נפוצות (FAQ) מנוהל ארוך</li>
 <li>הנגשה לאוכלוסיות מיוחדות (קשישים, עולים חדשים)</li>
 <li>תרגום לשפות שונות</li>
-</ul>
-</div>
-<div class="prompt-box"><p><strong>הנגשת נוהל:</strong><br>"קח את הנוהל הממשלתי הבא וכתוב אותו מחדש כמדריך לאזרח. השתמש בשפה פשוטה, מספור, וכותרות ברורות. הוסף בסוף: 'לאן פונים' ו'מה צריך להביא'. הנוהל: [הדביקו]"</p></div>
-<div class="prompt-box"><p><strong>תרגום לשפות:</strong><br>"תרגם את ההודעה הבאה לערבית ולרוסית. שמור על טון ידידותי ומכבד. ההודעה: [הדביקו]"</p></div>
+</ul></div>
+<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>הנגשת נוהל:</strong> "קח את הנוהל הממשלתי הבא וכתוב אותו מחדש כמדריך לאזרח. שפה פשוטה, מספור, כותרות ברורות. הוסף בסוף: 'לאן פונים' ו'מה צריך להביא'. הנוהל: [הדביקו]"</p></div>
+<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>תרגום לשפות:</strong> "תרגם את ההודעה הבאה לערבית ולרוסית. שמור על טון ידידותי ומכבד. ההודעה: [הדביקו]"</p></div>
 </div>
 
 <div class="section">
-<div class="section-head">
-<div class="section-icon" style="background:rgba(16,185,129,.15)">🤖</div>
-<h2>חלק ג׳: צ׳אטבוטים ממשלתיים — מה אפשר ומה לא</h2>
-</div>
-<div class="card-box">
-<h3>דוגמאות לשימוש בצ׳אטבוט ממשלתי</h3>
+<div class="section-head"><div class="section-icon" style="background:rgba(61,140,111,.1)">🤖</div><h2>חלק ג׳: צ׳אטבוטים ממשלתיים — מה אפשר ומה לא</h2></div>
+<div class="card-box"><h3>✅ מה צ׳אטבוט ממשלתי יכול לעשות</h3>
 <ul class="green-list">
 <li>מענה לשאלות נפוצות על שירותים וזכאויות</li>
 <li>הכוונה לטפסים ומסמכים הנכונים</li>
 <li>בדיקת סטטוס פנייה (עם אימות זהות)</li>
 <li>תזכורות על מועדים ודדליינים</li>
 <li>ניתוב לגורם המטפל הנכון</li>
-</ul>
-</div>
-<div class="card-box">
-<h3>⚠️ מה צ׳אטבוט ממשלתי לא צריך לעשות</h3>
-<ul class="green-list">
+</ul></div>
+<div class="card-box"><h3>🔴 מה צ׳אטבוט לא צריך לעשות</h3>
+<ul class="red-list">
 <li>לקבל החלטות על זכאות — רק להסביר קריטריונים</li>
 <li>לתת ייעוץ משפטי — רק להפנות לגורם מוסמך</li>
 <li>לאחסן מידע אישי — רק להפנות למערכת מאובטחת</li>
-</ul>
-</div>
+</ul></div>
 </div>
 
 <div class="try-section">
 <h3>🎯 תרגיל מעשי</h3>
-<div class="prompt-box">
-<p>"אני עובד/ת ב[משרד]. כתוב 10 שאלות נפוצות שאזרחים שואלים על [שירות], עם תשובות קצרות וברורות בשפה פשוטה. הוסף בסוף כל תשובה: לאן לפנות למידע נוסף"</p>
+<div class="prompt-box" onclick="copyPrompt(this)"><p>"אני עובד/ת ב[משרד]. כתוב 10 שאלות נפוצות שאזרחים שואלים על [שירות], עם תשובות קצרות וברורות בשפה פשוטה. הוסף בסוף כל תשובה: לאן לפנות למידע נוסף"</p></div>
 </div>
+
+<div class="quiz-section">
+<h3>❓ בדקו את עצמכם</h3>
+<div class="quiz-q"><p>1. מה היתרון המרכזי של AI בשירות ציבורי?</p><details><summary>הציצו בתשובה</summary><p>שחרור זמן של עובדים לטיפול אישי ומורכב, בזמן ש-AI מטפל בשאלות חוזרות ובסיסיות.</p></details></div>
+<div class="quiz-q"><p>2. מה עקרון השפה הפשוטה?</p><details><summary>הציצו בתשובה</summary><p>כתיבת מידע ממשלתי בשפה שכל אזרח יבין — ללא מונחים משפטיים מורכבים.</p></details></div>
 </div>
 
 <div class="summary-box">
@@ -129,12 +89,16 @@ table{width:100%;border-collapse:collapse;margin:16px 0}th{background:rgba(56,18
 </div>
 </main>
 
+<section class="course-complete">
+<button class="complete-btn" id="completeBtn" onclick="toggleComplete()">✓ סיימתי יחידה זו</button><br>
+<button class="share-course-btn" onclick="shareCourse()">📱 שתפו בוואטסאפ</button>
+</section>
 <nav class="nav-bottom">
-<a href="course8.html" class="nav-btn nav-prev">→ קורס 8: אתיקה ובטיחות</a>
-<a href="course10.html" class="nav-btn nav-next">קורס 10: אוטומציה ←</a>
+<a href="course8.html" class="nav-btn nav-prev">→ יחידה 8: אתיקה ובטיחות</a>
+<a href="course10.html" class="nav-btn nav-next">יחידה 10: אוטומציה ←</a>
 </nav>
-<footer class="footer">
-<p>מותאם לעובדי המגזר הציבורי בישראל © 2025</p>
-</footer>
+<footer class="site-footer"><p>המקפצה — מותאם למובילי AI במגזר הציבורי בישראל © 2025</p></footer>
+<script>const COURSE_ID=9;</script>
+<script src="shared.js"></script>
 </body>
 </html>
