@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>קורס 12: Claude Code — אקדמיית AI למגזר הציבורי</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Heebo',sans-serif;background:#0f172a;color:#e2e8f0;line-height:1.8}a{color:#38bdf8;text-decoration:none}
+.topbar{background:rgba(15,23,42,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06);padding:16px 24px;display:flex;align-items:center;position:sticky;top:0;z-index:100}
+.back-btn{padding:8px 20px;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#94a3b8;font-size:.9rem}.topbar-title{font-size:.95rem;color:#64748b;margin-right:12px}
+.course-hero{padding:60px 24px 40px;text-align:center;background:linear-gradient(180deg,#0c4a6e 0%,#0f172a 100%)}
+.course-badge{display:inline-block;padding:6px 18px;border-radius:50px;font-size:.8rem;font-weight:500;margin-bottom:20px}
+.course-hero h1{font-size:2.4rem;font-weight:800;margin-bottom:12px}.course-hero .sub{color:#94a3b8;font-size:1.1rem;max-width:600px;margin:0 auto 24px}
+.meta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}.meta-item{background:rgba(255,255,255,.05);padding:6px 16px;border-radius:10px;font-size:.85rem;color:#94a3b8}
+.content{max-width:800px;margin:0 auto;padding:40px 24px 80px}.section{margin-bottom:48px}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px}.section-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}.section-head h2{font-size:1.4rem;font-weight:700;color:#f1f5f9}
+.card-box{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:24px;margin-bottom:16px}.card-box h3{font-size:1.1rem;font-weight:600;color:#f1f5f9;margin-bottom:12px}
+.green-list{list-style:none;padding:0}.green-list li::before{content:"✅ "}.green-list li{padding:6px 0;border-bottom:1px solid rgba(255,255,255,.04)}.green-list li:last-child{border:none}
+table{width:100%;border-collapse:collapse;margin:16px 0}th{background:rgba(56,189,248,.1);color:#38bdf8;padding:12px 16px;text-align:right;font-weight:600;font-size:.9rem}td{padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.06);font-size:.95rem}
+.prompt-box{background:linear-gradient(135deg,rgba(56,189,248,.05),rgba(139,92,246,.05));border:1px solid rgba(56,189,248,.15);border-radius:12px;padding:20px;margin:12px 0;position:relative}.prompt-box::before{content:"💬 פרומפט";position:absolute;top:-10px;right:16px;background:#0f172a;padding:0 8px;font-size:.75rem;color:#38bdf8;font-weight:600}.prompt-box p{color:#cbd5e1;font-size:.95rem}
+.code-box{background:#1e1e2e;border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:20px;margin:12px 0;font-family:'Courier New',monospace;direction:ltr;text-align:left;font-size:.9rem;color:#a6e3a1;line-height:1.6;overflow-x:auto}
+.try-section{background:linear-gradient(135deg,rgba(16,185,129,.08),rgba(56,189,248,.08));border:1px solid rgba(16,185,129,.2);border-radius:16px;padding:28px;margin:32px 0}.try-section h3{color:#10b981;font-size:1.15rem;margin-bottom:16px}
+.summary-box{background:linear-gradient(135deg,rgba(139,92,246,.08),rgba(56,189,248,.08));border:1px solid rgba(139,92,246,.2);border-radius:16px;padding:28px}.summary-box h3{color:#a78bfa;margin-bottom:12px}.summary-box ul{list-style:none;padding:0}.summary-box li{padding:6px 0;color:#cbd5e1}.summary-box li::before{content:"💎 "}
+.nav-bottom{display:flex;justify-content:space-between;padding:24px;max-width:800px;margin:0 auto;border-top:1px solid rgba(255,255,255,.06)}.nav-btn{padding:12px 28px;border-radius:10px;font-weight:600}.nav-prev{background:rgba(255,255,255,.05);color:#94a3b8}.nav-next{background:linear-gradient(135deg,#38bdf8,#818cf8);color:#fff}
+.footer{text-align:center;padding:40px;color:#475569;font-size:.85rem;border-top:1px solid rgba(255,255,255,.04)}
+@media print{body{background:#fff;color:#1e293b}.topbar,.nav-bottom{display:none}.course-hero{background:#f0f9ff!important;color:#1e293b}.card-box{border:1px solid #e2e8f0;break-inside:avoid}.prompt-box{border:1px solid #bae6fd;background:#f0f9ff}.code-box{background:#f8f8f8;color:#1e293b;border:1px solid #e2e8f0}}
+</style>
+
+</head>
+<body>
+<nav class="topbar">
+<a href="index.html" class="back-btn">→ חזרה לכל הקורסים</a>
+<span class="topbar-title">קורס 12 מתוך 12</span>
+</nav>
+<header class="course-hero">
+<span class="course-badge" style="background:rgba(56,189,248,.15);color:#38bdf8">💻 טכני — מפתחים וצוותי IT</span>
+<h1>Claude Code — מדריך מעשי למפתחים</h1>
+<p class="sub">פיתוח עם Claude Code, אוטומציה טכנית, סקריפטים, ועבודה עם API</p>
+<div class="meta-row">
+<span class="meta-item">⏱ 40 דקות</span>
+<span class="meta-item">👥 מפתחים וצוותי IT</span>
+<span class="meta-item">💻 טכני</span>
+</div>
+</header>
+
+<main class="content">
+
+<div class="section">
+<div class="section-head">
+<div class="section-icon" style="background:rgba(56,189,248,.15)">💻</div>
+<h2>חלק א׳: מה זה Claude Code?</h2>
+</div>
+<div class="card-box">
+<p>Claude Code הוא כלי של Anthropic שמאפשר לעבוד עם Claude ישירות מהטרמינל. הוא קורא את הקוד שלכם, מבין את המבנה, ויכול לכתוב, לתקן ולשפר קוד — כמו מתכנת זוגי חכם.</p>
+</div>
+<div class="card-box">
+<h3>מה Claude Code יכול לעשות</h3>
+<ul class="green-list">
+<li>לכתוב קוד חדש על בסיס תיאור בשפה טבעית</li>
+<li>לתקן באגים ולהסביר שגיאות</li>
+<li>לעשות Refactoring לקוד קיים</li>
+<li>ליצור טסטים אוטומטיים</li>
+<li>לכתוב תיעוד טכני</li>
+<li>לנתח קוד ולמצוא בעיות אבטחה</li>
+<li>לעבוד עם Git — commits, branches, PRs</li>
+</ul>
+</div>
+</div>
+
+<div class="section">
+<div class="section-head">
+<div class="section-icon" style="background:rgba(16,185,129,.15)">🚀</div>
+<h2>חלק ב׳: התקנה והתחלה</h2>
+</div>
+<div class="card-box">
+<h3>התקנה</h3>
+<div class="code-box">npm install -g @anthropic-ai/claude-code</div>
+<h3 style="margin-top:16px">שימוש בסיסי</h3>
+<div class="code-box"># כניסה לפרויקט
+cd my-project
+
+# הפעלת Claude Code
+claude
+
+# דוגמאות פקודות:
+> "הסבר מה הקוד הזה עושה"
+> "תקן את הבאג בקובץ server.js"
+> "צור API endpoint חדש ל-/users"
+> "כתוב טסטים ל-utils.js"</div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-head">
+<div class="section-icon" style="background:rgba(139,92,246,.15)">🔧</div>
+<h2>חלק ג׳: שימושים מעשיים בממשלה</h2>
+</div>
+<div class="card-box">
+<table>
+<tr><th>משימה</th><th>פקודה לדוגמה</th></tr>
+<tr><td>יצירת סקריפט לעיבוד נתונים</td><td>"כתוב סקריפט Python שקורא CSV ומייצר דוח סיכום"</td></tr>
+<tr><td>בניית API פנימי</td><td>"צור REST API ב-Node.js לניהול פניות אזרחים"</td></tr>
+<tr><td>אוטומציה של דוחות</td><td>"כתוב סקריפט שמייצר דוח שבועי מ-database"</td></tr>
+<tr><td>תיקון באגים</td><td>"יש שגיאה בדף ההרשמה — תמצא ותתקן"</td></tr>
+<tr><td>שיפור אבטחה</td><td>"סרוק את הקוד ומצא בעיות אבטחה פוטנציאליות"</td></tr>
+<tr><td>תיעוד</td><td>"כתוב README מפורט לפרויקט הזה"</td></tr>
+</table>
+</div>
+</div>
+
+<div class="section">
+<div class="section-head">
+<div class="section-icon" style="background:rgba(251,191,36,.15)">💡</div>
+<h2>חלק ד׳: טיפים למפתחים</h2>
+</div>
+<div class="card-box">
+<ul class="green-list">
+<li><strong>היו ספציפיים:</strong> "צור endpoint ב-Express שמקבל POST עם שם ומייל" עדיף על "תעשה API"</li>
+<li><strong>תנו הקשר:</strong> "אנחנו משתמשים ב-TypeScript, PostgreSQL, ו-Express"</li>
+<li><strong>בקשו הסבר:</strong> "תתקן ותסביר מה היה הבאג ולמה הפתרון עובד"</li>
+<li><strong>בדקו תמיד:</strong> הריצו את הקוד, בדקו טסטים, אל תעשו deploy עיוור</li>
+<li><strong>השתמשו ב-CLAUDE.md:</strong> קובץ הגדרות בשורש הפרויקט שמלמד את Claude על הפרויקט</li>
+</ul>
+</div>
+</div>
+
+<div class="try-section">
+<h3>🎯 תרגיל מעשי</h3>
+<p style="margin-bottom:16px">התקינו Claude Code ונסו:</p>
+<div class="prompt-box">
+<p>"צור סקריפט Python שקורא קובץ CSV עם עמודות: שם, תאריך, סטטוס. הסקריפט צריך: 1) לספור כמה רשומות בכל סטטוס 2) למצוא את התאריך הכי ישן והכי חדש 3) להדפיס סיכום יפה"</p>
+</div>
+</div>
+
+<div class="summary-box">
+<h3>💎 סיכום</h3>
+<ul>
+<li>Claude Code = מתכנת זוגי חכם בטרמינל</li>
+<li>כותב, מתקן, מסביר ומתעד קוד</li>
+<li>מצוין לאוטומציה, סקריפטים, ו-API בממשלה</li>
+<li>תמיד בדקו את הקוד לפני deploy</li>
+</ul>
+</div>
+</main>
+
+<nav class="nav-bottom">
+<a href="course11.html" class="nav-btn nav-prev">→ קורס 11: RAG</a>
+<a href="index.html" class="nav-btn nav-next">חזרה לכל הקורסים ←</a>
+</nav>
+<footer class="footer">
+<p>מבוסס על Anthropic Claude Code in Action</p>
+<p>מותאם לעובדי המגזר הציבורי בישראל © 2025</p>
+</footer>
+</body>
+</html>

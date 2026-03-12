@@ -3,272 +3,138 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>קורס 9: Claude Code — מדריך מעשי — אקדמיית AI</title>
+<title>קורס 9: AI לשירות הציבור — אקדמיית AI למגזר הציבורי</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap');
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Heebo',sans-serif;background:#0f172a;color:#e2e8f0;line-height:1.8}
-a{color:#38bdf8;text-decoration:none}
-.topbar{background:rgba(15,23,42,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06);padding:16px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
-.back-btn{padding:8px 20px;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#94a3b8;font-size:.9rem;transition:.2s}
-.back-btn:hover{background:rgba(56,189,248,.1);color:#38bdf8;border-color:rgba(56,189,248,.3)}
-.topbar-title{font-size:.95rem;color:#64748b}
-.course-hero{padding:60px 24px 40px;text-align:center;background:linear-gradient(180deg,#3b0764 0%,#0f172a 100%)}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Heebo',sans-serif;background:#0f172a;color:#e2e8f0;line-height:1.8}a{color:#38bdf8;text-decoration:none}
+.topbar{background:rgba(15,23,42,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06);padding:16px 24px;display:flex;align-items:center;position:sticky;top:0;z-index:100}
+.back-btn{padding:8px 20px;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#94a3b8;font-size:.9rem}.topbar-title{font-size:.95rem;color:#64748b;margin-right:12px}
+.course-hero{padding:60px 24px 40px;text-align:center;background:linear-gradient(180deg,#78350f 0%,#0f172a 100%)}
 .course-badge{display:inline-block;padding:6px 18px;border-radius:50px;font-size:.8rem;font-weight:500;margin-bottom:20px}
-.course-hero h1{font-size:2.4rem;font-weight:800;margin-bottom:12px}
-.course-hero .sub{color:#94a3b8;font-size:1.1rem;max-width:600px;margin:0 auto 24px}
-.meta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-.meta-item{background:rgba(255,255,255,.05);padding:6px 16px;border-radius:10px;font-size:.85rem;color:#94a3b8}
-.content{max-width:800px;margin:0 auto;padding:40px 24px 80px}
-.section{margin-bottom:48px}
-.section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px}
-.section-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
-.section-head h2{font-size:1.4rem;font-weight:700;color:#f1f5f9}
-.card-box{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:24px;margin-bottom:16px}
-.card-box h3{font-size:1.1rem;font-weight:600;color:#f1f5f9;margin-bottom:12px}
+.course-hero h1{font-size:2.4rem;font-weight:800;margin-bottom:12px}.course-hero .sub{color:#94a3b8;font-size:1.1rem;max-width:600px;margin:0 auto 24px}
+.meta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}.meta-item{background:rgba(255,255,255,.05);padding:6px 16px;border-radius:10px;font-size:.85rem;color:#94a3b8}
+.content{max-width:800px;margin:0 auto;padding:40px 24px 80px}.section{margin-bottom:48px}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px}.section-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}.section-head h2{font-size:1.4rem;font-weight:700;color:#f1f5f9}
+.card-box{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:24px;margin-bottom:16px}.card-box h3{font-size:1.1rem;font-weight:600;color:#f1f5f9;margin-bottom:12px}
+.green-list{list-style:none;padding:0}.green-list li::before{content:"✅ "}.green-list li{padding:6px 0;border-bottom:1px solid rgba(255,255,255,.04)}.green-list li:last-child{border:none}
+table{width:100%;border-collapse:collapse;margin:16px 0}th{background:rgba(56,189,248,.1);color:#38bdf8;padding:12px 16px;text-align:right;font-weight:600;font-size:.9rem}td{padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.06);font-size:.95rem}
+.prompt-box{background:linear-gradient(135deg,rgba(56,189,248,.05),rgba(139,92,246,.05));border:1px solid rgba(56,189,248,.15);border-radius:12px;padding:20px;margin:12px 0;position:relative}.prompt-box::before{content:"💬 פרומפט";position:absolute;top:-10px;right:16px;background:#0f172a;padding:0 8px;font-size:.75rem;color:#38bdf8;font-weight:600}.prompt-box p{color:#cbd5e1;font-size:.95rem}
+.try-section{background:linear-gradient(135deg,rgba(16,185,129,.08),rgba(56,189,248,.08));border:1px solid rgba(16,185,129,.2);border-radius:16px;padding:28px;margin:32px 0}.try-section h3{color:#10b981;font-size:1.15rem;margin-bottom:16px}
+.summary-box{background:linear-gradient(135deg,rgba(139,92,246,.08),rgba(56,189,248,.08));border:1px solid rgba(139,92,246,.2);border-radius:16px;padding:28px}.summary-box h3{color:#a78bfa;margin-bottom:12px}.summary-box ul{list-style:none;padding:0}.summary-box li{padding:6px 0;color:#cbd5e1}.summary-box li::before{content:"💎 "}
+.nav-bottom{display:flex;justify-content:space-between;padding:24px;max-width:800px;margin:0 auto;border-top:1px solid rgba(255,255,255,.06)}.nav-btn{padding:12px 28px;border-radius:10px;font-weight:600}.nav-prev{background:rgba(255,255,255,.05);color:#94a3b8}.nav-next{background:linear-gradient(135deg,#38bdf8,#818cf8);color:#fff}
+.footer{text-align:center;padding:40px;color:#475569;font-size:.85rem;border-top:1px solid rgba(255,255,255,.04)}
+@media print{body{background:#fff;color:#1e293b}.topbar,.nav-bottom{display:none}.course-hero{background:#fffbeb!important;color:#1e293b}.card-box{border:1px solid #e2e8f0;break-inside:avoid}.prompt-box{border:1px solid #bae6fd;background:#f0f9ff}}
 </style>
+
 </head>
 <body>
 <nav class="topbar">
-<div style="display:flex;align-items:center;gap:12px">
 <a href="index.html" class="back-btn">→ חזרה לכל הקורסים</a>
-<span class="topbar-title">קורס 9 מתוך 9</span>
-</div>
+<span class="topbar-title">קורס 9 מתוך 12</span>
 </nav>
 <header class="course-hero">
-<span class="course-badge" style="background:rgba(167,139,250,.15);color:#a78bfa">💻 מתקדם — מפתחים ו-IT</span>
-<h1>Claude Code — מדריך מעשי</h1>
-<p class="sub">עוזר פיתוח AI בטרמינל: תיקון באגים, כתיבת טסטים, אוטומציית Git ועוד</p>
+<span class="course-badge" style="background:rgba(251,191,36,.15);color:#fbbf24">🏛️ ישומי — שירות ציבורי</span>
+<h1>AI לשירות הציבור והנגשת מידע</h1>
+<p class="sub">שיפור חוויית האזרח, הנגשת שירותים, שפה פשוטה, וצ׳אטבוטים ממשלתיים</p>
 <div class="meta-row">
-<span class="meta-item">⏱ 40 דקות</span>
-<span class="meta-item">👥 מפתחים ו-IT</span>
-<span class="meta-item">📋 10 שימושים + Skills</span>
+<span class="meta-item">⏱ 35 דקות</span>
+<span class="meta-item">👥 עובדי שירות ומנהלים</span>
+<span class="meta-item">🏛️ שירות ציבורי</span>
 </div>
 </header>
+
 <main class="content">
 
-<style>
-.code-box{background:rgba(15,10,30,.8);border:1px solid rgba(167,139,250,.2);border-radius:12px;padding:20px;margin:12px 0;font-family:'Courier New',monospace;direction:ltr;text-align:left;font-size:.9rem;color:#c4b5fd;line-height:1.6;white-space:pre-wrap}
-.prompt-box{background:linear-gradient(135deg,rgba(167,139,250,.05),rgba(139,92,246,.08));border:1px solid rgba(167,139,250,.2);border-radius:12px;padding:20px;margin:12px 0;position:relative}
-.prompt-box::before{content:"💬 פרומפט";position:absolute;top:-10px;right:16px;background:#0f172a;padding:0 8px;font-size:.75rem;color:#a78bfa;font-weight:600}
-.prompt-num{display:inline-block;background:rgba(167,139,250,.15);color:#a78bfa;width:28px;height:28px;border-radius:50%;text-align:center;line-height:28px;font-size:.85rem;font-weight:700;margin-left:8px}
-.cmd-table{width:100%;border-collapse:collapse;margin:16px 0}
-.cmd-table th{background:rgba(167,139,250,.1);color:#a78bfa;padding:10px 14px;text-align:right;font-size:.85rem;border-bottom:1px solid rgba(167,139,250,.2)}
-.cmd-table td{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.04);font-size:.9rem}
-.cmd-table td:first-child{font-family:'Courier New',monospace;direction:ltr;text-align:left;color:#c4b5fd;white-space:nowrap}
-.bullet-list{list-style:none;padding:0;margin:12px 0}
-.bullet-list li{padding:6px 0;padding-right:20px;position:relative;color:#cbd5e1}
-.bullet-list li::before{content:"◆";position:absolute;right:0;color:#a78bfa;font-size:.7rem;top:10px}
-.try-section{background:linear-gradient(135deg,rgba(16,185,129,.08),rgba(167,139,250,.08));border:1px solid rgba(16,185,129,.2);border-radius:16px;padding:28px;margin:32px 0}
-.try-section h3{color:#10b981;font-size:1.15rem;margin-bottom:16px}
-.nav-bottom{display:flex;justify-content:space-between;padding:24px;max-width:800px;margin:0 auto;border-top:1px solid rgba(255,255,255,.06)}
-.nav-btn{padding:12px 28px;border-radius:10px;font-weight:600;transition:.2s}
-.nav-prev{background:rgba(255,255,255,.05);color:#94a3b8}
-.nav-next{background:linear-gradient(135deg,#a78bfa,#818cf8);color:#fff}
-.footer{text-align:center;padding:40px;color:#475569;font-size:.85rem;border-top:1px solid rgba(255,255,255,.04)}
-@media(max-width:600px){.cmd-table{font-size:.8rem}}
-@media print{body{background:#fff;color:#1e293b}.topbar,.nav-bottom{display:none}.course-hero{background:#faf5ff!important;color:#1e293b}.card-box{border:1px solid #e2e8f0;break-inside:avoid}.code-box{background:#f5f3ff;border:1px solid #c4b5fd;color:#4c1d95}.prompt-box{border:1px solid #c4b5fd;background:#faf5ff}}
-</style>
-
-<!-- חלק א׳: מה זה Claude Code? -->
 <div class="section">
 <div class="section-head">
-<div class="section-icon" style="background:rgba(167,139,250,.15)">🖥️</div>
-<h2>חלק א׳: מה זה Claude Code?</h2>
+<div class="section-icon" style="background:rgba(251,191,36,.15)">🏛️</div>
+<h2>חלק א׳: AI כמנוף לשירות ציבורי טוב יותר</h2>
 </div>
 <div class="card-box">
-<p><strong style="color:#a78bfa">Claude Code הוא עוזר פיתוח שרץ בטרמינל</strong> — הוא קורא את הקוד שלך, מבין את המבנה, ויכול:</p>
-<ul class="bullet-list">
-<li>לכתוב קוד חדש</li>
-<li>לתקן באגים</li>
-<li>לעשות Refactoring</li>
-<li>לכתוב טסטים</li>
-<li>לעבוד עם Git</li>
-<li>להריץ פקודות</li>
-<li>לנתח קבצים ותיקיות שלמות</li>
-</ul>
+<p>אזרחים מצפים לשירות מהיר, ברור ונגיש. AI יכול לעזור לנו לתת שירות טוב יותר — לא על ידי החלפת העובד, אלא על ידי שחרור זמן לטיפול אישי ומורכב.</p>
 </div>
 <div class="card-box">
-<h3>למה זה רלוונטי לביטוח לאומי?</h3>
-<ul class="bullet-list">
-<li>האצת פיתוח מערכות פנימיות</li>
-<li>תחזוקת קוד Legacy</li>
-<li>אוטומציה של תהליכי DevOps</li>
-<li>כתיבת סקריפטים לעיבוד נתונים</li>
-<li>Code Review אוטומטי</li>
-</ul>
-</div>
-</div>
-
-<!-- חלק ב׳: התקנה והתחלת עבודה -->
-<div class="section">
-<div class="section-head">
-<div class="section-icon" style="background:rgba(167,139,250,.15)">⚙️</div>
-<h2>חלק ב׳: התקנה והתחלת עבודה</h2>
-</div>
-<div class="card-box">
-<h3>התקנה</h3>
-<div class="code-box">npm install -g @anthropic-ai/claude-code</div>
-<h3 style="margin-top:20px">הפעלה ראשונה</h3>
-<div class="code-box">cd /path/to/your/project
-claude</div>
-<p style="color:#94a3b8;font-size:.9rem;margin-top:12px">💡 Claude Code סורק את הפרויקט, מבין את המבנה, ומוכן לעזור.</p>
-</div>
-<div class="card-box">
-<h3>פקודות בסיסיות</h3>
-<table class="cmd-table">
-<thead><tr><th>פקודה</th><th>מה עושה</th></tr></thead>
-<tbody>
-<tr><td>claude</td><td>מפעיל את Claude Code בתיקייה הנוכחית</td></tr>
-<tr><td>claude "תקן את הבאג בקובץ X"</td><td>שולח משימה ישירה</td></tr>
-<tr><td>claude commit</td><td>יוצר commit עם הודעה אוטומטית</td></tr>
-<tr><td>/help</td><td>מציג עזרה</td></tr>
-<tr><td>/clear</td><td>מנקה את ההקשר</td></tr>
-<tr><td>/compact</td><td>דוחס את ההיסטוריה לחסוך הקשר</td></tr>
-</tbody>
+<h3>איפה AI משפר שירות ציבורי?</h3>
+<table>
+<tr><th>תחום</th><th>לפני AI</th><th>עם AI</th></tr>
+<tr><td>מענה לשאלות נפוצות</td><td>עובד עונה שוב ושוב</td><td>צ׳אטבוט עונה 24/7, עובד מטפל במורכב</td></tr>
+<tr><td>הנגשת מידע</td><td>מסמכים בירוקרטיים</td><td>מידע בשפה פשוטה ובכל שפה</td></tr>
+<tr><td>זמן המתנה</td><td>דקות ארוכות בטלפון</td><td>מענה מיידי לשאלות בסיסיות</td></tr>
+<tr><td>ניתוב פניות</td><td>ניתוב ידני, טעויות</td><td>ניתוב אוטומטי חכם</td></tr>
+<tr><td>תרגום</td><td>מסמכים בעברית בלבד</td><td>תרגום מיידי לערבית, רוסית, אמהרית</td></tr>
 </table>
 </div>
 </div>
 
-<!-- חלק ג׳: 10 שימושים מעשיים -->
 <div class="section">
 <div class="section-head">
-<div class="section-icon" style="background:rgba(167,139,250,.15)">🚀</div>
-<h2>חלק ג׳: 10 שימושים מעשיים לביטוח לאומי</h2>
+<div class="section-icon" style="background:rgba(56,189,248,.15)">📝</div>
+<h2>חלק ב׳: הנגשת מידע ממשלתי</h2>
+</div>
+<div class="card-box">
+<h3>עקרון השפה הפשוטה (Plain Language)</h3>
+<p>אזרחים לא צריכים תואר במשפטים כדי להבין את הזכויות שלהם. AI מצטיין בתרגום שפה בירוקרטית לשפה שכולם מבינים.</p>
+<ul class="green-list">
+<li>תרגום נהלים מורכבים לשפה פשוטה</li>
+<li>יצירת מדריכי "שלב אחר שלב" לאזרחים</li>
+<li>כתיבת שאלות נפוצות (FAQ) מנוהל ארוך</li>
+<li>הנגשה לאוכלוסיות מיוחדות (קשישים, עולים חדשים)</li>
+<li>תרגום לשפות שונות</li>
+</ul>
+</div>
+<div class="prompt-box"><p><strong>הנגשת נוהל:</strong><br>"קח את הנוהל הממשלתי הבא וכתוב אותו מחדש כמדריך לאזרח. השתמש בשפה פשוטה, מספור, וכותרות ברורות. הוסף בסוף: 'לאן פונים' ו'מה צריך להביא'. הנוהל: [הדביקו]"</p></div>
+<div class="prompt-box"><p><strong>תרגום לשפות:</strong><br>"תרגם את ההודעה הבאה לערבית ולרוסית. שמור על טון ידידותי ומכבד. ההודעה: [הדביקו]"</p></div>
 </div>
 
-<div class="prompt-box"><p><span class="prompt-num">1</span> <strong>תיקון באגים:</strong></p>
-<div class="code-box">&gt; תבדוק למה הפונקציה calculateBenefit מחזירה ערך שגוי כשהגיל מעל 67</div></div>
-
-<div class="prompt-box"><p><span class="prompt-num">2</span> <strong>כתיבת טסטים:</strong></p>
-<div class="code-box">&gt; כתוב unit tests לכל הפונקציות בקובץ eligibility-checker.js</div></div>
-
-<div class="prompt-box"><p><span class="prompt-num">3</span> <strong>Refactoring:</strong></p>
-<div class="code-box">&gt; שפר את הקוד בקובץ claims-processor.py — הפוך אותו לקריא יותר, הוסף type hints ותיעוד</div></div>
-
-<div class="prompt-box"><p><span class="prompt-num">4</span> <strong>סקריפט לעיבוד נתונים:</strong></p>
-<div class="code-box">&gt; כתוב סקריפט Python שקורא קובץ CSV של תביעות, מסנן תביעות פתוחות מעל 90 יום, ומייצר דוח Excel</div></div>
-
-<div class="prompt-box"><p><span class="prompt-num">5</span> <strong>תיעוד קוד:</strong></p>
-<div class="code-box">&gt; הוסף תיעוד מפורט (docstrings) לכל הפונקציות בתיקייה src/services/</div></div>
-
-<div class="prompt-box"><p><span class="prompt-num">6</span> <strong>Code Review:</strong></p>
-<div class="code-box">&gt; בדוק את השינויים ב-Git diff האחרון. חפש: בעיות אבטחה, באגים פוטנציאליים, שיפורי ביצועים</div></div>
-
-<div class="prompt-box"><p><span class="prompt-num">7</span> <strong>המרת קוד:</strong></p>
-<div class="code-box">&gt; המר את הסקריפט הזה מ-VBScript ל-Python. שמור על אותה לוגיקה בדיוק</div></div>
-
-<div class="prompt-box"><p><span class="prompt-num">8</span> <strong>יצירת API:</strong></p>
-<div class="code-box">&gt; צור REST API endpoint שמקבל מספר תביעה ומחזיר סטטוס. השתמש ב-Express.js עם validation</div></div>
-
-<div class="prompt-box"><p><span class="prompt-num">9</span> <strong>אוטומציית Git:</strong></p>
-<div class="code-box">&gt; claude commit  # יוצר commit message אוטומטי ומדויק
-&gt; בדוק את כל ה-PR הפתוחים ותן סיכום של השינויים בכל אחד</div></div>
-
-<div class="prompt-box"><p><span class="prompt-num">10</span> <strong>ניתוח קוד Legacy:</strong></p>
-<div class="code-box">&gt; נתח את הקוד בתיקייה legacy/ והסבר מה כל קובץ עושה. צור מפת תלויות</div></div>
-</div>
-
-<!-- חלק ד׳: CLAUDE.md -->
 <div class="section">
 <div class="section-head">
-<div class="section-icon" style="background:rgba(167,139,250,.15)">📄</div>
-<h2>חלק ד׳: CLAUDE.md — הגדרת הקשר לפרויקט</h2>
+<div class="section-icon" style="background:rgba(16,185,129,.15)">🤖</div>
+<h2>חלק ג׳: צ׳אטבוטים ממשלתיים — מה אפשר ומה לא</h2>
 </div>
 <div class="card-box">
-<p>קובץ <strong style="color:#a78bfa">CLAUDE.md</strong> בשורש הפרויקט מלמד את Claude Code על הפרויקט שלך:</p>
-<div class="code-box"># פרויקט: מערכת ניהול תביעות — ביטוח לאומי
-
-## מבנה הפרויקט
-- src/services/ — לוגיקה עסקית
-- src/api/ — נקודות קצה
-- src/models/ — מודלים של בסיס נתונים
-- tests/ — טסטים
-
-## כללים
-- כתוב קוד ב-TypeScript
-- השתמש ב-async/await
-- כל פונקציה חייבת type hints
-- טסטים עם Jest
-- הודעות commit בעברית
-
-## סטנדרטים
-- אין console.log בקוד production
-- כל endpoint חייב validation
-- טיפול בשגיאות עם try/catch</div>
-</div>
-</div>
-
-<!-- חלק ה׳: Agent Skills -->
-<div class="section">
-<div class="section-head">
-<div class="section-icon" style="background:rgba(167,139,250,.15)">🧩</div>
-<h2>חלק ה׳: Agent Skills — הוראות חוזרות</h2>
+<h3>דוגמאות לשימוש בצ׳אטבוט ממשלתי</h3>
+<ul class="green-list">
+<li>מענה לשאלות נפוצות על שירותים וזכאויות</li>
+<li>הכוונה לטפסים ומסמכים הנכונים</li>
+<li>בדיקת סטטוס פנייה (עם אימות זהות)</li>
+<li>תזכורות על מועדים ודדליינים</li>
+<li>ניתוב לגורם המטפל הנכון</li>
+</ul>
 </div>
 <div class="card-box">
-<p><strong style="color:#a78bfa">Skills</strong> הם הנחיות שאתה כותב פעם אחת ו-Claude Code משתמש בהן שוב ושוב:</p>
-<h3 style="margin-top:16px">Skill לכתיבת טסטים:</h3>
-<div class="code-box"># skill: write-tests
-## description: כתיבת טסטים לפי הסטנדרט שלנו
-
-כשאתה כותב טסטים:
-1. השתמש ב-Jest
-2. כתוב לפחות 3 test cases: happy path, edge case, error case
-3. השתמש ב-describe/it בעברית
-4. הוסף mock לכל קריאת API חיצונית</div>
-</div>
-<div class="card-box">
-<h3>Skill ל-Code Review:</h3>
-<div class="code-box"># skill: code-review
-## description: בדיקת קוד לפי הסטנדרטים שלנו
-
-בדוק:
-- אבטחה: SQL injection, XSS, הרשאות
-- ביצועים: שאילתות כבדות, לולאות מיותרות
-- קריאות: שמות משתנים, תיעוד, מבנה
-- טסטים: האם יש כיסוי מספיק?</div>
+<h3>⚠️ מה צ׳אטבוט ממשלתי לא צריך לעשות</h3>
+<ul class="green-list">
+<li>לקבל החלטות על זכאות — רק להסביר קריטריונים</li>
+<li>לתת ייעוץ משפטי — רק להפנות לגורם מוסמך</li>
+<li>לאחסן מידע אישי — רק להפנות למערכת מאובטחת</li>
+</ul>
 </div>
 </div>
 
-<!-- חלק ו׳: טיפים מתקדמים -->
-<div class="section">
-<div class="section-head">
-<div class="section-icon" style="background:rgba(167,139,250,.15)">💡</div>
-<h2>חלק ו׳: טיפים מתקדמים</h2>
-</div>
-<div class="card-box">
-<h3>עבודה מקבילית</h3>
-<p>הרץ כמה instances של Claude Code על חלקים שונים של הפרויקט בו-זמנית — כל אחד בטרמינל נפרד.</p>
-</div>
-<div class="card-box">
-<h3>שילוב עם GitHub</h3>
-<div class="code-box">&gt; צור PR עם תיאור מפורט לשינויים שעשינו
-&gt; בדוק את ה-PR של [שם עמית] ותן הערות</div>
-</div>
-<div class="card-box">
-<h3>חיבור MCP Servers</h3>
-<p>הרחב את היכולות עם כלים חיצוניים — גישה לבסיסי נתונים, דפדפן, ועוד. MCP (Model Context Protocol) מאפשר ל-Claude Code להתחבר לשירותים נוספים.</p>
-</div>
-</div>
-
-<!-- תרגיל מעשי -->
 <div class="try-section">
-<h3>🎯 תרגיל מעשי — נסה בעצמך</h3>
-<p>1. התקן Claude Code על פרויקט קיים</p>
-<p>2. צור קובץ CLAUDE.md עם הגדרות הפרויקט</p>
-<p>3. בקש מ-Claude Code לנתח את מבנה הפרויקט</p>
-<p>4. תקן באג אחד או כתוב טסט אחד בעזרתו</p>
-<p>5. צור commit אוטומטי</p>
+<h3>🎯 תרגיל מעשי</h3>
+<div class="prompt-box">
+<p>"אני עובד/ת ב[משרד]. כתוב 10 שאלות נפוצות שאזרחים שואלים על [שירות], עם תשובות קצרות וברורות בשפה פשוטה. הוסף בסוף כל תשובה: לאן לפנות למידע נוסף"</p>
+</div>
 </div>
 
+<div class="summary-box">
+<h3>💎 סיכום</h3>
+<ul>
+<li>AI משחרר זמן לטיפול אישי ומורכב</li>
+<li>הנגשת שפה היא אחד השימושים החזקים ביותר</li>
+<li>צ׳אטבוט ממשלתי — מענה 24/7 לשאלות בסיסיות</li>
+<li>תמיד בקרה אנושית על תוכן שמגיע לאזרח</li>
+</ul>
+</div>
 </main>
+
 <nav class="nav-bottom">
-<a href="course8.html" class="nav-btn nav-prev">→ קורס 8: אוטומציה</a>
-<a href="index.html" class="nav-btn nav-next">חזרה לכל הקורסים ←</a>
+<a href="course8.html" class="nav-btn nav-prev">→ קורס 8: אתיקה ובטיחות</a>
+<a href="course10.html" class="nav-btn nav-next">קורס 10: אוטומציה ←</a>
 </nav>
 <footer class="footer">
-<p>מבוסס על הסילבוס של Anthropic — Claude Code in Action + Introduction to Agent Skills</p>
-<p>מותאם לצוותי פיתוח ו-IT בביטוח לאומי וממשלת ישראל © 2025</p>
+<p>מותאם לעובדי המגזר הציבורי בישראל © 2025</p>
 </footer>
 </body>
 </html>

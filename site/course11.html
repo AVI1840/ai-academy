@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>קורס 11: RAG — חיבור AI למאגרי ידע — אקדמיית AI למגזר הציבורי</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Heebo',sans-serif;background:#0f172a;color:#e2e8f0;line-height:1.8}a{color:#38bdf8;text-decoration:none}
+.topbar{background:rgba(15,23,42,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06);padding:16px 24px;display:flex;align-items:center;position:sticky;top:0;z-index:100}
+.back-btn{padding:8px 20px;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#94a3b8;font-size:.9rem}.topbar-title{font-size:.95rem;color:#64748b;margin-right:12px}
+.course-hero{padding:60px 24px 40px;text-align:center;background:linear-gradient(180deg,#312e81 0%,#0f172a 100%)}
+.course-badge{display:inline-block;padding:6px 18px;border-radius:50px;font-size:.8rem;font-weight:500;margin-bottom:20px}
+.course-hero h1{font-size:2.4rem;font-weight:800;margin-bottom:12px}.course-hero .sub{color:#94a3b8;font-size:1.1rem;max-width:600px;margin:0 auto 24px}
+.meta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}.meta-item{background:rgba(255,255,255,.05);padding:6px 16px;border-radius:10px;font-size:.85rem;color:#94a3b8}
+.content{max-width:800px;margin:0 auto;padding:40px 24px 80px}.section{margin-bottom:48px}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px}.section-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}.section-head h2{font-size:1.4rem;font-weight:700;color:#f1f5f9}
+.card-box{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:24px;margin-bottom:16px}.card-box h3{font-size:1.1rem;font-weight:600;color:#f1f5f9;margin-bottom:12px}
+.green-list{list-style:none;padding:0}.green-list li::before{content:"✅ "}.green-list li{padding:6px 0;border-bottom:1px solid rgba(255,255,255,.04)}.green-list li:last-child{border:none}
+table{width:100%;border-collapse:collapse;margin:16px 0}th{background:rgba(56,189,248,.1);color:#38bdf8;padding:12px 16px;text-align:right;font-weight:600;font-size:.9rem}td{padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.06);font-size:.95rem}
+.prompt-box{background:linear-gradient(135deg,rgba(56,189,248,.05),rgba(139,92,246,.05));border:1px solid rgba(56,189,248,.15);border-radius:12px;padding:20px;margin:12px 0;position:relative}.prompt-box::before{content:"💬 פרומפט";position:absolute;top:-10px;right:16px;background:#0f172a;padding:0 8px;font-size:.75rem;color:#38bdf8;font-weight:600}.prompt-box p{color:#cbd5e1;font-size:.95rem}
+.step-box{background:rgba(139,92,246,.06);border:1px solid rgba(139,92,246,.15);border-radius:12px;padding:20px;margin:12px 0}
+.step-box h4{color:#a78bfa;margin-bottom:8px}
+.try-section{background:linear-gradient(135deg,rgba(16,185,129,.08),rgba(56,189,248,.08));border:1px solid rgba(16,185,129,.2);border-radius:16px;padding:28px;margin:32px 0}.try-section h3{color:#10b981;font-size:1.15rem;margin-bottom:16px}
+.summary-box{background:linear-gradient(135deg,rgba(139,92,246,.08),rgba(56,189,248,.08));border:1px solid rgba(139,92,246,.2);border-radius:16px;padding:28px}.summary-box h3{color:#a78bfa;margin-bottom:12px}.summary-box ul{list-style:none;padding:0}.summary-box li{padding:6px 0;color:#cbd5e1}.summary-box li::before{content:"💎 "}
+.nav-bottom{display:flex;justify-content:space-between;padding:24px;max-width:800px;margin:0 auto;border-top:1px solid rgba(255,255,255,.06)}.nav-btn{padding:12px 28px;border-radius:10px;font-weight:600}.nav-prev{background:rgba(255,255,255,.05);color:#94a3b8}.nav-next{background:linear-gradient(135deg,#38bdf8,#818cf8);color:#fff}
+.footer{text-align:center;padding:40px;color:#475569;font-size:.85rem;border-top:1px solid rgba(255,255,255,.04)}
+@media print{body{background:#fff;color:#1e293b}.topbar,.nav-bottom{display:none}.course-hero{background:#eef2ff!important;color:#1e293b}.card-box{border:1px solid #e2e8f0;break-inside:avoid}.prompt-box{border:1px solid #bae6fd;background:#f0f9ff}.step-box{border:1px solid #c4b5fd;background:#f5f3ff}}
+</style>
+
+</head>
+<body>
+<nav class="topbar">
+<a href="index.html" class="back-btn">→ חזרה לכל הקורסים</a>
+<span class="topbar-title">קורס 11 מתוך 12</span>
+</nav>
+<header class="course-hero">
+<span class="course-badge" style="background:rgba(139,92,246,.15);color:#a78bfa">🗄️ מתקדם — ארגוני</span>
+<h1>RAG — חיבור AI למאגרי ידע ארגוניים</h1>
+<p class="sub">איך לחבר AI למסמכים ונהלים פנימיים כדי לקבל תשובות מדויקות מהמידע שלכם</p>
+<div class="meta-row">
+<span class="meta-item">⏱ 40 דקות</span>
+<span class="meta-item">👥 מנהלים וצוותי IT</span>
+<span class="meta-item">🗄️ ארגוני</span>
+</div>
+</header>
+
+<main class="content">
+
+<div class="section">
+<div class="section-head">
+<div class="section-icon" style="background:rgba(139,92,246,.15)">🗄️</div>
+<h2>חלק א׳: מה זה RAG ולמה זה חשוב?</h2>
+</div>
+<div class="card-box">
+<h3>RAG = Retrieval Augmented Generation</h3>
+<p>בעברית פשוטה: <strong>חיבור AI למאגר הידע שלכם</strong>. במקום ש-AI יענה מהידע הכללי שלו, הוא קורא את המסמכים, הנהלים והמידע הפנימי של הארגון — ועונה על בסיסם.</p>
+</div>
+<div class="card-box">
+<h3>למה זה משנה את המשחק?</h3>
+<table>
+<tr><th>בלי RAG</th><th>עם RAG</th></tr>
+<tr><td>AI עונה מידע כללי</td><td>AI עונה מהנהלים שלכם</td></tr>
+<tr><td>"אני חושב שהנוהל אומר..."</td><td>"לפי נוהל 4.2.1, סעיף ג..."</td></tr>
+<tr><td>סיכון להזיות</td><td>תשובות מבוססות מקור</td></tr>
+<tr><td>לא מכיר את הארגון</td><td>מכיר כל מסמך שהעלו</td></tr>
+</table>
+</div>
+</div>
+
+<div class="section">
+<div class="section-head">
+<div class="section-icon" style="background:rgba(56,189,248,.15)">🔧</div>
+<h2>חלק ב׳: איך RAG עובד — בפשטות</h2>
+</div>
+<div class="step-box">
+<h4>שלב 1: העלאת מסמכים 📄</h4>
+<p>מעלים את הנהלים, המסמכים והמידע הפנימי למערכת</p>
+</div>
+<div class="step-box">
+<h4>שלב 2: אינדוקס חכם 🔍</h4>
+<p>המערכת "קוראת" את כל המסמכים ויוצרת אינדקס חכם שמאפשר חיפוש מהיר</p>
+</div>
+<div class="step-box">
+<h4>שלב 3: שאלה מהמשתמש ❓</h4>
+<p>עובד שואל שאלה — למשל: "מה הנוהל לטיפול בפנייה דחופה?"</p>
+</div>
+<div class="step-box">
+<h4>שלב 4: חיפוש + תשובה 💡</h4>
+<p>המערכת מוצאת את הקטעים הרלוונטיים ו-AI מנסח תשובה על בסיסם — עם הפניה למקור</p>
+</div>
+</div>
+
+<div class="section">
+<div class="section-head">
+<div class="section-icon" style="background:rgba(16,185,129,.15)">🏛️</div>
+<h2>חלק ג׳: שימושים ממשלתיים</h2>
+</div>
+<div class="card-box">
+<ul class="green-list">
+<li><strong>מוקד שירות:</strong> עובד שואל "מה הזכאות של אזרח בן 67?" — מקבל תשובה מהנהלים</li>
+<li><strong>עובד חדש:</strong> שואל שאלות על נהלים ומקבל תשובות מיידיות עם הפניה למקור</li>
+<li><strong>צ׳אטבוט לאזרח:</strong> אזרח שואל על שירות ומקבל תשובה מדויקת מהמידע הרשמי</li>
+<li><strong>ניהול ידע:</strong> חיפוש חכם בכל מסמכי הארגון במקום חיפוש ידני</li>
+<li><strong>הדרכה:</strong> מערכת שעונה על שאלות מקצועיות מתוך חומרי ההדרכה</li>
+</ul>
+</div>
+</div>
+
+<div class="section">
+<div class="section-head">
+<div class="section-icon" style="background:rgba(251,191,36,.15)">🛠️</div>
+<h2>חלק ד׳: כלים זמינים היום</h2>
+</div>
+<div class="card-box">
+<table>
+<tr><th>כלי</th><th>מה עושה</th><th>מתאים ל</th></tr>
+<tr><td>Claude Projects</td><td>העלאת מסמכים ושאילת שאלות</td><td>צוותים קטנים, ניסוי מהיר</td></tr>
+<tr><td>ChatGPT + Files</td><td>העלאת קבצים לשיחה</td><td>שימוש אישי, ניסוי</td></tr>
+<tr><td>NotebookLM (Google)</td><td>ניתוח מסמכים עם מקורות</td><td>מחקר, ניתוח מסמכים</td></tr>
+<tr><td>Microsoft Copilot</td><td>חיבור ל-SharePoint ו-Teams</td><td>ארגונים עם Microsoft 365</td></tr>
+</table>
+</div>
+</div>
+
+<div class="try-section">
+<h3>🎯 תרגיל מעשי — נסו RAG פשוט</h3>
+<p style="margin-bottom:16px">פתחו <a href="https://claude.ai" target="_blank">Claude</a> → צרו Project חדש → העלו 2-3 נהלים (ללא מידע אישי) → שאלו:</p>
+<div class="prompt-box">
+<p>"על בסיס המסמכים שהעליתי, ענה: מה התהליך לטיפול ב[X]? ציין את המקור המדויק לכל פרט"</p>
+</div>
+</div>
+
+<div class="summary-box">
+<h3>💎 סיכום</h3>
+<ul>
+<li>RAG = חיבור AI למידע הפנימי שלכם</li>
+<li>תשובות מדויקות עם הפניה למקור — פחות הזיות</li>
+<li>אפשר להתחיל היום עם Claude Projects או NotebookLM</li>
+<li>שימושים: מוקד שירות, עובדים חדשים, צ׳אטבוט לאזרח</li>
+</ul>
+</div>
+</main>
+
+<nav class="nav-bottom">
+<a href="course10.html" class="nav-btn nav-prev">→ קורס 10: אוטומציה</a>
+<a href="course12.html" class="nav-btn nav-next">קורס 12: Claude Code ←</a>
+</nav>
+<footer class="footer">
+<p>מבוסס על Anthropic MCP + RAG Architecture</p>
+<p>מותאם לעובדי המגזר הציבורי בישראל © 2025</p>
+</footer>
+</body>
+</html>

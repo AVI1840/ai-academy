@@ -3,180 +3,121 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>קורס 6: AI לחשיבה ופתרון בעיות — אקדמיית AI</title>
+<title>קורס 6: חיפוש ומחקר עם AI — אקדמיית AI למגזר הציבורי</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap');
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Heebo',sans-serif;background:#0f172a;color:#e2e8f0;line-height:1.8}
-a{color:#38bdf8;text-decoration:none}
-.topbar{background:rgba(15,23,42,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06);padding:16px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
-.back-btn{padding:8px 20px;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#94a3b8;font-size:.9rem;transition:.2s}
-.back-btn:hover{background:rgba(56,189,248,.1);color:#38bdf8;border-color:rgba(56,189,248,.3)}
-.topbar-title{font-size:.95rem;color:#64748b}
-.course-hero{padding:60px 24px 40px;text-align:center;background:linear-gradient(180deg,#78350f 0%,#0f172a 100%)}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Heebo',sans-serif;background:#0f172a;color:#e2e8f0;line-height:1.8}a{color:#38bdf8;text-decoration:none}
+.topbar{background:rgba(15,23,42,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06);padding:16px 24px;display:flex;align-items:center;position:sticky;top:0;z-index:100}
+.back-btn{padding:8px 20px;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#94a3b8;font-size:.9rem}.topbar-title{font-size:.95rem;color:#64748b;margin-right:12px}
+.course-hero{padding:60px 24px 40px;text-align:center;background:linear-gradient(180deg,#0c4a6e 0%,#0f172a 100%)}
 .course-badge{display:inline-block;padding:6px 18px;border-radius:50px;font-size:.8rem;font-weight:500;margin-bottom:20px}
-.course-hero h1{font-size:2.4rem;font-weight:800;margin-bottom:12px}
-.course-hero .sub{color:#94a3b8;font-size:1.1rem;max-width:600px;margin:0 auto 24px}
-.meta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-.meta-item{background:rgba(255,255,255,.05);padding:6px 16px;border-radius:10px;font-size:.85rem;color:#94a3b8}
-.content{max-width:800px;margin:0 auto;padding:40px 24px 80px}
-.section{margin-bottom:48px}
-.section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px}
-.section-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
-.section-head h2{font-size:1.4rem;font-weight:700;color:#f1f5f9}
-.card-box{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:24px;margin-bottom:16px}
-.card-box h3{font-size:1.1rem;font-weight:600;color:#f1f5f9;margin-bottom:12px}
+.course-hero h1{font-size:2.4rem;font-weight:800;margin-bottom:12px}.course-hero .sub{color:#94a3b8;font-size:1.1rem;max-width:600px;margin:0 auto 24px}
+.meta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}.meta-item{background:rgba(255,255,255,.05);padding:6px 16px;border-radius:10px;font-size:.85rem;color:#94a3b8}
+.content{max-width:800px;margin:0 auto;padding:40px 24px 80px}.section{margin-bottom:48px}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px}.section-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}.section-head h2{font-size:1.4rem;font-weight:700;color:#f1f5f9}
+.card-box{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:24px;margin-bottom:16px}.card-box h3{font-size:1.1rem;font-weight:600;color:#f1f5f9;margin-bottom:12px}
+.green-list{list-style:none;padding:0}.green-list li::before{content:"✅ "}.green-list li{padding:6px 0;border-bottom:1px solid rgba(255,255,255,.04)}.green-list li:last-child{border:none}
+table{width:100%;border-collapse:collapse;margin:16px 0}th{background:rgba(56,189,248,.1);color:#38bdf8;padding:12px 16px;text-align:right;font-weight:600;font-size:.9rem}td{padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.06);font-size:.95rem}
+.prompt-box{background:linear-gradient(135deg,rgba(56,189,248,.05),rgba(139,92,246,.05));border:1px solid rgba(56,189,248,.15);border-radius:12px;padding:20px;margin:12px 0;position:relative}.prompt-box::before{content:"💬 פרומפט";position:absolute;top:-10px;right:16px;background:#0f172a;padding:0 8px;font-size:.75rem;color:#38bdf8;font-weight:600}.prompt-box p{color:#cbd5e1;font-size:.95rem}
+.try-section{background:linear-gradient(135deg,rgba(16,185,129,.08),rgba(56,189,248,.08));border:1px solid rgba(16,185,129,.2);border-radius:16px;padding:28px;margin:32px 0}.try-section h3{color:#10b981;font-size:1.15rem;margin-bottom:16px}
+.summary-box{background:linear-gradient(135deg,rgba(139,92,246,.08),rgba(56,189,248,.08));border:1px solid rgba(139,92,246,.2);border-radius:16px;padding:28px}.summary-box h3{color:#a78bfa;margin-bottom:12px}.summary-box ul{list-style:none;padding:0}.summary-box li{padding:6px 0;color:#cbd5e1}.summary-box li::before{content:"💎 "}
+.nav-bottom{display:flex;justify-content:space-between;padding:24px;max-width:800px;margin:0 auto;border-top:1px solid rgba(255,255,255,.06)}.nav-btn{padding:12px 28px;border-radius:10px;font-weight:600}.nav-prev{background:rgba(255,255,255,.05);color:#94a3b8}.nav-next{background:linear-gradient(135deg,#38bdf8,#818cf8);color:#fff}
+.footer{text-align:center;padding:40px;color:#475569;font-size:.85rem;border-top:1px solid rgba(255,255,255,.04)}
+@media print{body{background:#fff;color:#1e293b}.topbar,.nav-bottom{display:none}.course-hero{background:#f0f9ff!important;color:#1e293b}.card-box{border:1px solid #e2e8f0;break-inside:avoid}.prompt-box{border:1px solid #bae6fd;background:#f0f9ff}}
 </style>
+
 </head>
 <body>
 <nav class="topbar">
-<div style="display:flex;align-items:center;gap:12px">
 <a href="index.html" class="back-btn">→ חזרה לכל הקורסים</a>
-<span class="topbar-title">קורס 6 מתוך 9</span>
-</div>
+<span class="topbar-title">קורס 6 מתוך 12</span>
 </nav>
 <header class="course-hero">
-<span class="course-badge" style="background:rgba(245,158,11,.15);color:#f59e0b">💡 בינוני — מנהלים ומקבלי החלטות</span>
-<h1>AI לחשיבה ופתרון בעיות</h1>
-<p class="sub">ניתוח SWOT, חשיבה מזוויות, תכנון לאחור — AI כשותף לחשיבה ניהולית</p>
+<span class="course-badge" style="background:rgba(56,189,248,.15);color:#38bdf8">🔍 ישומי</span>
+<h1>חיפוש ומחקר עם AI</h1>
+<p class="sub">מחקר מדיניות, סקירת ספרות, השוואת גישות — ומציאת מידע רלוונטי במהירות</p>
 <div class="meta-row">
 <span class="meta-item">⏱ 35 דקות</span>
-<span class="meta-item">👥 מנהלים</span>
-<span class="meta-item">📋 4 טכניקות + פרומפטים</span>
+<span class="meta-item">👥 מנהלים ועובדים</span>
+<span class="meta-item">📋 4 תרגילים</span>
 </div>
 </header>
+
 <main class="content">
 
-<style>
-.prompt-box{background:linear-gradient(135deg,rgba(56,189,248,.05),rgba(139,92,246,.05));border:1px solid rgba(56,189,248,.15);border-radius:12px;padding:20px;margin:12px 0;position:relative}
-.prompt-box::before{content:"💬 פרומפט מוכן";position:absolute;top:-10px;right:16px;background:#0f172a;padding:0 8px;font-size:.75rem;color:#38bdf8;font-weight:600}
-.prompt-num{display:inline-block;background:rgba(56,189,248,.15);color:#38bdf8;width:28px;height:28px;border-radius:50%;text-align:center;line-height:28px;font-size:.85rem;font-weight:700;margin-left:8px}
-.info-table{width:100%;border-collapse:collapse;margin:16px 0}
-.info-table th{background:rgba(245,158,11,.12);color:#f59e0b;padding:10px 14px;text-align:right;font-weight:600;font-size:.9rem;border-bottom:1px solid rgba(255,255,255,.08)}
-.info-table td{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.04);font-size:.9rem;color:#cbd5e1}
-.info-table tr:hover td{background:rgba(255,255,255,.02)}
-.technique-box{background:linear-gradient(135deg,rgba(245,158,11,.06),rgba(139,92,246,.04));border:1px solid rgba(245,158,11,.18);border-radius:14px;padding:24px;margin-bottom:20px}
-.technique-box h3{color:#fbbf24;font-size:1.1rem;font-weight:700;margin-bottom:12px}
-.technique-prompt{background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:16px;margin:12px 0;font-size:.9rem;color:#e2e8f0;line-height:1.7;white-space:pre-wrap}
-.try-section{background:linear-gradient(135deg,rgba(16,185,129,.08),rgba(56,189,248,.08));border:1px solid rgba(16,185,129,.2);border-radius:16px;padding:28px;margin:32px 0}
-.try-section h3{color:#10b981;font-size:1.15rem;margin-bottom:16px}
-.nav-bottom{display:flex;justify-content:space-between;padding:24px;max-width:800px;margin:0 auto;border-top:1px solid rgba(255,255,255,.06)}
-.nav-btn{padding:12px 28px;border-radius:10px;font-weight:600;transition:.2s}
-.nav-prev{background:rgba(255,255,255,.05);color:#94a3b8}
-.nav-next{background:linear-gradient(135deg,#38bdf8,#818cf8);color:#fff}
-.footer{text-align:center;padding:40px;color:#475569;font-size:.85rem;border-top:1px solid rgba(255,255,255,.04)}
-.bullet-list{list-style:none;padding:0;margin:12px 0}
-.bullet-list li{padding:6px 0;padding-right:20px;position:relative;color:#cbd5e1;font-size:.95rem}
-.bullet-list li::before{content:"•";position:absolute;right:0;color:#f59e0b;font-weight:bold}
-@media(max-width:600px){.info-table{font-size:.8rem}}
-@media print{body{background:#fff;color:#1e293b}.topbar,.nav-bottom{display:none}.course-hero{background:#fffbeb!important;color:#1e293b}.card-box,.technique-box{border:1px solid #e2e8f0;break-inside:avoid}.prompt-box{border:1px solid #fde68a;background:#fffbeb}}
-</style>
-
-<!-- חלק א׳: AI כשותף לחשיבה -->
 <div class="section">
 <div class="section-head">
-<div class="section-icon" style="background:rgba(245,158,11,.15)">🧠</div>
-<h2>חלק א׳: AI כשותף לחשיבה</h2>
+<div class="section-icon" style="background:rgba(56,189,248,.15)">🔍</div>
+<h2>חלק א׳: AI כעוזר מחקר אישי</h2>
 </div>
-
 <div class="card-box">
-<h3>AI לא רק כותב — הוא גם חושב</h3>
-<p style="margin-bottom:12px">כשנותנים ל-AI בעיה מורכבת, הוא יכול:</p>
-<ul class="bullet-list">
-<li>לפרק אותה לחלקים</li>
-<li>לבחון אותה מזוויות שונות</li>
-<li>להציע פתרונות שלא חשבת עליהם</li>
-<li>לזהות סיכונים ומכשולים</li>
+<p>במקום לבלות שעות בחיפוש Google, AI יכול לעזור לכם למצוא מידע, לסכם מקורות, ולהשוות גישות — בדקות. הכלי המומלץ למחקר: <strong>Perplexity</strong> (מקורות מאומתים) + <strong>Claude</strong> (ניתוח מעמיק).</p>
+</div>
+<div class="card-box">
+<h3>מה AI יכול לעשות במחקר ממשלתי</h3>
+<ul class="green-list">
+<li>לסרוק ולסכם מאמרים ומסמכי מדיניות</li>
+<li>להשוות גישות של מדינות שונות לאותו נושא</li>
+<li>ליצור סקירת ספרות ראשונית</li>
+<li>לזהות מגמות ודפוסים במידע</li>
+<li>להכין רקע לישיבה או לקבלת החלטה</li>
 </ul>
 </div>
+</div>
 
+<div class="section">
+<div class="section-head">
+<div class="section-icon" style="background:rgba(139,92,246,.15)">🗺️</div>
+<h2>חלק ב׳: שיטת מחקר ב-3 שלבים</h2>
+</div>
 <div class="card-box">
-<h3>מתי להשתמש ב-AI לחשיבה?</h3>
-<table class="info-table">
-<thead>
-<tr><th>מצב</th><th>דוגמה מביטוח לאומי</th></tr>
-</thead>
-<tbody>
-<tr><td>תכנון פרויקט</td><td>"איך ליישם מערכת תורים דיגיטלית בסניפים?"</td></tr>
-<tr><td>פתרון בעיה</td><td>"למה זמני הטיפול בתביעות עלו ב-30%?"</td></tr>
-<tr><td>קבלת החלטה</td><td>"האם כדאי לאחד שני סניפים? מה היתרונות והחסרונות?"</td></tr>
-<tr><td>שיפור תהליך</td><td>"איך לקצר את תהליך הגשת תביעת נכות?"</td></tr>
-</tbody>
+<table>
+<tr><th>שלב</th><th>מה עושים</th><th>כלי מומלץ</th></tr>
+<tr><td>1. איסוף</td><td>חיפוש מידע ומקורות</td><td>Perplexity</td></tr>
+<tr><td>2. ניתוח</td><td>קריאה מעמיקה והשוואה</td><td>Claude</td></tr>
+<tr><td>3. סיכום</td><td>כתיבת סיכום ממצאים</td><td>Claude / ChatGPT</td></tr>
 </table>
 </div>
 </div>
 
-<!-- חלק ב׳: 4 טכניקות חשיבה עם AI -->
 <div class="section">
 <div class="section-head">
-<div class="section-icon" style="background:rgba(139,92,246,.15)">⚡</div>
-<h2>חלק ב׳: 4 טכניקות חשיבה עם AI</h2>
+<div class="section-icon" style="background:rgba(16,185,129,.15)">💬</div>
+<h2>חלק ג׳: פרומפטים למחקר</h2>
+</div>
+<div class="prompt-box"><p><strong>סקירת מדיניות:</strong><br>"סקור את הגישות השונות של 5 מדינות מפותחות לנושא [X]. לכל מדינה ציין: הגישה, יתרונות, חסרונות, ורלוונטיות לישראל"</p></div>
+<div class="prompt-box"><p><strong>רקע לישיבה:</strong><br>"הכן מסמך רקע של עמוד אחד לישיבה בנושא [X]. כלול: מצב קיים, אתגרים, 3 חלופות אפשריות עם יתרונות וחסרונות"</p></div>
+<div class="prompt-box"><p><strong>השוואת חקיקה:</strong><br>"השווה את החקיקה בישראל לחקיקה ב[מדינה] בנושא [X]. ציין: דמיון, שוני, פערים, והמלצות"</p></div>
+<div class="prompt-box"><p><strong>סיכום מאמר:</strong><br>"סכם את המאמר/דוח הבא ב-5 נקודות מרכזיות. ציין: ממצאים עיקריים, מתודולוגיה, מגבלות, והשלכות מעשיות. המאמר: [הדביקו]"</p></div>
 </div>
 
-<div class="technique-box">
-<h3>טכניקה 1: ניתוח SWOT</h3>
-<p style="color:#cbd5e1;margin-bottom:12px">ניתוח חוזקות, חולשות, הזדמנויות ואיומים — כלי קלאסי שהופך חזק יותר עם AI:</p>
-<div class="prompt-box">
-<p>בצע ניתוח SWOT לרעיון הבא:<br>הטמעת צ׳אטבוט AI במוקד הטלפוני של ביטוח לאומי<br><br>חוזקות (Strengths):<br>חולשות (Weaknesses):<br>הזדמנויות (Opportunities):<br>איומים (Threats):<br><br>לכל קטגוריה תן 3-4 נקודות מפורטות ורלוונטיות לביטוח לאומי.</p>
-</div>
-</div>
-
-<div class="technique-box">
-<h3>טכניקה 2: חשיבה מזוויות שונות</h3>
-<p style="color:#cbd5e1;margin-bottom:12px">בחינת בעיה מנקודות מבט מרובות — תושב, עובד, ארגון, משפטית:</p>
-<div class="prompt-box">
-<p>אני שוקל לשנות את תהליך קליטת תביעות נכות לתהליך דיגיטלי מלא.<br>נתח את הרעיון מ-4 זוויות:<br>1. זווית התושב — מה הוא ירוויח/יפסיד?<br>2. זווית העובד — איך זה ישפיע על העבודה שלו?<br>3. זווית הארגון — עלויות, יעילות, סיכונים<br>4. זווית משפטית — האם יש מגבלות רגולטוריות?</p>
-</div>
-</div>
-
-<div class="technique-box">
-<h3>טכניקה 3: "עורך דין של השטן"</h3>
-<p style="color:#cbd5e1;margin-bottom:12px">בקש מ-AI לתקוף את התוכנית שלך — כדי לחזק אותה:</p>
-<div class="prompt-box">
-<p>אני מתכנן [תאר תוכנית].<br>שחק תפקיד של מבקר ביקורתי:<br>- מצא 5 חולשות בתוכנית<br>- לכל חולשה הצע פתרון<br>- דרג את הסיכונים מגבוה לנמוך</p>
-</div>
-</div>
-
-<div class="technique-box">
-<h3>טכניקה 4: תכנון לאחור</h3>
-<p style="color:#cbd5e1;margin-bottom:12px">התחל מהמטרה הסופית ובנה תוכנית אחורה — שיטה מוכחת לתכנון פרויקטים:</p>
-<div class="prompt-box">
-<p>המטרה: להפחית את זמן הטיפול הממוצע בתביעות ב-25% תוך שנה.<br>בנה תוכנית עבודה לאחור:<br>- מה צריך לקרות בחודש 12?<br>- מה צריך לקרות בחודש 6?<br>- מה צריך לקרות בחודש 1?<br>- מה הצעד הראשון מחר בבוקר?</p>
-</div>
-</div>
-</div>
-
-<!-- חלק ג׳: פרומפטים מוכנים לחשיבה ניהולית -->
-<div class="section">
-<div class="section-head">
-<div class="section-icon" style="background:rgba(56,189,248,.15)">📋</div>
-<h2>חלק ג׳: פרומפטים מוכנים לחשיבה ניהולית</h2>
-</div>
-
-<div class="prompt-box"><p><span class="prompt-num">1</span> <strong>הכנה לישיבה:</strong><br>"אני הולך לישיבה בנושא [X]. הכן לי: 5 שאלות חכמות לשאול, 3 נקודות שחשוב להעלות, רשימת סיכונים אפשריים"</p></div>
-<div class="prompt-box"><p><span class="prompt-num">2</span> <strong>כתיבת נייר עמדה:</strong><br>"כתוב נייר עמדה בן עמוד אחד בנושא [X]. מבנה: רקע, מצב קיים, חלופות, המלצה, צעדים הבאים"</p></div>
-<div class="prompt-box"><p><span class="prompt-num">3</span> <strong>ניתוח כשל:</strong><br>"תהליך [X] נכשל. עזור לי לנתח: מה קרה, למה, מה אפשר היה לעשות אחרת, ומה הלקח לעתיד"</p></div>
-<div class="prompt-box"><p><span class="prompt-num">4</span> <strong>סיעור מוחות:</strong><br>"אני צריך 10 רעיונות יצירתיים לשיפור שירות הלקוחות בסניפי ביטוח לאומי. חשוב מחוץ לקופסה"</p></div>
-</div>
-
-<!-- תרגיל מעשי -->
 <div class="try-section">
-<h3>🎯 תרגיל מעשי — נסה בעצמך</h3>
-<p>חשוב על אתגר אמיתי שאתה מתמודד איתו בעבודה. נסה:</p>
-<p style="margin-top:12px">1. תאר את הבעיה ל-Claude ב-3 משפטים</p>
-<p>2. בקש ניתוח מ-3 זוויות שונות</p>
-<p>3. בקש תוכנית פעולה עם 5 צעדים</p>
-<p style="margin-top:16px;color:#94a3b8;font-size:.9rem">💡 טיפ: ככל שתתאר את הבעיה בצורה מפורטת יותר, כך התוצאות יהיו טובות יותר.</p>
+<h3>🎯 תרגיל מעשי</h3>
+<p style="margin-bottom:16px">בחרו נושא רלוונטי לעבודתכם ונסו:</p>
+<div class="prompt-box">
+<p>"אני עובד/ת ב[משרד]. אני צריך/ה לדעת איך מדינות אחרות מתמודדות עם [נושא]. תן לי סקירה קצרה של 3 מדינות עם דוגמאות מעשיות"</p>
+</div>
+<p style="color:#94a3b8;font-size:.9rem;margin-top:12px">💡 נסו את אותה שאלה ב-Perplexity (למקורות) וב-Claude (לניתוח) — השוו תוצאות</p>
 </div>
 
+<div class="summary-box">
+<h3>💎 סיכום</h3>
+<ul>
+<li>Perplexity למחקר עם מקורות, Claude לניתוח מעמיק</li>
+<li>שיטת 3 שלבים: איסוף → ניתוח → סיכום</li>
+<li>תמיד אמתו מקורות — AI יכול "להמציא" מראי מקום</li>
+<li>מחקר שלקח ימים יכול להיעשות בשעות</li>
+</ul>
+</div>
 </main>
+
 <nav class="nav-bottom">
-<a href="course5.html" class="nav-btn nav-prev">→ קורס 5: חיפוש ומחקר</a>
-<a href="course7.html" class="nav-btn nav-next">קורס 7: אתיקה ובטיחות ←</a>
+<a href="course5.html" class="nav-btn nav-prev">→ קורס 5: ניתוח נתונים</a>
+<a href="course7.html" class="nav-btn nav-next">קורס 7: חשיבה ופתרון בעיות ←</a>
 </nav>
 <footer class="footer">
-<p>מבוסס על הסילבוס של Anthropic — Extended Thinking + Features of Claude</p>
-<p>מותאם לעובדי ביטוח לאומי וממשלת ישראל © 2025</p>
+<p>מבוסס על OpenAI Search & Research + Anthropic Claude 101</p>
+<p>מותאם לעובדי המגזר הציבורי בישראל © 2025</p>
 </footer>
 </body>
 </html>

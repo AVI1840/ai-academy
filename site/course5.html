@@ -3,200 +3,124 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>קורס 5: חיפוש ומחקר עם AI — אקדמיית AI</title>
+<title>קורס 5: AI לניתוח נתונים — אקדמיית AI למגזר הציבורי</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap');
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Heebo',sans-serif;background:#0f172a;color:#e2e8f0;line-height:1.8}
-a{color:#38bdf8;text-decoration:none}
-.topbar{background:rgba(15,23,42,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06);padding:16px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
-.back-btn{padding:8px 20px;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#94a3b8;font-size:.9rem;transition:.2s}
-.back-btn:hover{background:rgba(56,189,248,.1);color:#38bdf8;border-color:rgba(56,189,248,.3)}
-.topbar-title{font-size:.95rem;color:#64748b}
-.course-hero{padding:60px 24px 40px;text-align:center;background:linear-gradient(180deg,#78350f 0%,#0f172a 100%)}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Heebo',sans-serif;background:#0f172a;color:#e2e8f0;line-height:1.8}a{color:#38bdf8;text-decoration:none}
+.topbar{background:rgba(15,23,42,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06);padding:16px 24px;display:flex;align-items:center;position:sticky;top:0;z-index:100}
+.back-btn{padding:8px 20px;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#94a3b8;font-size:.9rem}.topbar-title{font-size:.95rem;color:#64748b;margin-right:12px}
+.course-hero{padding:60px 24px 40px;text-align:center;background:linear-gradient(180deg,#064e3b 0%,#0f172a 100%)}
 .course-badge{display:inline-block;padding:6px 18px;border-radius:50px;font-size:.8rem;font-weight:500;margin-bottom:20px}
-.course-hero h1{font-size:2.4rem;font-weight:800;margin-bottom:12px}
-.course-hero .sub{color:#94a3b8;font-size:1.1rem;max-width:600px;margin:0 auto 24px}
-.meta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-.meta-item{background:rgba(255,255,255,.05);padding:6px 16px;border-radius:10px;font-size:.85rem;color:#94a3b8}
-.content{max-width:800px;margin:0 auto;padding:40px 24px 80px}
-.section{margin-bottom:48px}
-.section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px}
-.section-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.course-hero h1{font-size:2.4rem;font-weight:800;margin-bottom:12px}.course-hero .sub{color:#94a3b8;font-size:1.1rem;max-width:600px;margin:0 auto 24px}
+.meta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}.meta-item{background:rgba(255,255,255,.05);padding:6px 16px;border-radius:10px;font-size:.85rem;color:#94a3b8}
+.content{max-width:800px;margin:0 auto;padding:40px 24px 80px}.section{margin-bottom:48px}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px}.section-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
 .section-head h2{font-size:1.4rem;font-weight:700;color:#f1f5f9}
-.card-box{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:24px;margin-bottom:16px}
-.card-box h3{font-size:1.1rem;font-weight:600;color:#f1f5f9;margin-bottom:12px}
+.card-box{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:24px;margin-bottom:16px}.card-box h3{font-size:1.1rem;font-weight:600;color:#f1f5f9;margin-bottom:12px}
+.green-list{list-style:none;padding:0}.green-list li::before{content:"✅ "}.green-list li{padding:6px 0;border-bottom:1px solid rgba(255,255,255,.04)}.green-list li:last-child{border:none}
+</style>
+
+<style>
+table{width:100%;border-collapse:collapse;margin:16px 0}th{background:rgba(56,189,248,.1);color:#38bdf8;padding:12px 16px;text-align:right;font-weight:600;font-size:.9rem}td{padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.06);font-size:.95rem}
+.prompt-box{background:linear-gradient(135deg,rgba(56,189,248,.05),rgba(139,92,246,.05));border:1px solid rgba(56,189,248,.15);border-radius:12px;padding:20px;margin:12px 0;position:relative}
+.prompt-box::before{content:"💬 פרומפט";position:absolute;top:-10px;right:16px;background:#0f172a;padding:0 8px;font-size:.75rem;color:#38bdf8;font-weight:600}.prompt-box p{color:#cbd5e1;font-size:.95rem}
+.try-section{background:linear-gradient(135deg,rgba(16,185,129,.08),rgba(56,189,248,.08));border:1px solid rgba(16,185,129,.2);border-radius:16px;padding:28px;margin:32px 0}.try-section h3{color:#10b981;font-size:1.15rem;margin-bottom:16px}
+.summary-box{background:linear-gradient(135deg,rgba(139,92,246,.08),rgba(56,189,248,.08));border:1px solid rgba(139,92,246,.2);border-radius:16px;padding:28px}.summary-box h3{color:#a78bfa;margin-bottom:12px}.summary-box ul{list-style:none;padding:0}.summary-box li{padding:6px 0;color:#cbd5e1}.summary-box li::before{content:"💎 "}
+.nav-bottom{display:flex;justify-content:space-between;padding:24px;max-width:800px;margin:0 auto;border-top:1px solid rgba(255,255,255,.06)}.nav-btn{padding:12px 28px;border-radius:10px;font-weight:600;transition:.2s}.nav-prev{background:rgba(255,255,255,.05);color:#94a3b8}.nav-next{background:linear-gradient(135deg,#38bdf8,#818cf8);color:#fff}
+.footer{text-align:center;padding:40px;color:#475569;font-size:.85rem;border-top:1px solid rgba(255,255,255,.04)}
+@media print{body{background:#fff;color:#1e293b}.topbar,.nav-bottom{display:none}.course-hero{background:#f0fdf4!important;color:#1e293b}.card-box{border:1px solid #e2e8f0;break-inside:avoid}.prompt-box{border:1px solid #bae6fd;background:#f0f9ff}}
 </style>
 </head>
 <body>
 <nav class="topbar">
-<div style="display:flex;align-items:center;gap:12px">
 <a href="index.html" class="back-btn">→ חזרה לכל הקורסים</a>
-<span class="topbar-title">קורס 5 מתוך 9</span>
-</div>
+<span class="topbar-title">קורס 5 מתוך 12</span>
 </nav>
 <header class="course-hero">
-<span class="course-badge" style="background:rgba(245,158,11,.15);color:#f59e0b">🔍 בינוני — עובדים מקצועיים</span>
-<h1>חיפוש ומחקר עם AI</h1>
-<p class="sub">טכניקת הדבק-ושאל, השוואת נהלים, חילוץ מידע ממסמכים — ומבוא ל-RAG</p>
+<span class="course-badge" style="background:rgba(16,185,129,.15);color:#10b981">📊 ישומי</span>
+<h1>AI לניתוח נתונים</h1>
+<p class="sub">ניתוח דוחות, חילוץ תובנות מטבלאות, יצירת סיכומים מנהליים — בלי Excel מתקדם</p>
 <div class="meta-row">
-<span class="meta-item">⏱ 30 דקות</span>
-<span class="meta-item">👥 עובדים מקצועיים</span>
-<span class="meta-item">📋 טכניקות חיפוש</span>
+<span class="meta-item">⏱ 40 דקות</span>
+<span class="meta-item">👥 מנהלים ועובדים</span>
+<span class="meta-item">📋 5 תרגילים</span>
 </div>
 </header>
+
 <main class="content">
 
-<style>
-.info-table{width:100%;border-collapse:collapse;margin:16px 0}
-.info-table th,.info-table td{padding:12px 16px;text-align:right;border-bottom:1px solid rgba(255,255,255,.06)}
-.info-table th{background:rgba(245,158,11,.08);color:#f59e0b;font-weight:600;font-size:.9rem}
-.info-table td{font-size:.9rem;color:#cbd5e1}
-.info-table tr:hover td{background:rgba(255,255,255,.02)}
-.prompt-box{background:linear-gradient(135deg,rgba(245,158,11,.05),rgba(139,92,246,.05));border:1px solid rgba(245,158,11,.15);border-radius:12px;padding:20px;margin:12px 0;position:relative}
-.prompt-box::before{content:"💬 פרומפט מוכן";position:absolute;top:-10px;right:16px;background:#0f172a;padding:0 8px;font-size:.75rem;color:#f59e0b;font-weight:600}
-.xml-box{background:rgba(139,92,246,.06);border:1px solid rgba(139,92,246,.2);border-radius:12px;padding:20px;margin:16px 0;font-family:monospace;direction:ltr;text-align:left;font-size:.9rem;color:#c4b5fd;line-height:1.6;white-space:pre-wrap}
-.rag-step{display:flex;align-items:flex-start;gap:14px;margin-bottom:16px}
-.rag-num{width:32px;height:32px;border-radius:50%;background:rgba(245,158,11,.15);color:#f59e0b;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem;flex-shrink:0}
-.rag-text{font-size:.95rem;color:#cbd5e1;padding-top:4px}
-.benefit-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;font-size:.95rem;color:#cbd5e1}
-.benefit-item span{flex-shrink:0}
-.try-section{background:linear-gradient(135deg,rgba(16,185,129,.08),rgba(56,189,248,.08));border:1px solid rgba(16,185,129,.2);border-radius:16px;padding:28px;margin:32px 0}
-.try-section h3{color:#10b981;font-size:1.15rem;margin-bottom:16px}
-.nav-bottom{display:flex;justify-content:space-between;padding:24px;max-width:800px;margin:0 auto;border-top:1px solid rgba(255,255,255,.06)}
-.nav-btn{padding:12px 28px;border-radius:10px;font-weight:600;transition:.2s}
-.nav-prev{background:rgba(255,255,255,.05);color:#94a3b8}
-.nav-next{background:linear-gradient(135deg,#38bdf8,#818cf8);color:#fff}
-.footer{text-align:center;padding:40px;color:#475569;font-size:.85rem;border-top:1px solid rgba(255,255,255,.04)}
-@media print{body{background:#fff;color:#1e293b}.topbar,.nav-bottom{display:none}.course-hero{background:#fffbeb!important;color:#1e293b}.card-box{border:1px solid #e2e8f0;break-inside:avoid}.prompt-box{border:1px solid #fcd34d;background:#fffbeb}.xml-box{background:#f5f3ff;border:1px solid #c4b5fd;color:#4c1d95}}
-</style>
-
-<!-- חלק א׳: AI כעוזר מחקר -->
 <div class="section">
 <div class="section-head">
-<div class="section-icon" style="background:rgba(245,158,11,.15)">🔍</div>
-<h2>חלק א׳: AI כעוזר מחקר — מה הוא יכול?</h2>
+<div class="section-icon" style="background:rgba(16,185,129,.15)">📊</div>
+<h2>חלק א׳: מה AI יכול לעשות עם נתונים?</h2>
+</div>
+<div class="card-box">
+<p>לא צריך להיות מומחה ב-Excel או סטטיסטיקה. AI יכול לקחת טבלה, דוח או רשימת מספרים ולהפוך אותם לתובנות ברורות.</p>
+<ul class="green-list">
+<li>לנתח טבלאות ולזהות מגמות</li>
+<li>לסכם דוח של עשרות עמודים בפסקה אחת</li>
+<li>להשוות נתונים בין תקופות או יחידות</li>
+<li>ליצור גרפים ותרשימים (ב-ChatGPT ו-Gemini)</li>
+<li>לזהות חריגים ונקודות שדורשות תשומת לב</li>
+<li>להכין סיכום מנהלי מנתונים גולמיים</li>
+</ul>
+</div>
 </div>
 
-<div class="card-box">
-<h3>AI יכול לעזור לך:</h3>
-<div class="benefit-item"><span>🔎</span> לחפש מידע בתוך מסמכים ארוכים</div>
-<div class="benefit-item"><span>📄</span> לסכם מחקרים ודוחות</div>
-<div class="benefit-item"><span>🔄</span> להשוות בין גרסאות של נהלים</div>
-<div class="benefit-item"><span>🎯</span> למצוא תשובות בתוך חומר רב</div>
-<div class="benefit-item"><span>🗂️</span> לארגן מידע מפוזר למבנה ברור</div>
+<div class="section">
+<div class="section-head">
+<div class="section-icon" style="background:rgba(56,189,248,.15)">🔍</div>
+<h2>חלק ב׳: 5 סוגי ניתוח שימושיים</h2>
 </div>
-
 <div class="card-box">
-<h3>דוגמאות מביטוח לאומי</h3>
-<table class="info-table">
-<thead><tr><th>צורך</th><th>איך AI עוזר</th></tr></thead>
-<tbody>
-<tr><td>"מה הנוהל לגבי ערעור על נכות?"</td><td>הדבק את הנוהל ושאל שאלה ממוקדת</td></tr>
-<tr><td>"מה השתנה בחוזר החדש?"</td><td>הדבק שני חוזרים ובקש השוואה</td></tr>
-<tr><td>"מה אומר החוק על X?"</td><td>הדבק סעיף חוק ובקש הסבר בשפה פשוטה</td></tr>
-<tr><td>"סכם לי את הדוח הזה"</td><td>הדבק דוח ובקש 5 נקודות מרכזיות</td></tr>
-</tbody>
+<table>
+<tr><th>סוג ניתוח</th><th>דוגמה ממשלתית</th><th>כלי מומלץ</th></tr>
+<tr><td>סיכום דוח</td><td>סיכום דוח ביקורת שנתי</td><td>Claude</td></tr>
+<tr><td>השוואת תקופות</td><td>השוואת ביצועים רבעון 1 מול 2</td><td>ChatGPT / Gemini</td></tr>
+<tr><td>זיהוי מגמות</td><td>מגמות בפניות אזרחים לאורך שנה</td><td>ChatGPT</td></tr>
+<tr><td>ניתוח סקר</td><td>ניתוח סקר שביעות רצון אזרחים</td><td>Claude / ChatGPT</td></tr>
+<tr><td>סיכום מנהלי</td><td>הפיכת נתונים גולמיים למצגת להנהלה</td><td>Claude</td></tr>
 </table>
 </div>
 </div>
 
-<!-- חלק ב׳: טכניקת "הדבק ושאל" -->
 <div class="section">
 <div class="section-head">
-<div class="section-icon" style="background:rgba(139,92,246,.15)">📋</div>
-<h2>חלק ב׳: טכניקת "הדבק ושאל" — הדרך הכי יעילה</h2>
+<div class="section-icon" style="background:rgba(139,92,246,.15)">💬</div>
+<h2>חלק ג׳: פרומפטים לניתוח נתונים</h2>
+</div>
+<div class="prompt-box"><p><strong>סיכום דוח:</strong><br>"קרא את הדוח הבא וצור סיכום מנהלי של עמוד אחד: ממצאים עיקריים, מגמות, המלצות. הדוח: [הדביקו]"</p></div>
+<div class="prompt-box"><p><strong>ניתוח טבלה:</strong><br>"נתח את הטבלה הבאה וזהה: 3 מגמות עיקריות, חריגים שדורשים תשומת לב, והמלצות לפעולה. הטבלה: [הדביקו]"</p></div>
+<div class="prompt-box"><p><strong>השוואה:</strong><br>"השווה בין הנתונים של [תקופה א] ל[תקופה ב]. הצג: מה השתפר, מה ירד, מה נשאר יציב, ומה דורש התייחסות"</p></div>
+<div class="prompt-box"><p><strong>סיכום לישיבת הנהלה:</strong><br>"הכן 5 שקפים (טקסט בלבד) לישיבת הנהלה על בסיס הנתונים הבאים. כל שקף: כותרת, 3 נקודות, תובנה אחת. הנתונים: [הדביקו]"</p></div>
 </div>
 
-<div class="card-box">
-<h3>הטכניקה הבסיסית</h3>
-<div class="benefit-item"><span>1.</span> העתק את המסמך (או חלק ממנו) ל-Claude</div>
-<div class="benefit-item"><span>2.</span> שאל שאלה ממוקדת</div>
-<div class="benefit-item"><span>3.</span> קבל תשובה מבוססת על המסמך בלבד</div>
-</div>
-
-<div class="card-box">
-<h3>דוגמה מעשית</h3>
-<div class="prompt-box">
-<p>הנה חוזר מנכ"ל מספר 2024/15 בנושא עדכון נהלי טיפול בתביעות נכות:<br>[הדבק את החוזר]</p>
-<p style="margin-top:12px"><strong>שאלות:</strong></p>
-<p>1. מה השינויים העיקריים לעומת הנוהל הקודם?</p>
-<p>2. מתי השינויים נכנסים לתוקף?</p>
-<p>3. מה נדרש מעובדי הסניף?</p>
-<p>4. האם יש חריגים?</p>
-</div>
-</div>
-
-<div class="card-box">
-<h3>טכניקה מתקדמת — השוואת מסמכים</h3>
-<div class="xml-box">הנה שני נהלים:
-&lt;נוהל_ישן&gt;
-[הדבק]
-&lt;/נוהל_ישן&gt;
-
-&lt;נוהל_חדש&gt;
-[הדבק]
-&lt;/נוהל_חדש&gt;
-
-צור טבלת השוואה: מה השתנה, מה נשאר, מה חדש לגמרי.</div>
-<p style="color:#94a3b8;font-size:.9rem;margin-top:12px">💡 שימוש בתגיות XML עוזר ל-AI להבחין בין שני המסמכים ולהשוות ביניהם בצורה מדויקת.</p>
-</div>
-</div>
-
-<!-- חלק ג׳: מה זה RAG -->
-<div class="section">
-<div class="section-head">
-<div class="section-icon" style="background:rgba(245,158,11,.15)">🤖</div>
-<h2>חלק ג׳: מה זה RAG ולמה זה חשוב לעתיד?</h2>
-</div>
-
-<div class="card-box">
-<h3>RAG = Retrieval Augmented Generation</h3>
-<p style="color:#f59e0b;font-size:1rem;margin-bottom:12px">יצירה מועשרת באחזור</p>
-<p style="color:#94a3b8">בשפה פשוטה: חיבור AI למאגרי מידע פנימיים כך שהוא יענה על בסיס המידע שלכם.</p>
-</div>
-
-<div class="card-box">
-<h3>איך זה עובד?</h3>
-<div class="rag-step"><div class="rag-num">1</div><div class="rag-text">תושב שואל שאלה</div></div>
-<div class="rag-step"><div class="rag-num">2</div><div class="rag-text">המערכת מחפשת במאגר הנהלים/חוקים הרלוונטיים</div></div>
-<div class="rag-step"><div class="rag-num">3</div><div class="rag-text">AI מנסח תשובה על בסיס המידע שנמצא</div></div>
-<div class="rag-step"><div class="rag-num">4</div><div class="rag-text">התשובה כוללת הפניה למקור</div></div>
-</div>
-
-<div class="card-box">
-<h3>למה זה קריטי לביטוח לאומי?</h3>
-<div class="benefit-item"><span>💬</span> צ׳אטבוט פנימי שעונה לעובדים על נהלים — בזמן אמת</div>
-<div class="benefit-item"><span>🌐</span> פורטל לתושבים שעונה על שאלות זכאות</div>
-<div class="benefit-item"><span>⚡</span> מערכת שעוזרת לפקיד למצוא את הנוהל הנכון תוך שניות</div>
-<div class="benefit-item"><span>✅</span> הפחתת טעויות כי התשובה מבוססת על מקור רשמי</div>
-</div>
-
-<div class="card-box">
-<h3>מה אתה יכול לעשות כבר היום (בלי RAG):</h3>
-<div class="benefit-item"><span>📋</span> להדביק נהלים ל-Claude ולשאול שאלות</div>
-<div class="benefit-item"><span>📁</span> ליצור "מאגר פרומפטים" עם נהלים נפוצים</div>
-<div class="benefit-item"><span>❓</span> לבנות מסמך שאלות נפוצות על בסיס נהלים</div>
-</div>
-</div>
-
-<!-- תרגיל מעשי -->
 <div class="try-section">
-<h3>🎯 תרגיל מעשי — נסה את טכניקת "הדבק ושאל"</h3>
-<p>1. קח נוהל פנימי (ללא מידע רגיש)</p>
-<p>2. הדבק אותו ל-Claude</p>
-<p>3. שאל 3 שאלות שעובד חדש היה שואל</p>
-<p>4. בדוק: האם התשובות מדויקות? האם הן מבוססות על הטקסט?</p>
+<h3>🎯 תרגיל מעשי</h3>
+<p style="margin-bottom:16px">קחו דוח או טבלה מהעבודה (ללא מידע אישי) ונסו:</p>
+<div class="prompt-box">
+<p>"נתח את הנתונים הבאים וצור: 1) סיכום של 3 שורות 2) 3 תובנות מפתיעות 3) 2 המלצות לפעולה. הנתונים: [הדביקו]"</p>
+</div>
 </div>
 
+<div class="summary-box">
+<h3>💎 סיכום</h3>
+<ul>
+<li>AI הופך נתונים גולמיים לתובנות ברורות — בלי Excel מתקדם</li>
+<li>תמיד בדקו שהמספרים נכונים — AI יכול לטעות בחישובים</li>
+<li>Claude מצטיין בדוחות ארוכים, ChatGPT ו-Gemini בגרפים</li>
+<li>סיכום מנהלי הוא אחד השימושים החזקים ביותר</li>
+</ul>
+</div>
 </main>
+
 <nav class="nav-bottom">
 <a href="course4.html" class="nav-btn nav-prev">→ קורס 4: כתיבה ותקשורת</a>
-<a href="course6.html" class="nav-btn nav-next">קורס 6: חשיבה ופתרון בעיות ←</a>
+<a href="course6.html" class="nav-btn nav-next">קורס 6: חיפוש ומחקר ←</a>
 </nav>
 <footer class="footer">
-<p>מבוסס על הסילבוס של Anthropic — RAG + Claude 101</p>
-<p>מותאם לעובדי ביטוח לאומי וממשלת ישראל © 2025</p>
+<p>מבוסס על OpenAI Data Analysis + Anthropic Claude 101</p>
+<p>מותאם לעובדי המגזר הציבורי בישראל © 2025</p>
 </footer>
 </body>
 </html>
