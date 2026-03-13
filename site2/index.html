@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>המקפצה — אקדמיית AI למובילי המגזר הציבורי</title>
+<meta name="description" content="12 יחידות לימוד מעשיות ב-AI, מותאמות למובילי AI בממשלת ישראל">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap');
+:root{--bg:#0a0e1a;--bg2:#111827;--bg3:#1a2035;--text:#e8eaf0;--text2:#8b95a8;--border:rgba(255,255,255,.07);--accent:#3b82f6;--accent2:#60a5fa;--card:#131a2e;--green:#10b981;--purple:#8b5cf6;--gradient:linear-gradient(135deg,#3b82f6,#8b5cf6)}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Heebo',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--accent2);text-decoration:none;transition:all .2s}a:hover{color:#93bbfd}
+</style>
+</head>
+<body>
+<!-- Header -->
+<header style="position:sticky;top:0;z-index:100;background:rgba(10,14,26,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:14px 0">
+<div style="max-width:1140px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between">
+<a href="#" style="font-size:1.4rem;font-weight:800;color:#fff;display:flex;align-items:center;gap:10px"><span style="width:34px;height:34px;background:var(--gradient);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem">🚀</span> המקפצה</a>
+<nav id="navLinks" style="display:flex;gap:28px;align-items:center">
+<a href="#syllabus" style="color:var(--text2);font-size:.88rem;font-weight:500">סילבוס</a>
+<a href="#paths" style="color:var(--text2);font-size:.88rem;font-weight:500">מסלולים</a>
+<a href="#courses" style="color:var(--text2);font-size:.88rem;font-weight:500">יחידות</a>
+<a href="#courses" style="background:var(--gradient);color:#fff;padding:8px 20px;border-radius:8px;font-weight:600;font-size:.85rem;box-shadow:0 4px 12px rgba(59,130,246,.2)">התחילו ללמוד</a>
+</nav>
+</div>
+</header>
+
+<!-- Hero -->
+<section style="padding:100px 24px 80px;text-align:center;position:relative;overflow:hidden">
+<div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:800px;height:800px;background:radial-gradient(circle,rgba(59,130,246,.08) 0%,transparent 70%);pointer-events:none"></div>
+<div style="position:relative;max-width:800px;margin:0 auto">
+<div style="display:inline-flex;align-items:center;gap:8px;padding:8px 20px;border-radius:50px;font-size:.8rem;font-weight:500;background:rgba(59,130,246,.08);color:var(--accent2);border:1px solid rgba(59,130,246,.15);margin-bottom:28px">🎓 תוכנית הכשרה ממשלתית מלאה</div>
+<h1 style="font-size:3.2rem;font-weight:900;margin-bottom:18px;letter-spacing:-.03em;line-height:1.15;background:linear-gradient(135deg,#fff 40%,var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">אקדמיית AI<br>למובילי המגזר הציבורי</h1>
+<p style="color:var(--text2);font-size:1.15rem;max-width:600px;margin:0 auto 36px;line-height:1.8">12 יחידות לימוד מעשיות, מסילבוס בסיסי ועד RAG ו-Claude Code.<br>תוכנית מקיפה שנבנתה עבור ~1,000 מובילי AI בממשלת ישראל.</p>
+<div style="display:flex;gap:48px;justify-content:center;flex-wrap:wrap;margin-bottom:40px">
+<div style="text-align:center"><div style="font-size:2.2rem;font-weight:800;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent">12</div><div style="font-size:.82rem;color:var(--text2)">יחידות לימוד</div></div>
+<div style="text-align:center"><div style="font-size:2.2rem;font-weight:800;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent">6</div><div style="font-size:.82rem;color:var(--text2)">תחומי ידע</div></div>
+<div style="text-align:center"><div style="font-size:2.2rem;font-weight:800;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent">50+</div><div style="font-size:.82rem;color:var(--text2)">פרומפטים מוכנים</div></div>
+</div>
+<div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+<a href="#courses" style="background:var(--gradient);color:#fff;padding:16px 36px;border-radius:12px;font-weight:700;font-size:1rem;box-shadow:0 4px 20px rgba(59,130,246,.25);display:inline-block;transition:all .2s">התחילו ללמוד →</a>
+<a href="#syllabus" style="background:rgba(255,255,255,.04);color:var(--text);padding:16px 36px;border-radius:12px;font-weight:600;font-size:1rem;border:1px solid var(--border);display:inline-block;transition:all .2s">צפו בסילבוס</a>
+</div>
+</div>
+</section>
+
+<!-- Progress Dashboard -->
+<section style="max-width:1140px;margin:0 auto 80px;padding:0 24px" id="dashboard">
+<div style="background:var(--card);border:1px solid var(--border);border-radius:20px;padding:36px;display:flex;align-items:center;gap:36px">
+<div style="flex-shrink:0;position:relative;width:120px;height:120px">
+<svg width="120" height="120" viewBox="0 0 120 120" style="transform:rotate(-90deg)">
+<circle cx="60" cy="60" r="52" fill="none" stroke="rgba(255,255,255,.06)" stroke-width="8"/>
+<circle id="progressRing" cx="60" cy="60" r="52" fill="none" stroke="url(#grad)" stroke-width="8" stroke-linecap="round" stroke-dasharray="326.73" stroke-dashoffset="326.73"/>
+<defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#8b5cf6"/></linearGradient></defs>
+</svg>
+<div id="progressPct" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:1.6rem;font-weight:800">0%</div>
+</div>
+<div style="flex:1">
+<h2 style="font-size:1.3rem;font-weight:700;margin-bottom:4px">ההתקדמות שלך</h2>
+<p id="progressText" style="color:var(--text2);font-size:.92rem;margin-bottom:16px">עוד לא התחלת — בחר/י יחידה והתחל/י ללמוד</p>
+<div style="height:6px;background:rgba(255,255,255,.06);border-radius:3px;overflow:hidden;margin-bottom:12px"><div id="progressBar" style="height:100%;background:var(--gradient);border-radius:3px;transition:width .6s;width:0%"></div></div>
+<div id="progressMeta" style="font-size:.82rem;color:var(--text2)">0 מתוך 12 יחידות הושלמו</div>
+<a href="#courses" id="resumeBtn" style="display:none;margin-top:14px;background:var(--gradient);color:#fff;padding:10px 24px;border-radius:10px;font-weight:600;font-size:.9rem;display:inline-block;box-shadow:0 4px 12px rgba(59,130,246,.2)">המשך ללמוד →</a>
+</div>
+</div>
+</section>
+
+<!-- Syllabus -->
+<section style="max-width:1140px;margin:0 auto 80px;padding:0 24px" id="syllabus">
+<div style="font-size:.78rem;font-weight:600;color:var(--accent2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">סילבוס</div>
+<h2 style="font-size:2rem;font-weight:800;margin-bottom:8px">6 תחומי ידע</h2>
+<p style="color:var(--text2);font-size:1rem;margin-bottom:40px;max-width:560px">מבסיס ועד מתקדם — תוכנית מובנית שמכסה את כל מה שמוביל AI בממשלה צריך לדעת</p>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+<div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;transition:all .2s"><div style="width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:16px;background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.12)">🧠</div><h3 style="font-size:1.05rem;font-weight:700;margin-bottom:6px">בסיס AI</h3><p style="color:var(--text2);font-size:.88rem;line-height:1.6">אוריינות AI, מפת המודלים, עבודה אחראית</p><div style="margin-top:12px;font-size:.78rem;color:var(--text2)">יחידות 1-2</div></div>
+<div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;transition:all .2s"><div style="width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:16px;background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.12)">✍️</div><h3 style="font-size:1.05rem;font-weight:700;margin-bottom:6px">הנדסת הנחיות</h3><p style="color:var(--text2);font-size:.88rem;line-height:1.6">Prompt Engineering, טכניקות מתקדמות, תגיות XML</p><div style="margin-top:12px;font-size:.78rem;color:var(--text2)">יחידה 3</div></div>
+<div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;transition:all .2s"><div style="width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:16px;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.12)">📝</div><h3 style="font-size:1.05rem;font-weight:700;margin-bottom:6px">כתיבה וניתוח</h3><p style="color:var(--text2);font-size:.88rem;line-height:1.6">כתיבה ממשלתית, ניתוח נתונים, מחקר עם AI</p><div style="margin-top:12px;font-size:.78rem;color:var(--text2)">יחידות 4-6</div></div>
+<div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;transition:all .2s"><div style="width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:16px;background:rgba(139,92,246,.08);border:1px solid rgba(139,92,246,.12)">💡</div><h3 style="font-size:1.05rem;font-weight:700;margin-bottom:6px">חשיבה ואתיקה</h3><p style="color:var(--text2);font-size:.88rem;line-height:1.6">חשיבה אסטרטגית, פתרון בעיות, אתיקה ובטיחות</p><div style="margin-top:12px;font-size:.78rem;color:var(--text2)">יחידות 7-8</div></div>
+<div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;transition:all .2s"><div style="width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:16px;background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.12)">🏛️</div><h3 style="font-size:1.05rem;font-weight:700;margin-bottom:6px">AI בשירות הציבורי</h3><p style="color:var(--text2);font-size:.88rem;line-height:1.6">שירות לאזרח, הנגשת מידע, אוטומציה</p><div style="margin-top:12px;font-size:.78rem;color:var(--text2)">יחידות 9-10</div></div>
+<div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;transition:all .2s"><div style="width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:16px;background:rgba(56,189,248,.08);border:1px solid rgba(56,189,248,.12)">💻</div><h3 style="font-size:1.05rem;font-weight:700;margin-bottom:6px">AI מתקדם וטכני</h3><p style="color:var(--text2);font-size:.88rem;line-height:1.6">RAG, מאגרי ידע ארגוניים, Claude Code</p><div style="margin-top:12px;font-size:.78rem;color:var(--text2)">יחידות 11-12</div></div>
+</div>
+</section>
+
+<!-- Courses Grid -->
+<section style="max-width:1140px;margin:0 auto 80px;padding:0 24px" id="courses">
+<div style="font-size:.78rem;font-weight:600;color:var(--accent2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">יחידות לימוד</div>
+<h2 style="font-size:2rem;font-weight:800;margin-bottom:8px">12 יחידות מעשיות</h2>
+<p style="color:var(--text2);font-size:1rem;margin-bottom:40px;max-width:560px">כל יחידה כוללת תיאוריה, פרומפטים מוכנים, תרגילים ושאלות בדיקה</p>
+<div id="coursesGrid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px"></div>
+</section>
+
+<!-- About -->
+<section style="max-width:800px;margin:0 auto 80px;padding:0 24px;text-align:center" id="about">
+<div style="font-size:.78rem;font-weight:600;color:var(--accent2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">אודות</div>
+<h2 style="font-size:2rem;font-weight:800;margin-bottom:16px">על המקפצה</h2>
+<p style="color:var(--text2);font-size:1rem;line-height:1.8;margin-bottom:16px">תוכנית הכשרה ממשלתית מלאה ב-AI, שנבנתה עבור ~1,000 מובילי AI בממשלת ישראל. התוכנית מבוססת על סילבוסים של Anthropic ו-OpenAI, מותאמת לשפה העברית ולהקשר הממשלתי הישראלי.</p>
+<div style="font-weight:700;font-size:.95rem;margin-top:28px">אביעד יצחקי</div>
+<div style="color:var(--text2);font-size:.85rem">מוביל AI ושותפויות, מינהלי גמלאות ביטוח לאומי</div>
+<div style="margin-top:32px;padding:28px;background:var(--card);border:1px solid var(--border);border-radius:16px;display:inline-block">
+<p style="margin-bottom:14px;font-size:.9rem;color:var(--text2)">שתפו את התוכנית עם עמיתים</p>
+<button onclick="shareWhatsApp()" style="display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#fff;padding:12px 28px;border-radius:12px;font-family:'Heebo',sans-serif;font-weight:600;font-size:.9rem;border:none;cursor:pointer;box-shadow:0 4px 12px rgba(37,211,102,.15)">📱 שתפו בוואטסאפ</button>
+</div>
+</section>
+
+<!-- Footer -->
+<footer style="border-top:1px solid var(--border);padding:48px 24px;text-align:center">
+<div style="font-size:1.1rem;font-weight:700;margin-bottom:8px">🚀 המקפצה</div>
+<div style="color:var(--text2);font-size:.82rem;line-height:1.8">מבוסס על Anthropic AI Fluency ו-OpenAI Academy<br>מותאם למובילי AI במגזר הציבורי בישראל © 2025</div>
+</footer>
+
+<!-- Responsive -->
+<style>
+@media(max-width:900px){#coursesGrid,[style*="grid-template-columns:repeat(3"]{grid-template-columns:repeat(2,1fr)!important}h1{font-size:2.2rem!important}#navLinks{display:none}}
+@media(max-width:600px){#coursesGrid,[style*="grid-template-columns:repeat(2"]{grid-template-columns:1fr!important}h1{font-size:1.8rem!important}.hero-stats{gap:24px}}
+</style>
+
+<script>
+const COURSES=[
+{id:1,title:'אוריינות AI ועבודה אחראית',desc:'מה AI יכול ומה לא, מסגרת 4D, כללי אתיקה ובטיחות',time:'35 דק׳',tags:['בסיסי','כל העובדים'],icon:'🧠',color:'#10b981'},
+{id:2,title:'מפת המודלים — במה להשתמש ומתי',desc:'ChatGPT, Claude, Gemini, Grok, Perplexity — חוזקות, שימושים וטבלת השוואה',time:'35 דק׳',tags:['בסיסי','5 מודלים'],icon:'🗺️',color:'#8b5cf6'},
+{id:3,title:'הנדסת הנחיות (Prompt Engineering)',desc:'4 עקרונות, תגיות XML, ו-8 פרומפטים מוכנים לשימוש יומיומי',time:'35 דק׳',tags:['ישומי','8 פרומפטים'],icon:'✍️',color:'#3b82f6'},
+{id:4,title:'AI לכתיבה ותקשורת בשירות הציבורי',desc:'ניסוח מכתבים, הנגשת מידע, תרגום בירוקרטית לשפה פשוטה',time:'35 דק׳',tags:['ישומי','6 תבניות'],icon:'📝',color:'#f59e0b'},
+{id:5,title:'AI לניתוח נתונים וקבלת החלטות',desc:'ניתוח דוחות, חילוץ תובנות, סיכומים מנהליים — בלי Excel מתקדם',time:'40 דק׳',tags:['ישומי','5 תרגילים'],icon:'📊',color:'#10b981'},
+{id:6,title:'חיפוש ומחקר עם AI',desc:'מחקר מדיניות, סקירת ספרות, השוואת גישות בין מדינות',time:'35 דק׳',tags:['ישומי','4 תרגילים'],icon:'🔍',color:'#3b82f6'},
+{id:7,title:'AI לחשיבה אסטרטגית ופתרון בעיות',desc:'שרשרת חשיבה, ריבוי פרספקטיבות, Pre-Mortem, ניתוח סיכונים',time:'35 דק׳',tags:['מתקדם','5 תרגילים'],icon:'💡',color:'#8b5cf6'},
+{id:8,title:'אתיקה, בטיחות ורגולציה של AI בממשלה',desc:'הטיות, פרטיות, שקיפות, קווים אדומים וצ׳קליסט לשימוש אחראי',time:'35 דק׳',tags:['חובה','כל העובדים'],icon:'🛡️',color:'#ef4444'},
+{id:9,title:'AI לשירות הציבור והנגשת מידע',desc:'שיפור חוויית האזרח, שפה פשוטה, צ׳אטבוטים ממשלתיים',time:'35 דק׳',tags:['ישומי','שירות ציבורי'],icon:'🏛️',color:'#f59e0b'},
+{id:10,title:'אוטומציה ותהליכי עבודה עם AI',desc:'זיהוי תהליכים, בניית Workflows, חיסכון בזמן ושיפור יעילות',time:'40 דק׳',tags:['מתקדם','אוטומציה'],icon:'⚙️',color:'#10b981'},
+{id:11,title:'RAG — חיבור AI למאגרי ידע ארגוניים',desc:'Retrieval Augmented Generation — תשובות מדויקות מהמידע הפנימי שלכם',time:'40 דק׳',tags:['מתקדם','ארגוני'],icon:'🗄️',color:'#8b5cf6'},
+{id:12,title:'Claude Code — למפתחים וצוותי IT',desc:'פיתוח עם Claude Code, אוטומציה טכנית, סקריפטים ועבודה עם API',time:'40 דק׳',tags:['טכני','מפתחים'],icon:'💻',color:'#3b82f6'}
+];
+
+function getProgress(){try{return JSON.parse(localStorage.getItem('hamakpetza_v2')||'{}');}catch(e){return {};}}
+function getCompletedCount(){return Object.values(getProgress()).filter(v=>v).length;}
+
+function renderCourses(){
+const grid=document.getElementById('coursesGrid');const progress=getProgress();
+grid.innerHTML=COURSES.map(c=>{
+const done=progress['course_'+c.id];
+return `<a href="course${c.id}.html" style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;transition:all .2s;position:relative;display:flex;flex-direction:column;text-decoration:none;color:inherit;overflow:hidden">
+<div style="position:absolute;top:0;right:0;left:0;height:3px;background:${c.color};opacity:.6"></div>
+${done?'<div style="position:absolute;top:14px;left:14px;width:26px;height:26px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.8rem">✓</div>':''}
+<div style="font-size:.78rem;font-weight:600;color:var(--text2);margin-bottom:8px;display:flex;align-items:center;gap:6px"><span style="font-size:1.1rem">${c.icon}</span> יחידה ${c.id}</div>
+<h3 style="font-size:1rem;font-weight:700;margin-bottom:8px;line-height:1.4;color:#fff">${c.title}</h3>
+<div style="color:var(--text2);font-size:.85rem;line-height:1.6;margin-bottom:16px;flex:1">${c.desc}</div>
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px">${c.tags.map(t=>`<span style="font-size:.72rem;padding:3px 10px;border-radius:50px;background:rgba(59,130,246,.08);color:var(--accent2);border:1px solid rgba(59,130,246,.1)">${t}</span>`).join('')}<span style="font-size:.72rem;padding:3px 10px;border-radius:50px;background:rgba(255,255,255,.04);color:var(--text2);border:1px solid var(--border)">⏱ ${c.time}</span></div>
+<span style="font-size:.88rem;font-weight:600;color:var(--accent2);display:flex;align-items:center;gap:6px">התחילו ללמוד ←</span>
+</a>`;
+}).join('');
+}
+
+function updateDashboard(){
+const count=getCompletedCount();const pct=Math.round((count/12)*100);
+const circumference=2*Math.PI*52;const offset=circumference-(pct/100)*circumference;
+document.getElementById('progressRing').style.strokeDashoffset=offset;
+document.getElementById('progressPct').textContent=pct+'%';
+document.getElementById('progressBar').style.width=pct+'%';
+document.getElementById('progressMeta').textContent=count+' מתוך 12 יחידות הושלמו';
+const resumeBtn=document.getElementById('resumeBtn');
+const progressText=document.getElementById('progressText');
+if(count===0){progressText.textContent='עוד לא התחלת — בחר/י יחידה והתחל/י ללמוד';resumeBtn.style.display='none';}
+else if(count===12){progressText.textContent='🎉 כל הכבוד! השלמת את כל 12 היחידות';resumeBtn.style.display='none';}
+else{const next=COURSES.find(c=>!getProgress()['course_'+c.id]);progressText.textContent='היחידה הבאה: '+next.title;resumeBtn.href='course'+next.id+'.html';resumeBtn.style.display='inline-block';}
+}
+
+function shareWhatsApp(){
+const text='🚀 המקפצה — אקדמיית AI למובילי המגזר הציבורי\n\n12 יחידות לימוד מעשיות ב-AI, מותאמות לעובדי מדינה.\nסילבוס, תרגולים, פרומפטים מוכנים ודשבורד למידה.\n\nhttps://avi1840.github.io/ai-academy/site2/index.html';
+window.open('https://wa.me/?text='+encodeURIComponent(text),'_blank');
+}
+
+renderCourses();updateDashboard();
+</script>
+</body>
+</html>

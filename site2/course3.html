@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>יחידה 3: הנדסת הנחיות — המקפצה</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Frank+Ruhl+Libre:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+</head>
+<body>
+<nav class="topbar"><div class="topbar-right"><a href="index.html" class="back-btn">→ חזרה למקפצה</a><span class="topbar-title">יחידה 3 מתוך 12</span></div></nav>
+
+<header class="course-hero">
+<span class="course-badge" style="background:rgba(106,155,204,.1);color:var(--secondary)">✍️ בסיסי — ישומי מיידי</span>
+<h1>הנדסת הנחיות (Prompt Engineering)</h1>
+<p class="sub">איך לשאול את AI נכון כדי לקבל תוצאות מצוינות — עם 8 פרומפטים מוכנים לשימוש</p>
+<div class="meta-row"><span class="meta-item">⏱ 35 דקות</span><span class="meta-item">👥 כל עובדי המדינה</span><span class="meta-item">📋 8 פרומפטים מוכנים</span></div>
+</header>
+
+<main class="content">
+
+<div class="section">
+<div class="section-head"><div class="section-icon" style="background:rgba(217,119,87,.1)">🎯</div><h2>חלק א׳: 4 עקרונות לפרומפט מוצלח</h2></div>
+
+<div class="card-box"><h3>1. היו ברורים וישירים</h3>
+<p>ככל שתהיו ספציפיים יותר, כך התוצאה תהיה טובה יותר. אל תניחו ש-AI "מבין" מה אתם רוצים.</p>
+<div class="compare">
+<div class="compare-bad">תעזור לי עם מכתב</div>
+<div class="compare-good">כתוב טיוטת מכתב לאזרח שמודיע על דחיית בקשה, בטון מכבד, עם הסבר על אפשרות ערעור</div>
+</div></div>
+
+<div class="card-box"><h3>2. תנו הקשר</h3>
+<p>ספרו ל-AI מי קהל היעד, מה המטרה, ומה הרקע — בדיוק כמו שהייתם מסבירים לעמית חדש.</p>
+<div class="compare">
+<div class="compare-bad">סכם את הטקסט</div>
+<div class="compare-good">סכם את הנוהל הזה ב-5 נקודות, עבור עובד חדש במשרד שצריך להבין את התהליך מהר</div>
+</div></div>
+
+<div class="card-box"><h3>3. הגדירו פורמט</h3>
+<p>אמרו ל-AI באיזה מבנה אתם רוצים את התשובה — טבלה, רשימה, פסקאות, או כל פורמט אחר.</p>
+<div class="compare">
+<div class="compare-bad">תן לי מידע על הנושא</div>
+<div class="compare-good">צור טבלה עם 3 עמודות: נושא | סטטוס | פעולה נדרשת</div>
+</div></div>
+
+<div class="card-box"><h3>4. תנו דוגמה</h3>
+<p>כשאתם רוצים סגנון מסוים, הדביקו דוגמה. AI מצוין בחיקוי סגנון קיים.</p>
+<div class="compare">
+<div class="compare-bad">כתוב תשובה לפנייה</div>
+<div class="compare-good">כתוב תשובה לפניית אזרח בסגנון הדוגמה הבאה: [הדביקו דוגמה]</div>
+</div></div>
+</div>
+
+<div class="section">
+<div class="section-head"><div class="section-icon" style="background:rgba(139,108,193,.1)">🏷️</div><h2>חלק ב׳: טכניקת תגיות XML</h2></div>
+<div class="card-box"><h3>למה תגיות XML?</h3>
+<p>תגיות XML עוזרות ל-AI להבחין בין חלקים שונים של ההנחיה — תפקיד, הקשר, משימה ופורמט. זה כמו לשים כותרות ברורות לכל חלק.</p>
+<div class="xml-box">&lt;תפקיד&gt;אתה עוזר מקצועי לעובדי מדינה&lt;/תפקיד&gt;
+
+&lt;הקשר&gt;אני עובד במשרד ממשלתי ומטפל בפניות אזרחים&lt;/הקשר&gt;
+
+&lt;משימה&gt;כתוב תשובה מנומסת לאזרח שפנייתו נדחתה, עם הסבר על אפשרות ערעור&lt;/משימה&gt;
+
+&lt;פורמט&gt;מכתב רשמי, 3 פסקאות, טון מכבד ואמפתי&lt;/פורמט&gt;</div>
+<p>לא חייבים להשתמש בתגיות בכל פרומפט. זה שימושי במיוחד כשההנחיה מורכבת.</p></div>
+</div>
+
+<div class="section">
+<div class="section-head"><div class="section-icon" style="background:rgba(217,119,87,.1)">💬</div><h2>חלק ג׳: 8 פרומפטים מוכנים לשימוש יומיומי</h2></div>
+
+<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>1. סיכום מסמך:</strong> "סכם את המסמך הבא ב-5 נקודות עיקריות. ציין נתונים מספריים חשובים. קהל יעד: מנהל שצריך להבין את התמונה ב-2 דקות. [הדביקו מסמך]"</p></div>
+
+<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>2. ניסוח מכתב:</strong> "כתוב מכתב רשמי מטעם [גוף] ל[נמען] בנושא [X]. טון: מכבד ומקצועי. אורך: עמוד אחד. כלול: פתיחה, גוף, סיכום, ופרטי קשר."</p></div>
+
+<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>3. הנגשת שפה:</strong> "קח את הטקסט הבא וכתוב אותו מחדש בשפה פשוטה שאזרח ללא רקע מקצועי יבין. שמור על הדיוק. הוסף כותרות משנה. [הדביקו טקסט]"</p></div>
+
+<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>4. הכנת מצגת:</strong> "צור מבנה מצגת של [X] שקפים בנושא [Y]. לכל שקף: כותרת, 3-4 נקודות תבליט, והערה למציג. קהל יעד: [Z]."</p></div>
+
+<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>5. ניתוח SWOT:</strong> "בצע ניתוח SWOT ל[נושא/פרויקט]. לכל קטגוריה (חוזקות, חולשות, הזדמנויות, איומים) ציין 3-4 נקודות עם הסבר קצר."</p></div>
+
+<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>6. סיכום ישיבה:</strong> "סכם את הישיבה הבאה: [הדביקו רשימות]. פורמט: נושא, משתתפים, 5 נקודות עיקריות, החלטות, משימות (מי-מה-מתי)."</p></div>
+
+<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>7. השוואת חלופות:</strong> "השווה בין 3 חלופות ל[X]: [א] [ב] [ג]. לכל חלופה: יתרונות, חסרונות, עלות, זמן, סיכון. הצג בטבלה ותן המלצה מנומקת."</p></div>
+
+<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>8. מייל מקצועי:</strong> "כתוב מייל ל[נמען] בנושא [X]. המייל צריך: subject ברור, פסקת פתיחה קצרה, גוף עם 3 נקודות בתבליטים, קריאה לפעולה. טון: מקצועי וידידותי."</p></div>
+</div>
+
+<div class="try-section">
+<h3>🎯 נסו בעצמכם</h3>
+<p style="margin-bottom:16px;font-family:'Heebo',sans-serif;font-size:.95rem">בחרו פרומפט מהרשימה, התאימו אותו למשימה אמיתית מהעבודה, ונסו ב-Claude או ChatGPT. שימו לב להבדל בין פרומפט כללי לפרומפט ספציפי.</p>
+</div>
+
+<div class="quiz-section">
+<h3>❓ בדקו את עצמכם</h3>
+<div class="quiz-q"><p>1. מהם 4 העקרונות לפרומפט מוצלח?</p><details><summary>הציצו בתשובה</summary><p>בהירות, הקשר, פורמט, ודוגמה.</p></details></div>
+<div class="quiz-q"><p>2. מתי כדאי להשתמש בתגיות XML?</p><details><summary>הציצו בתשובה</summary><p>כשההנחיה מורכבת ויש בה כמה חלקים — תפקיד, הקשר, משימה ופורמט.</p></details></div>
+<div class="quiz-q"><p>3. למה חשוב לציין קהל יעד בפרומפט?</p><details><summary>הציצו בתשובה</summary><p>כי AI מתאים את רמת השפה, הטון והעומק לקהל — מנהל בכיר יקבל סיכום שונה מעובד חדש.</p></details></div>
+</div>
+
+<div class="summary-box">
+<h3>💎 סיכום — מה לזכור?</h3>
+<ul>
+<li>4 עקרונות: בהירות, הקשר, פורמט, דוגמה</li>
+<li>תגיות XML — לפרומפטים מורכבים עם כמה חלקים</li>
+<li>8 פרומפטים מוכנים — העתיקו, התאימו, והשתמשו</li>
+<li>ככל שהפרומפט ספציפי יותר — התוצאה טובה יותר</li>
+</ul>
+</div>
+</main>
+
+<section class="course-complete">
+<button class="complete-btn" id="completeBtn" onclick="toggleComplete()">✓ סיימתי יחידה זו</button><br>
+<button class="share-course-btn" onclick="shareCourse()">📱 שתפו בוואטסאפ</button>
+</section>
+<nav class="nav-bottom">
+<a href="course2.html" class="nav-btn nav-prev">→ יחידה 2: מפת המודלים</a>
+<a href="course4.html" class="nav-btn nav-next">יחידה 4: כתיבה ותקשורת ←</a>
+</nav>
+<footer class="site-footer"><p>המקפצה — מבוסס על Anthropic ו-OpenAI | מותאם למובילי AI במגזר הציבורי בישראל © 2025</p></footer>
+<script>const COURSE_ID=3;</script>
+<script src="shared.js"></script>
+</body>
+</html>

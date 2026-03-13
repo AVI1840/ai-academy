@@ -10,7 +10,12 @@
 <link rel="stylesheet" href="shared.css">
 </head>
 <body>
-<nav class="topbar"><div class="topbar-right"><a href="index.html" class="back-btn">→ חזרה למקפצה</a><span class="topbar-title">יחידה 1 מתוך 12</span></div></nav>
+<nav class="topbar">
+<div class="topbar-right">
+<a href="index.html" class="back-btn">→ חזרה למקפצה</a>
+<span class="topbar-title">יחידה 1 מתוך 12</span>
+</div>
+</nav>
 
 <header class="course-hero">
 <span class="course-badge" style="background:rgba(61,140,111,.1);color:var(--green)">🧠 בסיסי — לכל עובדי המדינה</span>
@@ -25,13 +30,17 @@
 
 <main class="content">
 <div class="section">
-<div class="section-head"><div class="section-icon" style="background:rgba(61,140,111,.1)">📖</div><h2>חלק א׳: מה זה AI בכלל?</h2></div>
+<div class="section-head">
+<div class="section-icon" style="background:rgba(61,140,111,.1)">📖</div>
+<h2>חלק א׳: מה זה AI בכלל?</h2>
+</div>
 <div class="card-box">
 <p>AI (בינה מלאכותית) הוא תוכנה שיודעת לעבד טקסט, לנתח מידע ולייצר תוכן — בדומה לעוזר חכם שקורא מהר מאוד ויודע לנסח היטב. הוא לא "חושב" כמו אדם, אלא מזהה דפוסים בכמויות עצומות של טקסט ומייצר תשובות על בסיסם.</p>
 </div>
 </div>
 </main>
 
+<!-- Continue content in main -->
 <div style="max-width:720px;margin:0 auto;padding:0 24px">
 
 <div class="card-box">
@@ -57,7 +66,10 @@
 </div>
 
 <div class="section" style="margin-top:48px">
-<div class="section-head"><div class="section-icon" style="background:rgba(106,155,204,.1)">🔄</div><h2>חלק ב׳: מסגרת 4D לעבודה אחראית עם AI</h2></div>
+<div class="section-head">
+<div class="section-icon" style="background:rgba(106,155,204,.1)">🔄</div>
+<h2>חלק ב׳: מסגרת 4D לעבודה אחראית עם AI</h2>
+</div>
 <div class="card-box">
 <p>מסגרת עבודה מוכחת של Anthropic, מותאמת לעבודה ממשלתית:</p>
 <table>
@@ -71,7 +83,10 @@
 </div>
 
 <div class="section" style="margin-top:48px">
-<div class="section-head"><div class="section-icon" style="background:rgba(199,92,74,.1)">🛡️</div><h2>חלק ג׳: כללי אתיקה ובטיחות — חובה בממשלה</h2></div>
+<div class="section-head">
+<div class="section-icon" style="background:rgba(199,92,74,.1)">🛡️</div>
+<h2>חלק ג׳: כללי אתיקה ובטיחות — חובה בממשלה</h2>
+</div>
 <div class="card-box">
 <h3>🔴 אסור בהחלט</h3>
 <ul class="red-list">
@@ -103,7 +118,10 @@
 </div>
 
 <div class="section" style="margin-top:48px">
-<div class="section-head"><div class="section-icon" style="background:rgba(251,191,36,.1)">🏛️</div><h2>חלק ד׳: דוגמאות שימוש ממשרדי ממשלה</h2></div>
+<div class="section-head">
+<div class="section-icon" style="background:rgba(251,191,36,.1)">🏛️</div>
+<h2>חלק ד׳: דוגמאות שימוש ממשרדי ממשלה</h2>
+</div>
 <div class="card-box">
 <table>
 <tr><th>משרד / גוף</th><th>שימוש לדוגמה</th></tr>
@@ -121,16 +139,15 @@
 <div class="try-section">
 <h3>🎯 תרגיל מעשי — נסו עכשיו!</h3>
 <p style="margin-bottom:16px;font-family:'Heebo',sans-serif;font-size:.95rem">פתחו את <a href="https://claude.ai" target="_blank">claude.ai</a> או <a href="https://chat.openai.com" target="_blank">ChatGPT</a> ונסו:</p>
-<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>תרגיל 1:</strong> העתיקו פסקה מנוהל פנימי (ללא מידע אישי) ובקשו:<br>"סכם את הנוהל הזה ב-3 נקודות עיקריות בשפה פשוטה שאזרח יבין"</p></div>
-<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>תרגיל 2:</strong> בקשו:<br>"כתוב טיוטת מכתב לאזרח שמודיע לו שפנייתו התקבלה ונמצאת בטיפול, בטון מכבד ובשפה פשוטה"</p></div>
-<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>תרגיל 3:</strong> שאלו:<br>"מהם 5 השימושים הכי מעשיים של AI עבור עובד בשירות הציבורי הישראלי?"</p></div>
+<div class="prompt-box" onclick="copyPrompt(this)">
+<p><strong>תרגיל 1:</strong> העתיקו פסקה מנוהל פנימי (ללא מידע אישי) ובקשו:<br>"סכם את הנוהל הזה ב-3 נקודות עיקריות בשפה פשוטה שאזרח יבין"</p>
 </div>
-
-<div class="quiz-section">
-<h3>❓ בדקו את עצמכם</h3>
-<div class="quiz-q"><p>1. מה ההבדל בין AI לבין אדם בקבלת החלטות?</p><details><summary>הציצו בתשובה</summary><p>AI מזהה דפוסים ומייצר תשובות, אבל לא "מבין" באמת. ההחלטה הסופית חייבת להיות של אדם עם שיקול דעת מקצועי.</p></details></div>
-<div class="quiz-q"><p>2. מהם 4 שלבי מסגרת 4D?</p><details><summary>הציצו בתשובה</summary><p>Discover (גלה), Discern (הבחן), Direct (כוון), Determine (החלט).</p></details></div>
-<div class="quiz-q"><p>3. מה אסור להזין לכלי AI חיצוני?</p><details><summary>הציצו בתשובה</summary><p>מידע אישי מזהה — ת.ז., שמות, כתובות, מצב רפואי, מסמכים מסווגים.</p></details></div>
+<div class="prompt-box" onclick="copyPrompt(this)">
+<p><strong>תרגיל 2:</strong> בקשו:<br>"כתוב טיוטת מכתב לאזרח שמודיע לו שפנייתו התקבלה ונמצאת בטיפול, בטון מכבד ובשפה פשוטה"</p>
+</div>
+<div class="prompt-box" onclick="copyPrompt(this)">
+<p><strong>תרגיל 3:</strong> שאלו:<br>"מהם 5 השימושים הכי מעשיים של AI עבור עובד בשירות הציבורי הישראלי?"</p>
+</div>
 </div>
 
 <div class="summary-box">
@@ -143,20 +160,23 @@
 <li>השתמשו במסגרת 4D: גלה, הבחן, כוון, החלט</li>
 </ul>
 </div>
-</div>
+</div><!-- end content wrapper -->
 
 <section class="course-complete">
 <button class="complete-btn" id="completeBtn" onclick="toggleComplete()">✓ סיימתי יחידה זו</button><br>
 <button class="share-course-btn" onclick="shareCourse()">📱 שתפו בוואטסאפ</button>
 </section>
+
 <nav class="nav-bottom">
 <a href="index.html" class="nav-btn nav-prev">→ כל היחידות</a>
 <a href="course2.html" class="nav-btn nav-next">יחידה 2: מפת המודלים ←</a>
 </nav>
+
 <footer class="site-footer">
 <p>מבוסס על Anthropic AI Fluency: Framework & Foundations</p>
 <p>מותאם למובילי AI במגזר הציבורי בישראל © 2025</p>
 </footer>
+
 <script>const COURSE_ID=1;</script>
 <script src="shared.js"></script>
 </body>

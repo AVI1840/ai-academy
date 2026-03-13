@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>יחידה 7: AI לחשיבה ופתרון בעיות — המקפצה</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Frank+Ruhl+Libre:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+</head>
+<body>
+<nav class="topbar"><div class="topbar-right"><a href="index.html" class="back-btn">→ חזרה למקפצה</a><span class="topbar-title">יחידה 7 מתוך 12</span></div></nav>
+
+<header class="course-hero">
+<span class="course-badge" style="background:rgba(139,108,193,.1);color:var(--purple)">💡 מתקדם</span>
+<h1>AI לחשיבה אסטרטגית ופתרון בעיות</h1>
+<p class="sub">חשיבה מערכתית, ניתוח סיכונים, קבלת החלטות ותכנון אסטרטגי עם AI</p>
+<div class="meta-row"><span class="meta-item">⏱ 35 דקות</span><span class="meta-item">👥 מנהלים ומובילים</span><span class="meta-item">📋 5 תרגילים</span></div>
+</header>
+
+<main class="content">
+<div class="section">
+<div class="section-head"><div class="section-icon" style="background:rgba(139,108,193,.1)">💡</div><h2>חלק א׳: AI כשותף לחשיבה</h2></div>
+<div class="card-box"><p>AI לא רק כותב ומסכם — הוא יכול לשמש כשותף חשיבה שמאתגר אתכם, מציע זוויות חדשות, ועוזר לנתח בעיות מורכבות. במיוחד שימושי למנהלים שצריכים לקבל החלטות.</p></div>
+<div class="card-box"><h3>4 דרכים להשתמש ב-AI לחשיבה</h3>
+<table>
+<tr><th>שימוש</th><th>דוגמה ממשלתית</th></tr>
+<tr><td>ניתוח SWOT</td><td>ניתוח חוזקות/חולשות של תוכנית דיגיטציה חדשה</td></tr>
+<tr><td>ניתוח סיכונים</td><td>מיפוי סיכונים בפרויקט שירות חדש לאזרח</td></tr>
+<tr><td>סיעור מוחות מובנה</td><td>יצירת 20 רעיונות לשיפור שירות במשרד</td></tr>
+<tr><td>עורך דין של השטן</td><td>"מצא 5 סיבות למה התוכנית הזו תיכשל"</td></tr>
+</table></div>
+</div>
+
+<div class="section">
+<div class="section-head"><div class="section-icon" style="background:rgba(106,155,204,.1)">🧩</div><h2>חלק ב׳: טכניקות חשיבה עם AI</h2></div>
+
+<div class="card-box"><h3>טכניקה 1: שרשרת חשיבה (Chain of Thought)</h3>
+<p>בקשו מ-AI לחשוב שלב אחרי שלב במקום לקפוץ למסקנה:</p></div>
+<div class="prompt-box" onclick="copyPrompt(this)"><p>"נתח את הבעיה הבאה צעד אחר צעד: [תארו את הבעיה]. בכל שלב: 1) מה אנחנו יודעים 2) מה חסר 3) מה המסקנה עד כה"</p></div>
+
+<div class="card-box"><h3>טכניקה 2: ריבוי פרספקטיבות</h3>
+<p>בקשו מ-AI לנתח מנקודות מבט שונות:</p></div>
+<div class="prompt-box" onclick="copyPrompt(this)"><p>"נתח את ההחלטה [X] מ-4 נקודות מבט: 1) האזרח 2) עובד השטח 3) המנהל 4) משרד האוצר. לכל נקודת מבט: חששות, ציפיות, והמלצות"</p></div>
+
+<div class="card-box"><h3>טכניקה 3: Pre-Mortem</h3>
+<p>דמיינו שהפרויקט נכשל — ובקשו מ-AI לנתח למה:</p></div>
+<div class="prompt-box" onclick="copyPrompt(this)"><p>"דמיין שעברה שנה והפרויקט [X] נכשל לחלוטין. מהן 5 הסיבות הסבירות ביותר לכישלון? ומה היינו יכולים לעשות אחרת?"</p></div>
+</div>
+
+<div class="section">
+<div class="section-head"><div class="section-icon" style="background:rgba(61,140,111,.1)">📋</div><h2>חלק ג׳: פרומפטים לקבלת החלטות</h2></div>
+<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>ניתוח חלופות:</strong> "יש לי 3 חלופות ל[X]: א) [חלופה 1] ב) [חלופה 2] ג) [חלופה 3]. נתח כל חלופה: עלות, זמן, סיכון, השפעה על אזרחים, ותן המלצה מנומקת"</p></div>
+<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>ניתוח סיכונים:</strong> "מפה את הסיכונים בפרויקט [X]. לכל סיכון: הסתברות (גבוה/בינוני/נמוך), השפעה, ופעולת מניעה מומלצת"</p></div>
+</div>
+
+<div class="try-section">
+<h3>🎯 תרגיל מעשי</h3>
+<div class="prompt-box" onclick="copyPrompt(this)"><p>"אני מתמודד/ת עם האתגר הבא: [תארו]. עזור לי לנתח: 1) מה שורש הבעיה 2) מי המושפעים 3) 3 פתרונות אפשריים עם יתרונות וחסרונות 4) המלצה מנומקת"</p></div>
+</div>
+
+<div class="quiz-section">
+<h3>❓ בדקו את עצמכם</h3>
+<div class="quiz-q"><p>1. מה היתרון של טכניקת Pre-Mortem?</p><details><summary>הציצו בתשובה</summary><p>היא מאלצת אתכם לחשוב על כישלונות אפשריים מראש — ולמנוע אותם.</p></details></div>
+<div class="quiz-q"><p>2. למה כדאי לבקש מ-AI ריבוי פרספקטיבות?</p><details><summary>הציצו בתשובה</summary><p>כי אנחנו נוטים לראות דברים מזווית אחת. AI יכול להציג נקודות מבט שלא חשבנו עליהן.</p></details></div>
+</div>
+
+<div class="summary-box">
+<h3>💎 סיכום</h3>
+<ul>
+<li>AI הוא שותף חשיבה מצוין — לא מחליף את שיקול הדעת שלכם</li>
+<li>שרשרת חשיבה, ריבוי פרספקטיבות ו-Pre-Mortem — 3 טכניקות חזקות</li>
+<li>בקשו מ-AI לאתגר אתכם, לא רק להסכים</li>
+<li>ההחלטה הסופית תמיד שלכם</li>
+</ul>
+</div>
+</main>
+
+<section class="course-complete">
+<button class="complete-btn" id="completeBtn" onclick="toggleComplete()">✓ סיימתי יחידה זו</button><br>
+<button class="share-course-btn" onclick="shareCourse()">📱 שתפו בוואטסאפ</button>
+</section>
+<nav class="nav-bottom">
+<a href="course6.html" class="nav-btn nav-prev">→ יחידה 6: חיפוש ומחקר</a>
+<a href="course8.html" class="nav-btn nav-next">יחידה 8: אתיקה ובטיחות ←</a>
+</nav>
+<footer class="site-footer"><p>המקפצה — מבוסס על Anthropic ו-OpenAI | מותאם למובילי AI במגזר הציבורי בישראל © 2025</p></footer>
+<script>const COURSE_ID=7;</script>
+<script src="shared.js"></script>
+</body>
+</html>
