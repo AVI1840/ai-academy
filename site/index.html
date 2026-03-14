@@ -1,419 +1,447 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="he" dir="rtl" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>המקפצה — אקדמיית AI למובילי המגזר הציבורי</title>
-<meta name="description" content="תוכנית הכשרה ממשלתית מלאה ב-AI: 12 יחידות לימוד, סילבוס, תרגולים, דשבורד למידה ומסלול למובילי AI">
+<meta name="description" content="12 יחידות לימוד מעשיות ב-AI למובילי המגזר הציבורי. מבוסס על Anthropic AI Fluency.">
+<meta property="og:title" content="המקפצה — אקדמיית AI למובילי המגזר הציבורי">
+<meta property="og:description" content="12 יחידות לימוד מעשיות ב-AI, מותאמות לעובדי מדינה.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Frank+Ruhl+Libre:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Frank+Ruhl+Libre:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#faf9f5;--text:#141413;--text2:#6b6a65;--border:#e8e6dc;--accent:#d97757;--accent-light:#f0c4b3;--secondary:#6a9bcc;--card-bg:#fff;--card-hover:#f5f3ef;--green:#3d8c6f;--red:#c75c4a;--purple:#8b6cc1}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'Frank Ruhl Libre','Heebo',serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:18px;-webkit-font-smoothing:antialiased}
-h1,h2,h3,h4,h5,h6{font-family:'Heebo',sans-serif;line-height:1.3}
-a{color:var(--accent);text-decoration:none;transition:color .2s}
-a:hover{color:#b8603f}
-img{max-width:100%}
-
-/* Header */
-.site-header{position:sticky;top:0;z-index:100;background:rgba(250,249,245,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:14px 0}
-.header-inner{max-width:1100px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:'Heebo',sans-serif;font-size:1.5rem;font-weight:800;color:var(--text);display:flex;align-items:center;gap:10px}
-.logo-icon{width:36px;height:36px;background:var(--accent);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.1rem}
-.nav-links{display:flex;gap:28px;align-items:center}
-.nav-links a{color:var(--text2);font-family:'Heebo',sans-serif;font-size:.9rem;font-weight:500}
-.nav-links a:hover{color:var(--accent)}
-.nav-cta{background:var(--accent);color:#fff!important;padding:8px 20px;border-radius:8px;font-weight:600;font-size:.85rem}
-.nav-cta:hover{background:#b8603f}
-.mobile-menu-btn{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text)}
-
-/* Hero */
-.hero{padding:80px 24px 60px;text-align:center;max-width:800px;margin:0 auto}
-.hero-badge{display:inline-block;padding:6px 18px;border-radius:50px;font-size:.8rem;font-weight:500;background:rgba(217,119,87,.1);color:var(--accent);font-family:'Heebo',sans-serif;margin-bottom:24px}
-.hero h1{font-size:3rem;font-weight:900;margin-bottom:16px;letter-spacing:-.02em}
-.hero p{color:var(--text2);font-size:1.15rem;max-width:600px;margin:0 auto 32px;line-height:1.8}
-.hero-stats{display:flex;gap:40px;justify-content:center;flex-wrap:wrap;margin-bottom:36px}
-.hero-stat{text-align:center}
-.hero-stat .num{font-family:'Heebo',sans-serif;font-size:2rem;font-weight:800;color:var(--accent)}
-.hero-stat .label{font-size:.85rem;color:var(--text2);font-family:'Heebo',sans-serif}
-.hero-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-.btn-primary{background:var(--accent);color:#fff;padding:14px 32px;border-radius:10px;font-family:'Heebo',sans-serif;font-weight:700;font-size:1rem;border:none;cursor:pointer;transition:all .2s;display:inline-block}
-.btn-primary:hover{background:#b8603f;color:#fff;transform:translateY(-1px)}
-.btn-secondary{background:transparent;color:var(--text);padding:14px 32px;border-radius:10px;font-family:'Heebo',sans-serif;font-weight:600;font-size:1rem;border:1.5px solid var(--border);cursor:pointer;transition:all .2s;display:inline-block}
-.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
-
-/* Progress Dashboard */
-.dashboard{max-width:1100px;margin:0 auto 80px;padding:0 24px}
-.dashboard-card{background:var(--card-bg);border:1px solid var(--border);border-radius:16px;padding:36px;display:flex;align-items:center;gap:36px}
-.progress-ring-wrap{flex-shrink:0;position:relative;width:120px;height:120px}
-.progress-ring-wrap svg{transform:rotate(-90deg)}
-.progress-ring-bg{fill:none;stroke:var(--border);stroke-width:8}
-.progress-ring-fill{fill:none;stroke:var(--accent);stroke-width:8;stroke-linecap:round;transition:stroke-dashoffset .6s ease}
-.progress-pct{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Heebo',sans-serif;font-size:1.6rem;font-weight:800;color:var(--text)}
-.dashboard-info{flex:1}
-.dashboard-info h2{font-size:1.4rem;font-weight:700;margin-bottom:4px}
-.dashboard-info p{color:var(--text2);font-size:.95rem;margin-bottom:16px;font-family:'Heebo',sans-serif}
-.dashboard-bar{height:8px;background:var(--border);border-radius:4px;overflow:hidden;margin-bottom:12px}
-.dashboard-bar-fill{height:100%;background:var(--accent);border-radius:4px;transition:width .6s ease}
-.dashboard-meta{font-size:.85rem;color:var(--text2);font-family:'Heebo',sans-serif}
-.resume-btn{margin-top:16px;display:inline-block}
+/* ===== LIGHT THEME (Anthropic-inspired) ===== */
+:root,[data-theme="light"]{
+  --bg:#FAF8F5;--bg2:#F2EDE7;--bg3:#E8E0D6;
+  --text:#1A1612;--text2:#8C8278;--text3:#B5ADA3;
+  --border:#E8E0D6;--border2:#D8CFC4;
+  --accent:#D97706;--accent2:#B45309;
+  --green:#059669;--purple:#7C3AED;--blue:#2563EB;
+  --card:#FFFFFF;
+  --header-bg:rgba(250,248,245,.92);
+  --modal-overlay:rgba(0,0,0,.3);
+  --shadow-s:0 1px 3px rgba(0,0,0,.04);
+  --shadow-m:0 4px 16px rgba(0,0,0,.06);
+  --shadow-l:0 12px 40px rgba(0,0,0,.08);
+  --grad:linear-gradient(135deg,#D97706,#B45309);
+  --glow:none;
+  --hero-glow:radial-gradient(600px circle at 50% 0%,rgba(217,119,6,.06),transparent 70%);
+  --noise:none;
+}
 </style>
 </head>
-<body>
+<body></body></html>
+<style>
+/* ===== DARK THEME (Futuristic premium) ===== */
+[data-theme="dark"]{
+  --bg:#09090B;--bg2:#111114;--bg3:#18181B;
+  --text:#FAFAFA;--text2:#A1A1AA;--text3:#71717A;
+  --border:rgba(255,255,255,.08);--border2:rgba(255,255,255,.14);
+  --accent:#F97316;--accent2:#EA580C;
+  --green:#22C55E;--purple:#A855F7;--blue:#3B82F6;
+  --card:rgba(255,255,255,.035);
+  --header-bg:rgba(9,9,11,.78);
+  --modal-overlay:rgba(0,0,0,.65);
+  --shadow-s:0 1px 3px rgba(0,0,0,.3);
+  --shadow-m:0 4px 16px rgba(0,0,0,.4);
+  --shadow-l:0 12px 40px rgba(0,0,0,.5);
+  --grad:linear-gradient(135deg,#F97316,#A855F7);
+  --glow:0 0 40px rgba(249,115,22,.08);
+  --hero-glow:radial-gradient(600px ellipse at 40% 20%,rgba(249,115,22,.1),transparent),radial-gradient(500px ellipse at 65% 40%,rgba(168,85,247,.07),transparent);
+  --noise:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.02'/%3E%3C/svg%3E");
+}
+/* ===== BASE ===== */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Heebo',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background .4s,color .4s}
+body::before{content:'';position:fixed;inset:0;background:var(--noise);pointer-events:none;z-index:0}
+a{color:var(--accent);text-decoration:none;transition:all .25s}
+@keyframes mesh{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes livePulse{0%,100%{opacity:1;box-shadow:0 0 8px rgba(34,197,94,.5)}50%{opacity:.4;box-shadow:0 0 3px rgba(34,197,94,.2)}}
+.anim{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s}.anim.vis{opacity:1;transform:none}
+</style>
+<style>
+/* ===== HEADER ===== */
+.hdr{position:sticky;top:0;z-index:100;background:var(--header-bg);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:11px 0;transition:background .4s,box-shadow .3s}
+.hdr.scrolled{box-shadow:var(--shadow-m)}
+.hdr-in{max-width:1140px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:1.3rem;font-weight:800;color:var(--text);display:flex;align-items:center;gap:8px}
+.logo:hover{color:var(--text)}
+.logo-i{width:34px;height:34px;border-radius:8px;background:var(--grad);background-size:200% 200%;animation:mesh 5s ease infinite;display:grid;place-items:center;color:#fff;font-size:.95rem;box-shadow:0 2px 8px rgba(217,119,6,.2)}
+.nav{display:flex;gap:22px;align-items:center}
+.nav a{color:var(--text3);font-size:.84rem;font-weight:500}
+.nav a:hover{color:var(--text)}
+.nav-cta{background:var(--grad);background-size:200% 200%;animation:mesh 5s ease infinite;color:#fff!important;padding:8px 20px;border-radius:8px;font-weight:600;font-size:.82rem}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(217,119,6,.2)}
+.thm{background:var(--card);border:1px solid var(--border);border-radius:8px;width:34px;height:34px;cursor:pointer;font-size:1rem;display:grid;place-items:center;transition:all .25s;color:var(--text)}
+.thm:hover{border-color:var(--accent)}
+.mob-btn{display:none;background:none;border:none;font-size:1.3rem;cursor:pointer;color:var(--text)}
 
-<!-- Header -->
-<header class="site-header">
-<div class="header-inner">
-<a href="#" class="logo"><span class="logo-icon">🚀</span> המקפצה</a>
-<nav class="nav-links" id="navLinks">
+/* ===== HERO ===== */
+.hero{position:relative;padding:100px 24px 80px;max-width:820px;margin:0 auto;text-align:center}
+.hero::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:100%;max-width:900px;height:900px;background:var(--hero-glow);pointer-events:none;z-index:-1}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:7px 18px;border-radius:50px;font-size:.78rem;font-weight:600;background:var(--card);border:1px solid var(--border);color:var(--text2);margin-bottom:24px}
+.hero-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--green);animation:livePulse 2s infinite}
+.hero h1{font-size:3.2rem;font-weight:900;letter-spacing:-.04em;margin-bottom:20px;line-height:1.1}
+.hero h1 .hl{background:var(--grad);background-size:200% 200%;animation:mesh 5s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero>p{color:var(--text2);font-size:1.08rem;max-width:560px;margin:0 auto 40px;line-height:1.85}
+.hero-nums{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
+.hero-num{text-align:center;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 26px;min-width:115px;transition:all .3s}
+.hero-num:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:var(--glow)}
+.hero-num strong{display:block;font-size:2.2rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-num span{font-size:.8rem;color:var(--text3)}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-a{background:var(--grad);background-size:200% 200%;animation:mesh 5s ease infinite;color:#fff;padding:14px 34px;border-radius:10px;font-weight:700;font-size:.95rem;border:none;cursor:pointer;transition:all .25s;box-shadow:0 4px 16px rgba(217,119,6,.18);display:inline-block}
+.btn-a:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(217,119,6,.25);color:#fff}
+.btn-b{background:var(--card);color:var(--text);padding:14px 34px;border-radius:10px;font-weight:600;font-size:.95rem;border:1.5px solid var(--border);cursor:pointer;transition:all .25s;display:inline-block}
+.btn-b:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.badge-row{margin-top:32px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.badge-pill{font-size:.72rem;padding:5px 14px;border-radius:50px;background:var(--card);border:1px solid var(--border);color:var(--text3);font-weight:500}
+</style>
+
+<header class="hdr" id="hdr">
+<div class="hdr-in">
+<a href="#" class="logo"><span class="logo-i">🚀</span>המקפצה</a>
+<nav class="nav" id="nav">
 <a href="#syllabus">סילבוס</a>
 <a href="#paths">מסלולים</a>
-<a href="#courses">יחידות לימוד</a>
+<a href="#courses">יחידות</a>
 <a href="#about">אודות</a>
+<button class="thm" id="thmBtn" onclick="toggleTheme()" title="מצב כהה / בהיר">🌙</button>
 <a href="#courses" class="nav-cta">התחילו ללמוד</a>
 </nav>
-<button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="תפריט">☰</button>
+<button class="mob-btn" onclick="document.getElementById('nav').classList.toggle('open')" aria-label="תפריט">☰</button>
 </div>
 </header>
 
-<!-- Hero -->
 <section class="hero">
-<span class="hero-badge">🎓 תוכנית הכשרה ממשלתית מלאה</span>
-<h1>אקדמיית AI למובילי המגזר הציבורי</h1>
-<p>12 יחידות לימוד מעשיות, מסילבוס בסיסי ועד RAG ו-Claude Code. תוכנית מקיפה שנבנתה במיוחד עבור ~1,000 מובילי AI בממשלת ישראל.</p>
-<div class="hero-stats">
-<div class="hero-stat"><div class="num">12</div><div class="label">יחידות לימוד</div></div>
-<div class="hero-stat"><div class="num">6</div><div class="label">תחומי ידע</div></div>
-<div class="hero-stat"><div class="num">50+</div><div class="label">פרומפטים מוכנים</div></div>
-<div class="hero-stat"><div class="num">24</div><div class="label">שבועות</div></div>
+<div class="hero-badge"><span class="dot"></span> תוכנית הכשרה ממשלתית פעילה</div>
+<h1>אקדמיית <span class="hl">AI</span><br>למובילי המגזר הציבורי</h1>
+<p>12 יחידות לימוד מעשיות, מסילבוס בסיסי ועד RAG ו-Claude Code. נבנתה עבור ~1,000 מובילי AI בממשלת ישראל.</p>
+<div class="hero-nums">
+<div class="hero-num"><strong>12</strong><span>יחידות לימוד</span></div>
+<div class="hero-num"><strong>6</strong><span>תחומי ידע</span></div>
+<div class="hero-num"><strong>50+</strong><span>פרומפטים מוכנים</span></div>
 </div>
-<div class="hero-actions">
-<a href="#courses" class="btn-primary">התחילו ללמוד →</a>
-<a href="#syllabus" class="btn-secondary">צפו בסילבוס</a>
+<div class="hero-btns">
+<a href="#courses" class="btn-a">התחילו ללמוד →</a>
+<a href="#syllabus" class="btn-b">צפו בסילבוס</a>
+</div>
+<div class="badge-row">
+<span class="badge-pill">🏛️ מבוסס Anthropic AI Fluency</span>
+<span class="badge-pill">🔧 נבנה עם ~6 כלי AI במקביל</span>
+<span class="badge-pill">📋 מותאם לממשלת ישראל</span>
 </div>
 </section>
+<style>
+/* ===== PROGRESS ===== */
+.prog-sec{max-width:1140px;margin:0 auto 80px;padding:0 24px}
+.prog-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px 36px;display:flex;align-items:center;gap:32px;box-shadow:var(--shadow-s);position:relative;overflow:hidden}
+.prog-card::before{content:'';position:absolute;top:0;right:0;left:0;height:2px;background:var(--grad);background-size:200% 200%;animation:mesh 4s ease infinite}
+.ring-w{flex-shrink:0;position:relative;width:100px;height:100px}
+.ring-w svg{transform:rotate(-90deg)}
+.ring-bg{fill:none;stroke:var(--border);stroke-width:6}
+.ring-f{fill:none;stroke:url(#rGrad);stroke-width:6;stroke-linecap:round;transition:stroke-dashoffset .8s ease}
+.ring-pct{position:absolute;inset:0;display:grid;place-items:center;font-size:1.4rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.prog-info{flex:1}
+.prog-info h3{font-size:1.1rem;font-weight:700;margin-bottom:4px}
+.prog-info p{color:var(--text2);font-size:.86rem;margin-bottom:14px}
+.bar{height:6px;background:var(--border);border-radius:3px;overflow:hidden}
+.bar-f{height:100%;background:var(--grad);background-size:200% 200%;animation:mesh 4s ease infinite;border-radius:3px;transition:width .8s ease}
+.prog-meta{font-size:.78rem;color:var(--text3);margin-top:8px}
+/* ===== SECTIONS ===== */
+.sec{max-width:1140px;margin:0 auto 90px;padding:0 24px}
+.sec-eye{font-size:.72rem;font-weight:700;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+.sec-title{font-size:2rem;font-weight:800;margin-bottom:8px;letter-spacing:-.02em}
+.sec-sub{color:var(--text2);font-size:.95rem;margin-bottom:40px;max-width:500px;line-height:1.85}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+/* ===== DOMAIN CARDS ===== */
+.dc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;transition:all .3s;box-shadow:var(--shadow-s)}
+.dc:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:var(--shadow-m)}
+[data-theme="dark"] .dc:hover{box-shadow:var(--glow)}
+.dc-i{width:44px;height:44px;border-radius:10px;display:grid;place-items:center;font-size:1.3rem;margin-bottom:14px}
+.dc h3{font-size:1rem;font-weight:700;margin-bottom:5px}
+.dc p{color:var(--text2);font-size:.84rem;line-height:1.65}
+.dc-t{margin-top:12px;font-size:.72rem;color:var(--accent);font-weight:600}
+</style>
 
-<!-- Progress Dashboard -->
-<section class="dashboard" id="dashboard">
-<div class="dashboard-card">
-<div class="progress-ring-wrap">
-<svg width="120" height="120" viewBox="0 0 120 120">
-<circle class="progress-ring-bg" cx="60" cy="60" r="52"/>
-<circle class="progress-ring-fill" id="progressRing" cx="60" cy="60" r="52" stroke-dasharray="326.73" stroke-dashoffset="326.73"/>
+<section class="prog-sec">
+<div class="prog-card">
+<div class="ring-w">
+<svg width="100" height="100" viewBox="0 0 100 100">
+<defs><linearGradient id="rGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:var(--accent)"/><stop offset="100%" style="stop-color:var(--purple)"/></linearGradient></defs>
+<circle class="ring-bg" cx="50" cy="50" r="44"/>
+<circle class="ring-f" id="pRing" cx="50" cy="50" r="44" stroke-dasharray="276.46" stroke-dashoffset="276.46"/>
 </svg>
-<div class="progress-pct" id="progressPct">0%</div>
+<div class="ring-pct" id="pPct">0%</div>
 </div>
-<div class="dashboard-info">
-<h2>ההתקדמות שלך</h2>
-<p id="progressText">עוד לא התחלת — בחר/י יחידה והתחל/י ללמוד</p>
-<div class="dashboard-bar"><div class="dashboard-bar-fill" id="progressBar" style="width:0%"></div></div>
-<div class="dashboard-meta" id="progressMeta">0 מתוך 12 יחידות הושלמו</div>
-<a href="#courses" class="btn-primary resume-btn" id="resumeBtn" style="display:none">המשך ללמוד →</a>
-</div>
-</div>
-</section>
-
-<!-- Syllabus Section -->
-<style>
-.syllabus{max-width:1100px;margin:0 auto 80px;padding:0 24px}
-.section-label{font-family:'Heebo',sans-serif;font-size:.8rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
-.section-title{font-size:2rem;font-weight:800;margin-bottom:8px}
-.section-sub{color:var(--text2);font-size:1rem;margin-bottom:40px;max-width:600px}
-.domains-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.domain-card{background:var(--card-bg);border:1px solid var(--border);border-radius:14px;padding:28px;transition:all .2s}
-.domain-card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.06)}
-.domain-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:16px}
-.domain-card h3{font-size:1.1rem;font-weight:700;margin-bottom:6px}
-.domain-card p{color:var(--text2);font-size:.9rem;line-height:1.6;font-family:'Heebo',sans-serif}
-.domain-courses{margin-top:12px;font-size:.8rem;color:var(--text2);font-family:'Heebo',sans-serif}
-</style>
-
-<section class="syllabus" id="syllabus">
-<div class="section-label">סילבוס</div>
-<h2 class="section-title">6 תחומי ידע</h2>
-<p class="section-sub">מבסיס ועד מתקדם — תוכנית מובנית שמכסה את כל מה שמוביל AI בממשלה צריך לדעת</p>
-<div class="domains-grid">
-<div class="domain-card">
-<div class="domain-icon" style="background:rgba(61,140,111,.1)">🧠</div>
-<h3>בסיס AI</h3>
-<p>אוריינות AI, מפת המודלים, עבודה אחראית</p>
-<div class="domain-courses">יחידות 1-2</div>
-</div>
-<div class="domain-card">
-<div class="domain-icon" style="background:rgba(217,119,87,.1)">✍️</div>
-<h3>הנדסת הנחיות</h3>
-<p>Prompt Engineering, טכניקות מתקדמות, תגיות XML</p>
-<div class="domain-courses">יחידה 3</div>
-</div>
-<div class="domain-card">
-<div class="domain-icon" style="background:rgba(106,155,204,.1)">📝</div>
-<h3>כתיבה וניתוח</h3>
-<p>כתיבה ממשלתית, ניתוח נתונים, מחקר עם AI</p>
-<div class="domain-courses">יחידות 4-6</div>
-</div>
-<div class="domain-card">
-<div class="domain-icon" style="background:rgba(139,108,193,.1)">💡</div>
-<h3>חשיבה ואתיקה</h3>
-<p>חשיבה אסטרטגית, פתרון בעיות, אתיקה ובטיחות</p>
-<div class="domain-courses">יחידות 7-8</div>
-</div>
-<div class="domain-card">
-<div class="domain-icon" style="background:rgba(251,191,36,.1)">🏛️</div>
-<h3>AI בשירות הציבורי</h3>
-<p>שירות לאזרח, הנגשת מידע, אוטומציה</p>
-<div class="domain-courses">יחידות 9-10</div>
-</div>
-<div class="domain-card">
-<div class="domain-icon" style="background:rgba(56,189,248,.1)">💻</div>
-<h3>AI מתקדם וטכני</h3>
-<p>RAG, מאגרי ידע ארגוניים, Claude Code</p>
-<div class="domain-courses">יחידות 11-12</div>
+<div class="prog-info">
+<h3>ההתקדמות שלך</h3>
+<p id="pText">עוד לא התחלת — בחר/י יחידה והתחל/י ללמוד</p>
+<div class="bar"><div class="bar-f" id="pBar" style="width:0%"></div></div>
+<div class="prog-meta" id="pMeta">0 מתוך 12 יחידות הושלמו</div>
 </div>
 </div>
 </section>
 
-<!-- Learning Paths -->
+<section class="sec" id="syllabus">
+<div class="sec-eye">סילבוס</div>
+<h2 class="sec-title">6 תחומי ידע</h2>
+<p class="sec-sub">מבסיס ועד מתקדם — תוכנית מובנית שמכסה את כל מה שמוביל AI בממשלה צריך</p>
+<div class="g3">
+<div class="dc anim"><div class="dc-i" style="background:rgba(5,150,105,.08)">🧠</div><h3>בסיס AI</h3><p>אוריינות AI, מפת המודלים, עבודה אחראית</p><div class="dc-t">יחידות 1-2</div></div>
+<div class="dc anim"><div class="dc-i" style="background:rgba(217,119,6,.08)">✍️</div><h3>הנדסת הנחיות</h3><p>Prompt Engineering, טכניקות מתקדמות, XML</p><div class="dc-t">יחידה 3</div></div>
+<div class="dc anim"><div class="dc-i" style="background:rgba(37,99,235,.08)">📝</div><h3>כתיבה וניתוח</h3><p>כתיבה ממשלתית, ניתוח נתונים, מחקר</p><div class="dc-t">יחידות 4-6</div></div>
+<div class="dc anim"><div class="dc-i" style="background:rgba(124,58,237,.08)">💡</div><h3>חשיבה ואתיקה</h3><p>חשיבה אסטרטגית, פתרון בעיות, אתיקה</p><div class="dc-t">יחידות 7-8</div></div>
+<div class="dc anim"><div class="dc-i" style="background:rgba(251,191,36,.08)">🏛️</div><h3>AI בשירות הציבורי</h3><p>שירות לאזרח, הנגשת מידע, אוטומציה</p><div class="dc-t">יחידות 9-10</div></div>
+<div class="dc anim"><div class="dc-i" style="background:rgba(6,182,212,.08)">💻</div><h3>AI מתקדם וטכני</h3><p>RAG, מאגרי ידע ארגוניים, Claude Code</p><div class="dc-t">יחידות 11-12</div></div>
+</div>
+</section>
 <style>
-.paths{max-width:1100px;margin:0 auto 80px;padding:0 24px}
-.paths-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.path-card{background:var(--card-bg);border:1px solid var(--border);border-radius:14px;padding:28px;position:relative;overflow:hidden}
-.path-card::before{content:'';position:absolute;top:0;right:0;left:0;height:4px}
-.path-card.basic::before{background:var(--green)}
-.path-card.advanced::before{background:var(--accent)}
-.path-card.leader::before{background:var(--purple)}
-.path-tag{display:inline-block;padding:4px 12px;border-radius:50px;font-size:.75rem;font-weight:600;font-family:'Heebo',sans-serif;margin-bottom:14px}
-.path-card.basic .path-tag{background:rgba(61,140,111,.1);color:var(--green)}
-.path-card.advanced .path-tag{background:rgba(217,119,87,.1);color:var(--accent)}
-.path-card.leader .path-tag{background:rgba(139,108,193,.1);color:var(--purple)}
-.path-card h3{font-size:1.2rem;font-weight:700;margin-bottom:8px}
-.path-card p{color:var(--text2);font-size:.9rem;line-height:1.6;margin-bottom:16px;font-family:'Heebo',sans-serif}
-.path-courses{list-style:none;padding:0}
-.path-courses li{padding:6px 0;border-bottom:1px solid var(--border);font-size:.88rem;font-family:'Heebo',sans-serif;color:var(--text2)}
-.path-courses li:last-child{border:none}
-.path-courses li::before{content:'→ ';color:var(--accent)}
+/* ===== PATH CARDS ===== */
+.pc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;position:relative;overflow:hidden;transition:all .3s;box-shadow:var(--shadow-s)}
+.pc:hover{transform:translateY(-3px);box-shadow:var(--shadow-m)}
+[data-theme="dark"] .pc:hover{box-shadow:var(--glow)}
+.pc::before{content:'';position:absolute;top:0;right:0;left:0;height:3px}
+.pc.basic::before{background:var(--green)}.pc.adv::before{background:var(--accent)}.pc.lead::before{background:var(--purple)}
+.pt{display:inline-block;padding:4px 12px;border-radius:50px;font-size:.72rem;font-weight:600;margin-bottom:12px}
+.pc.basic .pt{background:rgba(5,150,105,.08);color:var(--green)}
+.pc.adv .pt{background:rgba(217,119,6,.08);color:var(--accent)}
+.pc.lead .pt{background:rgba(124,58,237,.08);color:var(--purple)}
+.pc h3{font-size:1.1rem;font-weight:700;margin-bottom:6px}
+.pc>p{color:var(--text2);font-size:.84rem;line-height:1.65;margin-bottom:14px}
+.pl{list-style:none;padding:0}.pl li{padding:7px 0;border-bottom:1px solid var(--border);font-size:.84rem;color:var(--text2)}.pl li:last-child{border:none}.pl li::before{content:'← ';color:var(--accent);font-weight:600}
+/* ===== COURSE CARDS ===== */
+.cc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px;transition:all .3s;position:relative;display:flex;flex-direction:column;overflow:hidden;box-shadow:var(--shadow-s)}
+.cc::after{content:'';position:absolute;bottom:0;right:0;left:0;height:2px;background:var(--grad);background-size:200% 200%;animation:mesh 5s ease infinite;opacity:0;transition:opacity .3s}
+.cc:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:var(--shadow-m)}
+.cc:hover::after{opacity:1}
+[data-theme="dark"] .cc:hover{box-shadow:var(--glow)}
+.cc-n{font-size:.74rem;font-weight:600;color:var(--text3);margin-bottom:8px}
+.cc h3{font-size:.98rem;font-weight:700;margin-bottom:6px;line-height:1.4}
+.cc-d{color:var(--text2);font-size:.83rem;line-height:1.65;margin-bottom:14px;flex:1}
+.cc-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.cc-tag{font-size:.68rem;padding:3px 10px;border-radius:50px;background:var(--bg2);color:var(--text3);border:1px solid var(--border)}
+.cc-link{font-size:.85rem;font-weight:600;color:var(--accent)}
+.cc-done{position:absolute;top:14px;left:14px;width:24px;height:24px;border-radius:50%;background:var(--green);color:#fff;display:none;place-items:center;font-size:.75rem;box-shadow:0 2px 8px rgba(5,150,105,.25)}
 </style>
 
-<section class="paths" id="paths">
-<div class="section-label">מסלולי למידה</div>
-<h2 class="section-title">3 מסלולים מותאמים</h2>
-<p class="section-sub">בחרו את המסלול שמתאים לתפקיד ולרמה שלכם</p>
-<div class="paths-grid">
-<div class="path-card basic">
-<span class="path-tag">🟢 בסיסי</span>
-<h3>כל עובד מדינה</h3>
-<p>בסיס AI, כתיבה, ואתיקה — חובה לכל עובד שמשתמש ב-AI</p>
-<ul class="path-courses">
-<li>אוריינות AI ועבודה אחראית</li>
-<li>הנדסת הנחיות</li>
-<li>כתיבה ותקשורת עם AI</li>
-<li>אתיקה ובטיחות AI</li>
-</ul>
-</div>
-<div class="path-card advanced">
-<span class="path-tag">🟠 מתקדם</span>
-<h3>מנהלים ומובילים</h3>
-<p>ניתוח, מחקר, חשיבה אסטרטגית ואוטומציה — למי שרוצה להוביל</p>
-<ul class="path-courses">
-<li>מפת המודלים</li>
-<li>ניתוח נתונים עם AI</li>
-<li>חיפוש ומחקר</li>
-<li>חשיבה ופתרון בעיות</li>
-<li>שירות הציבור</li>
-<li>אוטומציה ותהליכי עבודה</li>
-</ul>
-</div>
-<div class="path-card leader">
-<span class="path-tag">🟣 מוביל AI</span>
-<h3>מובילי AI וצוותי IT</h3>
-<p>RAG, Claude Code, וכלים טכניים — למי שמוביל את הטרנספורמציה</p>
-<ul class="path-courses">
-<li>כל 10 היחידות הקודמות</li>
-<li>RAG — חיבור AI למאגרי ידע</li>
-<li>Claude Code — למפתחים</li>
-</ul>
-</div>
+<section class="sec" id="paths">
+<div class="sec-eye">מסלולי למידה</div>
+<h2 class="sec-title">3 מסלולים מותאמים</h2>
+<p class="sec-sub">בחרו את המסלול שמתאים לתפקיד ולרמה שלכם</p>
+<div class="g3">
+<div class="pc basic anim"><span class="pt">בסיסי</span><h3>כל עובד מדינה</h3><p>בסיס AI, כתיבה, ואתיקה — חובה לכל עובד</p><ul class="pl"><li>אוריינות AI ועבודה אחראית</li><li>הנדסת הנחיות</li><li>כתיבה ותקשורת עם AI</li><li>אתיקה ובטיחות AI</li></ul></div>
+<div class="pc adv anim"><span class="pt">מתקדם</span><h3>מנהלים ומובילים</h3><p>ניתוח, מחקר, חשיבה אסטרטגית ואוטומציה</p><ul class="pl"><li>מפת המודלים</li><li>ניתוח נתונים עם AI</li><li>חיפוש ומחקר</li><li>חשיבה ופתרון בעיות</li><li>שירות הציבור</li><li>אוטומציה ותהליכי עבודה</li></ul></div>
+<div class="pc lead anim"><span class="pt">מוביל AI</span><h3>מובילי AI וצוותי IT</h3><p>RAG, Claude Code, וכלים טכניים</p><ul class="pl"><li>כל 10 היחידות הקודמות</li><li>RAG — חיבור AI למאגרי ידע</li><li>Claude Code — למפתחים</li></ul></div>
 </div>
 </section>
 
-<!-- Courses Section -->
+<section class="sec" id="courses">
+<div class="sec-eye">יחידות לימוד</div>
+<h2 class="sec-title">12 יחידות מעשיות</h2>
+<p class="sec-sub">כל יחידה כוללת תיאוריה, פרומפטים מוכנים, תרגילים ושאלות בדיקה</p>
+<div class="g3" id="coursesGrid"></div>
+</section>
 <style>
-.courses{max-width:1100px;margin:0 auto 80px;padding:0 24px}
-.courses-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.course-card{background:var(--card-bg);border:1px solid var(--border);border-radius:14px;padding:24px;transition:all .2s;position:relative;display:flex;flex-direction:column}
-.course-card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.06)}
-.course-num{font-family:'Heebo',sans-serif;font-size:.75rem;font-weight:700;color:var(--text2);margin-bottom:8px}
-.course-card h3{font-size:1.05rem;font-weight:700;margin-bottom:8px;line-height:1.4}
-.course-card .course-desc{color:var(--text2);font-size:.88rem;line-height:1.6;margin-bottom:16px;flex:1;font-family:'Heebo',sans-serif}
-.course-card-meta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px}
-.course-card-tag{font-size:.75rem;padding:3px 10px;border-radius:50px;font-family:'Heebo',sans-serif;font-weight:500;background:rgba(217,119,87,.08);color:var(--accent)}
-.course-card-link{font-family:'Heebo',sans-serif;font-size:.9rem;font-weight:600;color:var(--accent);display:flex;align-items:center;gap:6px}
-.course-card-link:hover{color:#b8603f}
-.course-done-badge{position:absolute;top:16px;left:16px;width:28px;height:28px;border-radius:50%;background:var(--green);color:#fff;display:none;align-items:center;justify-content:center;font-size:.85rem}
+/* ===== CTA BANNER ===== */
+.cta-w{max-width:1140px;margin:0 auto 90px;padding:0 24px}
+.cta-box{border-radius:20px;padding:52px 36px;text-align:center;position:relative;overflow:hidden;background:var(--bg2);border:1px solid var(--border)}
+.cta-box::before{content:'';position:absolute;inset:0;background:var(--hero-glow);pointer-events:none}
+.cta-box::after{content:'';position:absolute;top:0;right:0;left:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent),var(--purple),transparent);opacity:.5}
+.cta-box h2{font-size:1.8rem;font-weight:800;margin-bottom:10px;position:relative;z-index:1}
+.cta-box p{color:var(--text2);font-size:.95rem;margin-bottom:24px;position:relative;z-index:1;max-width:460px;margin-left:auto;margin-right:auto;line-height:1.8}
+/* ===== ABOUT ===== */
+.about-sec{max-width:700px;margin:0 auto 90px;padding:0 24px;text-align:center}
+.about-sec p{color:var(--text2);font-size:.98rem;line-height:1.9;margin-bottom:14px}
+.credit{display:inline-flex;flex-direction:column;align-items:center;gap:8px;margin-top:24px;padding:28px 40px;background:var(--card);border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow-s)}
+.credit .av{width:52px;height:52px;border-radius:50%;background:var(--grad);background-size:200% 200%;animation:mesh 5s ease infinite;display:grid;place-items:center;color:#fff;font-size:1.2rem;font-weight:800}
+.credit .nm{font-size:1rem;font-weight:700}
+.credit .rl{font-size:.84rem;color:var(--text2)}
+/* ===== SHARE SECTION ===== */
+.share-sec{max-width:700px;margin:0 auto 90px;padding:0 24px;text-align:center}
+.share-sec h3{font-size:1.2rem;font-weight:700;margin-bottom:8px}
+.share-sec p{color:var(--text2);font-size:.9rem;margin-bottom:18px}
+.share-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.sh-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 22px;border-radius:10px;font-weight:600;font-size:.85rem;border:none;cursor:pointer;transition:all .25s;color:#fff}
+.sh-btn:hover{transform:translateY(-2px);color:#fff}
+.sh-wa{background:#25d366;box-shadow:0 3px 12px rgba(37,211,102,.2)}.sh-wa:hover{background:#1da851}
+.sh-fb{background:#1877F2;box-shadow:0 3px 12px rgba(24,119,242,.2)}.sh-fb:hover{background:#1565C0}
+.sh-li{background:#0A66C2;box-shadow:0 3px 12px rgba(10,102,194,.2)}.sh-li:hover{background:#084E96}
+/* ===== FOOTER ===== */
+.ftr{border-top:1px solid var(--border);padding:40px 24px;text-align:center;transition:background .4s}
+.ftr-logo{font-size:1rem;font-weight:700;margin-bottom:6px;color:var(--text)}
+.ftr-line{width:36px;height:2px;background:var(--grad);margin:10px auto;border-radius:1px}
+.ftr-txt{color:var(--text3);font-size:.78rem;line-height:1.9}
+.ftr-links{margin-top:14px;display:flex;gap:20px;justify-content:center;flex-wrap:wrap}
+.ftr-links a{color:var(--text3);font-size:.78rem}.ftr-links a:hover{color:var(--accent)}
 </style>
 
-<section class="courses" id="courses">
-<div class="section-label">יחידות לימוד</div>
-<h2 class="section-title">12 יחידות מעשיות</h2>
-<p class="section-sub">כל יחידה כוללת תיאוריה, פרומפטים מוכנים, תרגילים ושאלות בדיקה</p>
-<div class="courses-grid" id="coursesGrid"></div>
+<section class="cta-w">
+<div class="cta-box">
+<h2>מוכנים להתחיל?</h2>
+<p>הצטרפו ל-1,000 מובילי AI במגזר הציבורי שכבר לומדים. בחרו יחידה והתחילו — בקצב שלכם.</p>
+<a href="#courses" class="btn-a" style="position:relative;z-index:1">בחרו יחידה והתחילו →</a>
+</div>
 </section>
 
-<!-- About Section -->
-<style>
-.about{max-width:800px;margin:0 auto 80px;padding:0 24px;text-align:center}
-.about p{color:var(--text2);font-size:1rem;line-height:1.8;margin-bottom:16px}
-.about .credit{font-family:'Heebo',sans-serif;font-size:.95rem;font-weight:600;color:var(--text);margin-top:24px}
-.about .credit-sub{font-family:'Heebo',sans-serif;font-size:.85rem;color:var(--text2)}
-.share-section{margin-top:32px;padding:24px;background:var(--card-bg);border:1px solid var(--border);border-radius:14px;display:inline-block}
-.share-section p{margin-bottom:12px;font-family:'Heebo',sans-serif;font-size:.9rem;color:var(--text2)}
-.share-btn{display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#fff;padding:10px 24px;border-radius:10px;font-family:'Heebo',sans-serif;font-weight:600;font-size:.9rem;border:none;cursor:pointer;transition:all .2s}
-.share-btn:hover{background:#1da851;color:#fff;transform:translateY(-1px)}
-</style>
-
-<section class="about" id="about">
-<div class="section-label">אודות</div>
-<h2 class="section-title">על המקפצה</h2>
-<p>תוכנית הכשרה ממשלתית מלאה ב-AI, שנבנתה עבור ~1,000 מובילי AI בממשלת ישראל. התוכנית מבוססת על סילבוסים של Anthropic ו-OpenAI, מותאמת לשפה העברית ולהקשר הממשלתי הישראלי.</p>
-<p>המטרה: להכשיר דור חדש של מובילי AI בשירות הציבורי — אנשים שיודעים לעבוד עם AI בצורה אחראית, יעילה ומעשית.</p>
-<div class="credit">אביעד יצחקי</div>
-<div class="credit-sub">מוביל AI ושותפויות, מינהלי גמלאות ביטוח לאומי</div>
-<div class="share-section">
-<p>שתפו את התוכנית עם עמיתים</p>
-<button class="share-btn" onclick="shareWhatsApp()">📱 שתפו בוואטסאפ</button>
+<section class="about-sec" id="about">
+<div class="sec-eye">אודות</div>
+<h2 class="sec-title">על המקפצה</h2>
+<p>תוכנית הכשרה ממשלתית מלאה ב-AI, שנבנתה עבור ~1,000 מובילי AI בממשלת ישראל. מבוססת על סילבוס Anthropic AI Fluency עם התאמות לממשלה, ונבנתה עם כ-6 כלי AI במקביל לתיקוף ולדיוק (שתמיד דינמי — לקחת בערבון מוגבל).</p>
+<p>נשמח לתגובות ופידבק!</p>
+<div class="credit">
+<div class="av">א</div>
+<div class="nm">אביעד יצחקי</div>
+<div class="rl">מוביל AI ושותפויות, מינהלי גמלאות ביטוח לאומי</div>
 </div>
 </section>
 
-<!-- Footer -->
-<style>
-.site-footer{border-top:1px solid var(--border);padding:40px 24px;text-align:center}
-.footer-inner{max-width:1100px;margin:0 auto}
-.footer-logo{font-family:'Heebo',sans-serif;font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:8px}
-.footer-text{color:var(--text2);font-size:.85rem;font-family:'Heebo',sans-serif;line-height:1.8}
-.footer-links{margin-top:16px;display:flex;gap:20px;justify-content:center;flex-wrap:wrap}
-.footer-links a{color:var(--text2);font-size:.85rem;font-family:'Heebo',sans-serif}
-.footer-links a:hover{color:var(--accent)}
-</style>
+<section class="share-sec">
+<h3>📣 שתפו עם קולגות, המשרד וחברים</h3>
+<p>הכירו לעמיתים את התוכנית — ככל שיותר אנשים לומדים, כך הארגון מתקדם</p>
+<div class="share-btns">
+<button class="sh-btn sh-wa" onclick="shareWA()">📱 וואטסאפ</button>
+<button class="sh-btn sh-fb" onclick="shareFB()">📘 פייסבוק</button>
+<button class="sh-btn sh-li" onclick="shareLI()">💼 לינקדאין</button>
+</div>
+</section>
 
-<footer class="site-footer">
-<div class="footer-inner">
-<div class="footer-logo">🚀 המקפצה</div>
-<div class="footer-text">
-מבוסס על Anthropic AI Fluency ו-OpenAI Academy<br>
-מותאם למובילי AI במגזר הציבורי בישראל © 2025
-</div>
-<div class="footer-links">
-<a href="#syllabus">סילבוס</a>
-<a href="#paths">מסלולים</a>
-<a href="#courses">יחידות לימוד</a>
-<a href="#about">אודות</a>
-</div>
-</div>
+<footer class="ftr">
+<div class="ftr-logo">🚀 המקפצה</div>
+<div class="ftr-line"></div>
+<div class="ftr-txt">מבוסס על Anthropic AI Fluency ו-OpenAI Academy · מותאם למגזר הציבורי © 2025</div>
+<div class="ftr-links"><a href="#syllabus">סילבוס</a><a href="#paths">מסלולים</a><a href="#courses">יחידות</a><a href="#about">אודות</a></div>
 </footer>
-
-<!-- Responsive CSS -->
 <style>
+/* ===== FEEDBACK FAB + MODAL ===== */
+.fb-fab{position:fixed;bottom:20px;left:20px;z-index:999;width:50px;height:50px;border-radius:50%;background:var(--grad);background-size:200% 200%;animation:mesh 5s ease infinite;color:#fff;font-size:1.3rem;border:none;cursor:pointer;box-shadow:0 4px 16px rgba(217,119,6,.25);transition:all .3s;display:grid;place-items:center}
+.fb-fab:hover{transform:scale(1.1)}
+.fb-modal{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;pointer-events:none;opacity:0;transition:opacity .3s}
+.fb-modal.open{pointer-events:all;opacity:1}
+.fb-bk{position:absolute;inset:0;background:var(--modal-overlay);backdrop-filter:blur(4px)}
+.fb-panel{position:relative;background:var(--bg);border:1px solid var(--border2);border-radius:16px;padding:24px;width:92%;max-width:400px;box-shadow:var(--shadow-l);transform:translateY(16px);transition:transform .3s}
+.fb-modal.open .fb-panel{transform:translateY(0)}
+.fb-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.fb-hdr h3{font-size:1.05rem;font-weight:700;margin:0}
+.fb-x{background:none;border:none;font-size:1.1rem;cursor:pointer;color:var(--text3);padding:4px 8px;border-radius:6px}
+.fb-x:hover{background:var(--bg2)}
+.fb-inp{width:100%;padding:9px 12px;border:1px solid var(--border);border-radius:8px;font-family:'Heebo',sans-serif;font-size:.88rem;margin-bottom:10px;background:var(--bg2);color:var(--text);transition:border-color .2s}
+.fb-inp:focus{outline:none;border-color:var(--accent)}
+.fb-ta{min-height:90px;resize:vertical}
+.fb-sub{width:100%;padding:10px;border:none;border-radius:8px;background:var(--grad);background-size:200% 200%;animation:mesh 5s ease infinite;color:#fff;font-weight:700;font-size:.9rem;cursor:pointer;transition:all .2s}
+.fb-sub:hover{transform:translateY(-1px)}.fb-sub:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.fb-ok{display:flex;align-items:center;justify-content:center;gap:8px;padding:18px;font-size:.95rem;color:var(--green);font-weight:600}
+.fb-ok span{font-size:1.4rem}
+
+/* ===== RESPONSIVE ===== */
 @media(max-width:900px){
-.domains-grid,.paths-grid,.courses-grid{grid-template-columns:repeat(2,1fr)}
-.hero h1{font-size:2.2rem}
-.nav-links{display:none;position:absolute;top:60px;right:0;left:0;background:var(--bg);border-bottom:1px solid var(--border);flex-direction:column;padding:20px 24px;gap:16px}
-.nav-links.open{display:flex}
-.mobile-menu-btn{display:block}
-.dashboard-card{flex-direction:column;text-align:center}
+  .g3{grid-template-columns:repeat(2,1fr)}
+  .hero h1{font-size:2.4rem}
+  .nav{display:none;position:absolute;top:52px;right:0;left:0;background:var(--header-bg);backdrop-filter:blur(20px);flex-direction:column;padding:18px 24px;gap:12px;border-bottom:1px solid var(--border);box-shadow:var(--shadow-m)}
+  .nav.open{display:flex}
+  .mob-btn{display:block}
+  .prog-card{flex-direction:column;text-align:center}
+  .cta-box{padding:36px 24px}
 }
 @media(max-width:600px){
-.domains-grid,.paths-grid,.courses-grid{grid-template-columns:1fr}
-.hero{padding:50px 20px 40px}
-.hero h1{font-size:1.8rem}
-.hero-stats{gap:24px}
-.hero-stat .num{font-size:1.5rem}
-.section-title{font-size:1.6rem}
-.dashboard-card{padding:24px}
+  .g3{grid-template-columns:1fr}
+  .hero{padding:60px 16px 50px}
+  .hero h1{font-size:1.9rem}
+  .hero-nums{gap:8px}
+  .hero-num{min-width:auto;padding:14px 18px}
+  .hero-num strong{font-size:1.7rem}
+  .sec-title{font-size:1.5rem}
+  .sec,.prog-sec,.cta-w,.about-sec,.share-sec{padding-right:16px;padding-left:16px}
+  .hdr-in{padding:0 14px}
+  .badge-row{flex-direction:column;align-items:center}
 }
-@media print{
-.site-header,.dashboard,.share-section,.nav-bottom,.site-footer{display:none}
-body{background:#fff}
-.course-card{break-inside:avoid;border:1px solid #ddd}
-}
+@media print{.hdr,.prog-sec,.share-sec,.cta-w,.ftr,.fb-fab{display:none}body{background:#fff;color:#000}}
 </style>
-
-<!-- JavaScript -->
 <script>
-const COURSES = [
-{id:1,title:'אוריינות AI ועבודה אחראית',desc:'מה AI יכול ומה לא, מסגרת 4D, כללי אתיקה ובטיחות',time:'35 דק׳',tags:['בסיסי','כל העובדים'],icon:'🧠'},
-{id:2,title:'מפת המודלים — במה להשתמש ומתי',desc:'ChatGPT, Claude, Gemini, Grok, Perplexity — חוזקות, שימושים וטבלת השוואה',time:'35 דק׳',tags:['בסיסי','5 מודלים'],icon:'🗺️'},
-{id:3,title:'הנדסת הנחיות (Prompt Engineering)',desc:'4 עקרונות, תגיות XML, ו-8 פרומפטים מוכנים לשימוש יומיומי',time:'35 דק׳',tags:['ישומי','8 פרומפטים'],icon:'✍️'},
-{id:4,title:'AI לכתיבה ותקשורת בשירות הציבורי',desc:'ניסוח מכתבים, הנגשת מידע, תרגום בירוקרטית לשפה פשוטה',time:'35 דק׳',tags:['ישומי','6 תבניות'],icon:'📝'},
-{id:5,title:'AI לניתוח נתונים וקבלת החלטות',desc:'ניתוח דוחות, חילוץ תובנות, סיכומים מנהליים — בלי Excel מתקדם',time:'40 דק׳',tags:['ישומי','5 תרגילים'],icon:'📊'},
-{id:6,title:'חיפוש ומחקר עם AI',desc:'מחקר מדיניות, סקירת ספרות, השוואת גישות בין מדינות',time:'35 דק׳',tags:['ישומי','4 תרגילים'],icon:'🔍'},
-{id:7,title:'AI לחשיבה אסטרטגית ופתרון בעיות',desc:'שרשרת חשיבה, ריבוי פרספקטיבות, Pre-Mortem, ניתוח סיכונים',time:'35 דק׳',tags:['מתקדם','5 תרגילים'],icon:'💡'},
-{id:8,title:'אתיקה, בטיחות ורגולציה של AI בממשלה',desc:'הטיות, פרטיות, שקיפות, קווים אדומים וצ׳קליסט לשימוש אחראי',time:'35 דק׳',tags:['חובה','כל העובדים'],icon:'🛡️'},
-{id:9,title:'AI לשירות הציבור והנגשת מידע',desc:'שיפור חוויית האזרח, שפה פשוטה, צ׳אטבוטים ממשלתיים',time:'35 דק׳',tags:['ישומי','שירות ציבורי'],icon:'🏛️'},
-{id:10,title:'אוטומציה ותהליכי עבודה עם AI',desc:'זיהוי תהליכים, בניית Workflows, חיסכון בזמן ושיפור יעילות',time:'40 דק׳',tags:['מתקדם','אוטומציה'],icon:'⚙️'},
-{id:11,title:'RAG — חיבור AI למאגרי ידע ארגוניים',desc:'Retrieval Augmented Generation — תשובות מדויקות מהמידע הפנימי שלכם',time:'40 דק׳',tags:['מתקדם','ארגוני'],icon:'🗄️'},
-{id:12,title:'Claude Code — למפתחים וצוותי IT',desc:'פיתוח עם Claude Code, אוטומציה טכנית, סקריפטים ועבודה עם API',time:'40 דק׳',tags:['טכני','מפתחים'],icon:'💻'}
+// ===== DATA =====
+const C=[
+{id:1,t:'אוריינות AI ועבודה אחראית',d:'מה AI יכול ומה לא, מסגרת 4D, כללי אתיקה ובטיחות',m:'35 דק׳',tags:['בסיסי','כל העובדים'],i:'🧠'},
+{id:2,t:'מפת המודלים — במה להשתמש ומתי',d:'ChatGPT, Claude, Gemini, Grok, Perplexity — חוזקות ושימושים',m:'35 דק׳',tags:['בסיסי','5 מודלים'],i:'🗺️'},
+{id:3,t:'הנדסת הנחיות (Prompt Engineering)',d:'4 עקרונות, תגיות XML, ו-8 פרומפטים מוכנים',m:'35 דק׳',tags:['ישומי','8 פרומפטים'],i:'✍️'},
+{id:4,t:'AI לכתיבה ותקשורת בשירות הציבורי',d:'ניסוח מכתבים, הנגשת מידע, תרגום בירוקרטית',m:'35 דק׳',tags:['ישומי','6 תבניות'],i:'📝'},
+{id:5,t:'AI לניתוח נתונים וקבלת החלטות',d:'ניתוח דוחות, חילוץ תובנות, סיכומים מנהליים',m:'40 דק׳',tags:['ישומי','5 תרגילים'],i:'📊'},
+{id:6,t:'חיפוש ומחקר עם AI',d:'מחקר מדיניות, סקירת ספרות, השוואת גישות',m:'35 דק׳',tags:['ישומי','4 תרגילים'],i:'🔍'},
+{id:7,t:'AI לחשיבה אסטרטגית ופתרון בעיות',d:'שרשרת חשיבה, ריבוי פרספקטיבות, Pre-Mortem',m:'35 דק׳',tags:['מתקדם','5 תרגילים'],i:'💡'},
+{id:8,t:'אתיקה, בטיחות ורגולציה של AI בממשלה',d:'הטיות, פרטיות, שקיפות, קווים אדומים',m:'35 דק׳',tags:['חובה','כל העובדים'],i:'🛡️'},
+{id:9,t:'AI לשירות הציבור והנגשת מידע',d:'שיפור חוויית האזרח, שפה פשוטה, צ׳אטבוטים',m:'35 דק׳',tags:['ישומי','שירות ציבורי'],i:'🏛️'},
+{id:10,t:'אוטומציה ותהליכי עבודה עם AI',d:'זיהוי תהליכים, בניית Workflows, חיסכון בזמן',m:'40 דק׳',tags:['מתקדם','אוטומציה'],i:'⚙️'},
+{id:11,t:'RAG — חיבור AI למאגרי ידע ארגוניים',d:'תשובות מדויקות מהמידע הפנימי שלכם',m:'40 דק׳',tags:['מתקדם','ארגוני'],i:'🗄️'},
+{id:12,t:'Claude Code — למפתחים וצוותי IT',d:'פיתוח עם Claude Code, אוטומציה טכנית, API',m:'40 דק׳',tags:['טכני','מפתחים'],i:'💻'}
 ];
-</script>
+const SITE='https://avi1840.github.io/ai-academy/site/';
+const SHARE_TEXT='🚀 המקפצה — אקדמיית AI למובילי המגזר הציבורי\n\n12 יחידות לימוד מעשיות ב-AI, מותאמות לעובדי מדינה.\n\n'+SITE+'index.html';
 
+// ===== PROGRESS =====
+function getP(){try{return JSON.parse(localStorage.getItem('hamakpetza_progress')||'{}')}catch(e){return{}}}
+function render(){
+const g=document.getElementById('coursesGrid'),p=getP();if(!g)return;
+g.innerHTML=C.map(c=>{const done=p['course_'+c.id];return`<a href="course${c.id}.html" class="cc anim" style="text-decoration:none;color:inherit"><div class="cc-done" style="display:${done?'grid':'none'}">✓</div><div class="cc-n">${c.i} יחידה ${c.id}</div><h3>${c.t}</h3><div class="cc-d">${c.d}</div><div class="cc-tags">${c.tags.map(t=>`<span class="cc-tag">${t}</span>`).join('')}<span class="cc-tag">⏱ ${c.m}</span></div><span class="cc-link">התחילו ללמוד ←</span></a>`}).join('');
+setTimeout(initObs,100);
+}
+</script>
 <script>
-// Progress tracking
-function getProgress(){try{return JSON.parse(localStorage.getItem('hamakpetza_progress')||'{}');}catch(e){return {};}}
-function setProgress(p){localStorage.setItem('hamakpetza_progress',JSON.stringify(p));}
-function getCompletedCount(){return Object.values(getProgress()).filter(v=>v).length;}
-
-// Render courses
-function renderCourses(){
-const grid=document.getElementById('coursesGrid');
-const progress=getProgress();
-grid.innerHTML=COURSES.map(c=>{
-const done=progress['course_'+c.id];
-return `<a href="course${c.id}.html" class="course-card" style="text-decoration:none;color:inherit">
-<div class="course-done-badge" style="display:${done?'flex':'none'}">✓</div>
-<div class="course-num">${c.icon} יחידה ${c.id}</div>
-<h3>${c.title}</h3>
-<div class="course-desc">${c.desc}</div>
-<div class="course-card-meta">${c.tags.map(t=>`<span class="course-card-tag">${t}</span>`).join('')}<span class="course-card-tag">⏱ ${c.time}</span></div>
-<span class="course-card-link">התחילו ללמוד ←</span>
-</a>`;
-}).join('');
+function updateP(){
+const cnt=Object.values(getP()).filter(v=>v).length,pct=Math.round(cnt/12*100),circ=2*Math.PI*44,off=circ-(pct/100)*circ;
+const r=document.getElementById('pRing');if(r)r.style.strokeDashoffset=off;
+const pp=document.getElementById('pPct');if(pp)pp.textContent=pct+'%';
+const pb=document.getElementById('pBar');if(pb)pb.style.width=pct+'%';
+const pm=document.getElementById('pMeta');if(pm)pm.textContent=cnt+' מתוך 12 יחידות הושלמו';
+const pt=document.getElementById('pText');
+if(pt){if(cnt===0)pt.textContent='עוד לא התחלת — בחר/י יחידה והתחל/י ללמוד';
+else if(cnt===12)pt.textContent='🎉 כל הכבוד! השלמת את כל 12 היחידות';
+else{const n=C.find(c=>!getP()['course_'+c.id]);pt.textContent='היחידה הבאה: '+n.t;}}
 }
 
-// Update dashboard
-function updateDashboard(){
-const count=getCompletedCount();
-const pct=Math.round((count/12)*100);
-const circumference=2*Math.PI*52;
-const offset=circumference-(pct/100)*circumference;
-document.getElementById('progressRing').style.strokeDashoffset=offset;
-document.getElementById('progressPct').textContent=pct+'%';
-document.getElementById('progressBar').style.width=pct+'%';
-document.getElementById('progressMeta').textContent=count+' מתוך 12 יחידות הושלמו';
-const resumeBtn=document.getElementById('resumeBtn');
-const progressText=document.getElementById('progressText');
-if(count===0){progressText.textContent='עוד לא התחלת — בחר/י יחידה והתחל/י ללמוד';resumeBtn.style.display='none';}
-else if(count===12){progressText.textContent='🎉 כל הכבוד! השלמת את כל 12 היחידות';resumeBtn.style.display='none';}
-else{
-const next=COURSES.find(c=>!getProgress()['course_'+c.id]);
-progressText.textContent='היחידה הבאה: '+next.title;
-resumeBtn.href='course'+next.id+'.html';
-resumeBtn.style.display='inline-block';
+// ===== THEME =====
+function toggleTheme(){
+const html=document.documentElement;
+const next=html.getAttribute('data-theme')==='dark'?'light':'dark';
+html.setAttribute('data-theme',next);
+localStorage.setItem('hamakpetza_theme',next);
+document.getElementById('thmBtn').textContent=next==='dark'?'☀️':'🌙';
 }
+function loadTheme(){
+const saved=localStorage.getItem('hamakpetza_theme');
+if(saved){document.documentElement.setAttribute('data-theme',saved);document.getElementById('thmBtn').textContent=saved==='dark'?'☀️':'🌙';}
 }
 
-// WhatsApp share
-function shareWhatsApp(){
-const text='🚀 המקפצה — אקדמיית AI למובילי המגזר הציבורי\n\n12 יחידות לימוד מעשיות ב-AI, מותאמות לעובדי מדינה.\nסילבוס, תרגולים, פרומפטים מוכנים ודשבורד למידה.\n\nhttps://avi1840.github.io/ai-academy/site/index.html';
-window.open('https://wa.me/?text='+encodeURIComponent(text),'_blank');
+// ===== SHARE =====
+function shareWA(){window.open('https://wa.me/?text='+encodeURIComponent(SHARE_TEXT),'_blank')}
+function shareFB(){window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(SITE+'index.html'),'_blank')}
+function shareLI(){window.open('https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(SITE+'index.html'),'_blank')}
+
+// ===== FEEDBACK =====
+const SHEET_URL="https://script.google.com/macros/s/AKfycbwD8CMFoP5XoOwRLwK_OxMMOFKF8fS2CRpbJkNdOHjbnJIepkOLzlGrg3GQNGRqbwB6bA/exec";
+const APP_NAME="המקפצה";
+async function sendFB(o){await fetch(SHEET_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/json"},body:JSON.stringify({app:APP_NAME,name:o.name||"אנונימי",category:o.category||"כללי",severity:o.severity||"—",text:o.text,page:o.page||location.pathname})})}
+function initFeedback(){
+const b=document.createElement('button');b.className='fb-fab';b.innerHTML='💬';b.title='שלחו משוב';
+b.onclick=()=>document.getElementById('fbModal').classList.add('open');document.body.appendChild(b);
+const m=document.createElement('div');m.id='fbModal';m.className='fb-modal';
+m.innerHTML='<div class="fb-bk" onclick="closeFB()"></div><div class="fb-panel"><div class="fb-hdr"><h3>💬 שלחו משוב</h3><button class="fb-x" onclick="closeFB()">✕</button></div><form id="fbForm" onsubmit="submitFB(event)"><input type="text" id="fbN" placeholder="שם (אופציונלי)" class="fb-inp"><select id="fbC" class="fb-inp"><option value="כללי">כללי</option><option value="באג">באג</option><option value="שיפור">שיפור</option><option value="תוכן">תוכן</option><option value="עיצוב">עיצוב</option></select><select id="fbS" class="fb-inp"><option value="—">חומרה (אופציונלי)</option><option value="קריטי">קריטי</option><option value="שיפור">שיפור</option><option value="קטן">קטן</option></select><textarea id="fbT" placeholder="מה תרצו לשפר?" class="fb-inp fb-ta" required></textarea><button type="submit" class="fb-sub" id="fbBtn">שליחה</button></form><div id="fbOk" class="fb-ok" style="display:none"><span>✅</span> תודה! המשוב נשלח</div></div>';
+document.body.appendChild(m);
 }
+function closeFB(){document.getElementById('fbModal').classList.remove('open')}
+async function submitFB(e){e.preventDefault();const b=document.getElementById('fbBtn');b.textContent='שולח...';b.disabled=true;
+await sendFB({name:document.getElementById('fbN').value,category:document.getElementById('fbC').value,severity:document.getElementById('fbS').value,text:document.getElementById('fbT').value});
+document.getElementById('fbForm').style.display='none';document.getElementById('fbOk').style.display='flex';
+setTimeout(()=>{closeFB();document.getElementById('fbForm').style.display='';document.getElementById('fbForm').reset();document.getElementById('fbOk').style.display='none';b.textContent='שליחה';b.disabled=false},2500)}
 
-// Mobile menu
-function toggleMenu(){document.getElementById('navLinks').classList.toggle('open');}
+// ===== SCROLL + OBSERVER =====
+function initObs(){
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')})},{threshold:.1});
+document.querySelectorAll('.anim').forEach((el,i)=>{el.style.transitionDelay=(i*.04)+'s';obs.observe(el)});
+}
+window.addEventListener('scroll',()=>{document.getElementById('hdr').classList.toggle('scrolled',scrollY>20)});
 
-// Init
-renderCourses();
-updateDashboard();
+// ===== INIT =====
+document.addEventListener('DOMContentLoaded',()=>{loadTheme();render();updateP();initFeedback();initObs()});
 </script>
-</body>
-</html>
