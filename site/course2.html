@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="he" dir="rtl" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,157 +8,278 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Frank+Ruhl+Libre:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+<style>body{transition:background .4s,color .4s}</style>
+<script>var t=localStorage.getItem("hamakpetza_theme");if(t)document.documentElement.setAttribute("data-theme",t);</script>
 </head>
-<body>
-<nav class="topbar"><div class="topbar-right"><a href="index.html" class="back-btn">→ חזרה למקפצה</a><span class="topbar-title">יחידה 2 מתוך 12</span></div></nav>
 
+<body>
+
+<nav class="topbar"><div class="topbar-right"><a href="index.html" class="back-btn">→ חזרה למקפצה</a><span class="topbar-title">יחידה 2 מתוך 12</span></div><button class="thm-course" id="thmCourse" onclick="toggleCourseTheme()" title="מצב כהה / בהיר">🌙</button></nav>
 <header class="course-hero">
+
 <span class="course-badge" style="background:rgba(139,108,193,.1);color:var(--purple)">🗺️ בסיס — לכל מובילי AI</span>
+
 <h1>מפת המודלים — במה להשתמש ומתי</h1>
+
 <p class="sub">השאלה הכי נפוצה: 'באיזה AI להשתמש?' — הנה המדריך המלא עם חוזקות, שימושים, Pro Tips וטבלת השוואה</p>
+
 <div class="meta-row">
+
 <span class="meta-item">⏱ 35 דקות</span>
+
 <span class="meta-item">🗺️ 5 מודלים</span>
+
 <span class="meta-item">❓ 5 שאלות בדיקה</span>
+
 </div>
 </header>
 
 <main class="content">
+
 <div class="section">
+
 <div class="section-head"><div class="section-icon" style="background:rgba(139,108,193,.1)">🧩</div><h2>חלק א׳: למה חשוב להכיר כמה מודלים?</h2></div>
+
 <div class="card-box">
+
 <p>כל מודל AI חזק בדברים שונים. מוביל AI שמכיר רק כלי אחד — מפספס. המטרה: שתדעו בדיוק מתי לפתוח כל כלי, ולמה.</p>
+
 </div>
+
 </div>
 
 <div class="section">
+
 <div class="section-head"><div class="section-icon" style="background:rgba(106,155,204,.1)">🔍</div><h2>חלק ב׳: 5 המודלים לעומק</h2></div>
 
 <div class="model-card" style="border-right:4px solid var(--green)">
+
 <h3>1. ChatGPT</h3>
+
 <p class="model-sub">OpenAI — GPT-4o / o1 / o3</p>
+
 <div class="model-section"><h4>🎯 שימושים עיקריים</h4><p>GPTs מותאמים אישית, כתיבת פרומפטים, שיווק ויצירת תוכן</p></div>
+
 <div class="model-section"><h4>💪 חוזקות</h4><p>GPT Store — אקוסיסטם של סוכנים מתמחים, פלטפורמת All-in-one, יכולות מולטימודליות (טקסט, תמונה, קול)</p></div>
+
 <div class="tip-box"><strong>💡 Pro Tip:</strong> השתמשו ב-GPT Store כדי למצוא סוכנים מתמחים לכל תחום — מניסוח משפטי ועד ניתוח נתונים.</div>
+
 </div>
 
 <div class="model-card" style="border-right:4px solid var(--accent)">
+
 <h3>2. Claude</h3>
+
 <p class="model-sub">Anthropic — Sonnet / Opus</p>
+
 <div class="model-section"><h4>🎯 שימושים עיקריים</h4><p>עיבוד טקסטים ארוכים, ניתוח מעמיק, כתיבה איכותית</p></div>
+
 <div class="model-section"><h4>💪 חוזקות</h4><p>חלון הקשר של 200K+ טוקנים, הבנה ברמה אנושית, מודל אתי ובטוח</p></div>
+
 <div class="tip-box"><strong>💡 Pro Tip:</strong> העלו ספרים שלמים או מסמכים משפטיים — Claude יכול לעבד ולנתח מסמכים ארוכים במיוחד.</div>
+
 </div>
 
 <div class="model-card" style="border-right:4px solid var(--secondary)">
+
 <h3>3. Gemini</h3>
+
 <p class="model-sub">Google — 1.5 Pro / Ultra</p>
+
 <div class="model-section"><h4>🎯 שימושים עיקריים</h4><p>מצגות, אינטגרציה עם Google Docs, תרגום בזמן אמת</p></div>
+
 <div class="model-section"><h4>💪 חוזקות</h4><p>אינטגרציה עמוקה עם Google Workspace, שיתוף פעולה קבוצתי</p></div>
+
 <div class="tip-box"><strong>💡 Pro Tip:</strong> הפכו כל מסמך למצגת מלאה — Gemini משתלב ישירות עם Google Slides.</div>
+
 </div>
 
 <div class="model-card" style="border-right:4px solid var(--secondary)">
+
 <h3>4. Grok</h3>
+
 <p class="model-sub">xAI</p>
+
 <div class="model-section"><h4>🎯 שימושים עיקריים</h4><p>תובנות בזמן אמת, ניתוח מגמות</p></div>
+
 <div class="model-section"><h4>💪 חוזקות</h4><p>גישה ישירה לנתוני X/Twitter, ניתוח סנטימנט</p></div>
+
 <div class="tip-box"><strong>💡 Pro Tip:</strong> השתמשו ב-Grok לניטור נושאים ספציפיים בזמן אמת — מעקב אחרי שיח ציבורי ומגמות.</div>
+
 </div>
 
 <div class="model-card" style="border-right:4px solid var(--green)">
+
 <h3>5. Perplexity</h3>
+
 <p class="model-sub">מנוע חיפוש AI</p>
+
 <div class="model-section"><h4>🎯 שימושים עיקריים</h4><p>אימות עובדות, מחקר סמנטי, סקירות מבוססות מקורות</p></div>
+
 <div class="model-section"><h4>💪 חוזקות</h4><p>מקורות אקדמיים ורשמיים, יכולת ציטוט ואסמכתאות</p></div>
+
 <div class="tip-box"><strong>💡 Pro Tip:</strong> השתמשו ב-Perplexity לבדיקת עובדות פוליטיות/רפואיות — בחרו סוג מקורות (אקדמי, חדשותי, רשמי).</div>
+
 </div>
+
 </div>
 
 <div class="section">
-<div class="section-head"><div class="section-icon" style="background:rgba(217,119,87,.1)">📊</div><h2>חלק ג׳: טבלת השוואה — מתי להשתמש במה</h2></div>
-<div class="card-box">
-<table>
-<tr><th>משימה ממשלתית</th><th>כלי מומלץ</th><th>למה?</th></tr>
-<tr><td>ניסוח מכתב לאזרח</td><td>Claude</td><td>כתיבה איכותית, טון מכבד, הבנת הקשר</td></tr>
-<tr><td>סיכום 50+ עמודים</td><td>Claude</td><td>חלון הקשר ארוך, דיוק בסיכום</td></tr>
-<tr><td>סיעור מוחות</td><td>ChatGPT</td><td>יצירתיות, מגוון רעיונות, GPTs מתמחים</td></tr>
-<tr><td>ניתוח טבלה / נתונים</td><td>Gemini</
 
-<div class="section">
 <div class="section-head"><div class="section-icon" style="background:rgba(217,119,87,.1)">📊</div><h2>חלק ג׳: טבלת השוואה — מתי להשתמש במה</h2></div>
+
 <div class="card-box">
+
 <table>
+
 <tr><th>משימה ממשלתית</th><th>כלי מומלץ</th><th>למה?</th></tr>
+
 <tr><td>ניסוח מכתב לאזרח</td><td>Claude</td><td>כתיבה איכותית, טון מכבד, הבנת הקשר</td></tr>
+
 <tr><td>סיכום 50+ עמודים</td><td>Claude</td><td>חלון הקשר ארוך, דיוק בסיכום</td></tr>
+
 <tr><td>סיעור מוחות</td><td>ChatGPT</td><td>יצירתיות, מגוון רעיונות, GPTs מתמחים</td></tr>
+
 <tr><td>ניתוח טבלה / נתונים</td><td>Gemini</td><td>אינטגרציה עם Sheets, עיבוד מהיר</td></tr>
+
 <tr><td>מחקר מדיניות</td><td>Perplexity</td><td>מקורות אקדמיים, ציטוטים מדויקים</td></tr>
+
 <tr><td>מעקב חדשות ושיח ציבורי</td><td>Grok / Perplexity</td><td>נתונים בזמן אמת, ניתוח סנטימנט</td></tr>
+
 <tr><td>הכנת מצגת</td><td>Gemini</td><td>אינטגרציה ישירה עם Google Slides</td></tr>
+
 <tr><td>השוואת חקיקה</td><td>Perplexity + Claude</td><td>מחקר מקורות + ניתוח מעמיק</td></tr>
+
 <tr><td>עוזר אישי יומיומי</td><td>ChatGPT GPTs</td><td>סוכנים מותאמים אישית לכל משימה</td></tr>
+
 <tr><td>דוח ביקורת</td><td>Claude</td><td>עיבוד מסמכים ארוכים, דיוק וניתוח</td></tr>
+
 </table>
+
 </div>
+
 </div>
 
 <div class="section">
+
 <div class="section-head"><div class="section-icon" style="background:rgba(61,140,111,.1)">🔄</div><h2>חלק ד׳: שיטת עבודה מומלצת — שלבו בין מודלים</h2></div>
+
 <div class="card-box">
+
 <table>
+
 <tr><th>שלב</th><th>פעולה</th><th>כלי מומלץ</th></tr>
+
 <tr><td>1</td><td>מחקר ואיסוף מקורות</td><td>Perplexity</td></tr>
+
 <tr><td>2</td><td>ניתוח מעמיק</td><td>Claude</td></tr>
+
 <tr><td>3</td><td>יצירת תוכן</td><td>ChatGPT</td></tr>
+
 <tr><td>4</td><td>הצגה ושיתוף</td><td>Gemini</td></tr>
+
 <tr><td>5</td><td>אימות סופי</td><td>Perplexity</td></tr>
+
 </table>
+
 </div>
+
 </div>
+
 </main>
 
 <div style="max-width:720px;margin:0 auto;padding:0 24px">
+
 <div class="try-section">
+
 <h3>🎯 נסו בעצמכם — השוו בין מודלים!</h3>
+
 <p style="margin-bottom:16px;font-family:'Heebo',sans-serif;font-size:.95rem">פתחו שני מודלים במקביל ונסו את אותו פרומפט:</p>
+
 <div class="prompt-box" onclick="copyPrompt(this)"><p><strong>תרגיל 1:</strong> שלחו ל-Claude ול-ChatGPT:<br>"סכם את היתרונות והחסרונות של עבודה מרחוק בשירות הציבורי בישראל, ב-5 נקודות לכל צד"<br>השוו: מי נתן תשובה מעמיקה יותר? מי יצירתי יותר?</p></div>
+
 <div class="prompt-box" onclick="copyPrompt(this)"><p><strong>תרגיל 2:</strong> שלחו ל-Perplexity:<br>"מהם השינויים העיקריים בחוק שירות המדינה בשנתיים האחרונות?"<br>בדקו: האם יש מקורות? האם הם אמינים?</p></div>
+
 <div class="prompt-box" onclick="copyPrompt(this)"><p><strong>תרגיל 3:</strong> שלחו ל-Gemini:<br>"צור מצגת של 5 שקפים על שילוב AI בשירות הציבורי"<br>בדקו: איך האינטגרציה עם Google Slides עובדת?</p></div>
+
 </div>
 
 <div class="quiz-section">
+
 <h3>❓ בדקו את עצמכם — 5 שאלות</h3>
+
 <div class="quiz-q"><p>1. איזה מודל הכי מתאים לסיכום מסמך משפטי של 100 עמודים?</p><details><summary>הציצו בתשובה</summary><p>Claude — בזכות חלון ההקשר הארוך (200K+ טוקנים) והיכולת לעבד מסמכים ארוכים בדיוק גבוה.</p></details></div>
+
 <div class="quiz-q"><p>2. לאן תפנו כדי לבדוק עובדה עם מקורות אקדמיים?</p><details><summary>הציצו בתשובה</summary><p>Perplexity — מנוע חיפוש AI שמציג מקורות ואסמכתאות לכל תשובה.</p></details></div>
+
 <div class="quiz-q"><p>3. מה היתרון המרכזי של Gemini על פני המודלים האחרים?</p><details><summary>הציצו בתשובה</summary><p>אינטגרציה עמוקה עם Google Workspace — Docs, Sheets, Slides ושיתוף פעולה קבוצתי.</p></details></div>
+
 <div class="quiz-q"><p>4. באיזה כלי תשתמשו למעקב אחרי שיח ציבורי בזמן אמת?</p><details><summary>הציצו בתשובה</summary><p>Grok — בזכות הגישה הישירה לנתוני X/Twitter וניתוח סנטימנט בזמן אמת.</p></details></div>
+
 <div class="quiz-q"><p>5. מהי שיטת העבודה המומלצת בפרויקט מחקר מדיניות?</p><details><summary>הציצו בתשובה</summary><p>שלבו בין מודלים: מחקר ב-Perplexity, ניתוח ב-Claude, יצירת תוכן ב-ChatGPT, הצגה ב-Gemini, אימות סופי ב-Perplexity.</p></details></div>
+
 </div>
 
 <div class="summary-box">
+
 <h3>💎 סיכום — מה לזכור?</h3>
+
 <ul>
+
 <li>כל מודל AI חזק בתחום אחר — אין "הכי טוב" אחד</li>
+
 <li>Claude מצטיין בטקסטים ארוכים וניתוח מעמיק</li>
+
 <li>ChatGPT חזק ביצירתיות ובאקוסיסטם של GPTs</li>
+
 <li>Gemini משתלב עם Google Workspace לשיתוף פעולה</li>
+
 <li>שלבו בין מודלים לתוצאות הטובות ביותר</li>
+
 </ul>
+
 </div>
+
 </div>
 
 <section class="course-complete">
+
 <button class="complete-btn" id="completeBtn" onclick="toggleComplete()">✓ סיימתי יחידה זו</button><br>
+
 <button class="share-course-btn" onclick="shareCourse()">📱 שתפו בוואטסאפ</button>
+
 </section>
+
 <nav class="nav-bottom">
+
 <a href="course1.html" class="nav-btn nav-prev">→ יחידה 1: אוריינות AI</a>
+
 <a href="course3.html" class="nav-btn nav-next">יחידה 3: הנדסת הנחיות ←</a>
+
 </nav>
+
 <footer class="site-footer"><p>המקפצה — מבוסס על Anthropic ו-OpenAI | מותאם למובילי AI במגזר הציבורי בישראל © 2025</p></footer>
 <script>const COURSE_ID=2;</script>
 <script src="shared.js"></script>
+<script>
+function toggleCourseTheme(){
+  var h=document.documentElement;
+  var n=h.getAttribute("data-theme")==="dark"?"light":"dark";
+  h.setAttribute("data-theme",n);
+  localStorage.setItem("hamakpetza_theme",n);
+  var btn=document.getElementById("thmCourse");
+  if(btn) btn.textContent=n==="dark"?"☀️":"🌙";
+}
+(function(){
+  var t=localStorage.getItem("hamakpetza_theme");
+  if(t){
+    document.documentElement.setAttribute("data-theme",t);
+    var btn=document.getElementById("thmCourse");
+    if(btn) btn.textContent=t==="dark"?"☀️":"🌙";
+  }
+})();
+</script>
 </body>
 </html>
+

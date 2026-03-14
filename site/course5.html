@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="he" dir="rtl" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,95 +8,183 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Frank+Ruhl+Libre:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+<style>body{transition:background .4s,color .4s}</style>
+<script>var t=localStorage.getItem("hamakpetza_theme");if(t)document.documentElement.setAttribute("data-theme",t);</script>
 </head>
-<body>
-<nav class="topbar"><div class="topbar-right"><a href="index.html" class="back-btn">→ חזרה למקפצה</a><span class="topbar-title">יחידה 5 מתוך 12</span></div></nav>
 
+<body>
+
+<nav class="topbar"><div class="topbar-right"><a href="index.html" class="back-btn">→ חזרה למקפצה</a><span class="topbar-title">יחידה 5 מתוך 12</span></div><button class="thm-course" id="thmCourse" onclick="toggleCourseTheme()" title="מצב כהה / בהיר">🌙</button></nav>
 <header class="course-hero">
+
 <span class="course-badge" style="background:rgba(61,140,111,.1);color:var(--green)">📊 ישומי</span>
+
 <h1>AI לניתוח נתונים וקבלת החלטות</h1>
+
 <p class="sub">ניתוח דוחות, חילוץ תובנות מטבלאות, יצירת סיכומים מנהליים — בלי Excel מתקדם</p>
+
 <div class="meta-row"><span class="meta-item">⏱ 40 דקות</span><span class="meta-item">👥 מנהלים ועובדים</span><span class="meta-item">📋 5 תרגילים</span></div>
 </header>
 
 <main class="content">
+
 <div class="section">
+
 <div class="section-head"><div class="section-icon" style="background:rgba(61,140,111,.1)">📊</div><h2>חלק א׳: מה AI יכול לעשות עם נתונים?</h2></div>
+
 <div class="card-box"><h3>✅ יכולות ניתוח נתונים עם AI</h3>
+
 <ul class="green-list">
+
 <li>לנתח טבלאות נתונים ולחלץ תובנות מרכזיות</li>
+
 <li>לסכם דוחות ארוכים לנקודות עיקריות</li>
+
 <li>להשוות נתונים בין תקופות ולזהות שינויים</li>
+
 <li>ליצור גרפים, תרשימים והמחשות ויזואליות</li>
+
 <li>לזהות חריגות, מגמות ודפוסים בנתונים</li>
+
 <li>להכין סיכומים מנהליים מוכנים לישיבות הנהלה</li>
+
 </ul></div>
+
 </div>
 
 <div class="section">
+
 <div class="section-head"><div class="section-icon" style="background:rgba(106,155,204,.1)">🔍</div><h2>חלק ב׳: 5 סוגי ניתוח שימושיים</h2></div>
+
 <div class="card-box"><table>
+
 <tr><th>סוג ניתוח</th><th>דוגמה ממשלתית</th><th>כלי מומלץ</th></tr>
+
 <tr><td>סיכום דוח</td><td>סיכום דוח ביקורת שנתי ל-5 נקודות</td><td>Claude</td></tr>
+
 <tr><td>השוואת תקופות</td><td>השוואת פניות אזרחים Q1 מול Q2</td><td>ChatGPT + Gemini</td></tr>
+
 <tr><td>זיהוי מגמות</td><td>מגמות בתביעות לאורך 3 שנים</td><td>ChatGPT</td></tr>
+
 <tr><td>ניתוח סקר</td><td>תוצאות סקר שביעות רצון עובדים</td><td>Claude + ChatGPT</td></tr>
+
 <tr><td>סיכום מנהלי</td><td>one-pager לישיבת הנהלה מדוח של 50 עמודים</td><td>Claude</td></tr>
+
 </table></div>
+
 </div>
 
 <div class="section">
+
 <div class="section-head"><div class="section-icon" style="background:rgba(217,119,87,.1)">💬</div><h2>חלק ג׳: פרומפטים לניתוח נתונים</h2></div>
+
 <div class="prompt-box" onclick="copyPrompt(this)"><p><strong>1. סיכום דוח:</strong> "קיבלתי דוח של [X] עמודים בנושא [נושא]. סכם לי את 5 הנקודות העיקריות, כולל נתונים מספריים מרכזיים, ממצאים בולטים והמלצות. הפלט: רשימה ממוספרת בעברית."</p></div>
+
 <div class="prompt-box" onclick="copyPrompt(this)"><p><strong>2. ניתוח טבלה:</strong> "הנה טבלת נתונים [הדביקו]. נתח: מגמות עיקריות, חריגות בולטות, ממוצעים והשוואות בין קטגוריות. הצג תובנות בפורמט ברור עם כותרות."</p></div>
+
 <div class="prompt-box" onclick="copyPrompt(this)"><p><strong>3. השוואה בין תקופות:</strong> "הנה נתונים מ-[תקופה 1] ומ-[תקופה 2]. השווה: שינויים משמעותיים, אחוזי שינוי, תחומים שהשתפרו ותחומים שנחלשו. הצג בטבלת השוואה."</p></div>
+
 <div class="prompt-box" onclick="copyPrompt(this)"><p><strong>4. סיכום לישיבת הנהלה:</strong> "הכן executive summary מהנתונים הבאים [הדביקו]. כלול: 3 תובנות מרכזיות, 2 סיכונים, 2 המלצות לפעולה. אורך: חצי עמוד. טון: מקצועי ותמציתי."</p></div>
+
 </div>
 
 <div class="section">
+
 <div class="section-head"><div class="section-icon" style="background:rgba(139,108,193,.1)">⚠️</div><h2>חלק ד׳: מה לזכור בניתוח נתונים עם AI</h2></div>
+
 <div class="card-box"><h3>🟡 דגשים חשובים</h3>
+
 <ul class="yellow-list">
+
 <li>אל תזינו נתונים אישיים — עבדו עם נתונים מצרפיים בלבד</li>
+
 <li>תמיד אמתו מספרים מול המקור — AI יכול לטעות בחישובים</li>
+
 <li>ציינו יחידות מידה ותקופות זמן בפרומפט</li>
+
 <li>בקשו מ-AI לציין רמת ודאות בממצאים</li>
+
 </ul></div>
+
 </div>
 
 <div class="try-section">
+
 <h3>🎯 תרגיל מעשי</h3>
+
 <div class="prompt-box" onclick="copyPrompt(this)"><p>קחו טבלה מדוח שבועי/חודשי (ללא מידע אישי) והדביקו ב-Claude עם הבקשה: "נתח את הטבלה הזו. זהה 3 תובנות מרכזיות, מגמה אחת מדאיגה, והמלצה אחת לפעולה. הצג בפורמט סיכום מנהלי."</p></div>
+
 </div>
 
 <div class="quiz-section">
+
 <h3>❓ בדקו את עצמכם</h3>
+
 <div class="quiz-q"><p>1. איזה כלי AI הכי מתאים לסיכום דוח ארוך?</p><details><summary>הציצו בתשובה</summary><p>Claude — בזכות חלון ההקשר הארוך שמאפשר לעבד מסמכים של עשרות עמודים.</p></details></div>
+
 <div class="quiz-q"><p>2. מה חשוב לציין בפרומפט לניתוח נתונים?</p><details><summary>הציצו בתשובה</summary><p>יחידות מידה, תקופות זמן, פורמט פלט רצוי, ומה בדיוק מחפשים (מגמות, חריגות, השוואות).</p></details></div>
+
 <div class="quiz-q"><p>3. למה אסור להזין נתונים אישיים ל-AI?</p><details><summary>הציצו בתשובה</summary><p>כי כלי AI חיצוניים אינם מאובטחים לנתונים אישיים. יש לעבוד עם נתונים מצרפיים או אנונימיים בלבד.</p></details></div>
+
 </div>
 
 <div class="summary-box">
+
 <h3>💎 סיכום</h3>
+
 <ul>
+
 <li>AI מצוין בסיכום דוחות, ניתוח טבלאות וזיהוי מגמות</li>
+
 <li>Claude לדוחות ארוכים, ChatGPT ליצירתיות, Gemini לאינטגרציה עם Sheets</li>
+
 <li>תמיד אמתו מספרים — AI יכול לטעות בחישובים</li>
+
 <li>עבדו עם נתונים מצרפיים בלבד, ללא מידע אישי</li>
+
 </ul>
+
 </div>
+
 </main>
 
 <section class="course-complete">
+
 <button class="complete-btn" id="completeBtn" onclick="toggleComplete()">✓ סיימתי יחידה זו</button><br>
+
 <button class="share-course-btn" onclick="shareCourse()">📱 שתפו בוואטסאפ</button>
+
 </section>
+
 <nav class="nav-bottom">
+
 <a href="course4.html" class="nav-btn nav-prev">→ יחידה 4: כתיבה ותקשורת</a>
+
 <a href="course6.html" class="nav-btn nav-next">יחידה 6: חיפוש ומחקר ←</a>
+
 </nav>
+
 <footer class="site-footer"><p>המקפצה — מבוסס על Anthropic ו-OpenAI | מותאם למובילי AI במגזר הציבורי בישראל © 2025</p></footer>
 <script>const COURSE_ID=5;</script>
 <script src="shared.js"></script>
+<script>
+function toggleCourseTheme(){
+  var h=document.documentElement;
+  var n=h.getAttribute("data-theme")==="dark"?"light":"dark";
+  h.setAttribute("data-theme",n);
+  localStorage.setItem("hamakpetza_theme",n);
+  var btn=document.getElementById("thmCourse");
+  if(btn) btn.textContent=n==="dark"?"☀️":"🌙";
+}
+(function(){
+  var t=localStorage.getItem("hamakpetza_theme");
+  if(t){
+    document.documentElement.setAttribute("data-theme",t);
+    var btn=document.getElementById("thmCourse");
+    if(btn) btn.textContent=t==="dark"?"☀️":"🌙";
+  }
+})();
+</script>
 </body>
 </html>

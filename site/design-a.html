@@ -459,6 +459,42 @@ function shareWA(){window.open('https://wa.me/?text='+encodeURIComponent('🚀 �
 // Scroll header shadow
 window.addEventListener('scroll',()=>{document.querySelector('.header').classList.toggle('scrolled',window.scrollY>20)});
 render();updateP();
+
+// === FEEDBACK ===
+const SHEET_URL="https://script.google.com/macros/s/AKfycbwD8CMFoP5XoOwRLwK_OxMMOFKF8fS2CRpbJkNdOHjbnJIepkOLzlGrg3GQNGRqbwB6bA/exec";
+const APP_NAME="המקפצה — עיצוב A";
+async function sendFeedback({name,category,severity,text,page}){await fetch(SHEET_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/json"},body:JSON.stringify({app:APP_NAME,name:name||"אנונימי",category:category||"כללי",severity:severity||"—",text:text,page:page||window.location.pathname})})}
+function initFeedback(){
+const btn=document.createElement('button');btn.className='feedback-fab';btn.innerHTML='💬';btn.title='שלחו משוב';
+btn.onclick=()=>document.getElementById('feedbackModal').classList.add('open');document.body.appendChild(btn);
+const m=document.createElement('div');m.id='feedbackModal';m.className='feedback-modal';
+m.innerHTML='<div class="feedback-backdrop" onclick="closeFeedback()"></div><div class="feedback-panel"><div class="feedback-header"><h3>💬 שלחו משוב</h3><button class="feedback-close" onclick="closeFeedback()">✕</button></div><form id="feedbackForm" onsubmit="submitFeedback(event)"><input type="text" id="fbName" placeholder="שם (אופציונלי)" class="fb-input"><select id="fbCategory" class="fb-input"><option value="כללי">כללי</option><option value="באג">באג</option><option value="שיפור">שיפור</option><option value="תוכן">תוכן</option><option value="עיצוב">עיצוב</option></select><select id="fbSeverity" class="fb-input"><option value="—">חומרה (אופציונלי)</option><option value="קריטי">קריטי</option><option value="שיפור">שיפור</option><option value="קטן">קטן</option></select><textarea id="fbText" placeholder="מה תרצו לשפר?" class="fb-input fb-textarea" required></textarea><button type="submit" class="fb-submit" id="fbSubmitBtn">שליחה</button></form><div id="fbSuccess" class="fb-success" style="display:none"><span>✅</span> תודה! המשוב נשלח בהצלחה</div></div>';
+document.body.appendChild(m);
+}
+function closeFeedback(){document.getElementById('feedbackModal').classList.remove('open')}
+async function submitFeedback(e){e.preventDefault();const b=document.getElementById('fbSubmitBtn');b.textContent='שולח...';b.disabled=true;await sendFeedback({name:document.getElementById('fbName').value,category:document.getElementById('fbCategory').value,severity:document.getElementById('fbSeverity').value,text:document.getElementById('fbText').value});document.getElementById('feedbackForm').style.display='none';document.getElementById('fbSuccess').style.display='flex';setTimeout(()=>{closeFeedback();document.getElementById('feedbackForm').style.display='';document.getElementById('feedbackForm').reset();document.getElementById('fbSuccess').style.display='none';b.textContent='שליחה';b.disabled=false},2500)}
+initFeedback();
 </script>
+
+<style>
+.feedback-fab{position:fixed;bottom:24px;left:24px;z-index:999;width:52px;height:52px;border-radius:50%;background:var(--accent);color:#fff;font-size:1.4rem;border:none;cursor:pointer;box-shadow:0 4px 16px rgba(217,119,6,.25);transition:var(--transition);display:grid;place-items:center}
+.feedback-fab:hover{transform:scale(1.1);box-shadow:0 6px 24px rgba(217,119,6,.35)}
+.feedback-modal{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;pointer-events:none;opacity:0;transition:opacity .3s}
+.feedback-modal.open{pointer-events:all;opacity:1}
+.feedback-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.3);backdrop-filter:blur(4px)}
+.feedback-panel{position:relative;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;width:90%;max-width:420px;box-shadow:var(--shadow-lg);transform:translateY(20px);transition:transform .3s}
+.feedback-modal.open .feedback-panel{transform:translateY(0)}
+.feedback-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+.feedback-header h3{font-family:'Heebo',sans-serif;font-size:1.1rem;font-weight:700;margin:0}
+.feedback-close{background:none;border:none;font-size:1.2rem;cursor:pointer;color:var(--text2);padding:4px 8px;border-radius:6px}
+.fb-input{width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:10px;font-family:'Heebo',sans-serif;font-size:.9rem;margin-bottom:12px;background:var(--bg);color:var(--text)}
+.fb-input:focus{outline:none;border-color:var(--accent)}
+.fb-textarea{min-height:100px;resize:vertical}
+.fb-submit{width:100%;padding:12px;border:none;border-radius:10px;background:var(--text);color:#fff;font-family:'Heebo',sans-serif;font-weight:700;font-size:.95rem;cursor:pointer;transition:var(--transition)}
+.fb-submit:hover{background:#2D2520;transform:translateY(-1px)}
+.fb-submit:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.fb-success{display:flex;align-items:center;justify-content:center;gap:8px;padding:20px;font-family:'Heebo',sans-serif;font-size:1rem;color:var(--green);font-weight:600}
+.fb-success span{font-size:1.5rem}
+</style>
 </body>
 </html>

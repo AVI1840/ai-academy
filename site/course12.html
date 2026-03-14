@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="he" dir="rtl" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,109 +8,207 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Frank+Ruhl+Libre:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+<style>body{transition:background .4s,color .4s}</style>
+<script>var t=localStorage.getItem("hamakpetza_theme");if(t)document.documentElement.setAttribute("data-theme",t);</script>
 </head>
-<body>
-<nav class="topbar"><div class="topbar-right"><a href="index.html" class="back-btn">→ חזרה למקפצה</a><span class="topbar-title">יחידה 12 מתוך 12</span></div></nav>
 
+<body>
+
+<nav class="topbar"><div class="topbar-right"><a href="index.html" class="back-btn">→ חזרה למקפצה</a><span class="topbar-title">יחידה 12 מתוך 12</span></div><button class="thm-course" id="thmCourse" onclick="toggleCourseTheme()" title="מצב כהה / בהיר">🌙</button></nav>
 <header class="course-hero">
+
 <span class="course-badge" style="background:rgba(106,155,204,.1);color:var(--secondary)">💻 טכני — מפתחים וצוותי IT</span>
+
 <h1>Claude Code — מדריך מעשי למפתחים</h1>
+
 <p class="sub">פיתוח עם Claude Code, אוטומציה טכנית, סקריפטים, ועבודה עם API</p>
+
 <div class="meta-row"><span class="meta-item">⏱ 40 דקות</span><span class="meta-item">👥 מפתחים וצוותי IT</span><span class="meta-item">💻 טכני</span></div>
 </header>
 
 <main class="content">
+
 <div class="section">
+
 <div class="section-head"><div class="section-icon" style="background:rgba(106,155,204,.1)">💻</div><h2>חלק א׳: מה זה Claude Code?</h2></div>
+
 <div class="card-box"><p>Claude Code הוא כלי של Anthropic שמאפשר לעבוד עם Claude ישירות מהטרמינל. הוא קורא את הקוד שלכם, מבין את המבנה, ויכול לכתוב, לתקן ולשפר קוד — כמו מתכנת זוגי חכם.</p></div>
+
 <div class="card-box"><h3>מה Claude Code יכול לעשות</h3>
+
 <ul class="green-list">
+
 <li>לכתוב קוד חדש על בסיס תיאור בשפה טבעית</li>
+
 <li>לתקן באגים ולהסביר שגיאות</li>
+
 <li>לעשות Refactoring לקוד קיים</li>
+
 <li>ליצור טסטים אוטומטיים</li>
+
 <li>לכתוב תיעוד טכני</li>
+
 <li>לנתח קוד ולמצוא בעיות אבטחה</li>
+
 <li>לעבוד עם Git — commits, branches, PRs</li>
+
 </ul></div>
+
 </div>
 
 <div class="section">
+
 <div class="section-head"><div class="section-icon" style="background:rgba(61,140,111,.1)">🚀</div><h2>חלק ב׳: התקנה והתחלה</h2></div>
+
 <div class="card-box"><h3>התקנה</h3>
+
 <div class="code-box">npm install -g @anthropic-ai/claude-code</div>
+
 <h3 style="margin-top:16px">שימוש בסיסי</h3>
+
 <div class="code-box"># כניסה לפרויקט
+
 cd my-project
 
 # הפעלת Claude Code
+
 claude
 
 # דוגמאות פקודות:
+
 > "הסבר מה הקוד הזה עושה"
+
 > "תקן את הבאג בקובץ server.js"
+
 > "צור API endpoint חדש ל-/users"
+
 > "כתוב טסטים ל-utils.js"</div></div>
+
 </div>
 
 <div class="section">
+
 <div class="section-head"><div class="section-icon" style="background:rgba(139,108,193,.1)">🔧</div><h2>חלק ג׳: שימושים מעשיים בממשלה</h2></div>
+
 <div class="card-box"><table>
+
 <tr><th>משימה</th><th>פקודה לדוגמה</th></tr>
+
 <tr><td>יצירת סקריפט לעיבוד נתונים</td><td>"כתוב סקריפט Python שקורא CSV ומייצר דוח סיכום"</td></tr>
+
 <tr><td>בניית API פנימי</td><td>"צור REST API ב-Node.js לניהול פניות אזרחים"</td></tr>
+
 <tr><td>אוטומציה של דוחות</td><td>"כתוב סקריפט שמייצר דוח שבועי מ-database"</td></tr>
+
 <tr><td>תיקון באגים</td><td>"יש שגיאה בדף ההרשמה — תמצא ותתקן"</td></tr>
+
 <tr><td>שיפור אבטחה</td><td>"סרוק את הקוד ומצא בעיות אבטחה פוטנציאליות"</td></tr>
+
 <tr><td>תיעוד</td><td>"כתוב README מפורט לפרויקט הזה"</td></tr>
+
 </table></div>
+
 </div>
 
 <div class="section">
+
 <div class="section-head"><div class="section-icon" style="background:rgba(251,191,36,.1)">💡</div><h2>חלק ד׳: טיפים למפתחים</h2></div>
+
 <div class="card-box">
+
 <ul class="green-list">
+
 <li><strong>היו ספציפיים:</strong> "צור endpoint ב-Express שמקבל POST עם שם ומייל" עדיף על "תעשה API"</li>
+
 <li><strong>תנו הקשר:</strong> "אנחנו משתמשים ב-TypeScript, PostgreSQL, ו-Express"</li>
+
 <li><strong>בקשו הסבר:</strong> "תתקן ותסביר מה היה הבאג ולמה הפתרון עובד"</li>
+
 <li><strong>בדקו תמיד:</strong> הריצו את הקוד, בדקו טסטים, אל תעשו deploy עיוור</li>
+
 <li><strong>השתמשו ב-CLAUDE.md:</strong> קובץ הגדרות בשורש הפרויקט שמלמד את Claude על הפרויקט</li>
+
 </ul></div>
+
 </div>
 
 <div class="try-section">
+
 <h3>🎯 תרגיל מעשי</h3>
+
 <p style="margin-bottom:16px;font-family:'Heebo',sans-serif;font-size:.95rem">התקינו Claude Code ונסו:</p>
+
 <div class="prompt-box" onclick="copyPrompt(this)"><p>"צור סקריפט Python שקורא קובץ CSV עם עמודות: שם, תאריך, סטטוס. הסקריפט צריך: 1) לספור כמה רשומות בכל סטטוס 2) למצוא את התאריך הכי ישן והכי חדש 3) להדפיס סיכום יפה"</p></div>
+
 </div>
 
 <div class="quiz-section">
+
 <h3>❓ בדקו את עצמכם</h3>
+
 <div class="quiz-q"><p>1. מה היתרון של Claude Code על פני ChatGPT לפיתוח?</p><details><summary>הציצו בתשובה</summary><p>Claude Code עובד ישירות מהטרמינל, קורא את הקוד שלכם, ומבין את מבנה הפרויקט — לא צריך להעתיק ולהדביק.</p></details></div>
+
 <div class="quiz-q"><p>2. מה חשוב לעשות אחרי שClaude Code כותב קוד?</p><details><summary>הציצו בתשובה</summary><p>תמיד לבדוק — להריץ טסטים, לבדוק את הקוד, ולא לעשות deploy עיוור.</p></details></div>
+
 </div>
 
 <div class="summary-box">
+
 <h3>💎 סיכום</h3>
+
 <ul>
+
 <li>Claude Code = מתכנת זוגי חכם בטרמינל</li>
+
 <li>כותב, מתקן, מסביר ומתעד קוד</li>
+
 <li>מצוין לאוטומציה, סקריפטים, ו-API בממשלה</li>
+
 <li>תמיד בדקו את הקוד לפני deploy</li>
+
 </ul>
+
 </div>
+
 </main>
 
 <section class="course-complete">
+
 <button class="complete-btn" id="completeBtn" onclick="toggleComplete()">✓ סיימתי יחידה זו</button><br>
+
 <button class="share-course-btn" onclick="shareCourse()">📱 שתפו בוואטסאפ</button>
+
 </section>
+
 <nav class="nav-bottom">
+
 <a href="course11.html" class="nav-btn nav-prev">→ יחידה 11: RAG</a>
+
 <a href="index.html" class="nav-btn nav-next">חזרה לכל היחידות ←</a>
+
 </nav>
+
 <footer class="site-footer"><p>המקפצה — מבוסס על Anthropic Claude Code in Action | מותאם למובילי AI במגזר הציבורי בישראל © 2025</p></footer>
 <script>const COURSE_ID=12;</script>
 <script src="shared.js"></script>
+<script>
+function toggleCourseTheme(){
+  var h=document.documentElement;
+  var n=h.getAttribute("data-theme")==="dark"?"light":"dark";
+  h.setAttribute("data-theme",n);
+  localStorage.setItem("hamakpetza_theme",n);
+  var btn=document.getElementById("thmCourse");
+  if(btn) btn.textContent=n==="dark"?"☀️":"🌙";
+}
+(function(){
+  var t=localStorage.getItem("hamakpetza_theme");
+  if(t){
+    document.documentElement.setAttribute("data-theme",t);
+    var btn=document.getElementById("thmCourse");
+    if(btn) btn.textContent=t==="dark"?"☀️":"🌙";
+  }
+})();
+</script>
 </body>
 </html>

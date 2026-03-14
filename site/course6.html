@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="he" dir="rtl" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,83 +8,161 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Frank+Ruhl+Libre:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+<style>body{transition:background .4s,color .4s}</style>
+<script>var t=localStorage.getItem("hamakpetza_theme");if(t)document.documentElement.setAttribute("data-theme",t);</script>
 </head>
-<body>
-<nav class="topbar"><div class="topbar-right"><a href="index.html" class="back-btn">→ חזרה למקפצה</a><span class="topbar-title">יחידה 6 מתוך 12</span></div></nav>
 
+<body>
+
+<nav class="topbar"><div class="topbar-right"><a href="index.html" class="back-btn">→ חזרה למקפצה</a><span class="topbar-title">יחידה 6 מתוך 12</span></div><button class="thm-course" id="thmCourse" onclick="toggleCourseTheme()" title="מצב כהה / בהיר">🌙</button></nav>
 <header class="course-hero">
+
 <span class="course-badge" style="background:rgba(106,155,204,.1);color:var(--secondary)">🔍 ישומי</span>
+
 <h1>חיפוש ומחקר עם AI</h1>
+
 <p class="sub">מחקר מדיניות, סקירת ספרות, השוואת גישות בין מדינות — ומציאת מידע רלוונטי במהירות</p>
+
 <div class="meta-row"><span class="meta-item">⏱ 35 דקות</span><span class="meta-item">👥 מנהלים ועובדים</span><span class="meta-item">📋 4 תרגילים</span></div>
 </header>
 
 <main class="content">
+
 <div class="section">
+
 <div class="section-head"><div class="section-icon" style="background:rgba(106,155,204,.1)">🔍</div><h2>חלק א׳: AI כעוזר מחקר אישי</h2></div>
+
 <div class="card-box"><p>במקום לבלות שעות בחיפוש Google, AI יכול לעזור לכם למצוא מידע, לסכם מקורות, ולהשוות גישות — בדקות. הכלי המומלץ למחקר: Perplexity (מקורות מאומתים) + Claude (ניתוח מעמיק).</p></div>
+
 <div class="card-box"><h3>מה AI יכול לעשות במחקר ממשלתי</h3>
+
 <ul class="green-list">
+
 <li>לסרוק ולסכם מאמרים ומסמכי מדיניות</li>
+
 <li>להשוות גישות של מדינות שונות לאותו נושא</li>
+
 <li>ליצור סקירת ספרות ראשונית</li>
+
 <li>לזהות מגמות ודפוסים במידע</li>
+
 <li>להכין רקע לישיבה או לקבלת החלטה</li>
+
 </ul></div>
+
 </div>
 
 <div class="section">
+
 <div class="section-head"><div class="section-icon" style="background:rgba(139,108,193,.1)">🗺️</div><h2>חלק ב׳: שיטת מחקר ב-3 שלבים</h2></div>
+
 <div class="card-box"><table>
+
 <tr><th>שלב</th><th>מה עושים</th><th>כלי מומלץ</th></tr>
+
 <tr><td>1. איסוף</td><td>חיפוש מידע ומקורות</td><td>Perplexity</td></tr>
+
 <tr><td>2. ניתוח</td><td>קריאה מעמיקה והשוואה</td><td>Claude</td></tr>
+
 <tr><td>3. סיכום</td><td>כתיבת סיכום ממצאים</td><td>Claude / ChatGPT</td></tr>
+
 </table></div>
+
 </div>
 
 <div class="section">
+
 <div class="section-head"><div class="section-icon" style="background:rgba(61,140,111,.1)">💬</div><h2>חלק ג׳: פרומפטים למחקר</h2></div>
+
 <div class="prompt-box" onclick="copyPrompt(this)"><p><strong>סקירת מדיניות:</strong> "סקור את הגישות השונות של 5 מדינות מפותחות לנושא [X]. לכל מדינה ציין: הגישה, יתרונות, חסרונות, ורלוונטיות לישראל"</p></div>
+
 <div class="prompt-box" onclick="copyPrompt(this)"><p><strong>רקע לישיבה:</strong> "הכן מסמך רקע של עמוד אחד לישיבה בנושא [X]. כלול: מצב קיים, אתגרים, 3 חלופות אפשריות עם יתרונות וחסרונות"</p></div>
+
 <div class="prompt-box" onclick="copyPrompt(this)"><p><strong>השוואת חקיקה:</strong> "השווה את החקיקה בישראל לחקיקה ב[מדינה] בנושא [X]. ציין: דמיון, שוני, פערים, והמלצות"</p></div>
+
 <div class="prompt-box" onclick="copyPrompt(this)"><p><strong>סיכום מאמר:</strong> "סכם את המאמר/דוח הבא ב-5 נקודות מרכזיות. ציין: ממצאים עיקריים, מתודולוגיה, מגבלות, והשלכות מעשיות. המאמר: [הדביקו]"</p></div>
+
 </div>
 
 <div class="try-section">
+
 <h3>🎯 תרגיל מעשי</h3>
+
 <div class="prompt-box" onclick="copyPrompt(this)"><p>"אני עובד/ת ב[משרד]. אני צריך/ה לדעת איך מדינות אחרות מתמודדות עם [נושא]. תן לי סקירה קצרה של 3 מדינות עם דוגמאות מעשיות"</p></div>
+
 <p style="color:var(--text2);font-size:.9rem;margin-top:12px;font-family:'Heebo',sans-serif">💡 נסו את אותה שאלה ב-Perplexity (למקורות) וב-Claude (לניתוח) — השוו תוצאות</p>
+
 </div>
 
 <div class="quiz-section">
+
 <h3>❓ בדקו את עצמכם</h3>
+
 <div class="quiz-q"><p>1. איזה כלי הכי מתאים למחקר עם מקורות מאומתים?</p><details><summary>הציצו בתשובה</summary><p>Perplexity — מנוע חיפוש AI שמציג מקורות ואסמכתאות לכל תשובה.</p></details></div>
+
 <div class="quiz-q"><p>2. מהם 3 שלבי המחקר המומלצים?</p><details><summary>הציצו בתשובה</summary><p>איסוף (Perplexity) → ניתוח (Claude) → סיכום (Claude/ChatGPT).</p></details></div>
+
 <div class="quiz-q"><p>3. למה חשוב לאמת מקורות שAI מציג?</p><details><summary>הציצו בתשובה</summary><p>כי AI יכול "להמציא" מראי מקום — תמיד בדקו שהמקור קיים ומדויק.</p></details></div>
+
 </div>
 
 <div class="summary-box">
+
 <h3>💎 סיכום</h3>
+
 <ul>
+
 <li>Perplexity למחקר עם מקורות, Claude לניתוח מעמיק</li>
+
 <li>שיטת 3 שלבים: איסוף → ניתוח → סיכום</li>
+
 <li>תמיד אמתו מקורות — AI יכול "להמציא" מראי מקום</li>
+
 <li>מחקר שלקח ימים יכול להיעשות בשעות</li>
+
 </ul>
+
 </div>
+
 </main>
 
 <section class="course-complete">
+
 <button class="complete-btn" id="completeBtn" onclick="toggleComplete()">✓ סיימתי יחידה זו</button><br>
+
 <button class="share-course-btn" onclick="shareCourse()">📱 שתפו בוואטסאפ</button>
+
 </section>
+
 <nav class="nav-bottom">
+
 <a href="course5.html" class="nav-btn nav-prev">→ יחידה 5: ניתוח נתונים</a>
+
 <a href="course7.html" class="nav-btn nav-next">יחידה 7: חשיבה ופתרון בעיות ←</a>
+
 </nav>
+
 <footer class="site-footer"><p>המקפצה — מבוסס על Anthropic ו-OpenAI | מותאם למובילי AI במגזר הציבורי בישראל © 2025</p></footer>
 <script>const COURSE_ID=6;</script>
 <script src="shared.js"></script>
+<script>
+function toggleCourseTheme(){
+  var h=document.documentElement;
+  var n=h.getAttribute("data-theme")==="dark"?"light":"dark";
+  h.setAttribute("data-theme",n);
+  localStorage.setItem("hamakpetza_theme",n);
+  var btn=document.getElementById("thmCourse");
+  if(btn) btn.textContent=n==="dark"?"☀️":"🌙";
+}
+(function(){
+  var t=localStorage.getItem("hamakpetza_theme");
+  if(t){
+    document.documentElement.setAttribute("data-theme",t);
+    var btn=document.getElementById("thmCourse");
+    if(btn) btn.textContent=t==="dark"?"☀️":"🌙";
+  }
+})();
+</script>
 </body>
 </html>

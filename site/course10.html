@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="he" dir="rtl" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,88 +8,171 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Frank+Ruhl+Libre:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+<style>body{transition:background .4s,color .4s}</style>
+<script>var t=localStorage.getItem("hamakpetza_theme");if(t)document.documentElement.setAttribute("data-theme",t);</script>
 </head>
-<body>
-<nav class="topbar"><div class="topbar-right"><a href="index.html" class="back-btn">→ חזרה למקפצה</a><span class="topbar-title">יחידה 10 מתוך 12</span></div></nav>
 
+<body>
+
+<nav class="topbar"><div class="topbar-right"><a href="index.html" class="back-btn">→ חזרה למקפצה</a><span class="topbar-title">יחידה 10 מתוך 12</span></div><button class="thm-course" id="thmCourse" onclick="toggleCourseTheme()" title="מצב כהה / בהיר">🌙</button></nav>
 <header class="course-hero">
+
 <span class="course-badge" style="background:rgba(61,140,111,.1);color:var(--green)">⚙️ מתקדם</span>
+
 <h1>אוטומציה ותהליכי עבודה עם AI</h1>
+
 <p class="sub">זיהוי תהליכים לאוטומציה, בניית Workflows, חיסכון בזמן ושיפור יעילות</p>
+
 <div class="meta-row"><span class="meta-item">⏱ 40 דקות</span><span class="meta-item">👥 מנהלים ומובילים</span><span class="meta-item">⚙️ אוטומציה</span></div>
 </header>
 
 <main class="content">
+
 <div class="section">
+
 <div class="section-head"><div class="section-icon" style="background:rgba(61,140,111,.1)">⚙️</div><h2>חלק א׳: מה אפשר לאוטומט?</h2></div>
+
 <div class="card-box"><p>לא כל תהליך מתאים לאוטומציה. הכלל: אם עושים את זה שוב ושוב, באותו אופן, עם מעט שיקול דעת — זה מועמד מצוין.</p></div>
+
 <div class="card-box"><h3>מטריצת אוטומציה</h3>
+
 <table>
+
 <tr><th>סוג משימה</th><th>דוגמה</th><th>פוטנציאל</th></tr>
+
 <tr><td>חוזרת + פשוטה</td><td>מיון מיילים, תזכורות</td><td>🟢 גבוה מאוד</td></tr>
+
 <tr><td>חוזרת + מורכבת</td><td>סיכום ישיבות, דוחות שבועיים</td><td>🟢 גבוה (עם AI)</td></tr>
+
 <tr><td>חד-פעמית + פשוטה</td><td>ניסוח מכתב ספציפי</td><td>🟡 בינוני</td></tr>
+
 <tr><td>חד-פעמית + מורכבת</td><td>קביעת מדיניות חדשה</td><td>🔴 נמוך (AI כעוזר)</td></tr>
+
 </table></div>
+
 </div>
 
 <div class="section">
+
 <div class="section-head"><div class="section-icon" style="background:rgba(106,155,204,.1)">🔄</div><h2>חלק ב׳: 5 תהליכים שכל משרד יכול לאוטומט</h2></div>
+
 <div class="card-box">
+
 <ul class="green-list">
+
 <li><strong>סיכום ישיבות:</strong> הקליטו → תמללו → בקשו מ-AI סיכום מובנה עם משימות</li>
+
 <li><strong>דוח שבועי:</strong> צרו תבנית → AI ממלא מנתונים → אתם מאשרים</li>
+
 <li><strong>מענה לפניות חוזרות:</strong> זהו 20 השאלות הנפוצות → צרו תשובות עם AI → שלבו במערכת</li>
+
 <li><strong>הכנת רקע לישיבה:</strong> AI מסכם מסמכים רלוונטיים → אתם מוסיפים תובנות</li>
+
 <li><strong>בדיקת מסמכים:</strong> AI בודק שלמות ועקביות → אתם מאשרים</li>
+
 </ul></div>
+
 </div>
 
 <div class="section">
+
 <div class="section-head"><div class="section-icon" style="background:rgba(139,108,193,.1)">📋</div><h2>חלק ג׳: איך לבנות Workflow עם AI</h2></div>
+
 <div class="card-box"><h3>שיטת 4 שלבים</h3>
+
 <table>
+
 <tr><th>שלב</th><th>מה עושים</th><th>דוגמה</th></tr>
+
 <tr><td>1. מפו</td><td>רשמו את כל השלבים בתהליך</td><td>תהליך טיפול בפנייה: קבלה → מיון → טיפול → מענה</td></tr>
+
 <tr><td>2. סמנו</td><td>סמנו מה AI יכול לעשות</td><td>AI: מיון + טיוטת מענה. אדם: טיפול + אישור</td></tr>
+
 <tr><td>3. בנו</td><td>צרו פרומפטים לכל שלב</td><td>פרומפט למיון, פרומפט לטיוטת מענה</td></tr>
+
 <tr><td>4. בדקו</td><td>הריצו ובדקו תוצאות</td><td>בדיקת 10 פניות לדוגמה</td></tr>
+
 </table></div>
+
 <div class="prompt-box" onclick="copyPrompt(this)"><p><strong>מיפוי תהליך:</strong> "אני רוצה לאוטומט את התהליך הבא: [תארו]. מפה את כל השלבים, סמן מה AI יכול לעשות ומה דורש אדם, והצע Workflow מעשי"</p></div>
+
 </div>
 
 <div class="try-section">
+
 <h3>🎯 תרגיל מעשי</h3>
+
 <div class="prompt-box" onclick="copyPrompt(this)"><p>"חשוב על 3 משימות שאני עושה כל שבוע ב[תפקיד שלכם]. לכל משימה: 1) כמה זמן לוקחת 2) האם AI יכול לעזור 3) כמה זמן אחסוך 4) מה הפרומפט המתאים"</p></div>
+
 </div>
 
 <div class="quiz-section">
+
 <h3>❓ בדקו את עצמכם</h3>
+
 <div class="quiz-q"><p>1. איזה סוג משימה הכי מתאים לאוטומציה עם AI?</p><details><summary>הציצו בתשובה</summary><p>משימות חוזרות ופשוטות — שם ה-ROI הגבוה ביותר.</p></details></div>
+
 <div class="quiz-q"><p>2. מהם 4 שלבי בניית Workflow?</p><details><summary>הציצו בתשובה</summary><p>מפו → סמנו → בנו → בדקו.</p></details></div>
+
 </div>
 
 <div class="summary-box">
+
 <h3>💎 סיכום</h3>
+
 <ul>
+
 <li>התחילו ממשימות חוזרות ופשוטות — שם ה-ROI הגבוה ביותר</li>
+
 <li>AI לא מחליף — הוא מאיץ ומשחרר זמן לעבודה משמעותית</li>
+
 <li>שיטת 4 שלבים: מפו → סמנו → בנו → בדקו</li>
+
 <li>תמיד בקרה אנושית על תוצאות</li>
+
 </ul>
+
 </div>
+
 </main>
 
 <section class="course-complete">
+
 <button class="complete-btn" id="completeBtn" onclick="toggleComplete()">✓ סיימתי יחידה זו</button><br>
+
 <button class="share-course-btn" onclick="shareCourse()">📱 שתפו בוואטסאפ</button>
+
 </section>
+
 <nav class="nav-bottom">
+
 <a href="course9.html" class="nav-btn nav-prev">→ יחידה 9: שירות הציבור</a>
+
 <a href="course11.html" class="nav-btn nav-next">יחידה 11: RAG ←</a>
+
 </nav>
+
 <footer class="site-footer"><p>המקפצה — מותאם למובילי AI במגזר הציבורי בישראל © 2025</p></footer>
 <script>const COURSE_ID=10;</script>
 <script src="shared.js"></script>
+<script>
+function toggleCourseTheme(){
+  var h=document.documentElement;
+  var n=h.getAttribute("data-theme")==="dark"?"light":"dark";
+  h.setAttribute("data-theme",n);
+  localStorage.setItem("hamakpetza_theme",n);
+  var btn=document.getElementById("thmCourse");
+  if(btn) btn.textContent=n==="dark"?"☀️":"🌙";
+}
+(function(){
+  var t=localStorage.getItem("hamakpetza_theme");
+  if(t){
+    document.documentElement.setAttribute("data-theme",t);
+    var btn=document.getElementById("thmCourse");
+    if(btn) btn.textContent=t==="dark"?"☀️":"🌙";
+  }
+})();
+</script>
 </body>
 </html>

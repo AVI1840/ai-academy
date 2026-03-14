@@ -1,0 +1,8 @@
+node_modules/
+hamakpetza/node_modules/
+hamakpetza/.next/
+.next/
+*.lock
+dist/
+.env
+.env.local

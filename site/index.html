@@ -6,81 +6,61 @@
 <title>המקפצה — אקדמיית AI למובילי המגזר הציבורי</title>
 <meta name="description" content="12 יחידות לימוד מעשיות ב-AI למובילי המגזר הציבורי. מבוסס על Anthropic AI Fluency.">
 <meta property="og:title" content="המקפצה — אקדמיית AI למובילי המגזר הציבורי">
-<meta property="og:description" content="12 יחידות לימוד מעשיות ב-AI, מותאמות לעובדי מדינה.">
+<meta property="og:description" content="12 יחידות לימוד מעשיות ב-AI, מותאמות למגזר הציבורי. סילבוס, תרגולים, פרומפטים מוכנים ותעודת סיום.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://avi1840.github.io/ai-academy/site/">
+<meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630' fill='%23FAF8F5'%3E%3Crect width='1200' height='630' rx='0'/%3E%3Ctext x='600' y='280' text-anchor='middle' font-family='sans-serif' font-size='64' font-weight='800' fill='%23D97706'%3E🚀 המקפצה%3C/text%3E%3Ctext x='600' y='360' text-anchor='middle' font-family='sans-serif' font-size='28' fill='%231A1612'%3Eאקדמיית AI למובילי המגזר הציבורי%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Frank+Ruhl+Libre:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
-/* ===== LIGHT THEME (Anthropic-inspired) ===== */
+/* ===== LIGHT THEME ===== */
 :root,[data-theme="light"]{
-  --bg:#FAF8F5;--bg2:#F2EDE7;--bg3:#E8E0D6;
-  --text:#1A1612;--text2:#8C8278;--text3:#B5ADA3;
-  --border:#E8E0D6;--border2:#D8CFC4;
-  --accent:#D97706;--accent2:#B45309;
-  --green:#059669;--purple:#7C3AED;--blue:#2563EB;
-  --card:#FFFFFF;
-  --header-bg:rgba(250,248,245,.92);
-  --modal-overlay:rgba(0,0,0,.3);
-  --shadow-s:0 1px 3px rgba(0,0,0,.04);
-  --shadow-m:0 4px 16px rgba(0,0,0,.06);
-  --shadow-l:0 12px 40px rgba(0,0,0,.08);
-  --grad:linear-gradient(135deg,#D97706,#B45309);
-  --glow:none;
-  --hero-glow:radial-gradient(600px circle at 50% 0%,rgba(217,119,6,.06),transparent 70%);
-  --noise:none;
+--bg:#FAF8F5;--bg2:#F2EDE7;--bg3:#E8E0D6;--text:#1A1612;--text2:#8C8278;--text3:#B5ADA3;
+--border:#E8E0D6;--border2:#D8CFC4;--accent:#D97706;--accent2:#B45309;
+--green:#059669;--purple:#7C3AED;--blue:#2563EB;--card:#FFF;
+--header-bg:rgba(250,248,245,.92);--modal-overlay:rgba(0,0,0,.35);
+--shadow-s:0 1px 3px rgba(0,0,0,.04);--shadow-m:0 4px 16px rgba(0,0,0,.06);--shadow-l:0 12px 40px rgba(0,0,0,.08);
+--grad:linear-gradient(135deg,#D97706,#B45309);--glow:none;
+--hero-glow:radial-gradient(600px circle at 50% 0%,rgba(217,119,6,.06),transparent 70%);
 }
-</style>
-</head>
-<body></body></html>
-<style>
-/* ===== DARK THEME (Futuristic premium) ===== */
+/* ===== DARK THEME ===== */
 [data-theme="dark"]{
-  --bg:#09090B;--bg2:#111114;--bg3:#18181B;
-  --text:#FAFAFA;--text2:#A1A1AA;--text3:#71717A;
-  --border:rgba(255,255,255,.08);--border2:rgba(255,255,255,.14);
-  --accent:#F97316;--accent2:#EA580C;
-  --green:#22C55E;--purple:#A855F7;--blue:#3B82F6;
-  --card:rgba(255,255,255,.035);
-  --header-bg:rgba(9,9,11,.78);
-  --modal-overlay:rgba(0,0,0,.65);
-  --shadow-s:0 1px 3px rgba(0,0,0,.3);
-  --shadow-m:0 4px 16px rgba(0,0,0,.4);
-  --shadow-l:0 12px 40px rgba(0,0,0,.5);
-  --grad:linear-gradient(135deg,#F97316,#A855F7);
-  --glow:0 0 40px rgba(249,115,22,.08);
-  --hero-glow:radial-gradient(600px ellipse at 40% 20%,rgba(249,115,22,.1),transparent),radial-gradient(500px ellipse at 65% 40%,rgba(168,85,247,.07),transparent);
-  --noise:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.02'/%3E%3C/svg%3E");
+--bg:#09090B;--bg2:#111114;--bg3:#18181B;--text:#FAFAFA;--text2:#A1A1AA;--text3:#71717A;
+--border:rgba(255,255,255,.08);--border2:rgba(255,255,255,.14);--accent:#F97316;--accent2:#EA580C;
+--green:#22C55E;--purple:#A855F7;--blue:#3B82F6;--card:rgba(255,255,255,.035);
+--header-bg:rgba(9,9,11,.78);--modal-overlay:rgba(0,0,0,.65);
+--shadow-s:0 1px 3px rgba(0,0,0,.3);--shadow-m:0 4px 16px rgba(0,0,0,.4);--shadow-l:0 12px 40px rgba(0,0,0,.5);
+--grad:linear-gradient(135deg,#F97316,#A855F7);--glow:0 0 40px rgba(249,115,22,.08);
+--hero-glow:radial-gradient(600px ellipse at 40% 20%,rgba(249,115,22,.1),transparent),radial-gradient(500px ellipse at 65% 40%,rgba(168,85,247,.07),transparent);
 }
 /* ===== BASE ===== */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:'Heebo',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background .4s,color .4s}
-body::before{content:'';position:fixed;inset:0;background:var(--noise);pointer-events:none;z-index:0}
 a{color:var(--accent);text-decoration:none;transition:all .25s}
+.skip-link{position:absolute;top:-100px;left:0;background:var(--accent);color:#fff;padding:8px 16px;z-index:9999;border-radius:0 0 8px 0;font-weight:600}.skip-link:focus{top:0}
 @keyframes mesh{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 @keyframes livePulse{0%,100%{opacity:1;box-shadow:0 0 8px rgba(34,197,94,.5)}50%{opacity:.4;box-shadow:0 0 3px rgba(34,197,94,.2)}}
-.anim{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s}.anim.vis{opacity:1;transform:none}
-</style>
-<style>
-/* ===== HEADER ===== */
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.anim{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}.anim.vis{opacity:1;transform:none}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+/* HEADER */
 .hdr{position:sticky;top:0;z-index:100;background:var(--header-bg);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:11px 0;transition:background .4s,box-shadow .3s}
 .hdr.scrolled{box-shadow:var(--shadow-m)}
 .hdr-in{max-width:1140px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-size:1.3rem;font-weight:800;color:var(--text);display:flex;align-items:center;gap:8px}
-.logo:hover{color:var(--text)}
+.logo{font-size:1.3rem;font-weight:800;color:var(--text);display:flex;align-items:center;gap:8px}.logo:hover{color:var(--text)}
 .logo-i{width:34px;height:34px;border-radius:8px;background:var(--grad);background-size:200% 200%;animation:mesh 5s ease infinite;display:grid;place-items:center;color:#fff;font-size:.95rem;box-shadow:0 2px 8px rgba(217,119,6,.2)}
 .nav{display:flex;gap:22px;align-items:center}
-.nav a{color:var(--text3);font-size:.84rem;font-weight:500}
-.nav a:hover{color:var(--text)}
+.nav a{color:var(--text3);font-size:.84rem;font-weight:500}.nav a:hover{color:var(--text)}
 .nav-cta{background:var(--grad);background-size:200% 200%;animation:mesh 5s ease infinite;color:#fff!important;padding:8px 20px;border-radius:8px;font-weight:600;font-size:.82rem}
 .nav-cta:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(217,119,6,.2)}
-.thm{background:var(--card);border:1px solid var(--border);border-radius:8px;width:34px;height:34px;cursor:pointer;font-size:1rem;display:grid;place-items:center;transition:all .25s;color:var(--text)}
-.thm:hover{border-color:var(--accent)}
-.mob-btn{display:none;background:none;border:none;font-size:1.3rem;cursor:pointer;color:var(--text)}
-
-/* ===== HERO ===== */
-.hero{position:relative;padding:100px 24px 80px;max-width:820px;margin:0 auto;text-align:center}
+.hdr-right{display:flex;align-items:center;gap:10px}
+.thm{background:var(--card);border:1px solid var(--border);border-radius:8px;width:34px;height:34px;cursor:pointer;font-size:1rem;display:grid;place-items:center;transition:all .25s;color:var(--text)}.thm:hover{border-color:var(--accent)}
+.mob-btn{display:none;background:none;border:none;font-size:1.3rem;cursor:pointer;color:var(--text);padding:4px}
+/* HERO */
+.hero{position:relative;padding:100px 24px 70px;max-width:820px;margin:0 auto;text-align:center}
 .hero::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:100%;max-width:900px;height:900px;background:var(--hero-glow);pointer-events:none;z-index:-1}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;padding:7px 18px;border-radius:50px;font-size:.78rem;font-weight:600;background:var(--card);border:1px solid var(--border);color:var(--text2);margin-bottom:24px}
 .hero-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--green);animation:livePulse 2s infinite}
@@ -88,7 +68,7 @@ a{color:var(--accent);text-decoration:none;transition:all .25s}
 .hero h1 .hl{background:var(--grad);background-size:200% 200%;animation:mesh 5s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero>p{color:var(--text2);font-size:1.08rem;max-width:560px;margin:0 auto 40px;line-height:1.85}
 .hero-nums{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
-.hero-num{text-align:center;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 26px;min-width:115px;transition:all .3s}
+.hero-num{text-align:center;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 26px;min-width:110px;transition:all .3s}
 .hero-num:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:var(--glow)}
 .hero-num strong{display:block;font-size:2.2rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero-num span{font-size:.8rem;color:var(--text3)}
@@ -97,351 +77,597 @@ a{color:var(--accent);text-decoration:none;transition:all .25s}
 .btn-a:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(217,119,6,.25);color:#fff}
 .btn-b{background:var(--card);color:var(--text);padding:14px 34px;border-radius:10px;font-weight:600;font-size:.95rem;border:1.5px solid var(--border);cursor:pointer;transition:all .25s;display:inline-block}
 .btn-b:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
-.badge-row{margin-top:32px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.badge-row{margin-top:28px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
 .badge-pill{font-size:.72rem;padding:5px 14px;border-radius:50px;background:var(--card);border:1px solid var(--border);color:var(--text3);font-weight:500}
+/* SECTIONS */
+.sec{padding:80px 0}.sec-alt{background:var(--bg2)}
+.sec-title{text-align:center;font-size:1.8rem;font-weight:800;margin-bottom:8px}
+.sec-sub{text-align:center;color:var(--text2);font-size:.95rem;margin-bottom:48px;max-width:560px;margin-left:auto;margin-right:auto}
+/* STEPS */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.step{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px 20px;text-align:center;transition:all .3s;position:relative}
+.step:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:var(--shadow-m)}
+.step-num{width:40px;height:40px;border-radius:50%;background:var(--grad);color:#fff;font-weight:800;font-size:1rem;display:grid;place-items:center;margin:0 auto 14px}
+.step-icon{font-size:2rem;margin-bottom:10px}
+.step h3{font-size:.95rem;font-weight:700;margin-bottom:6px}
+.step p{font-size:.82rem;color:var(--text2);line-height:1.6}
+.step-arrow{position:absolute;left:-14px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:1.2rem}
+/* PROGRESS CARD */
+.prog-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:36px;display:flex;align-items:center;gap:36px;max-width:700px;margin:0 auto;box-shadow:var(--shadow-s);transition:all .3s}
+.prog-card:hover{box-shadow:var(--shadow-m)}
+.prog-ring-wrap{flex-shrink:0;position:relative;width:120px;height:120px}
+.prog-ring-wrap svg{width:120px;height:120px;transform:rotate(-90deg)}
+.prog-pct{position:absolute;inset:0;display:grid;place-items:center;font-size:1.8rem;font-weight:800}
+.prog-info{flex:1}
+.prog-info h3{font-size:1.15rem;font-weight:700;margin-bottom:6px}
+.prog-info p{color:var(--text2);font-size:.88rem;margin-bottom:16px}
+.prog-btn{display:inline-block;background:var(--grad);color:#fff;padding:10px 24px;border-radius:10px;font-weight:700;font-size:.88rem;border:none;cursor:pointer;transition:all .25s}
+.prog-btn:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(217,119,6,.2);color:#fff}
+.cert-btn{background:var(--green);margin-right:10px}
+.cert-btn:hover{box-shadow:0 4px 16px rgba(5,150,105,.3)}
+/* PERSONAS */
+.personas{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.persona{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px 20px;text-align:center;transition:all .3s}
+.persona:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:var(--shadow-m)}
+.persona-icon{font-size:2.4rem;margin-bottom:12px}
+.persona h3{font-size:.92rem;font-weight:700;margin-bottom:6px}
+.persona p{font-size:.82rem;color:var(--text2);line-height:1.6}
+/* VALUE GRID */
+.vals{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.val{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px;display:flex;gap:14px;align-items:flex-start;transition:all .3s}
+.val:hover{border-color:var(--accent);box-shadow:var(--shadow-s)}
+.val-icon{font-size:1.5rem;flex-shrink:0;margin-top:2px}
+.val h4{font-size:.9rem;font-weight:700;margin-bottom:4px}
+.val p{font-size:.82rem;color:var(--text2);line-height:1.5}
+/* SYLLABUS */
+.domains{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.domain{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px;transition:all .3s}
+.domain:hover{border-color:var(--accent);box-shadow:var(--shadow-s)}
+.domain-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.domain-icon{font-size:1.4rem}
+.domain h3{font-size:.92rem;font-weight:700}
+.domain ul{list-style:none;padding:0}.domain li{font-size:.82rem;color:var(--text2);padding:3px 0;line-height:1.5}
+.domain li::before{content:"→ ";color:var(--accent)}
+/* PATHS */
+.paths{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.path-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;text-align:center;transition:all .3s;position:relative;overflow:hidden}
+.path-card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:var(--shadow-m)}
+.path-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--grad)}
+.path-icon{font-size:2.2rem;margin-bottom:12px}
+.path-card h3{font-size:1.05rem;font-weight:700;margin-bottom:6px}
+.path-card p{font-size:.85rem;color:var(--text2);margin-bottom:14px;line-height:1.6}
+.path-units{font-size:.78rem;color:var(--accent);font-weight:600}
+/* COURSES GRID */
+.courses{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.crs{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px;transition:all .3s;display:block;color:var(--text);position:relative;overflow:hidden}
+.crs:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:var(--shadow-m);color:var(--text)}
+.crs.done{border-color:var(--green)}
+.crs.done::after{content:'✓';position:absolute;top:12px;left:12px;width:24px;height:24px;border-radius:50%;background:var(--green);color:#fff;font-size:.7rem;display:grid;place-items:center;font-weight:700}
+.crs-num{font-size:.72rem;color:var(--text3);font-weight:600;margin-bottom:6px}
+.crs-icon{font-size:1.6rem;margin-bottom:8px}
+.crs h3{font-size:.92rem;font-weight:700;margin-bottom:4px}
+.crs p{font-size:.78rem;color:var(--text2);line-height:1.5}
+.crs-tag{display:inline-block;margin-top:10px;font-size:.68rem;padding:3px 10px;border-radius:50px;font-weight:600}
+/* COMING SOON */
+.soon-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.soon{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px;opacity:.7;position:relative}
+.soon-tag{position:absolute;top:12px;left:12px;font-size:.65rem;padding:3px 10px;border-radius:50px;background:var(--accent);color:#fff;font-weight:700}
+.soon-icon{font-size:1.6rem;margin-bottom:8px}
+.soon h3{font-size:.88rem;font-weight:700;margin-bottom:4px}
+.soon p{font-size:.78rem;color:var(--text2);line-height:1.5}
+/* CTA BANNER */
+.cta-banner{background:var(--grad);background-size:200% 200%;animation:mesh 5s ease infinite;border-radius:20px;padding:48px 36px;text-align:center;color:#fff;position:relative;overflow:hidden}
+.cta-banner h2{font-size:1.6rem;font-weight:800;margin-bottom:10px}
+.cta-banner p{opacity:.9;margin-bottom:24px;font-size:.95rem}
+.cta-banner .btn-w{background:#fff;color:var(--accent2);padding:14px 34px;border-radius:10px;font-weight:700;font-size:.95rem;display:inline-block;transition:all .25s;border:none;cursor:pointer}
+.cta-banner .btn-w:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.15);color:var(--accent2)}
+/* FAQ */
+.faq-list{max-width:700px;margin:0 auto}
+.faq-item{background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:10px;overflow:hidden;transition:all .3s}
+.faq-item:hover{border-color:var(--accent)}
+.faq-q{padding:18px 22px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;font-weight:600;font-size:.92rem;user-select:none}
+.faq-q::after{content:'+';font-size:1.2rem;color:var(--text3);transition:transform .3s}
+.faq-item.open .faq-q::after{transform:rotate(45deg);color:var(--accent)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s}
+.faq-item.open .faq-a{max-height:300px;padding:0 22px 18px}
+.faq-a p{font-size:.88rem;color:var(--text2);line-height:1.7}
+/* ABOUT */
+.about-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:40px;max-width:700px;margin:0 auto;text-align:center}
+.about-card p{color:var(--text2);font-size:.92rem;line-height:1.8;margin-bottom:16px}
+.about-credit{font-size:.85rem;color:var(--text3);border-top:1px solid var(--border);padding-top:16px;margin-top:8px}
+/* SHARE */
+.share-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.share-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:10px;font-weight:600;font-size:.88rem;color:#fff;transition:all .25s;border:none;cursor:pointer}
+.share-btn:hover{transform:translateY(-2px);color:#fff}
+.share-wa{background:#25D366}.share-wa:hover{box-shadow:0 4px 16px rgba(37,211,102,.3)}
+.share-fb{background:#1877F2}.share-fb:hover{box-shadow:0 4px 16px rgba(24,119,242,.3)}
+.share-li{background:#0A66C2}.share-li:hover{box-shadow:0 4px 16px rgba(10,102,194,.3)}
+.share-cp{background:var(--card);color:var(--text);border:1px solid var(--border)}.share-cp:hover{border-color:var(--accent);color:var(--accent)}
+/* FOOTER */
+.ftr{border-top:1px solid var(--border);padding:32px 24px;text-align:center;color:var(--text3);font-size:.82rem;line-height:1.8}
+/* FEEDBACK */
+.feedback-fab{position:fixed;bottom:24px;left:24px;z-index:999;width:52px;height:52px;border-radius:50%;background:var(--grad);background-size:200% 200%;animation:mesh 5s ease infinite;color:#fff;font-size:1.4rem;border:none;cursor:pointer;box-shadow:0 4px 16px rgba(217,119,6,.3);transition:all .3s;display:grid;place-items:center}
+.feedback-fab:hover{transform:scale(1.1);box-shadow:0 6px 24px rgba(217,119,6,.4)}
+.feedback-modal{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;pointer-events:none;opacity:0;transition:opacity .3s}
+.feedback-modal.open{pointer-events:all;opacity:1}
+.feedback-backdrop{position:absolute;inset:0;background:var(--modal-overlay);backdrop-filter:blur(4px)}
+.feedback-panel{position:relative;background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:28px;width:90%;max-width:420px;box-shadow:var(--shadow-l);transform:translateY(20px);transition:transform .3s}
+.feedback-modal.open .feedback-panel{transform:translateY(0)}
+.feedback-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+.feedback-header h3{font-size:1.1rem;font-weight:700;margin:0}
+.feedback-close{background:none;border:none;font-size:1.2rem;cursor:pointer;color:var(--text2);padding:4px 8px;border-radius:6px}
+.feedback-close:hover{background:rgba(128,128,128,.1)}
+.fb-input{width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:10px;font-family:'Heebo',sans-serif;font-size:.9rem;margin-bottom:12px;background:var(--bg2);color:var(--text);transition:border-color .2s}
+.fb-input:focus{outline:none;border-color:var(--accent)}
+.fb-textarea{min-height:100px;resize:vertical}
+.fb-submit{width:100%;padding:12px;border:none;border-radius:10px;background:var(--grad);color:#fff;font-family:'Heebo',sans-serif;font-weight:700;font-size:.95rem;cursor:pointer;transition:all .2s}
+.fb-submit:hover{transform:translateY(-1px)}
+.fb-submit:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.fb-success{display:flex;align-items:center;justify-content:center;gap:8px;padding:20px;font-size:1rem;color:var(--green);font-weight:600}
+/* NAME MODAL */
+.name-modal{position:fixed;inset:0;z-index:1001;display:flex;align-items:center;justify-content:center;pointer-events:none;opacity:0;transition:opacity .3s}
+.name-modal.open{pointer-events:all;opacity:1}
+/* RESPONSIVE */
+@media(max-width:900px){
+.steps,.personas,.domains,.paths,.courses,.soon-grid,.vals{grid-template-columns:repeat(2,1fr)}
+.step-arrow{display:none}
+}
+@media(max-width:640px){
+.hero{padding:60px 16px 50px}.hero h1{font-size:2rem}
+.hero-nums{gap:8px}.hero-num{padding:14px 16px;min-width:80px}.hero-num strong{font-size:1.6rem}
+.hero-btns{flex-direction:column;align-items:center}.btn-a,.btn-b{width:100%;text-align:center}
+.badge-row{gap:6px}.badge-pill{font-size:.65rem;padding:4px 10px}
+.sec{padding:50px 0}.sec-title{font-size:1.4rem}.sec-sub{font-size:.85rem}
+.steps,.personas,.domains,.paths,.courses,.soon-grid,.vals{grid-template-columns:1fr}
+.prog-card{flex-direction:column;text-align:center;padding:28px 20px}
+.prog-ring-wrap{margin:0 auto}
+.nav{position:fixed;top:56px;right:-100%;width:70%;height:calc(100vh - 56px);background:var(--bg);flex-direction:column;padding:24px;gap:16px;transition:right .3s;border-left:1px solid var(--border);box-shadow:var(--shadow-l)}
+.nav.open{right:0}
+.nav a{font-size:1rem;padding:8px 0}
+.nav-cta{text-align:center;width:100%}
+.mob-btn{display:block}
+.cta-banner{padding:32px 20px;border-radius:14px}.cta-banner h2{font-size:1.2rem}
+.about-card{padding:24px}
+.share-btns{flex-direction:column;align-items:center}.share-btn{width:100%;justify-content:center}
+.faq-q{font-size:.85rem;padding:14px 16px}
+}
+@media print{.hdr,.ftr,.feedback-fab,.share-btns,.cta-banner{display:none}body{background:#fff;color:#000}}
 </style>
+</head>
+<body>
+<a href="#main" class="skip-link">דלג לתוכן</a>
 
+<!-- HEADER -->
 <header class="hdr" id="hdr">
 <div class="hdr-in">
 <a href="#" class="logo"><span class="logo-i">🚀</span>המקפצה</a>
 <nav class="nav" id="nav">
-<a href="#syllabus">סילבוס</a>
-<a href="#paths">מסלולים</a>
-<a href="#courses">יחידות</a>
-<a href="#about">אודות</a>
-<button class="thm" id="thmBtn" onclick="toggleTheme()" title="מצב כהה / בהיר">🌙</button>
+<a href="#syllabus">סילבוס</a><a href="#paths">מסלולים</a><a href="#courses">יחידות</a><a href="#faq">שאלות</a><a href="#about">אודות</a>
 <a href="#courses" class="nav-cta">התחילו ללמוד</a>
 </nav>
+<div class="hdr-right">
+<button class="thm" id="thmBtn" onclick="toggleTheme()" title="מצב כהה / בהיר">🌙</button>
 <button class="mob-btn" onclick="document.getElementById('nav').classList.toggle('open')" aria-label="תפריט">☰</button>
+</div>
 </div>
 </header>
 
+<main id="main">
+
+<!-- HERO -->
 <section class="hero">
-<div class="hero-badge"><span class="dot"></span> תוכנית הכשרה ממשלתית פעילה</div>
+<div class="hero-badge"><span class="dot"></span> תוכנית הכשרה למגזר הציבורי</div>
 <h1>אקדמיית <span class="hl">AI</span><br>למובילי המגזר הציבורי</h1>
-<p>12 יחידות לימוד מעשיות, מסילבוס בסיסי ועד RAG ו-Claude Code. נבנתה עבור ~1,000 מובילי AI בממשלת ישראל.</p>
+<p>12 יחידות לימוד מעשיות, מסילבוס בסיסי ועד <span dir="ltr">RAG</span> ו-<span dir="ltr">Claude Code</span>. מבוססת על סילבוס <span dir="ltr">Anthropic AI Fluency</span> עם התאמות לממשלת ישראל.</p>
 <div class="hero-nums">
 <div class="hero-num"><strong>12</strong><span>יחידות לימוד</span></div>
-<div class="hero-num"><strong>6</strong><span>תחומי ידע</span></div>
+<div class="hero-num"><strong>~7</strong><span>שעות סה״כ</span></div>
 <div class="hero-num"><strong>50+</strong><span>פרומפטים מוכנים</span></div>
+<div class="hero-num"><strong>🎓</strong><span>תעודת סיום</span></div>
 </div>
 <div class="hero-btns">
 <a href="#courses" class="btn-a">התחילו ללמוד →</a>
 <a href="#syllabus" class="btn-b">צפו בסילבוס</a>
 </div>
 <div class="badge-row">
-<span class="badge-pill">🏛️ מבוסס Anthropic AI Fluency</span>
+<span class="badge-pill">🏛️ מבוסס <span dir="ltr">Anthropic AI Fluency</span></span>
 <span class="badge-pill">🔧 נבנה עם ~6 כלי AI במקביל</span>
-<span class="badge-pill">📋 מותאם לממשלת ישראל</span>
+<span class="badge-pill">📋 מותאם למגזר הציבורי</span>
 </div>
 </section>
-<style>
-/* ===== PROGRESS ===== */
-.prog-sec{max-width:1140px;margin:0 auto 80px;padding:0 24px}
-.prog-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px 36px;display:flex;align-items:center;gap:32px;box-shadow:var(--shadow-s);position:relative;overflow:hidden}
-.prog-card::before{content:'';position:absolute;top:0;right:0;left:0;height:2px;background:var(--grad);background-size:200% 200%;animation:mesh 4s ease infinite}
-.ring-w{flex-shrink:0;position:relative;width:100px;height:100px}
-.ring-w svg{transform:rotate(-90deg)}
-.ring-bg{fill:none;stroke:var(--border);stroke-width:6}
-.ring-f{fill:none;stroke:url(#rGrad);stroke-width:6;stroke-linecap:round;transition:stroke-dashoffset .8s ease}
-.ring-pct{position:absolute;inset:0;display:grid;place-items:center;font-size:1.4rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.prog-info{flex:1}
-.prog-info h3{font-size:1.1rem;font-weight:700;margin-bottom:4px}
-.prog-info p{color:var(--text2);font-size:.86rem;margin-bottom:14px}
-.bar{height:6px;background:var(--border);border-radius:3px;overflow:hidden}
-.bar-f{height:100%;background:var(--grad);background-size:200% 200%;animation:mesh 4s ease infinite;border-radius:3px;transition:width .8s ease}
-.prog-meta{font-size:.78rem;color:var(--text3);margin-top:8px}
-/* ===== SECTIONS ===== */
-.sec{max-width:1140px;margin:0 auto 90px;padding:0 24px}
-.sec-eye{font-size:.72rem;font-weight:700;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
-.sec-title{font-size:2rem;font-weight:800;margin-bottom:8px;letter-spacing:-.02em}
-.sec-sub{color:var(--text2);font-size:.95rem;margin-bottom:40px;max-width:500px;line-height:1.85}
-.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-/* ===== DOMAIN CARDS ===== */
-.dc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;transition:all .3s;box-shadow:var(--shadow-s)}
-.dc:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:var(--shadow-m)}
-[data-theme="dark"] .dc:hover{box-shadow:var(--glow)}
-.dc-i{width:44px;height:44px;border-radius:10px;display:grid;place-items:center;font-size:1.3rem;margin-bottom:14px}
-.dc h3{font-size:1rem;font-weight:700;margin-bottom:5px}
-.dc p{color:var(--text2);font-size:.84rem;line-height:1.65}
-.dc-t{margin-top:12px;font-size:.72rem;color:var(--accent);font-weight:600}
-</style>
 
-<section class="prog-sec">
-<div class="prog-card">
-<div class="ring-w">
-<svg width="100" height="100" viewBox="0 0 100 100">
-<defs><linearGradient id="rGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:var(--accent)"/><stop offset="100%" style="stop-color:var(--purple)"/></linearGradient></defs>
-<circle class="ring-bg" cx="50" cy="50" r="44"/>
-<circle class="ring-f" id="pRing" cx="50" cy="50" r="44" stroke-dasharray="276.46" stroke-dashoffset="276.46"/>
+<!-- HOW IT WORKS -->
+<section class="sec sec-alt" id="how">
+<div class="wrap anim">
+<h2 class="sec-title">איך הלמידה בנויה?</h2>
+<p class="sec-sub">כל יחידה עוברת 4 שלבים — מתיאוריה לתרגול מעשי</p>
+<div class="steps">
+<div class="step"><div class="step-num">1</div><div class="step-icon">📖</div><h3>תיאוריה</h3><p>הסבר ברור ומותאם למגזר הציבורי</p></div>
+<div class="step"><span class="step-arrow">←</span><div class="step-num">2</div><div class="step-icon">💬</div><h3>פרומפטים מוכנים</h3><p>50+ פרומפטים להעתקה ושימוש מיידי</p></div>
+<div class="step"><span class="step-arrow">←</span><div class="step-num">3</div><div class="step-icon">🛠️</div><h3>תרגול מעשי</h3><p>תרגילים מותאמים לעבודה היומיומית</p></div>
+<div class="step"><span class="step-arrow">←</span><div class="step-num">4</div><div class="step-icon">✅</div><h3>שאלות בדיקה</h3><p>בדקו שהבנתם לפני שממשיכים</p></div>
+</div>
+<p style="text-align:center;margin-top:28px;font-size:.82rem;color:var(--text3)">מבוסס על <span dir="ltr">Anthropic AI Fluency</span> | נבנה עם ~6 כלי AI | מותאם למגזר הציבורי</p>
+</div>
+</section>
+
+<!-- PROGRESS -->
+<section class="sec" id="progress">
+<div class="wrap anim">
+<h2 class="sec-title">ההתקדמות שלי</h2>
+<p class="sec-sub">המערכת עוקבת אחרי ההתקדמות שלכם אוטומטית</p>
+<div class="prog-card" id="progCard">
+<div class="prog-ring-wrap">
+<svg viewBox="0 0 120 120">
+<circle cx="60" cy="60" r="52" fill="none" stroke-width="8" stroke="#E8E0D6" opacity=".3"/>
+<circle cx="60" cy="60" r="52" fill="none" stroke-width="8" stroke="#D97706" stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="326.7" id="progCircle"/>
 </svg>
-<div class="ring-pct" id="pPct">0%</div>
+<div class="prog-pct" id="progPct">0%</div>
 </div>
 <div class="prog-info">
-<h3>ההתקדמות שלך</h3>
-<p id="pText">עוד לא התחלת — בחר/י יחידה והתחל/י ללמוד</p>
-<div class="bar"><div class="bar-f" id="pBar" style="width:0%"></div></div>
-<div class="prog-meta" id="pMeta">0 מתוך 12 יחידות הושלמו</div>
+<h3 id="progTitle">התחילו ללמוד</h3>
+<p id="progDesc">השלימו את 12 היחידות כדי לקבל תעודת סיום</p>
+<div id="progActions">
+<a href="course1.html" class="prog-btn" id="progBtn">התחילו ביחידה 1 →</a>
+</div>
+</div>
 </div>
 </div>
 </section>
 
-<section class="sec" id="syllabus">
-<div class="sec-eye">סילבוס</div>
-<h2 class="sec-title">6 תחומי ידע</h2>
-<p class="sec-sub">מבסיס ועד מתקדם — תוכנית מובנית שמכסה את כל מה שמוביל AI בממשלה צריך</p>
-<div class="g3">
-<div class="dc anim"><div class="dc-i" style="background:rgba(5,150,105,.08)">🧠</div><h3>בסיס AI</h3><p>אוריינות AI, מפת המודלים, עבודה אחראית</p><div class="dc-t">יחידות 1-2</div></div>
-<div class="dc anim"><div class="dc-i" style="background:rgba(217,119,6,.08)">✍️</div><h3>הנדסת הנחיות</h3><p>Prompt Engineering, טכניקות מתקדמות, XML</p><div class="dc-t">יחידה 3</div></div>
-<div class="dc anim"><div class="dc-i" style="background:rgba(37,99,235,.08)">📝</div><h3>כתיבה וניתוח</h3><p>כתיבה ממשלתית, ניתוח נתונים, מחקר</p><div class="dc-t">יחידות 4-6</div></div>
-<div class="dc anim"><div class="dc-i" style="background:rgba(124,58,237,.08)">💡</div><h3>חשיבה ואתיקה</h3><p>חשיבה אסטרטגית, פתרון בעיות, אתיקה</p><div class="dc-t">יחידות 7-8</div></div>
-<div class="dc anim"><div class="dc-i" style="background:rgba(251,191,36,.08)">🏛️</div><h3>AI בשירות הציבורי</h3><p>שירות לאזרח, הנגשת מידע, אוטומציה</p><div class="dc-t">יחידות 9-10</div></div>
-<div class="dc anim"><div class="dc-i" style="background:rgba(6,182,212,.08)">💻</div><h3>AI מתקדם וטכני</h3><p>RAG, מאגרי ידע ארגוניים, Claude Code</p><div class="dc-t">יחידות 11-12</div></div>
+<!-- WHO IS IT FOR -->
+<section class="sec sec-alt" id="who">
+<div class="wrap anim">
+<h2 class="sec-title">למי מתאים?</h2>
+<p class="sec-sub">ההכשרה מותאמת למגוון תפקידים במגזר הציבורי</p>
+<div class="personas">
+<div class="persona"><div class="persona-icon">👤</div><h3>עובד מדינה</h3><p>שרוצה להתחיל לעבוד עם AI ביום-יום ולהתייעל</p></div>
+<div class="persona"><div class="persona-icon">👔</div><h3>מנהל</h3><p>שרוצה להוביל שינוי דיגיטלי ולהטמיע AI בצוות</p></div>
+<div class="persona"><div class="persona-icon">🚀</div><h3>מוביל AI / דיגיטל</h3><p>שרוצה כלים מתקדמים ומתודולוגיה מוכחת</p></div>
+<div class="persona"><div class="persona-icon">💻</div><h3>איש IT / מפתח</h3><p>שרוצה להכיר <span dir="ltr">RAG</span>, <span dir="ltr">Claude Code</span> וכלים טכניים</p></div>
+</div>
 </div>
 </section>
-<style>
-/* ===== PATH CARDS ===== */
-.pc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;position:relative;overflow:hidden;transition:all .3s;box-shadow:var(--shadow-s)}
-.pc:hover{transform:translateY(-3px);box-shadow:var(--shadow-m)}
-[data-theme="dark"] .pc:hover{box-shadow:var(--glow)}
-.pc::before{content:'';position:absolute;top:0;right:0;left:0;height:3px}
-.pc.basic::before{background:var(--green)}.pc.adv::before{background:var(--accent)}.pc.lead::before{background:var(--purple)}
-.pt{display:inline-block;padding:4px 12px;border-radius:50px;font-size:.72rem;font-weight:600;margin-bottom:12px}
-.pc.basic .pt{background:rgba(5,150,105,.08);color:var(--green)}
-.pc.adv .pt{background:rgba(217,119,6,.08);color:var(--accent)}
-.pc.lead .pt{background:rgba(124,58,237,.08);color:var(--purple)}
-.pc h3{font-size:1.1rem;font-weight:700;margin-bottom:6px}
-.pc>p{color:var(--text2);font-size:.84rem;line-height:1.65;margin-bottom:14px}
-.pl{list-style:none;padding:0}.pl li{padding:7px 0;border-bottom:1px solid var(--border);font-size:.84rem;color:var(--text2)}.pl li:last-child{border:none}.pl li::before{content:'← ';color:var(--accent);font-weight:600}
-/* ===== COURSE CARDS ===== */
-.cc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px;transition:all .3s;position:relative;display:flex;flex-direction:column;overflow:hidden;box-shadow:var(--shadow-s)}
-.cc::after{content:'';position:absolute;bottom:0;right:0;left:0;height:2px;background:var(--grad);background-size:200% 200%;animation:mesh 5s ease infinite;opacity:0;transition:opacity .3s}
-.cc:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:var(--shadow-m)}
-.cc:hover::after{opacity:1}
-[data-theme="dark"] .cc:hover{box-shadow:var(--glow)}
-.cc-n{font-size:.74rem;font-weight:600;color:var(--text3);margin-bottom:8px}
-.cc h3{font-size:.98rem;font-weight:700;margin-bottom:6px;line-height:1.4}
-.cc-d{color:var(--text2);font-size:.83rem;line-height:1.65;margin-bottom:14px;flex:1}
-.cc-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
-.cc-tag{font-size:.68rem;padding:3px 10px;border-radius:50px;background:var(--bg2);color:var(--text3);border:1px solid var(--border)}
-.cc-link{font-size:.85rem;font-weight:600;color:var(--accent)}
-.cc-done{position:absolute;top:14px;left:14px;width:24px;height:24px;border-radius:50%;background:var(--green);color:#fff;display:none;place-items:center;font-size:.75rem;box-shadow:0 2px 8px rgba(5,150,105,.25)}
-</style>
 
+<!-- WHAT YOU GET -->
+<section class="sec" id="value">
+<div class="wrap anim">
+<h2 class="sec-title">מה תקבלו?</h2>
+<p class="sec-sub">הכל כלול — בחינם, בקצב שלכם</p>
+<div class="vals">
+<div class="val"><div class="val-icon">📚</div><div><h4>12 יחידות לימוד מעשיות</h4><p>מאוריינות בסיסית ועד כלים מתקדמים</p></div></div>
+<div class="val"><div class="val-icon">💬</div><div><h4>50+ פרומפטים מוכנים</h4><p>להעתקה ושימוש מיידי בעבודה</p></div></div>
+<div class="val"><div class="val-icon">🏛️</div><div><h4>תרגילים למגזר הציבורי</h4><p>דוגמאות ותרחישים מהשטח</p></div></div>
+<div class="val"><div class="val-icon">📊</div><div><h4>מעקב התקדמות אישי</h4><p>ראו בדיוק איפה אתם עומדים</p></div></div>
+<div class="val"><div class="val-icon">🎓</div><div><h4>תעודת סיום להדפסה</h4><p>בסיום כל 12 היחידות</p></div></div>
+<div class="val"><div class="val-icon">⏰</div><div><h4>למידה עצמית בקצב שלכם</h4><p>~7 שעות סה״כ, בלי לחץ</p></div></div>
+</div>
+</div>
+</section>
+
+<!-- SYLLABUS -->
+<section class="sec sec-alt" id="syllabus">
+<div class="wrap anim">
+<h2 class="sec-title">הסילבוס</h2>
+<p class="sec-sub">6 תחומי ידע, 12 יחידות לימוד — מבוסס על <span dir="ltr">Anthropic AI Fluency</span></p>
+<div class="domains">
+<div class="domain"><div class="domain-head"><span class="domain-icon">🧠</span><h3>יסודות AI</h3></div><ul><li>אוריינות AI ועבודה אחראית</li><li>מפת המודלים — במה להשתמש ומתי</li></ul></div>
+<div class="domain"><div class="domain-head"><span class="domain-icon">✍️</span><h3>הנדסת הנחיות</h3></div><ul><li><span dir="ltr">Prompt Engineering</span> מתקדם</li><li>AI לכתיבה ותקשורת</li></ul></div>
+<div class="domain"><div class="domain-head"><span class="domain-icon">📊</span><h3>נתונים ומחקר</h3></div><ul><li>AI לניתוח נתונים</li><li>חיפוש ומחקר עם AI</li></ul></div>
+<div class="domain"><div class="domain-head"><span class="domain-icon">💡</span><h3>חשיבה ואתיקה</h3></div><ul><li>AI לחשיבה ופתרון בעיות</li><li>אתיקה ובטיחות AI בממשלה</li></ul></div>
+<div class="domain"><div class="domain-head"><span class="domain-icon">🏛️</span><h3>יישום ממשלתי</h3></div><ul><li>AI לשירות הציבור</li><li>אוטומציה ותהליכי עבודה</li></ul></div>
+<div class="domain"><div class="domain-head"><span class="domain-icon">⚙️</span><h3>כלים מתקדמים</h3></div><ul><li><span dir="ltr">RAG</span> — חיבור AI למאגרי ידע</li><li><span dir="ltr">Claude Code</span> — למפתחים</li></ul></div>
+</div>
+</div>
+</section>
+
+<!-- PATHS -->
 <section class="sec" id="paths">
-<div class="sec-eye">מסלולי למידה</div>
-<h2 class="sec-title">3 מסלולים מותאמים</h2>
-<p class="sec-sub">בחרו את המסלול שמתאים לתפקיד ולרמה שלכם</p>
-<div class="g3">
-<div class="pc basic anim"><span class="pt">בסיסי</span><h3>כל עובד מדינה</h3><p>בסיס AI, כתיבה, ואתיקה — חובה לכל עובד</p><ul class="pl"><li>אוריינות AI ועבודה אחראית</li><li>הנדסת הנחיות</li><li>כתיבה ותקשורת עם AI</li><li>אתיקה ובטיחות AI</li></ul></div>
-<div class="pc adv anim"><span class="pt">מתקדם</span><h3>מנהלים ומובילים</h3><p>ניתוח, מחקר, חשיבה אסטרטגית ואוטומציה</p><ul class="pl"><li>מפת המודלים</li><li>ניתוח נתונים עם AI</li><li>חיפוש ומחקר</li><li>חשיבה ופתרון בעיות</li><li>שירות הציבור</li><li>אוטומציה ותהליכי עבודה</li></ul></div>
-<div class="pc lead anim"><span class="pt">מוביל AI</span><h3>מובילי AI וצוותי IT</h3><p>RAG, Claude Code, וכלים טכניים</p><ul class="pl"><li>כל 10 היחידות הקודמות</li><li>RAG — חיבור AI למאגרי ידע</li><li>Claude Code — למפתחים</li></ul></div>
+<div class="wrap anim">
+<h2 class="sec-title">מסלולי למידה</h2>
+<p class="sec-sub">בחרו את המסלול שמתאים לכם</p>
+<div class="paths">
+<div class="path-card"><div class="path-icon">🌱</div><h3>בסיסי</h3><p>לכל עובדי המדינה — יסודות AI, פרומפטים, כתיבה וניתוח נתונים</p><div class="path-units">יחידות 1–5</div></div>
+<div class="path-card"><div class="path-icon">⚡</div><h3>מתקדם</h3><p>למנהלים ומובילים — מחקר, חשיבה, אתיקה ושירות ציבורי</p><div class="path-units">יחידות 6–9</div></div>
+<div class="path-card"><div class="path-icon">🔥</div><h3>מוביל AI</h3><p>למובילי דיגיטל ומפתחים — אוטומציה, <span dir="ltr">RAG</span> ו-<span dir="ltr">Claude Code</span></p><div class="path-units">יחידות 10–12</div></div>
+</div>
 </div>
 </section>
 
-<section class="sec" id="courses">
-<div class="sec-eye">יחידות לימוד</div>
-<h2 class="sec-title">12 יחידות מעשיות</h2>
-<p class="sec-sub">כל יחידה כוללת תיאוריה, פרומפטים מוכנים, תרגילים ושאלות בדיקה</p>
-<div class="g3" id="coursesGrid"></div>
+<!-- COURSES GRID -->
+<section class="sec sec-alt" id="courses">
+<div class="wrap anim">
+<h2 class="sec-title">12 יחידות הלימוד</h2>
+<p class="sec-sub">לחצו על יחידה כדי להתחיל ללמוד</p>
+<div class="courses" id="coursesGrid"></div>
+</div>
 </section>
-<style>
-/* ===== CTA BANNER ===== */
-.cta-w{max-width:1140px;margin:0 auto 90px;padding:0 24px}
-.cta-box{border-radius:20px;padding:52px 36px;text-align:center;position:relative;overflow:hidden;background:var(--bg2);border:1px solid var(--border)}
-.cta-box::before{content:'';position:absolute;inset:0;background:var(--hero-glow);pointer-events:none}
-.cta-box::after{content:'';position:absolute;top:0;right:0;left:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent),var(--purple),transparent);opacity:.5}
-.cta-box h2{font-size:1.8rem;font-weight:800;margin-bottom:10px;position:relative;z-index:1}
-.cta-box p{color:var(--text2);font-size:.95rem;margin-bottom:24px;position:relative;z-index:1;max-width:460px;margin-left:auto;margin-right:auto;line-height:1.8}
-/* ===== ABOUT ===== */
-.about-sec{max-width:700px;margin:0 auto 90px;padding:0 24px;text-align:center}
-.about-sec p{color:var(--text2);font-size:.98rem;line-height:1.9;margin-bottom:14px}
-.credit{display:inline-flex;flex-direction:column;align-items:center;gap:8px;margin-top:24px;padding:28px 40px;background:var(--card);border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow-s)}
-.credit .av{width:52px;height:52px;border-radius:50%;background:var(--grad);background-size:200% 200%;animation:mesh 5s ease infinite;display:grid;place-items:center;color:#fff;font-size:1.2rem;font-weight:800}
-.credit .nm{font-size:1rem;font-weight:700}
-.credit .rl{font-size:.84rem;color:var(--text2)}
-/* ===== SHARE SECTION ===== */
-.share-sec{max-width:700px;margin:0 auto 90px;padding:0 24px;text-align:center}
-.share-sec h3{font-size:1.2rem;font-weight:700;margin-bottom:8px}
-.share-sec p{color:var(--text2);font-size:.9rem;margin-bottom:18px}
-.share-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-.sh-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 22px;border-radius:10px;font-weight:600;font-size:.85rem;border:none;cursor:pointer;transition:all .25s;color:#fff}
-.sh-btn:hover{transform:translateY(-2px);color:#fff}
-.sh-wa{background:#25d366;box-shadow:0 3px 12px rgba(37,211,102,.2)}.sh-wa:hover{background:#1da851}
-.sh-fb{background:#1877F2;box-shadow:0 3px 12px rgba(24,119,242,.2)}.sh-fb:hover{background:#1565C0}
-.sh-li{background:#0A66C2;box-shadow:0 3px 12px rgba(10,102,194,.2)}.sh-li:hover{background:#084E96}
-/* ===== FOOTER ===== */
-.ftr{border-top:1px solid var(--border);padding:40px 24px;text-align:center;transition:background .4s}
-.ftr-logo{font-size:1rem;font-weight:700;margin-bottom:6px;color:var(--text)}
-.ftr-line{width:36px;height:2px;background:var(--grad);margin:10px auto;border-radius:1px}
-.ftr-txt{color:var(--text3);font-size:.78rem;line-height:1.9}
-.ftr-links{margin-top:14px;display:flex;gap:20px;justify-content:center;flex-wrap:wrap}
-.ftr-links a{color:var(--text3);font-size:.78rem}.ftr-links a:hover{color:var(--accent)}
-</style>
 
-<section class="cta-w">
-<div class="cta-box">
+<!-- COMING SOON -->
+<section class="sec" id="soon">
+<div class="wrap anim">
+<h2 class="sec-title">בקרוב</h2>
+<p class="sec-sub">יחידות בונוס שנמצאות בפיתוח</p>
+<div class="soon-grid">
+<div class="soon"><span class="soon-tag">בקרוב</span><div class="soon-icon">🎨</div><h3>AI ליצירת מצגות ותוכן ויזואלי</h3><p>עיצוב שקפים, אינפוגרפיקות ותוכן חזותי עם AI</p></div>
+<div class="soon"><span class="soon-tag">בקרוב</span><div class="soon-icon">📋</div><h3>AI לניהול פרויקטים</h3><p>תכנון, מעקב ודיווח על פרויקטים בעזרת AI</p></div>
+<div class="soon"><span class="soon-tag">בקרוב</span><div class="soon-icon">🤝</div><h3>AI לשיתוף פעולה בין-ארגוני</h3><p>כלים לעבודה משותפת בין משרדי ממשלה</p></div>
+</div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="sec sec-alt">
+<div class="wrap anim">
+<div class="cta-banner">
 <h2>מוכנים להתחיל?</h2>
-<p>הצטרפו ל-1,000 מובילי AI במגזר הציבורי שכבר לומדים. בחרו יחידה והתחילו — בקצב שלכם.</p>
-<a href="#courses" class="btn-a" style="position:relative;z-index:1">בחרו יחידה והתחילו →</a>
+<p>12 יחידות לימוד מעשיות מחכות לכם — בחינם, בקצב שלכם</p>
+<a href="#courses" class="btn-w">התחילו ללמוד עכשיו →</a>
+</div>
 </div>
 </section>
 
-<section class="about-sec" id="about">
-<div class="sec-eye">אודות</div>
-<h2 class="sec-title">על המקפצה</h2>
-<p>תוכנית הכשרה ממשלתית מלאה ב-AI, שנבנתה עבור ~1,000 מובילי AI בממשלת ישראל. מבוססת על סילבוס Anthropic AI Fluency עם התאמות לממשלה, ונבנתה עם כ-6 כלי AI במקביל לתיקוף ולדיוק (שתמיד דינמי — לקחת בערבון מוגבל).</p>
-<p>נשמח לתגובות ופידבק!</p>
-<div class="credit">
-<div class="av">א</div>
-<div class="nm">אביעד יצחקי</div>
-<div class="rl">מוביל AI ושותפויות, מינהלי גמלאות ביטוח לאומי</div>
+<!-- FAQ -->
+<section class="sec" id="faq">
+<div class="wrap anim">
+<h2 class="sec-title">שאלות נפוצות</h2>
+<p class="sec-sub">תשובות לשאלות שנשאלות הכי הרבה</p>
+<div class="faq-list">
+<div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">כמה זמן לוקח לסיים את כל ההכשרה?</div><div class="faq-a"><p>כ-7 שעות סה״כ. אפשר ללמוד בקצב שלכם — יחידה ביום, שתיים בשבוע, או הכל ביום אחד. ההתקדמות נשמרת אוטומטית.</p></div></div>
+<div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">צריך ידע טכני מוקדם?</div><div class="faq-a"><p>לא. יחידות 1–9 מתאימות לכל עובד מדינה ללא רקע טכני. יחידות 11–12 (<span dir="ltr">RAG</span> ו-<span dir="ltr">Claude Code</span>) מיועדות לאנשי IT ומפתחים.</p></div></div>
+<div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">איך מקבלים תעודת סיום?</div><div class="faq-a"><p>משלימים את כל 12 היחידות (לוחצים "סיימתי" בכל יחידה). כשמגיעים ל-100% — מופיע כפתור להורדת תעודה מעוצבת להדפסה עם השם שלכם.</p></div></div>
+<div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">האם התוכן מתעדכן?</div><div class="faq-a"><p>כן, התוכן מתעדכן באופן שוטף. עולם ה-AI משתנה מהר ואנחנו מעדכנים את היחידות בהתאם.</p></div></div>
+<div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">על מה מבוססת ההכשרה?</div><div class="faq-a"><p>על סילבוס <span dir="ltr">Anthropic AI Fluency</span> עם התאמות לממשלת ישראל. התוכן נבנה ותוקף עם כ-6 כלי AI במקביל לדיוק מרבי.</p></div></div>
+</div>
 </div>
 </section>
 
-<section class="share-sec">
-<h3>📣 שתפו עם קולגות, המשרד וחברים</h3>
-<p>הכירו לעמיתים את התוכנית — ככל שיותר אנשים לומדים, כך הארגון מתקדם</p>
+<!-- ABOUT -->
+<section class="sec sec-alt" id="about">
+<div class="wrap anim">
+<h2 class="sec-title">אודות</h2>
+<div class="about-card">
+<p>תוכנית הכשרה ממשלתית מלאה ב-AI, מבוססת על סילבוס <span dir="ltr">Anthropic AI Fluency</span> עם התאמות לממשלת ישראל. 12 יחידות לימוד מעשיות שמכסות את כל מה שמוביל AI במגזר הציבורי צריך לדעת.</p>
+<p>התוכן נבנה ותוקף עם כ-6 כלי AI במקביל, ומותאם לאתגרים הייחודיים של השירות הציבורי בישראל.</p>
+<div class="about-credit">נבנה ע״י אביעד יצחקי, מוביל AI ושותפויות, מינהלי גמלאות, ביטוח לאומי</div>
+</div>
+</div>
+</section>
+
+<!-- SHARE -->
+<section class="sec" id="share">
+<div class="wrap anim">
+<h2 class="sec-title">שתפו עם קולגות</h2>
+<p class="sec-sub">הכירו את ההכשרה לעוד אנשים במשרד ובארגון</p>
 <div class="share-btns">
-<button class="sh-btn sh-wa" onclick="shareWA()">📱 וואטסאפ</button>
-<button class="sh-btn sh-fb" onclick="shareFB()">📘 פייסבוק</button>
-<button class="sh-btn sh-li" onclick="shareLI()">💼 לינקדאין</button>
+<a class="share-btn share-wa" href="https://wa.me/?text=%F0%9F%9A%80%20%D7%94%D7%9E%D7%A7%D7%A4%D7%A6%D7%94%20%E2%80%94%20%D7%90%D7%A7%D7%93%D7%9E%D7%99%D7%99%D7%AA%20AI%20%D7%9C%D7%9E%D7%95%D7%91%D7%99%D7%9C%D7%99%20%D7%94%D7%9E%D7%92%D7%96%D7%A8%20%D7%94%D7%A6%D7%99%D7%91%D7%95%D7%A8%D7%99%0A12%20%D7%99%D7%97%D7%99%D7%93%D7%95%D7%AA%20%D7%9C%D7%99%D7%9E%D7%95%D7%93%20%D7%9E%D7%A2%D7%A9%D7%99%D7%95%D7%AA%20%D7%91%D7%97%D7%99%D7%A0%D7%9D%0Ahttps%3A%2F%2Favi1840.github.io%2Fai-academy%2Fsite%2F" target="_blank">📱 שתפו בוואטסאפ</a>
+<a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Favi1840.github.io%2Fai-academy%2Fsite%2F" target="_blank">📘 שתפו בפייסבוק</a>
+<a class="share-btn share-li" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Favi1840.github.io%2Fai-academy%2Fsite%2F" target="_blank">💼 שתפו בלינקדאין</a>
+<button class="share-btn share-cp" onclick="navigator.clipboard.writeText('https://avi1840.github.io/ai-academy/site/');this.innerHTML='✅ הקישור הועתק!'">🔗 העתיקו קישור</button>
+</div>
 </div>
 </section>
 
-<footer class="ftr">
-<div class="ftr-logo">🚀 המקפצה</div>
-<div class="ftr-line"></div>
-<div class="ftr-txt">מבוסס על Anthropic AI Fluency ו-OpenAI Academy · מותאם למגזר הציבורי © 2025</div>
-<div class="ftr-links"><a href="#syllabus">סילבוס</a><a href="#paths">מסלולים</a><a href="#courses">יחידות</a><a href="#about">אודות</a></div>
-</footer>
-<style>
-/* ===== FEEDBACK FAB + MODAL ===== */
-.fb-fab{position:fixed;bottom:20px;left:20px;z-index:999;width:50px;height:50px;border-radius:50%;background:var(--grad);background-size:200% 200%;animation:mesh 5s ease infinite;color:#fff;font-size:1.3rem;border:none;cursor:pointer;box-shadow:0 4px 16px rgba(217,119,6,.25);transition:all .3s;display:grid;place-items:center}
-.fb-fab:hover{transform:scale(1.1)}
-.fb-modal{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;pointer-events:none;opacity:0;transition:opacity .3s}
-.fb-modal.open{pointer-events:all;opacity:1}
-.fb-bk{position:absolute;inset:0;background:var(--modal-overlay);backdrop-filter:blur(4px)}
-.fb-panel{position:relative;background:var(--bg);border:1px solid var(--border2);border-radius:16px;padding:24px;width:92%;max-width:400px;box-shadow:var(--shadow-l);transform:translateY(16px);transition:transform .3s}
-.fb-modal.open .fb-panel{transform:translateY(0)}
-.fb-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
-.fb-hdr h3{font-size:1.05rem;font-weight:700;margin:0}
-.fb-x{background:none;border:none;font-size:1.1rem;cursor:pointer;color:var(--text3);padding:4px 8px;border-radius:6px}
-.fb-x:hover{background:var(--bg2)}
-.fb-inp{width:100%;padding:9px 12px;border:1px solid var(--border);border-radius:8px;font-family:'Heebo',sans-serif;font-size:.88rem;margin-bottom:10px;background:var(--bg2);color:var(--text);transition:border-color .2s}
-.fb-inp:focus{outline:none;border-color:var(--accent)}
-.fb-ta{min-height:90px;resize:vertical}
-.fb-sub{width:100%;padding:10px;border:none;border-radius:8px;background:var(--grad);background-size:200% 200%;animation:mesh 5s ease infinite;color:#fff;font-weight:700;font-size:.9rem;cursor:pointer;transition:all .2s}
-.fb-sub:hover{transform:translateY(-1px)}.fb-sub:disabled{opacity:.6;cursor:not-allowed;transform:none}
-.fb-ok{display:flex;align-items:center;justify-content:center;gap:8px;padding:18px;font-size:.95rem;color:var(--green);font-weight:600}
-.fb-ok span{font-size:1.4rem}
+</main>
 
-/* ===== RESPONSIVE ===== */
-@media(max-width:900px){
-  .g3{grid-template-columns:repeat(2,1fr)}
-  .hero h1{font-size:2.4rem}
-  .nav{display:none;position:absolute;top:52px;right:0;left:0;background:var(--header-bg);backdrop-filter:blur(20px);flex-direction:column;padding:18px 24px;gap:12px;border-bottom:1px solid var(--border);box-shadow:var(--shadow-m)}
-  .nav.open{display:flex}
-  .mob-btn{display:block}
-  .prog-card{flex-direction:column;text-align:center}
-  .cta-box{padding:36px 24px}
-}
-@media(max-width:600px){
-  .g3{grid-template-columns:1fr}
-  .hero{padding:60px 16px 50px}
-  .hero h1{font-size:1.9rem}
-  .hero-nums{gap:8px}
-  .hero-num{min-width:auto;padding:14px 18px}
-  .hero-num strong{font-size:1.7rem}
-  .sec-title{font-size:1.5rem}
-  .sec,.prog-sec,.cta-w,.about-sec,.share-sec{padding-right:16px;padding-left:16px}
-  .hdr-in{padding:0 14px}
-  .badge-row{flex-direction:column;align-items:center}
-}
-@media print{.hdr,.prog-sec,.share-sec,.cta-w,.ftr,.fb-fab{display:none}body{background:#fff;color:#000}}
-</style>
+<!-- FOOTER -->
+<footer class="ftr">
+<div class="wrap">
+© 2026 המקפצה | מבוסס על <span dir="ltr">Anthropic AI Fluency</span> | מותאם למגזר הציבורי
+</div>
+</footer>
+
+<!-- FEEDBACK FAB + MODAL -->
+<button class="feedback-fab" onclick="document.getElementById('fbModal').classList.add('open')" title="שלחו משוב">💬</button>
+<div class="feedback-modal" id="fbModal">
+<div class="feedback-backdrop" onclick="document.getElementById('fbModal').classList.remove('open')"></div>
+<div class="feedback-panel">
+<div class="feedback-header"><h3>💬 שלחו משוב</h3><button class="feedback-close" onclick="document.getElementById('fbModal').classList.remove('open')">✕</button></div>
+<form id="fbForm" onsubmit="submitFB(event)">
+<input type="text" id="fbName" placeholder="שם (אופציונלי)" class="fb-input">
+<select id="fbCat" class="fb-input"><option value="כללי">כללי</option><option value="באג">באג</option><option value="שיפור">שיפור</option><option value="תוכן">תוכן</option><option value="עיצוב">עיצוב</option></select>
+<select id="fbSev" class="fb-input"><option value="—">חומרה (אופציונלי)</option><option value="קריטי">קריטי</option><option value="שיפור">שיפור</option><option value="קטן">קטן</option></select>
+<textarea id="fbText" placeholder="מה תרצו לשפר?" class="fb-input fb-textarea" required></textarea>
+<button type="submit" class="fb-submit" id="fbSubmit">שליחה</button>
+</form>
+<div id="fbOk" class="fb-success" style="display:none"><span>✅</span> תודה! המשוב נשלח בהצלחה</div>
+</div>
+</div>
+
+<!-- NAME INPUT MODAL FOR CERTIFICATE -->
+<div class="name-modal" id="nameModal">
+<div class="feedback-backdrop" onclick="document.getElementById('nameModal').classList.remove('open')"></div>
+<div class="feedback-panel" style="text-align:center">
+<div class="feedback-header"><h3>🎓 תעודת סיום</h3><button class="feedback-close" onclick="document.getElementById('nameModal').classList.remove('open')">✕</button></div>
+<p style="color:var(--text2);font-size:.9rem;margin-bottom:16px">הזינו את שמכם כפי שיופיע בתעודה</p>
+<input type="text" id="certName" placeholder="השם המלא שלכם" class="fb-input" style="text-align:center;font-size:1.1rem">
+<button class="fb-submit" onclick="downloadCert()">הורדת תעודה →</button>
+</div>
+</div>
+
 <script>
-// ===== DATA =====
-const C=[
-{id:1,t:'אוריינות AI ועבודה אחראית',d:'מה AI יכול ומה לא, מסגרת 4D, כללי אתיקה ובטיחות',m:'35 דק׳',tags:['בסיסי','כל העובדים'],i:'🧠'},
-{id:2,t:'מפת המודלים — במה להשתמש ומתי',d:'ChatGPT, Claude, Gemini, Grok, Perplexity — חוזקות ושימושים',m:'35 דק׳',tags:['בסיסי','5 מודלים'],i:'🗺️'},
-{id:3,t:'הנדסת הנחיות (Prompt Engineering)',d:'4 עקרונות, תגיות XML, ו-8 פרומפטים מוכנים',m:'35 דק׳',tags:['ישומי','8 פרומפטים'],i:'✍️'},
-{id:4,t:'AI לכתיבה ותקשורת בשירות הציבורי',d:'ניסוח מכתבים, הנגשת מידע, תרגום בירוקרטית',m:'35 דק׳',tags:['ישומי','6 תבניות'],i:'📝'},
-{id:5,t:'AI לניתוח נתונים וקבלת החלטות',d:'ניתוח דוחות, חילוץ תובנות, סיכומים מנהליים',m:'40 דק׳',tags:['ישומי','5 תרגילים'],i:'📊'},
-{id:6,t:'חיפוש ומחקר עם AI',d:'מחקר מדיניות, סקירת ספרות, השוואת גישות',m:'35 דק׳',tags:['ישומי','4 תרגילים'],i:'🔍'},
-{id:7,t:'AI לחשיבה אסטרטגית ופתרון בעיות',d:'שרשרת חשיבה, ריבוי פרספקטיבות, Pre-Mortem',m:'35 דק׳',tags:['מתקדם','5 תרגילים'],i:'💡'},
-{id:8,t:'אתיקה, בטיחות ורגולציה של AI בממשלה',d:'הטיות, פרטיות, שקיפות, קווים אדומים',m:'35 דק׳',tags:['חובה','כל העובדים'],i:'🛡️'},
-{id:9,t:'AI לשירות הציבור והנגשת מידע',d:'שיפור חוויית האזרח, שפה פשוטה, צ׳אטבוטים',m:'35 דק׳',tags:['ישומי','שירות ציבורי'],i:'🏛️'},
-{id:10,t:'אוטומציה ותהליכי עבודה עם AI',d:'זיהוי תהליכים, בניית Workflows, חיסכון בזמן',m:'40 דק׳',tags:['מתקדם','אוטומציה'],i:'⚙️'},
-{id:11,t:'RAG — חיבור AI למאגרי ידע ארגוניים',d:'תשובות מדויקות מהמידע הפנימי שלכם',m:'40 דק׳',tags:['מתקדם','ארגוני'],i:'🗄️'},
-{id:12,t:'Claude Code — למפתחים וצוותי IT',d:'פיתוח עם Claude Code, אוטומציה טכנית, API',m:'40 דק׳',tags:['טכני','מפתחים'],i:'💻'}
+// ===== COURSES DATA =====
+const COURSES=[
+{id:1,icon:'🧠',title:'אוריינות AI ועבודה אחראית',desc:'מה AI יכול ומה לא, ואיך לעבוד איתו נכון',tag:'בסיסי',tagColor:'#059669'},
+{id:2,icon:'🗺️',title:'מפת המודלים',desc:'במה להשתמש ומתי — סקירת כלי AI מובילים',tag:'בסיסי',tagColor:'#059669'},
+{id:3,icon:'✍️',title:'הנדסת הנחיות',desc:'Prompt Engineering — איך לדבר עם AI בצורה אפקטיבית',tag:'בסיסי',tagColor:'#059669'},
+{id:4,icon:'📝',title:'AI לכתיבה ותקשורת',desc:'ניסוח מכתבים, סיכומים ותוכן מקצועי',tag:'בסיסי',tagColor:'#059669'},
+{id:5,icon:'📊',title:'AI לניתוח נתונים',desc:'ניתוח טבלאות, דוחות ומגמות עם AI',tag:'בסיסי',tagColor:'#059669'},
+{id:6,icon:'🔍',title:'חיפוש ומחקר עם AI',desc:'מחקר מדיניות, סקירת ספרות וחיפוש מידע',tag:'מתקדם',tagColor:'#7C3AED'},
+{id:7,icon:'💡',title:'AI לחשיבה ופתרון בעיות',desc:'חשיבה ביקורתית, ניתוח תרחישים וקבלת החלטות',tag:'מתקדם',tagColor:'#7C3AED'},
+{id:8,icon:'🛡️',title:'אתיקה ובטיחות AI',desc:'שימוש אחראי, הטיות, פרטיות ורגולציה',tag:'מתקדם',tagColor:'#7C3AED'},
+{id:9,icon:'🏛️',title:'AI לשירות הציבור',desc:'שיפור שירות לאזרח, נגישות ותקשורת ציבורית',tag:'מתקדם',tagColor:'#7C3AED'},
+{id:10,icon:'⚙️',title:'אוטומציה ותהליכי עבודה',desc:'ייעול תהליכים, אוטומציה ואינטגרציות',tag:'מוביל AI',tagColor:'#2563EB'},
+{id:11,icon:'🗄️',title:'RAG — חיבור AI למאגרי ידע',desc:'חיבור מודלים למסמכים ומאגרי מידע ארגוניים',tag:'מוביל AI',tagColor:'#2563EB'},
+{id:12,icon:'💻',title:'Claude Code — למפתחים',desc:'כתיבת קוד, דיבאג ואוטומציה עם Claude',tag:'מוביל AI',tagColor:'#2563EB'}
 ];
-const SITE='https://avi1840.github.io/ai-academy/site/';
-const SHARE_TEXT='🚀 המקפצה — אקדמיית AI למובילי המגזר הציבורי\n\n12 יחידות לימוד מעשיות ב-AI, מותאמות לעובדי מדינה.\n\n'+SITE+'index.html';
 
 // ===== PROGRESS =====
-function getP(){try{return JSON.parse(localStorage.getItem('hamakpetza_progress')||'{}')}catch(e){return{}}}
-function render(){
-const g=document.getElementById('coursesGrid'),p=getP();if(!g)return;
-g.innerHTML=C.map(c=>{const done=p['course_'+c.id];return`<a href="course${c.id}.html" class="cc anim" style="text-decoration:none;color:inherit"><div class="cc-done" style="display:${done?'grid':'none'}">✓</div><div class="cc-n">${c.i} יחידה ${c.id}</div><h3>${c.t}</h3><div class="cc-d">${c.d}</div><div class="cc-tags">${c.tags.map(t=>`<span class="cc-tag">${t}</span>`).join('')}<span class="cc-tag">⏱ ${c.m}</span></div><span class="cc-link">התחילו ללמוד ←</span></a>`}).join('');
-setTimeout(initObs,100);
+function getProgress(){try{return JSON.parse(localStorage.getItem('hamakpetza_progress')||'{}');}catch(e){return {};}}
+function setProgress(p){localStorage.setItem('hamakpetza_progress',JSON.stringify(p));}
+
+function renderCourses(){
+const grid=document.getElementById('coursesGrid');if(!grid)return;
+const p=getProgress();
+grid.innerHTML=COURSES.map(c=>{
+const done=p['course_'+c.id];
+return `<a href="course${c.id}.html" class="crs${done?' done':''}">
+<div class="crs-num">יחידה ${c.id}</div>
+<div class="crs-icon">${c.icon}</div>
+<h3>${c.title}</h3>
+<p>${c.desc}</p>
+<span class="crs-tag" style="background:${c.tagColor}15;color:${c.tagColor}">${c.tag}</span>
+</a>`;
+}).join('');
 }
-</script>
-<script>
-function updateP(){
-const cnt=Object.values(getP()).filter(v=>v).length,pct=Math.round(cnt/12*100),circ=2*Math.PI*44,off=circ-(pct/100)*circ;
-const r=document.getElementById('pRing');if(r)r.style.strokeDashoffset=off;
-const pp=document.getElementById('pPct');if(pp)pp.textContent=pct+'%';
-const pb=document.getElementById('pBar');if(pb)pb.style.width=pct+'%';
-const pm=document.getElementById('pMeta');if(pm)pm.textContent=cnt+' מתוך 12 יחידות הושלמו';
-const pt=document.getElementById('pText');
-if(pt){if(cnt===0)pt.textContent='עוד לא התחלת — בחר/י יחידה והתחל/י ללמוד';
-else if(cnt===12)pt.textContent='🎉 כל הכבוד! השלמת את כל 12 היחידות';
-else{const n=C.find(c=>!getP()['course_'+c.id]);pt.textContent='היחידה הבאה: '+n.t;}}
+
+function updateProgress(){
+const p=getProgress();
+const done=COURSES.filter(c=>p['course_'+c.id]).length;
+const pct=Math.round((done/12)*100);
+const circle=document.getElementById('progCircle');
+const pctEl=document.getElementById('progPct');
+const titleEl=document.getElementById('progTitle');
+const descEl=document.getElementById('progDesc');
+const actionsEl=document.getElementById('progActions');
+if(!circle)return;
+
+// Update ring - hardcoded colors for SVG compatibility
+const circumference=326.7;
+circle.style.strokeDashoffset=circumference-(circumference*pct/100);
+const isDark=document.documentElement.getAttribute('data-theme')==='dark';
+circle.setAttribute('stroke',isDark?'#F97316':'#D97706');
+
+pctEl.textContent=pct+'%';
+
+if(pct===100){
+titleEl.textContent='🎉 כל הכבוד! סיימתם את כל ההכשרה';
+descEl.textContent='אתם זכאים לתעודת סיום — לחצו להורדה';
+actionsEl.innerHTML='<button class="prog-btn cert-btn" onclick="document.getElementById(\'nameModal\').classList.add(\'open\')">🎓 הורדת תעודת סיום</button>';
+}else if(done>0){
+const next=COURSES.find(c=>!p['course_'+c.id]);
+titleEl.textContent=`השלמתם ${done} מתוך 12 יחידות`;
+descEl.textContent=`עוד ${12-done} יחידות לתעודת סיום`;
+actionsEl.innerHTML=`<a href="course${next.id}.html" class="prog-btn">המשיכו ליחידה ${next.id} →</a>`;
+}
 }
 
 // ===== THEME =====
 function toggleTheme(){
 const html=document.documentElement;
-const next=html.getAttribute('data-theme')==='dark'?'light':'dark';
+const curr=html.getAttribute('data-theme');
+const next=curr==='dark'?'light':'dark';
 html.setAttribute('data-theme',next);
 localStorage.setItem('hamakpetza_theme',next);
 document.getElementById('thmBtn').textContent=next==='dark'?'☀️':'🌙';
+updateProgress(); // refresh SVG colors
 }
 function loadTheme(){
 const saved=localStorage.getItem('hamakpetza_theme');
-if(saved){document.documentElement.setAttribute('data-theme',saved);document.getElementById('thmBtn').textContent=saved==='dark'?'☀️':'🌙';}
+if(saved){
+document.documentElement.setAttribute('data-theme',saved);
+document.getElementById('thmBtn').textContent=saved==='dark'?'☀️':'🌙';
 }
-
-// ===== SHARE =====
-function shareWA(){window.open('https://wa.me/?text='+encodeURIComponent(SHARE_TEXT),'_blank')}
-function shareFB(){window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(SITE+'index.html'),'_blank')}
-function shareLI(){window.open('https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(SITE+'index.html'),'_blank')}
+}
 
 // ===== FEEDBACK =====
 const SHEET_URL="https://script.google.com/macros/s/AKfycbwD8CMFoP5XoOwRLwK_OxMMOFKF8fS2CRpbJkNdOHjbnJIepkOLzlGrg3GQNGRqbwB6bA/exec";
-const APP_NAME="המקפצה";
-async function sendFB(o){await fetch(SHEET_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/json"},body:JSON.stringify({app:APP_NAME,name:o.name||"אנונימי",category:o.category||"כללי",severity:o.severity||"—",text:o.text,page:o.page||location.pathname})})}
-function initFeedback(){
-const b=document.createElement('button');b.className='fb-fab';b.innerHTML='💬';b.title='שלחו משוב';
-b.onclick=()=>document.getElementById('fbModal').classList.add('open');document.body.appendChild(b);
-const m=document.createElement('div');m.id='fbModal';m.className='fb-modal';
-m.innerHTML='<div class="fb-bk" onclick="closeFB()"></div><div class="fb-panel"><div class="fb-hdr"><h3>💬 שלחו משוב</h3><button class="fb-x" onclick="closeFB()">✕</button></div><form id="fbForm" onsubmit="submitFB(event)"><input type="text" id="fbN" placeholder="שם (אופציונלי)" class="fb-inp"><select id="fbC" class="fb-inp"><option value="כללי">כללי</option><option value="באג">באג</option><option value="שיפור">שיפור</option><option value="תוכן">תוכן</option><option value="עיצוב">עיצוב</option></select><select id="fbS" class="fb-inp"><option value="—">חומרה (אופציונלי)</option><option value="קריטי">קריטי</option><option value="שיפור">שיפור</option><option value="קטן">קטן</option></select><textarea id="fbT" placeholder="מה תרצו לשפר?" class="fb-inp fb-ta" required></textarea><button type="submit" class="fb-sub" id="fbBtn">שליחה</button></form><div id="fbOk" class="fb-ok" style="display:none"><span>✅</span> תודה! המשוב נשלח</div></div>';
-document.body.appendChild(m);
+async function submitFB(e){
+e.preventDefault();
+const btn=document.getElementById('fbSubmit');
+btn.textContent='שולח...';btn.disabled=true;
+await fetch(SHEET_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/json"},
+body:JSON.stringify({app:"המקפצה",name:document.getElementById('fbName').value||"אנונימי",
+category:document.getElementById('fbCat').value,severity:document.getElementById('fbSev').value,
+text:document.getElementById('fbText').value,page:window.location.pathname})});
+document.getElementById('fbForm').style.display='none';
+document.getElementById('fbOk').style.display='flex';
+setTimeout(()=>{
+document.getElementById('fbModal').classList.remove('open');
+document.getElementById('fbForm').style.display='';
+document.getElementById('fbForm').reset();
+document.getElementById('fbOk').style.display='none';
+btn.textContent='שליחה';btn.disabled=false;
+},2500);
 }
-function closeFB(){document.getElementById('fbModal').classList.remove('open')}
-async function submitFB(e){e.preventDefault();const b=document.getElementById('fbBtn');b.textContent='שולח...';b.disabled=true;
-await sendFB({name:document.getElementById('fbN').value,category:document.getElementById('fbC').value,severity:document.getElementById('fbS').value,text:document.getElementById('fbT').value});
-document.getElementById('fbForm').style.display='none';document.getElementById('fbOk').style.display='flex';
-setTimeout(()=>{closeFB();document.getElementById('fbForm').style.display='';document.getElementById('fbForm').reset();document.getElementById('fbOk').style.display='none';b.textContent='שליחה';b.disabled=false},2500)}
 
-// ===== SCROLL + OBSERVER =====
-function initObs(){
-const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')})},{threshold:.1});
-document.querySelectorAll('.anim').forEach((el,i)=>{el.style.transitionDelay=(i*.04)+'s';obs.observe(el)});
+// ===== CERTIFICATE =====
+function downloadCert(){
+const name=document.getElementById('certName').value.trim();
+if(!name){document.getElementById('certName').style.borderColor='#ef4444';return;}
+document.getElementById('nameModal').classList.remove('open');
+const today=new Date().toLocaleDateString('he-IL',{year:'numeric',month:'long',day:'numeric'});
+const coursesHTML=COURSES.map(c=>`<li>${c.icon} ${c.title}</li>`).join('');
+const w=window.open('','_blank');
+w.document.write(`<!DOCTYPE html><html lang="he" dir="rtl"><head><meta charset="UTF-8"><title>תעודת סיום — המקפצה</title>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;900&family=Frank+Ruhl+Libre:wght@400;700&display=swap" rel="stylesheet">
+<style>
+@page{size:A4 landscape;margin:0}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Heebo',sans-serif;width:297mm;height:210mm;display:flex;align-items:center;justify-content:center;background:#f5f5f5;padding:10mm}
+.cert{width:100%;height:100%;background:#fff;border:3px solid #D97706;border-radius:12px;padding:40px 50px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}
+.cert::before{content:'';position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,#D97706,#7C3AED,#2563EB)}
+.cert::after{content:'';position:absolute;bottom:0;left:0;right:0;height:6px;background:linear-gradient(90deg,#2563EB,#7C3AED,#D97706)}
+.cert-logo{font-size:2.5rem;margin-bottom:8px}
+.cert-title{font-size:1.8rem;font-weight:900;color:#D97706;margin-bottom:4px}
+.cert-sub{font-size:1rem;color:#666;margin-bottom:30px}
+.cert-name{font-size:2.4rem;font-weight:900;color:#1A1612;margin-bottom:8px;font-family:'Frank Ruhl Libre',serif}
+.cert-line{width:300px;height:2px;background:linear-gradient(90deg,transparent,#D97706,transparent);margin:0 auto 24px}
+.cert-text{font-size:.95rem;color:#555;margin-bottom:20px;line-height:1.6}
+.cert-courses{display:grid;grid-template-columns:repeat(3,1fr);gap:4px 20px;text-align:right;font-size:.75rem;color:#666;margin-bottom:24px;list-style:none;max-width:600px}
+.cert-date{font-size:.85rem;color:#888;margin-bottom:20px}
+.cert-sig{font-size:.85rem;color:#555;border-top:1px solid #ddd;padding-top:12px;max-width:300px}
+.cert-sig strong{display:block;font-size:.9rem;color:#1A1612}
+.no-print{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#D97706;color:#fff;padding:12px 32px;border:none;border-radius:10px;font-family:'Heebo',sans-serif;font-weight:700;font-size:1rem;cursor:pointer}
+@media print{.no-print{display:none}body{background:#fff;padding:0}.cert{border:3px solid #D97706}}
+</style></head><body>
+<div class="cert">
+<div class="cert-logo">🚀</div>
+<div class="cert-title">תעודת סיום</div>
+<div class="cert-sub">אקדמיית AI למובילי המגזר הציבורי</div>
+<div class="cert-name">${name}</div>
+<div class="cert-line"></div>
+<div class="cert-text">סיים/ה בהצלחה את כל 12 יחידות הלימוד בתוכנית ההכשרה<br>מבוססת על סילבוס Anthropic AI Fluency עם התאמות לממשלת ישראל</div>
+<ul class="cert-courses">${coursesHTML}</ul>
+<div class="cert-date">תאריך: ${today}</div>
+<div class="cert-sig"><strong>אביעד יצחקי</strong>מוביל AI ושותפויות, מינהלי גמלאות, ביטוח לאומי</div>
+</div>
+<button class="no-print" onclick="window.print()">🖨️ הדפסה</button>
+</body></html>`);
+w.document.close();
 }
-window.addEventListener('scroll',()=>{document.getElementById('hdr').classList.toggle('scrolled',scrollY>20)});
+
+// ===== SCROLL ANIMATIONS =====
+function initAnimations(){
+const obs=new IntersectionObserver((entries)=>{
+entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}});
+},{threshold:0.1});
+document.querySelectorAll('.anim').forEach(el=>obs.observe(el));
+}
+
+// ===== HEADER SCROLL =====
+function initHeaderScroll(){
+window.addEventListener('scroll',()=>{
+document.getElementById('hdr').classList.toggle('scrolled',window.scrollY>20);
+});
+}
+
+// ===== MOBILE NAV CLOSE ON LINK CLICK =====
+function initMobileNav(){
+document.querySelectorAll('.nav a').forEach(a=>{
+a.addEventListener('click',()=>document.getElementById('nav').classList.remove('open'));
+});
+}
 
 // ===== INIT =====
-document.addEventListener('DOMContentLoaded',()=>{loadTheme();render();updateP();initFeedback();initObs()});
+document.addEventListener('DOMContentLoaded',()=>{
+loadTheme();
+renderCourses();
+updateProgress();
+initAnimations();
+initHeaderScroll();
+initMobileNav();
+});
 </script>
+</body>
+</html>

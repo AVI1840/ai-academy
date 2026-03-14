@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="he" dir="rtl" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,99 +8,193 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Frank+Ruhl+Libre:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+<style>body{transition:background .4s,color .4s}</style>
+<script>var t=localStorage.getItem("hamakpetza_theme");if(t)document.documentElement.setAttribute("data-theme",t);</script>
 </head>
-<body>
-<nav class="topbar"><div class="topbar-right"><a href="index.html" class="back-btn">→ חזרה למקפצה</a><span class="topbar-title">יחידה 8 מתוך 12</span></div></nav>
 
+<body>
+
+<nav class="topbar"><div class="topbar-right"><a href="index.html" class="back-btn">→ חזרה למקפצה</a><span class="topbar-title">יחידה 8 מתוך 12</span></div><button class="thm-course" id="thmCourse" onclick="toggleCourseTheme()" title="מצב כהה / בהיר">🌙</button></nav>
 <header class="course-hero">
+
 <span class="course-badge" style="background:rgba(199,92,74,.1);color:var(--red)">🛡️ חובה — לכל עובדי המדינה</span>
+
 <h1>אתיקה, בטיחות ורגולציה של AI בממשלה</h1>
+
 <p class="sub">הטיות, פרטיות, שקיפות, רגולציה — ומדיניות שימוש אחראי ב-AI במגזר הציבורי</p>
+
 <div class="meta-row"><span class="meta-item">⏱ 35 דקות</span><span class="meta-item">👥 כל עובדי המדינה</span><span class="meta-item">🛡️ חובה</span></div>
 </header>
 
 <main class="content">
+
 <div class="section">
+
 <div class="section-head"><div class="section-icon" style="background:rgba(199,92,74,.1)">⚠️</div><h2>חלק א׳: למה אתיקה ב-AI חשובה במיוחד בממשלה?</h2></div>
+
 <div class="card-box"><p>כשעובד מדינה משתמש ב-AI, ההחלטות משפיעות על אזרחים אמיתיים. טעות של AI בקביעת זכאות, בניסוח מכתב, או בניתוח נתונים — יכולה לפגוע באנשים. לכן האחריות שלנו גדולה יותר.</p></div>
+
 <div class="card-box"><h3>5 סיכונים מרכזיים</h3>
+
 <table>
+
 <tr><th>סיכון</th><th>דוגמה</th><th>מה עושים</th></tr>
+
 <tr><td>הטיות (Bias)</td><td>AI שמפלה לפי מגדר, גיל או מוצא</td><td>בדיקה ידנית של תוצאות</td></tr>
+
 <tr><td>הזיות (Hallucinations)</td><td>AI שממציא עובדות או מקורות</td><td>אימות מול מקור רשמי</td></tr>
+
 <tr><td>דליפת מידע</td><td>הזנת פרטים אישיים לכלי חיצוני</td><td>לעולם לא להזין מידע אישי</td></tr>
+
 <tr><td>חוסר שקיפות</td><td>החלטה שהתקבלה "כי AI אמר"</td><td>תיעוד ושקיפות בתהליך</td></tr>
+
 <tr><td>תלות יתר</td><td>הפסקת חשיבה עצמאית</td><td>AI ככלי עזר, לא מחליף</td></tr>
+
 </table></div>
+
 </div>
 
 <div class="section">
+
 <div class="section-head"><div class="section-icon" style="background:rgba(199,92,74,.1)">🔴</div><h2>חלק ב׳: קווים אדומים — מה אסור</h2></div>
+
 <div class="card-box"><h3>🔴 אסור בהחלט</h3>
+
 <ul class="red-list">
+
 <li>להזין מידע אישי מזהה (ת.ז., שם מלא, כתובת, מצב רפואי) לכלי AI חיצוני</li>
+
 <li>לקבל החלטות על זכאות אזרחים על בסיס AI בלבד</li>
+
 <li>להשתמש ב-AI ללא בקרה אנושית בתהליכים שמשפיעים על אנשים</li>
+
 <li>לשתף מסמכים מסווגים או רגישים עם כלי AI</li>
+
 <li>להציג תוצאת AI כעובדה מאומתת בלי בדיקה</li>
+
 </ul></div>
+
 <div class="card-box"><h3>✅ מותר ומומלץ</h3>
+
 <ul class="green-list">
+
 <li>לעבוד עם נתונים אנונימיים או מצרפיים</li>
+
 <li>לנסח טיוטות ללא פרטים מזהים</li>
+
 <li>ללמוד, לחקור ולהתנסות</li>
+
 <li>לסכם נהלים ומסמכים פומביים</li>
+
 <li>לבקש עזרה בחשיבה וניתוח</li>
+
 </ul></div>
+
 </div>
 
 <div class="section">
+
 <div class="section-head"><div class="section-icon" style="background:rgba(251,191,36,.1)">📋</div><h2>חלק ג׳: צ׳קליסט לשימוש אחראי</h2></div>
+
 <div class="card-box"><h3>🟡 לפני כל שימוש ב-AI, שאלו את עצמכם:</h3>
+
 <ul class="yellow-list">
+
 <li>האם יש כאן מידע אישי? אם כן — הסירו אותו</li>
+
 <li>האם התוצאה תשפיע על אזרח? אם כן — בדקו פעמיים</li>
+
 <li>האם אני יכול/ה לאמת את התשובה? אם לא — אל תסמכו עליה</li>
+
 <li>האם ברור שזו טיוטה ולא החלטה סופית?</li>
+
 <li>האם אני שקוף/ה לגבי השימוש ב-AI?</li>
+
 </ul></div>
+
 </div>
 
 <div class="try-section">
+
 <h3>🎯 תרגיל מעשי</h3>
+
 <div class="prompt-box" onclick="copyPrompt(this)"><p>"אני עובד/ת מדינה. כתוב לי מדיניות שימוש ב-AI של 10 סעיפים לצוות שלי. כלול: מה מותר, מה אסור, איך לבדוק תוצאות, ואיך לשמור על פרטיות"</p></div>
+
 <p style="color:var(--text2);font-size:.9rem;margin-top:12px;font-family:'Heebo',sans-serif">💡 השתמשו בתוצאה כבסיס למדיניות אמיתית בצוות שלכם</p>
+
 </div>
 
 <div class="quiz-section">
+
 <h3>❓ בדקו את עצמכם</h3>
+
 <div class="quiz-q"><p>1. מה הסיכון הגדול ביותר בשימוש ב-AI בממשלה?</p><details><summary>הציצו בתשובה</summary><p>דליפת מידע אישי — הזנת פרטים מזהים של אזרחים לכלי AI חיצוני.</p></details></div>
+
 <div class="quiz-q"><p>2. מתי מותר להשתמש ב-AI לקבלת החלטות?</p><details><summary>הציצו בתשובה</summary><p>רק ככלי עזר — ההחלטה הסופית חייבת להיות של אדם, עם בקרה אנושית מלאה.</p></details></div>
+
 <div class="quiz-q"><p>3. מה לעשות כשAI נותן תשובה שנשמעת משכנעת?</p><details><summary>הציצו בתשובה</summary><p>לאמת מול מקור רשמי. AI יכול להזות (hallucinate) — לייצר מידע שנשמע אמין אבל שגוי.</p></details></div>
+
 </div>
 
 <div class="summary-box">
+
 <h3>💎 סיכום</h3>
+
 <ul>
+
 <li>אחריות מוגברת — החלטות AI משפיעות על אזרחים</li>
+
 <li>לעולם לא להזין מידע אישי לכלי AI חיצוני</li>
+
 <li>תמיד בקרה אנושית על תוצאות AI</li>
+
 <li>שקיפות — ציינו כשתוכן נוצר בעזרת AI</li>
+
 <li>AI ככלי עזר, לא כמקבל החלטות</li>
+
 </ul>
+
 </div>
+
 </main>
 
 <section class="course-complete">
+
 <button class="complete-btn" id="completeBtn" onclick="toggleComplete()">✓ סיימתי יחידה זו</button><br>
+
 <button class="share-course-btn" onclick="shareCourse()">📱 שתפו בוואטסאפ</button>
+
 </section>
+
 <nav class="nav-bottom">
+
 <a href="course7.html" class="nav-btn nav-prev">→ יחידה 7: חשיבה ופתרון בעיות</a>
+
 <a href="course9.html" class="nav-btn nav-next">יחידה 9: שירות הציבור ←</a>
+
 </nav>
+
 <footer class="site-footer"><p>המקפצה — מבוסס על Anthropic AI Fluency | מותאם למובילי AI במגזר הציבורי בישראל © 2025</p></footer>
 <script>const COURSE_ID=8;</script>
 <script src="shared.js"></script>
+<script>
+function toggleCourseTheme(){
+  var h=document.documentElement;
+  var n=h.getAttribute("data-theme")==="dark"?"light":"dark";
+  h.setAttribute("data-theme",n);
+  localStorage.setItem("hamakpetza_theme",n);
+  var btn=document.getElementById("thmCourse");
+  if(btn) btn.textContent=n==="dark"?"☀️":"🌙";
+}
+(function(){
+  var t=localStorage.getItem("hamakpetza_theme");
+  if(t){
+    document.documentElement.setAttribute("data-theme",t);
+    var btn=document.getElementById("thmCourse");
+    if(btn) btn.textContent=t==="dark"?"☀️":"🌙";
+  }
+})();
+</script>
 </body>
 </html>

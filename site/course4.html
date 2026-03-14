@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="he" dir="rtl" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,96 +8,175 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Frank+Ruhl+Libre:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+<style>body{transition:background .4s,color .4s}</style>
+<script>var t=localStorage.getItem("hamakpetza_theme");if(t)document.documentElement.setAttribute("data-theme",t);</script>
 </head>
-<body>
-<nav class="topbar"><div class="topbar-right"><a href="index.html" class="back-btn">→ חזרה למקפצה</a><span class="topbar-title">יחידה 4 מתוך 12</span></div></nav>
 
+<body>
+
+<nav class="topbar"><div class="topbar-right"><a href="index.html" class="back-btn">→ חזרה למקפצה</a><span class="topbar-title">יחידה 4 מתוך 12</span></div><button class="thm-course" id="thmCourse" onclick="toggleCourseTheme()" title="מצב כהה / בהיר">🌙</button></nav>
 <header class="course-hero">
+
 <span class="course-badge" style="background:rgba(217,119,87,.1);color:var(--accent)">📝 ישומי — לכל עובדי המדינה</span>
+
 <h1>AI לכתיבה ותקשורת בשירות הציבורי</h1>
+
 <p class="sub">ניסוח מכתבים, הנגשת מידע, תרגום בירוקרטית לשפה פשוטה — עם 6 תבניות מוכנות</p>
+
 <div class="meta-row"><span class="meta-item">⏱ 35 דקות</span><span class="meta-item">👥 כל עובדי המדינה</span><span class="meta-item">📋 6 תבניות</span></div>
 </header>
 
 <main class="content">
+
 <div class="section">
+
 <div class="section-head"><div class="section-icon" style="background:rgba(61,140,111,.1)">✍️</div><h2>חלק א׳: למה כתיבה עם AI משנה את המשחק?</h2></div>
+
 <div class="card-box"><p>כתיבה היא אחת המשימות הנפוצות ביותר בשירות הציבורי — מכתבים לאזרחים, סיכומי ישיבות, מיילים פנימיים, תוכן לאתר. AI חוסך 50-70% מזמן הכתיבה ומשפר משמעותית את איכות התוצר.</p></div>
+
 <div class="card-box"><h3>✅ מה AI יכול לעשות בכתיבה?</h3>
+
 <ul class="green-list">
+
 <li>לנסח מכתבים רשמיים בטון מכבד ובשפה ברורה</li>
+
 <li>לתרגם שפה בירוקרטית לשפה פשוטה שכל אזרח יבין</li>
+
 <li>לסכם ישיבות ודיונים ארוכים לנקודות עיקריות</li>
+
 <li>להתאים טון ורמת שפה לקהל יעד שונה</li>
+
 <li>ליצור תבניות מכתבים חוזרות שחוסכות שעות עבודה</li>
+
 </ul></div>
+
 </div>
 
 <div class="section">
+
 <div class="section-head"><div class="section-icon" style="background:rgba(217,119,87,.1)">📋</div><h2>חלק ב׳: 6 תבניות כתיבה מוכנות</h2></div>
+
 <p style="color:var(--text2);margin-bottom:20px;font-family:'Heebo',sans-serif;font-size:.95rem">לחצו על כל תבנית כדי להעתיק. הדביקו ב-Claude או ChatGPT והתאימו.</p>
 
 <div class="card-box"><h3>1. 📨 מכתב אישור</h3>
+
 <div class="prompt-box" onclick="copyPrompt(this)"><p>כתוב מכתב רשמי מטעם [שם הגוף] שמאשר לאזרח/ית את [סוג הבקשה]. המכתב צריך לכלול: פנייה אישית ומכבדת, ציון מספר הפנייה והתאריך, פירוט מה אושר ומה השלבים הבאים, פרטי קשר לשאלות. טון: רשמי אך חם ונגיש.</p></div></div>
 
 <div class="card-box"><h3>2. 🙏 מכתב דחייה מכבד</h3>
+
 <div class="prompt-box" onclick="copyPrompt(this)"><p>כתוב מכתב דחייה מכבד מטעם [שם הגוף] לבקשת [סוג הבקשה]. המכתב צריך: להודות על הפנייה, להסביר את סיבת הדחייה בשפה ברורה (לא משפטית), לציין אפשרויות ערעור, להפנות לגורם מסייע. טון: אמפתי, מכבד.</p></div></div>
 
 <div class="card-box"><h3>3. 📖 הנגשת נוהל</h3>
+
 <div class="prompt-box" onclick="copyPrompt(this)"><p>קח את הנוהל הבא ותרגם אותו לשפה פשוטה שאזרח ללא רקע מקצועי יבין: [הדביקו כאן את הנוהל]. הנחיות: החלף מונחים מקצועיים במילים יומיומיות, פרק משפטים ארוכים, הוסף כותרות משנה ונקודות תבליט, שמור על הדיוק המשפטי.</p></div></div>
 
 <div class="card-box"><h3>4. 📝 סיכום ישיבה</h3>
+
 <div class="prompt-box" onclick="copyPrompt(this)"><p>סכם את הישיבה הבאה בפורמט מובנה: [הדביקו תמלול/רשימות]. פורמט: נושא ותאריך, משתתפים, 3-5 נקודות עיקריות, החלטות שהתקבלו, משימות להמשך (מי, מה, עד מתי), נושאים פתוחים.</p></div></div>
 
 <div class="card-box"><h3>5. 📧 מייל פנימי</h3>
+
 <div class="prompt-box" onclick="copyPrompt(this)"><p>כתוב מייל פנימי מטעם [תפקיד] ל[קהל יעד] בנושא [הנושא]. המייל צריך: נושא (subject) ברור, פסקת פתיחה עם הקשר, גוף עם נקודות עיקריות בתבליטים, קריאה לפעולה ברורה. טון: מקצועי אך ידידותי.</p></div></div>
 
 <div class="card-box"><h3>6. 🌐 תוכן לאתר / רשת חברתית</h3>
+
 <div class="prompt-box" onclick="copyPrompt(this)"><p>כתוב פוסט ל[פלטפורמה] עבור [שם הגוף] בנושא [הנושא]. הנחיות: שפה נגישה, פסקאות קצרות, קריאה לפעולה, הצע 3 כותרות ואימוג׳ים מתאימים. אורך: [קצר/בינוני/ארוך].</p></div></div>
+
 </div>
 
 <div class="section">
+
 <div class="section-head"><div class="section-icon" style="background:rgba(106,155,204,.1)">🔄</div><h2>חלק ג׳: לפני ואחרי — הנגשת שפה</h2></div>
+
 <div class="compare">
+
 <div class="compare-bad"><p style="font-size:.9rem">בהתאם להוראות סעיף 127ל(ב) לחוק הביטוח הלאומי [נוסח משולב], התשנ"ה-1995, ולאחר בחינת מכלול הנתונים, הרינו להודיעך כי תביעתך לגמלת נכות כללית נדחתה, מאחר שאחוז הנכות (40%) אינו עומד בתנאי הסף (60%).</p></div>
+
 <div class="compare-good"><p style="font-size:.9rem"><strong>שלום,</strong> פנית אלינו בבקשה לקצבת נכות. בדקנו את הבקשה. <strong>לצערנו, הבקשה לא אושרה</strong> — אחוז הנכות שנקבע (40%) נמוך מהמינימום (60%). <strong>מה אפשר לעשות:</strong> להגיש ערעור תוך 60 יום, להתקשר לשאלות.</p></div>
+
 </div>
+
 </div>
 
 <div class="try-section">
+
 <h3>🎯 תרגיל מעשי</h3>
+
 <div class="prompt-box" onclick="copyPrompt(this)"><p>קח את הפסקה הבאה מנוהל פנימי (ללא מידע אישי) וכתוב אותה מחדש בשפה פשוטה שאזרח יבין. שמור על הדיוק אבל הפוך את השפה לנגישה: [הדביקו פסקה]</p></div>
+
 </div>
 
 <div class="quiz-section">
+
 <h3>❓ בדקו את עצמכם</h3>
+
 <div class="quiz-q"><p>1. מה הדבר הראשון שצריך לעשות לפני שמבקשים מ-AI לכתוב מכתב לאזרח?</p><details><summary>הציצו בתשובה</summary><p>לוודא שאין מידע אישי מזהה בפרומפט (ת.ז., שם מלא, כתובת).</p></details></div>
+
 <div class="quiz-q"><p>2. מה היתרון של תבניות כתיבה מוכנות?</p><details><summary>הציצו בתשובה</summary><p>חוסכות זמן, מבטיחות עקביות, ומאפשרות לכל עובד לייצר תוצר איכותי.</p></details></div>
+
 <div class="quiz-q"><p>3. למה חשוב לציין טון רצוי בפרומפט?</p><details><summary>הציצו בתשובה</summary><p>כי AI יכול לכתוב בטונים שונים מאוד — רשמי, ידידותי, אמפתי. בלי הנחיה, התוצאה עלולה לא להתאים.</p></details></div>
+
 </div>
 
 <div class="summary-box">
+
 <h3>💎 סיכום — מה לזכור?</h3>
+
 <ul>
+
 <li>AI חוסך 50-70% מזמן הכתיבה בשירות הציבורי</li>
+
 <li>6 תבניות מוכנות: אישור, דחייה, הנגשה, סיכום, מייל, תוכן</li>
+
 <li>תמיד ציינו טון, קהל יעד ופורמט רצוי</li>
+
 <li>הנגשת שפה — אחד השימושים החזקים ביותר</li>
+
 <li>לעולם לא להזין מידע אישי מזהה</li>
+
 </ul>
+
 </div>
+
 </main>
 
 <section class="course-complete">
+
 <button class="complete-btn" id="completeBtn" onclick="toggleComplete()">✓ סיימתי יחידה זו</button><br>
+
 <button class="share-course-btn" onclick="shareCourse()">📱 שתפו בוואטסאפ</button>
+
 </section>
+
 <nav class="nav-bottom">
+
 <a href="course3.html" class="nav-btn nav-prev">→ יחידה 3: הנדסת הנחיות</a>
+
 <a href="course5.html" class="nav-btn nav-next">יחידה 5: ניתוח נתונים ←</a>
+
 </nav>
+
 <footer class="site-footer"><p>המקפצה — מבוסס על Anthropic ו-OpenAI | מותאם למובילי AI במגזר הציבורי בישראל © 2025</p></footer>
 <script>const COURSE_ID=4;</script>
 <script src="shared.js"></script>
+<script>
+function toggleCourseTheme(){
+  var h=document.documentElement;
+  var n=h.getAttribute("data-theme")==="dark"?"light":"dark";
+  h.setAttribute("data-theme",n);
+  localStorage.setItem("hamakpetza_theme",n);
+  var btn=document.getElementById("thmCourse");
+  if(btn) btn.textContent=n==="dark"?"☀️":"🌙";
+}
+(function(){
+  var t=localStorage.getItem("hamakpetza_theme");
+  if(t){
+    document.documentElement.setAttribute("data-theme",t);
+    var btn=document.getElementById("thmCourse");
+    if(btn) btn.textContent=t==="dark"?"☀️":"🌙";
+  }
+})();
+</script>
 </body>
 </html>
