@@ -3,141 +3,158 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>המקפצה — עיצוב A: בהשראת Anthropic</title>
+<title>המקפצה — אקדמיית AI למובילי המגזר הציבורי</title>
+<meta name="description" content="12 יחידות לימוד מעשיות ב-AI למובילי המגזר הציבורי">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Frank+Ruhl+Libre:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Heebo:wght@300;400;500;600;700;800;900&family=Frank+Ruhl+Libre:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
 <style>
 :root {
-  --bg: #FAF8F5;
-  --bg2: #F2EDE7;
-  --text: #1A1612;
-  --text2: #8C8278;
-  --text3: #B5ADA3;
-  --border: #E8E0D6;
-  --accent: #D97706;
-  --accent2: #B45309;
-  --accent-soft: rgba(217,119,6,.06);
-  --green: #059669;
-  --green-soft: rgba(5,150,105,.06);
-  --purple: #7C3AED;
-  --purple-soft: rgba(124,58,237,.06);
-  --card: #FFFFFF;
-  --radius: 16px;
-  --shadow-sm: 0 1px 3px rgba(26,22,18,.04);
-  --shadow-md: 0 4px 16px rgba(26,22,18,.06);
-  --shadow-lg: 0 12px 40px rgba(26,22,18,.08);
-  --transition: all .3s cubic-bezier(.4,0,.2,1);
+  --cream: #faf9f7;
+  --cream-dark: #f0ede8;
+  --cream-darker: #e5e0d9;
+  --terra: #c96442;
+  --terra-light: #d4795a;
+  --terra-dark: #a8512f;
+  --terra-bg: rgba(201,100,66,.04);
+  --terra-bg2: rgba(201,100,66,.08);
+  --text-primary: #1a1714;
+  --text-secondary: #6b6560;
+  --text-tertiary: #9c958e;
+  --border: #e5e0d9;
+  --border-light: #ece8e2;
+  --white: #ffffff;
+  --green: #2d7a5f;
+  --green-bg: rgba(45,122,95,.06);
+  --purple: #6b4c9a;
+  --purple-bg: rgba(107,76,154,.05);
+  --radius: 12px;
+  --font-serif: 'Frank Ruhl Libre', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Inter', 'Heebo', -apple-system, sans-serif;
+  --font-hebrew: 'Heebo', 'Inter', sans-serif;
+  --ease: cubic-bezier(.25,.1,.25,1);
 }
-*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
-  font-family: 'Frank Ruhl Libre', Georgia, serif;
-  background: var(--bg);
-  color: var(--text);
+  font-family: var(--font-serif);
+  background: var(--cream);
+  color: var(--text-primary);
   line-height: 1.75;
   font-size: 17px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-h1,h2,h3,h4,h5,h6 { font-family: 'Heebo', sans-serif; line-height: 1.2; }
-a { color: var(--accent); text-decoration: none; transition: var(--transition); }
-
-/* === HEADER — Anthropic-style minimal === */
-.header {
-  position: sticky; top: 0; z-index: 100;
-  background: rgba(250,248,245,.92);
-  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
-  padding: 16px 0;
-}
-.header-inner {
-  max-width: 1080px; margin: 0 auto; padding: 0 40px;
-  display: flex; align-items: center; justify-content: space-between;
-}
-.logo {
-  font-family: 'Heebo', sans-serif; font-size: 1.35rem; font-weight: 800;
-  color: var(--text); display: flex; align-items: center; gap: 10px;
-  letter-spacing: -.02em;
-}
-.logo-mark {
-  width: 36px; height: 36px; border-radius: 9px;
-  background: var(--accent); display: grid; place-items: center;
-  color: #fff; font-size: 1rem; font-weight: 900;
-  box-shadow: 0 2px 8px rgba(217,119,6,.2);
-}
-.nav { display: flex; gap: 32px; align-items: center; }
-.nav a {
-  color: var(--text2); font-family: 'Heebo', sans-serif;
-  font-size: .85rem; font-weight: 500; letter-spacing: .01em;
-}
-.nav a:hover { color: var(--text); }
-.nav-cta {
-  background: var(--text); color: #fff !important;
-  padding: 9px 24px; border-radius: 8px; font-weight: 600;
-  transition: var(--transition);
-}
-.nav-cta:hover { background: #2D2520; transform: translateY(-1px); }
-.menu-btn { display: none; background: none; border: none; font-size: 1.3rem; cursor: pointer; color: var(--text); }
-
-/* === HERO — editorial, spacious === */
-.hero {
-  padding: 120px 40px 100px; max-width: 780px; margin: 0 auto; text-align: center;
-}
-.hero-eyebrow {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-family: 'Heebo', sans-serif; font-size: .78rem; font-weight: 600;
-  color: var(--accent); letter-spacing: .06em; text-transform: uppercase;
-  margin-bottom: 24px;
-}
-.hero-eyebrow::before {
-  content: ''; width: 32px; height: 1.5px; background: var(--accent); display: inline-block;
-}
-.hero h1 {
-  font-size: 3.4rem; font-weight: 900; letter-spacing: -.04em;
-  margin-bottom: 24px; line-height: 1.1; color: var(--text);
-}
-.hero h1 em {
-  font-style: normal; color: var(--accent);
-}
-.hero p {
-  color: var(--text2); font-size: 1.15rem; max-width: 540px;
-  margin: 0 auto 48px; line-height: 1.9;
-}
-.hero-stats {
-  display: flex; gap: 48px; justify-content: center; margin-bottom: 48px;
-}
-.hero-stat { text-align: center; }
-.hero-stat strong {
-  display: block; font-family: 'Heebo', sans-serif;
-  font-size: 2.6rem; font-weight: 800; color: var(--text);
-  letter-spacing: -.03em;
-}
-.hero-stat span {
-  font-size: .82rem; color: var(--text3); font-family: 'Heebo', sans-serif;
-  font-weight: 500;
-}
-.hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-.btn-primary {
-  background: var(--text); color: #fff; padding: 14px 36px; border-radius: 10px;
-  font-family: 'Heebo', sans-serif; font-weight: 700; font-size: .95rem;
-  border: none; cursor: pointer; transition: var(--transition);
-  box-shadow: var(--shadow-sm);
-}
-.btn-primary:hover { background: #2D2520; transform: translateY(-2px); box-shadow: var(--shadow-md); color: #fff; }
-.btn-ghost {
-  background: transparent; color: var(--text); padding: 14px 36px; border-radius: 10px;
-  font-family: 'Heebo', sans-serif; font-weight: 600; font-size: .95rem;
-  border: 1.5px solid var(--border); cursor: pointer; transition: var(--transition);
-}
-.btn-ghost:hover { border-color: var(--text); transform: translateY(-2px); color: var(--text); }
+h1,h2,h3,h4,h5,h6 { font-family: var(--font-hebrew); line-height: 1.25; letter-spacing: -.02em; }
+a { color: var(--terra); text-decoration: none; transition: color .2s var(--ease); }
+a:hover { color: var(--terra-dark); }
+::selection { background: var(--terra-bg2); color: var(--terra-dark); }
 </style>
 </head>
 <body>
 
+<style>
+/* === HEADER — Anthropic minimal === */
+.header {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(250,249,247,.85);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-light);
+  padding: 0;
+}
+.header-inner {
+  max-width: 1080px; margin: 0 auto; padding: 16px 48px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.logo {
+  font-family: var(--font-hebrew); font-size: 1.15rem; font-weight: 700;
+  color: var(--text-primary); display: flex; align-items: center; gap: 10px;
+}
+.logo:hover { color: var(--text-primary); }
+.logo-mark {
+  width: 32px; height: 32px; border-radius: 8px;
+  background: var(--terra); display: grid; place-items: center;
+  color: #fff; font-size: .75rem; font-weight: 800;
+  font-family: var(--font-hebrew);
+}
+.nav { display: flex; gap: 32px; align-items: center; }
+.nav a {
+  color: var(--text-tertiary); font-family: var(--font-hebrew);
+  font-size: .82rem; font-weight: 500; transition: color .2s;
+}
+.nav a:hover { color: var(--text-primary); }
+.nav-cta {
+  background: var(--text-primary); color: var(--cream) !important;
+  padding: 8px 22px; border-radius: 8px; font-weight: 600;
+}
+.nav-cta:hover { background: #2d2520; color: var(--cream) !important; }
+.menu-btn { display: none; background: none; border: none; font-size: 1.2rem; cursor: pointer; color: var(--text-primary); }
+
+/* === HERO — editorial, Anthropic-inspired === */
+.hero {
+  padding: 120px 48px 80px;
+  max-width: 760px; margin: 0 auto; text-align: center;
+}
+.hero-label {
+  display: inline-block;
+  font-family: var(--font-hebrew); font-size: .72rem; font-weight: 600;
+  color: var(--terra); letter-spacing: .12em; text-transform: uppercase;
+  margin-bottom: 28px;
+}
+.hero h1 {
+  font-family: var(--font-serif); font-size: 3.6rem; font-weight: 900;
+  letter-spacing: -.03em; margin-bottom: 24px; line-height: 1.08;
+  color: var(--text-primary);
+}
+.hero h1 em { font-style: normal; color: var(--terra); }
+.hero p {
+  color: var(--text-secondary); font-size: 1.1rem;
+  max-width: 520px; margin: 0 auto 48px; line-height: 1.85;
+}
+.hero-metrics {
+  display: flex; gap: 56px; justify-content: center; margin-bottom: 48px;
+}
+.hero-metric { text-align: center; }
+.hero-metric strong {
+  display: block; font-family: var(--font-hebrew);
+  font-size: 2.8rem; font-weight: 800; color: var(--text-primary);
+  letter-spacing: -.03em; line-height: 1;
+}
+.hero-metric span {
+  font-size: .78rem; color: var(--text-tertiary);
+  font-family: var(--font-hebrew); font-weight: 500;
+  margin-top: 4px; display: block;
+}
+.hero-actions { display: flex; gap: 12px; justify-content: center; }
+.btn-primary {
+  background: var(--text-primary); color: var(--cream);
+  padding: 14px 36px; border-radius: 8px;
+  font-family: var(--font-hebrew); font-weight: 600; font-size: .9rem;
+  border: none; cursor: pointer; transition: all .2s var(--ease);
+  display: inline-block;
+}
+.btn-primary:hover { background: #2d2520; transform: translateY(-1px); color: var(--cream); }
+.btn-secondary {
+  background: transparent; color: var(--text-primary);
+  padding: 14px 36px; border-radius: 8px;
+  font-family: var(--font-hebrew); font-weight: 500; font-size: .9rem;
+  border: 1px solid var(--border); cursor: pointer; transition: all .2s var(--ease);
+  display: inline-block;
+}
+.btn-secondary:hover { border-color: var(--text-primary); transform: translateY(-1px); color: var(--text-primary); }
+
+/* === DIVIDER LINE === */
+.divider {
+  max-width: 1080px; margin: 0 auto;
+  border: none; border-top: 1px solid var(--border-light);
+}
+</style>
+
+<!-- HEADER -->
 <header class="header">
 <div class="header-inner">
-<a href="#" class="logo"><span class="logo-mark">🚀</span>המקפצה</a>
+<a href="#" class="logo"><span class="logo-mark">מ</span>המקפצה</a>
 <nav class="nav" id="nav">
 <a href="#syllabus">סילבוס</a>
 <a href="#paths">מסלולים</a>
@@ -149,51 +166,132 @@ a { color: var(--accent); text-decoration: none; transition: var(--transition); 
 </div>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-<div class="hero-eyebrow">תוכנית הכשרה ממשלתית</div>
+<div class="hero-label">תוכנית הכשרה למגזר הציבורי</div>
 <h1>אקדמיית <em>AI</em><br>למובילי המגזר הציבורי</h1>
 <p>12 יחידות לימוד מעשיות, מסילבוס בסיסי ועד RAG ו-Claude Code. נבנתה עבור ~1,000 מובילי AI בממשלת ישראל.</p>
-<div class="hero-stats">
-<div class="hero-stat"><strong>12</strong><span>יחידות לימוד</span></div>
-<div class="hero-stat"><strong>6</strong><span>תחומי ידע</span></div>
-<div class="hero-stat"><strong>50+</strong><span>פרומפטים</span></div>
+<div class="hero-metrics">
+<div class="hero-metric"><strong>12</strong><span>יחידות לימוד</span></div>
+<div class="hero-metric"><strong>6</strong><span>תחומי ידע</span></div>
+<div class="hero-metric"><strong>50+</strong><span>פרומפטים</span></div>
 </div>
 <div class="hero-actions">
-<a href="#courses" class="btn-primary">התחילו ללמוד →</a>
-<a href="#syllabus" class="btn-ghost">צפו בסילבוס</a>
+<a href="#courses" class="btn-primary">התחילו ללמוד</a>
+<a href="#syllabus" class="btn-secondary">צפו בסילבוס</a>
 </div>
 </section>
 
-<!-- PROGRESS -->
+<hr class="divider">
+
 <style>
-.progress-section { max-width: 1080px; margin: 0 auto 100px; padding: 0 40px; }
+/* === PROGRESS === */
+.progress-section { max-width: 1080px; margin: 0 auto; padding: 64px 48px; }
 .progress-card {
-  background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
-  padding: 40px 44px; display: flex; align-items: center; gap: 40px;
-  box-shadow: var(--shadow-sm);
+  background: var(--white); border: 1px solid var(--border-light);
+  border-radius: var(--radius); padding: 36px 40px;
+  display: flex; align-items: center; gap: 36px;
 }
-.ring-wrap { flex-shrink: 0; position: relative; width: 100px; height: 100px; }
+.ring-wrap { flex-shrink: 0; position: relative; width: 96px; height: 96px; }
 .ring-wrap svg { transform: rotate(-90deg); }
-.ring-bg { fill: none; stroke: var(--bg2); stroke-width: 6; }
-.ring-fill { fill: none; stroke: var(--accent); stroke-width: 6; stroke-linecap: round; transition: stroke-dashoffset .8s cubic-bezier(.4,0,.2,1); }
+.ring-bg { fill: none; stroke: var(--cream-dark); stroke-width: 5; }
+.ring-fill { fill: none; stroke: var(--terra); stroke-width: 5; stroke-linecap: round; transition: stroke-dashoffset .8s var(--ease); }
 .ring-pct {
   position: absolute; inset: 0; display: grid; place-items: center;
-  font-family: 'Heebo', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--text);
+  font-family: var(--font-hebrew); font-size: 1.4rem; font-weight: 800;
+  color: var(--text-primary);
 }
 .progress-info { flex: 1; }
-.progress-info h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; }
-.progress-info p { color: var(--text2); font-size: .88rem; font-family: 'Heebo', sans-serif; margin-bottom: 16px; }
-.bar { height: 6px; background: var(--bg2); border-radius: 3px; overflow: hidden; }
-.bar-fill { height: 100%; background: var(--accent); border-radius: 3px; transition: width .8s cubic-bezier(.4,0,.2,1); }
-.progress-meta { font-size: .8rem; color: var(--text3); font-family: 'Heebo', sans-serif; margin-top: 10px; }
+.progress-info h3 { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
+.progress-info p { color: var(--text-secondary); font-size: .85rem; font-family: var(--font-hebrew); margin-bottom: 14px; }
+.bar { height: 4px; background: var(--cream-dark); border-radius: 2px; overflow: hidden; }
+.bar-fill { height: 100%; background: var(--terra); border-radius: 2px; transition: width .8s var(--ease); }
+.progress-meta { font-size: .78rem; color: var(--text-tertiary); font-family: var(--font-hebrew); margin-top: 8px; }
+
+/* === SECTIONS === */
+.sec { max-width: 1080px; margin: 0 auto; padding: 80px 48px; }
+.sec-label {
+  font-family: var(--font-hebrew); font-size: .7rem; font-weight: 600;
+  color: var(--terra); letter-spacing: .12em; text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.sec-title { font-size: 1.8rem; font-weight: 800; margin-bottom: 8px; }
+.sec-desc { color: var(--text-secondary); font-size: .95rem; margin-bottom: 48px; max-width: 480px; line-height: 1.85; }
+
+/* === DOMAIN GRID === */
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.domain-card {
+  background: var(--white); border: 1px solid var(--border-light);
+  border-radius: var(--radius); padding: 28px 24px;
+  transition: border-color .2s var(--ease);
+}
+.domain-card:hover { border-color: var(--terra); }
+.domain-icon {
+  width: 40px; height: 40px; border-radius: 8px;
+  display: grid; place-items: center; font-size: 1.2rem; margin-bottom: 16px;
+  background: var(--terra-bg);
+}
+.domain-card h3 { font-size: .95rem; font-weight: 700; margin-bottom: 6px; }
+.domain-card p { color: var(--text-secondary); font-size: .84rem; line-height: 1.7; font-family: var(--font-hebrew); }
+.domain-tag { margin-top: 14px; font-size: .7rem; color: var(--terra); font-family: var(--font-hebrew); font-weight: 600; }
+
+/* === PATH CARDS === */
+.path-card {
+  background: var(--white); border: 1px solid var(--border-light);
+  border-radius: var(--radius); padding: 28px 24px;
+  transition: border-color .2s var(--ease);
+}
+.path-card:hover { border-color: var(--terra); }
+.path-label {
+  display: inline-block; padding: 3px 12px; border-radius: 50px;
+  font-size: .7rem; font-weight: 600; font-family: var(--font-hebrew);
+  margin-bottom: 14px;
+}
+.path-card.basic .path-label { background: var(--green-bg); color: var(--green); }
+.path-card.adv .path-label { background: var(--terra-bg); color: var(--terra); }
+.path-card.lead .path-label { background: var(--purple-bg); color: var(--purple); }
+.path-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 6px; }
+.path-card > p { color: var(--text-secondary); font-size: .84rem; line-height: 1.7; margin-bottom: 14px; font-family: var(--font-hebrew); }
+.path-list { list-style: none; padding: 0; }
+.path-list li {
+  padding: 6px 0; border-bottom: 1px solid var(--border-light);
+  font-size: .82rem; font-family: var(--font-hebrew); color: var(--text-secondary);
+}
+.path-list li:last-child { border: none; }
+.path-list li::before { content: '← '; color: var(--terra); font-weight: 600; }
+
+/* === COURSE CARDS === */
+.course-card {
+  background: var(--white); border: 1px solid var(--border-light);
+  border-radius: var(--radius); padding: 24px;
+  transition: all .2s var(--ease); position: relative;
+  display: flex; flex-direction: column;
+}
+.course-card:hover { border-color: var(--terra); transform: translateY(-2px); }
+.course-num { font-family: var(--font-hebrew); font-size: .72rem; font-weight: 600; color: var(--text-tertiary); margin-bottom: 8px; }
+.course-card h3 { font-size: .92rem; font-weight: 700; margin-bottom: 6px; line-height: 1.4; }
+.course-desc { color: var(--text-secondary); font-size: .82rem; line-height: 1.7; margin-bottom: 14px; flex: 1; font-family: var(--font-hebrew); }
+.course-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+.course-tag {
+  font-size: .68rem; padding: 2px 10px; border-radius: 50px;
+  font-family: var(--font-hebrew); font-weight: 500;
+  background: var(--cream-dark); color: var(--text-secondary);
+}
+.course-link { font-family: var(--font-hebrew); font-size: .82rem; font-weight: 600; color: var(--terra); }
+.course-done {
+  position: absolute; top: 14px; left: 14px; width: 24px; height: 24px;
+  border-radius: 50%; background: var(--green); color: #fff;
+  display: none; place-items: center; font-size: .7rem;
+}
 </style>
 
+<!-- PROGRESS -->
 <section class="progress-section">
 <div class="progress-card">
 <div class="ring-wrap">
-<svg width="100" height="100" viewBox="0 0 100 100">
-<circle class="ring-bg" cx="50" cy="50" r="44"/>
-<circle class="ring-fill" id="pRing" cx="50" cy="50" r="44" stroke-dasharray="276.46" stroke-dashoffset="276.46"/>
+<svg width="96" height="96" viewBox="0 0 96 96">
+<circle class="ring-bg" cx="48" cy="48" r="42"/>
+<circle class="ring-fill" id="pRing" cx="48" cy="48" r="42" stroke-dasharray="263.89" stroke-dashoffset="263.89"/>
 </svg>
 <div class="ring-pct" id="pPct">0%</div>
 </div>
@@ -206,197 +304,129 @@ a { color: var(--accent); text-decoration: none; transition: var(--transition); 
 </div>
 </section>
 
-<!-- SYLLABUS -->
-<style>
-.sec { max-width: 1080px; margin: 0 auto 100px; padding: 0 40px; }
-.sec-eyebrow {
-  font-family: 'Heebo', sans-serif; font-size: .72rem; font-weight: 700;
-  color: var(--accent); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 10px;
-}
-.sec-title { font-size: 2rem; font-weight: 800; margin-bottom: 8px; letter-spacing: -.02em; }
-.sec-sub { color: var(--text2); font-size: .98rem; margin-bottom: 48px; max-width: 480px; line-height: 1.85; }
-.grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
-.d-card {
-  background: var(--card); border: 1px solid var(--border); border-radius: 14px;
-  padding: 28px 24px; transition: var(--transition); box-shadow: var(--shadow-sm);
-}
-.d-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--accent); }
-.d-icon {
-  width: 44px; height: 44px; border-radius: 10px; display: grid; place-items: center;
-  font-size: 1.3rem; margin-bottom: 16px;
-}
-.d-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
-.d-card p { color: var(--text2); font-size: .86rem; line-height: 1.7; font-family: 'Heebo', sans-serif; }
-.d-tag { margin-top: 14px; font-size: .72rem; color: var(--accent); font-family: 'Heebo', sans-serif; font-weight: 600; }
-</style>
+<hr class="divider">
 
+<!-- SYLLABUS -->
 <section class="sec" id="syllabus">
-<div class="sec-eyebrow">סילבוס</div>
+<div class="sec-label">סילבוס</div>
 <h2 class="sec-title">6 תחומי ידע</h2>
-<p class="sec-sub">מבסיס ועד מתקדם — תוכנית מובנית שמכסה את כל מה שמוביל AI בממשלה צריך</p>
+<p class="sec-desc">מבסיס ועד מתקדם — תוכנית מובנית שמכסה את כל מה שמוביל AI בממשלה צריך</p>
 <div class="grid-3">
-<div class="d-card"><div class="d-icon" style="background:var(--green-soft)">🧠</div><h3>בסיס AI</h3><p>אוריינות AI, מפת המודלים, עבודה אחראית</p><div class="d-tag">יחידות 1-2</div></div>
-<div class="d-card"><div class="d-icon" style="background:var(--accent-soft)">✍️</div><h3>הנדסת הנחיות</h3><p>Prompt Engineering, טכניקות מתקדמות, XML</p><div class="d-tag">יחידה 3</div></div>
-<div class="d-card"><div class="d-icon" style="background:rgba(106,155,204,.08)">📝</div><h3>כתיבה וניתוח</h3><p>כתיבה ממשלתית, ניתוח נתונים, מחקר</p><div class="d-tag">יחידות 4-6</div></div>
-<div class="d-card"><div class="d-icon" style="background:var(--purple-soft)">💡</div><h3>חשיבה ואתיקה</h3><p>חשיבה אסטרטגית, פתרון בעיות, אתיקה</p><div class="d-tag">יחידות 7-8</div></div>
-<div class="d-card"><div class="d-icon" style="background:rgba(251,191,36,.06)">🏛️</div><h3>AI בשירות הציבורי</h3><p>שירות לאזרח, הנגשת מידע, אוטומציה</p><div class="d-tag">יחידות 9-10</div></div>
-<div class="d-card"><div class="d-icon" style="background:rgba(56,189,248,.06)">💻</div><h3>AI מתקדם וטכני</h3><p>RAG, מאגרי ידע ארגוניים, Claude Code</p><div class="d-tag">יחידות 11-12</div></div>
+<div class="domain-card"><div class="domain-icon">🧠</div><h3>בסיס AI</h3><p>אוריינות AI, מפת המודלים, עבודה אחראית</p><div class="domain-tag">יחידות 1–2</div></div>
+<div class="domain-card"><div class="domain-icon">✍️</div><h3>הנדסת הנחיות</h3><p>Prompt Engineering, טכניקות מתקדמות, XML</p><div class="domain-tag">יחידה 3</div></div>
+<div class="domain-card"><div class="domain-icon">📝</div><h3>כתיבה וניתוח</h3><p>כתיבה ממשלתית, ניתוח נתונים, מחקר</p><div class="domain-tag">יחידות 4–6</div></div>
+<div class="domain-card"><div class="domain-icon">💡</div><h3>חשיבה ואתיקה</h3><p>חשיבה אסטרטגית, פתרון בעיות, אתיקה</p><div class="domain-tag">יחידות 7–8</div></div>
+<div class="domain-card"><div class="domain-icon">🏛️</div><h3>AI בשירות הציבורי</h3><p>שירות לאזרח, הנגשת מידע, אוטומציה</p><div class="domain-tag">יחידות 9–10</div></div>
+<div class="domain-card"><div class="domain-icon">💻</div><h3>AI מתקדם וטכני</h3><p>RAG, מאגרי ידע ארגוניים, Claude Code</p><div class="domain-tag">יחידות 11–12</div></div>
 </div>
 </section>
+
+<hr class="divider">
 
 <!-- PATHS -->
-<style>
-.p-card {
-  background: var(--card); border: 1px solid var(--border); border-radius: 14px;
-  padding: 28px 24px; position: relative; overflow: hidden; transition: var(--transition);
-  box-shadow: var(--shadow-sm);
-}
-.p-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
-.p-card::before { content: ''; position: absolute; top: 0; right: 0; left: 0; height: 3px; }
-.p-card.basic::before { background: var(--green); }
-.p-card.adv::before { background: var(--accent); }
-.p-card.lead::before { background: var(--purple); }
-.p-tag {
-  display: inline-block; padding: 4px 14px; border-radius: 50px;
-  font-size: .72rem; font-weight: 600; font-family: 'Heebo', sans-serif; margin-bottom: 14px;
-}
-.p-card.basic .p-tag { background: var(--green-soft); color: var(--green); }
-.p-card.adv .p-tag { background: var(--accent-soft); color: var(--accent); }
-.p-card.lead .p-tag { background: var(--purple-soft); color: var(--purple); }
-.p-card h3 { font-size: 1.12rem; font-weight: 700; margin-bottom: 8px; }
-.p-card > p { color: var(--text2); font-size: .86rem; line-height: 1.7; margin-bottom: 16px; font-family: 'Heebo', sans-serif; }
-.p-list { list-style: none; padding: 0; }
-.p-list li {
-  padding: 8px 0; border-bottom: 1px solid var(--border);
-  font-size: .85rem; font-family: 'Heebo', sans-serif; color: var(--text2);
-}
-.p-list li:last-child { border: none; }
-.p-list li::before { content: '← '; color: var(--accent); font-weight: 600; }
-</style>
-
 <section class="sec" id="paths">
-<div class="sec-eyebrow">מסלולי למידה</div>
+<div class="sec-label">מסלולי למידה</div>
 <h2 class="sec-title">3 מסלולים מותאמים</h2>
-<p class="sec-sub">בחרו את המסלול שמתאים לתפקיד ולרמה שלכם</p>
+<p class="sec-desc">בחרו את המסלול שמתאים לתפקיד ולרמה שלכם</p>
 <div class="grid-3">
-<div class="p-card basic"><span class="p-tag">בסיסי</span><h3>כל עובד מדינה</h3><p>בסיס AI, כתיבה, ואתיקה — חובה לכל עובד</p><ul class="p-list"><li>אוריינות AI ועבודה אחראית</li><li>הנדסת הנחיות</li><li>כתיבה ותקשורת עם AI</li><li>אתיקה ובטיחות AI</li></ul></div>
-<div class="p-card adv"><span class="p-tag">מתקדם</span><h3>מנהלים ומובילים</h3><p>ניתוח, מחקר, חשיבה אסטרטגית ואוטומציה</p><ul class="p-list"><li>מפת המודלים</li><li>ניתוח נתונים עם AI</li><li>חיפוש ומחקר</li><li>חשיבה ופתרון בעיות</li><li>שירות הציבור</li><li>אוטומציה ותהליכי עבודה</li></ul></div>
-<div class="p-card lead"><span class="p-tag">מוביל AI</span><h3>מובילי AI וצוותי IT</h3><p>RAG, Claude Code, וכלים טכניים</p><ul class="p-list"><li>כל 10 היחידות הקודמות</li><li>RAG — חיבור AI למאגרי ידע</li><li>Claude Code — למפתחים</li></ul></div>
+<div class="path-card basic"><span class="path-label">בסיסי</span><h3>כל עובד מדינה</h3><p>בסיס AI, כתיבה, ואתיקה — חובה לכל עובד</p><ul class="path-list"><li>אוריינות AI ועבודה אחראית</li><li>הנדסת הנחיות</li><li>כתיבה ותקשורת עם AI</li><li>אתיקה ובטיחות AI</li></ul></div>
+<div class="path-card adv"><span class="path-label">מתקדם</span><h3>מנהלים ומובילים</h3><p>ניתוח, מחקר, חשיבה אסטרטגית ואוטומציה</p><ul class="path-list"><li>מפת המודלים</li><li>ניתוח נתונים עם AI</li><li>חיפוש ומחקר</li><li>חשיבה ופתרון בעיות</li><li>שירות הציבור</li><li>אוטומציה ותהליכי עבודה</li></ul></div>
+<div class="path-card lead"><span class="path-label">מוביל AI</span><h3>מובילי AI וצוותי IT</h3><p>RAG, Claude Code, וכלים טכניים</p><ul class="path-list"><li>כל 10 היחידות הקודמות</li><li>RAG — חיבור AI למאגרי ידע</li><li>Claude Code — למפתחים</li></ul></div>
 </div>
 </section>
 
-<!-- COURSES -->
-<style>
-.c-card {
-  background: var(--card); border: 1px solid var(--border); border-radius: 14px;
-  padding: 26px 24px; transition: var(--transition); position: relative;
-  display: flex; flex-direction: column; overflow: hidden; box-shadow: var(--shadow-sm);
-}
-.c-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-.c-num { font-family: 'Heebo', sans-serif; font-size: .75rem; font-weight: 600; color: var(--text3); margin-bottom: 10px; }
-.c-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; line-height: 1.4; }
-.c-desc { color: var(--text2); font-size: .85rem; line-height: 1.7; margin-bottom: 16px; flex: 1; font-family: 'Heebo', sans-serif; }
-.c-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
-.c-tag {
-  font-size: .7rem; padding: 3px 10px; border-radius: 50px;
-  font-family: 'Heebo', sans-serif; font-weight: 500;
-  background: var(--bg2); color: var(--text2);
-}
-.c-link { font-family: 'Heebo', sans-serif; font-size: .86rem; font-weight: 600; color: var(--accent); }
-.c-done {
-  position: absolute; top: 16px; left: 16px; width: 26px; height: 26px;
-  border-radius: 50%; background: var(--green); color: #fff;
-  display: none; place-items: center; font-size: .8rem;
-}
-</style>
+<hr class="divider">
 
+<!-- COURSES -->
 <section class="sec" id="courses">
-<div class="sec-eyebrow">יחידות לימוד</div>
+<div class="sec-label">יחידות לימוד</div>
 <h2 class="sec-title">12 יחידות מעשיות</h2>
-<p class="sec-sub">כל יחידה כוללת תיאוריה, פרומפטים מוכנים, תרגילים ושאלות בדיקה</p>
+<p class="sec-desc">כל יחידה כוללת תיאוריה, פרומפטים מוכנים, תרגילים ושאלות בדיקה</p>
 <div class="grid-3" id="coursesGrid"></div>
 </section>
 
-<!-- DIVIDER QUOTE -->
+<hr class="divider">
+
+<!-- QUOTE -->
 <style>
 .quote-section {
-  max-width: 680px; margin: 0 auto 100px; padding: 0 40px; text-align: center;
+  max-width: 640px; margin: 0 auto; padding: 80px 48px; text-align: center;
 }
 .quote-section blockquote {
-  font-size: 1.4rem; font-weight: 500; line-height: 1.7; color: var(--text);
-  position: relative; padding: 0 20px;
-}
-.quote-section blockquote::before {
-  content: '״'; font-size: 4rem; color: var(--accent); position: absolute;
-  top: -20px; right: -10px; font-family: Georgia, serif; opacity: .3;
+  font-family: var(--font-serif); font-size: 1.35rem; font-weight: 500;
+  line-height: 1.75; color: var(--text-primary);
 }
 .quote-section cite {
-  display: block; margin-top: 16px; font-size: .85rem; color: var(--text3);
-  font-family: 'Heebo', sans-serif; font-style: normal;
+  display: block; margin-top: 20px; font-size: .82rem;
+  color: var(--text-tertiary); font-family: var(--font-hebrew);
+  font-style: normal; font-weight: 500;
 }
 </style>
 
 <section class="quote-section">
 <blockquote>הטכנולוגיה הטובה ביותר היא זו שמעצימה אנשים לעשות את עבודתם טוב יותר — לא זו שמחליפה אותם.</blockquote>
-<cite>— הפילוסופיה של המקפצה</cite>
+<cite>הפילוסופיה של המקפצה</cite>
 </section>
+
+<hr class="divider">
 
 <!-- ABOUT -->
 <style>
-.about-sec { max-width: 680px; margin: 0 auto 100px; padding: 0 40px; text-align: center; }
-.about-sec p { color: var(--text2); font-size: 1rem; line-height: 1.9; margin-bottom: 16px; }
-.credit-box {
-  display: inline-flex; flex-direction: column; align-items: center; gap: 10px;
-  margin-top: 28px; padding: 32px 44px; background: var(--card);
-  border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow-sm);
+.about-sec { max-width: 640px; margin: 0 auto; padding: 80px 48px; text-align: center; }
+.about-sec p { color: var(--text-secondary); font-size: .98rem; line-height: 1.85; margin-bottom: 16px; }
+.credit-card {
+  display: inline-flex; flex-direction: column; align-items: center; gap: 8px;
+  margin-top: 32px; padding: 32px 48px;
+  background: var(--white); border: 1px solid var(--border-light);
+  border-radius: var(--radius);
 }
-.credit-box .avatar {
-  width: 56px; height: 56px; border-radius: 50%; background: var(--accent);
-  display: grid; place-items: center; color: #fff; font-size: 1.3rem; font-weight: 800;
-  font-family: 'Heebo', sans-serif;
+.credit-avatar {
+  width: 48px; height: 48px; border-radius: 50%; background: var(--terra);
+  display: grid; place-items: center; color: #fff; font-size: 1.1rem; font-weight: 800;
+  font-family: var(--font-hebrew);
 }
-.credit-box .name { font-family: 'Heebo', sans-serif; font-size: 1.05rem; font-weight: 700; }
-.credit-box .role { font-family: 'Heebo', sans-serif; font-size: .85rem; color: var(--text2); }
-.wa-wrap { margin-top: 36px; }
+.credit-name { font-family: var(--font-hebrew); font-size: 1rem; font-weight: 700; }
+.credit-role { font-family: var(--font-hebrew); font-size: .82rem; color: var(--text-secondary); }
+.wa-wrap { margin-top: 32px; }
 .wa-btn {
   display: inline-flex; align-items: center; gap: 8px;
-  background: #25d366; color: #fff; padding: 12px 28px; border-radius: 10px;
-  font-family: 'Heebo', sans-serif; font-weight: 600; font-size: .88rem;
-  border: none; cursor: pointer; transition: var(--transition);
+  background: var(--text-primary); color: var(--cream);
+  padding: 12px 28px; border-radius: 8px;
+  font-family: var(--font-hebrew); font-weight: 600; font-size: .85rem;
+  border: none; cursor: pointer; transition: all .2s var(--ease);
 }
-.wa-btn:hover { background: #1da851; transform: translateY(-2px); color: #fff; }
+.wa-btn:hover { background: #2d2520; transform: translateY(-1px); color: var(--cream); }
 </style>
 
 <section class="about-sec" id="about">
-<div class="sec-eyebrow">אודות</div>
+<div class="sec-label">אודות</div>
 <h2 class="sec-title">על המקפצה</h2>
 <p>תוכנית הכשרה ממשלתית מלאה ב-AI, שנבנתה עבור ~1,000 מובילי AI בממשלת ישראל. מבוססת על סילבוסים של Anthropic ו-OpenAI, מותאמת לעברית ולהקשר הממשלתי.</p>
-<div class="credit-box">
-<div class="avatar">א</div>
-<div class="name">אביעד יצחקי</div>
-<div class="role">מוביל AI ושותפויות, מינהלי גמלאות ביטוח לאומי</div>
+<div class="credit-card">
+<div class="credit-avatar">א</div>
+<div class="credit-name">אביעד יצחקי</div>
+<div class="credit-role">מוביל AI ושותפויות, מינהלי גמלאות ביטוח לאומי</div>
 </div>
 <div class="wa-wrap">
-<button class="wa-btn" onclick="shareWA()">📱 שתפו בוואטסאפ</button>
+<button class="wa-btn" onclick="shareWA()">שתפו בוואטסאפ</button>
 </div>
 </section>
 
 <!-- FOOTER -->
 <style>
 .footer {
-  border-top: 1px solid var(--border); padding: 48px 40px; text-align: center;
+  border-top: 1px solid var(--border-light); padding: 40px 48px;
+  text-align: center; max-width: 1080px; margin: 0 auto;
 }
-.footer-logo { font-family: 'Heebo', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 8px; color: var(--text); }
-.footer-text { color: var(--text3); font-size: .8rem; font-family: 'Heebo', sans-serif; line-height: 1.9; }
-.footer-links { margin-top: 16px; display: flex; gap: 24px; justify-content: center; }
-.footer-links a { color: var(--text3); font-size: .8rem; font-family: 'Heebo', sans-serif; }
-.footer-links a:hover { color: var(--accent); }
-.footer-line { width: 40px; height: 2px; background: var(--accent); margin: 14px auto; border-radius: 1px; opacity: .4; }
+.footer-brand { font-family: var(--font-hebrew); font-size: .88rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
+.footer-text { color: var(--text-tertiary); font-size: .78rem; font-family: var(--font-hebrew); line-height: 1.8; }
+.footer-links { margin-top: 14px; display: flex; gap: 24px; justify-content: center; }
+.footer-links a { color: var(--text-tertiary); font-size: .78rem; font-family: var(--font-hebrew); }
+.footer-links a:hover { color: var(--terra); }
 </style>
 
 <footer class="footer">
-<div class="footer-logo">🚀 המקפצה</div>
-<div class="footer-line"></div>
+<div class="footer-brand">המקפצה</div>
 <div class="footer-text">מבוסס על Anthropic AI Fluency ו-OpenAI Academy · מותאם למגזר הציבורי © 2025</div>
 <div class="footer-links"><a href="#syllabus">סילבוס</a><a href="#paths">מסלולים</a><a href="#courses">יחידות</a><a href="#about">אודות</a></div>
 </footer>
@@ -404,97 +434,98 @@ a { color: var(--accent); text-decoration: none; transition: var(--transition); 
 <!-- RESPONSIVE -->
 <style>
 @media(max-width:900px){
-  .grid-3{grid-template-columns:repeat(2,1fr)}
-  .hero h1{font-size:2.6rem}
-  .nav{display:none;position:absolute;top:58px;right:0;left:0;background:rgba(250,248,245,.98);backdrop-filter:blur(20px);flex-direction:column;padding:20px 40px;gap:14px;border-bottom:1px solid var(--border);box-shadow:var(--shadow-md)}
-  .nav.open{display:flex}
-  .menu-btn{display:block}
-  .progress-card{flex-direction:column;text-align:center}
-  .hero-stats{gap:32px}
+  .grid-3 { grid-template-columns: repeat(2,1fr); }
+  .hero h1 { font-size: 2.6rem; }
+  .header-inner, .sec, .progress-section, .about-sec, .quote-section, .footer { padding-right: 24px; padding-left: 24px; }
+  .nav { display: none; position: absolute; top: 56px; right: 0; left: 0; background: rgba(250,249,247,.98); backdrop-filter: blur(16px); flex-direction: column; padding: 20px 24px; gap: 12px; border-bottom: 1px solid var(--border-light); }
+  .nav.open { display: flex; }
+  .menu-btn { display: block; }
+  .progress-card { flex-direction: column; text-align: center; }
+  .hero-metrics { gap: 32px; }
 }
 @media(max-width:600px){
-  .grid-3{grid-template-columns:1fr}
-  .hero{padding:70px 24px 60px}
-  .hero h1{font-size:2rem}
-  .hero-stats{gap:24px}
-  .hero-stat strong{font-size:2rem}
-  .sec-title{font-size:1.6rem}
-  .sec,.progress-section{padding-right:24px;padding-left:24px}
+  .grid-3 { grid-template-columns: 1fr; }
+  .hero { padding: 72px 20px 56px; }
+  .hero h1 { font-size: 2rem; }
+  .hero-metrics { gap: 24px; }
+  .hero-metric strong { font-size: 2rem; }
+  .sec-title { font-size: 1.5rem; }
+  .header-inner, .sec, .progress-section, .about-sec, .quote-section, .footer { padding-right: 20px; padding-left: 20px; }
 }
-@media print{.header,.progress-section,.wa-wrap,.footer{display:none}body{background:#fff}}
+@media print { .header, .progress-section, .wa-wrap, .footer, .feedback-fab { display: none; } body { background: #fff; } }
 </style>
 
 <!-- JS -->
 <script>
 const COURSES=[
-{id:1,title:'אוריינות AI ועבודה אחראית',desc:'מה AI יכול ומה לא, מסגרת 4D, כללי אתיקה ובטיחות',time:'35 דק׳',tags:['בסיסי','כל העובדים'],icon:'🧠'},
-{id:2,title:'מפת המודלים — במה להשתמש ומתי',desc:'ChatGPT, Claude, Gemini, Grok, Perplexity — חוזקות ושימושים',time:'35 דק׳',tags:['בסיסי','5 מודלים'],icon:'🗺️'},
-{id:3,title:'הנדסת הנחיות (Prompt Engineering)',desc:'4 עקרונות, תגיות XML, ו-8 פרומפטים מוכנים',time:'35 דק׳',tags:['ישומי','8 פרומפטים'],icon:'✍️'},
-{id:4,title:'AI לכתיבה ותקשורת בשירות הציבורי',desc:'ניסוח מכתבים, הנגשת מידע, תרגום בירוקרטית',time:'35 דק׳',tags:['ישומי','6 תבניות'],icon:'📝'},
-{id:5,title:'AI לניתוח נתונים וקבלת החלטות',desc:'ניתוח דוחות, חילוץ תובנות, סיכומים מנהליים',time:'40 דק׳',tags:['ישומי','5 תרגילים'],icon:'📊'},
-{id:6,title:'חיפוש ומחקר עם AI',desc:'מחקר מדיניות, סקירת ספרות, השוואת גישות',time:'35 דק׳',tags:['ישומי','4 תרגילים'],icon:'🔍'},
-{id:7,title:'AI לחשיבה אסטרטגית ופתרון בעיות',desc:'שרשרת חשיבה, ריבוי פרספקטיבות, Pre-Mortem',time:'35 דק׳',tags:['מתקדם','5 תרגילים'],icon:'💡'},
-{id:8,title:'אתיקה, בטיחות ורגולציה של AI בממשלה',desc:'הטיות, פרטיות, שקיפות, קווים אדומים',time:'35 דק׳',tags:['חובה','כל העובדים'],icon:'🛡️'},
-{id:9,title:'AI לשירות הציבור והנגשת מידע',desc:'שיפור חוויית האזרח, שפה פשוטה, צ׳אטבוטים',time:'35 דק׳',tags:['ישומי','שירות ציבורי'],icon:'🏛️'},
-{id:10,title:'אוטומציה ותהליכי עבודה עם AI',desc:'זיהוי תהליכים, בניית Workflows, חיסכון בזמן',time:'40 דק׳',tags:['מתקדם','אוטומציה'],icon:'⚙️'},
-{id:11,title:'RAG — חיבור AI למאגרי ידע ארגוניים',desc:'תשובות מדויקות מהמידע הפנימי שלכם',time:'40 דק׳',tags:['מתקדם','ארגוני'],icon:'🗄️'},
-{id:12,title:'Claude Code — למפתחים וצוותי IT',desc:'פיתוח עם Claude Code, אוטומציה טכנית, API',time:'40 דק׳',tags:['טכני','מפתחים'],icon:'💻'}
+{id:1,title:'אוריינות AI ועבודה אחראית',desc:'מה AI יכול ומה לא, מסגרת 4D, כללי אתיקה ובטיחות',time:'35 דק׳',tags:['בסיסי','כל העובדים']},
+{id:2,title:'מפת המודלים — במה להשתמש ומתי',desc:'ChatGPT, Claude, Gemini, Grok, Perplexity — חוזקות ושימושים',time:'35 דק׳',tags:['בסיסי','5 מודלים']},
+{id:3,title:'הנדסת הנחיות (Prompt Engineering)',desc:'4 עקרונות, תגיות XML, ו-8 פרומפטים מוכנים',time:'35 דק׳',tags:['ישומי','8 פרומפטים']},
+{id:4,title:'AI לכתיבה ותקשורת בשירות הציבורי',desc:'ניסוח מכתבים, הנגשת מידע, תרגום בירוקרטית',time:'35 דק׳',tags:['ישומי','6 תבניות']},
+{id:5,title:'AI לניתוח נתונים וקבלת החלטות',desc:'ניתוח דוחות, חילוץ תובנות, סיכומים מנהליים',time:'40 דק׳',tags:['ישומי','5 תרגילים']},
+{id:6,title:'חיפוש ומחקר עם AI',desc:'מחקר מדיניות, סקירת ספרות, השוואת גישות',time:'35 דק׳',tags:['ישומי','4 תרגילים']},
+{id:7,title:'AI לחשיבה אסטרטגית ופתרון בעיות',desc:'שרשרת חשיבה, ריבוי פרספקטיבות, Pre-Mortem',time:'35 דק׳',tags:['מתקדם','5 תרגילים']},
+{id:8,title:'אתיקה, בטיחות ורגולציה של AI בממשלה',desc:'הטיות, פרטיות, שקיפות, קווים אדומים',time:'35 דק׳',tags:['חובה','כל העובדים']},
+{id:9,title:'AI לשירות הציבור והנגשת מידע',desc:'שיפור חוויית האזרח, שפה פשוטה, צ׳אטבוטים',time:'35 דק׳',tags:['ישומי','שירות ציבורי']},
+{id:10,title:'אוטומציה ותהליכי עבודה עם AI',desc:'זיהוי תהליכים, בניית Workflows, חיסכון בזמן',time:'40 דק׳',tags:['מתקדם','אוטומציה']},
+{id:11,title:'RAG — חיבור AI למאגרי ידע ארגוניים',desc:'תשובות מדויקות מהמידע הפנימי שלכם',time:'40 דק׳',tags:['מתקדם','ארגוני']},
+{id:12,title:'Claude Code — למפתחים וצוותי IT',desc:'פיתוח עם Claude Code, אוטומציה טכנית, API',time:'40 דק׳',tags:['טכני','מפתחים']}
 ];
 function getP(){try{return JSON.parse(localStorage.getItem('hamakpetza_progress')||'{}')}catch(e){return{}}}
 function render(){
 const g=document.getElementById('coursesGrid'),p=getP();
-g.innerHTML=COURSES.map(c=>{const d=p['course_'+c.id];return`<a href="course${c.id}.html" class="c-card" style="text-decoration:none;color:inherit"><div class="c-done" style="display:${d?'grid':'none'}">✓</div><div class="c-num">${c.icon} יחידה ${c.id}</div><h3>${c.title}</h3><div class="c-desc">${c.desc}</div><div class="c-tags">${c.tags.map(t=>`<span class="c-tag">${t}</span>`).join('')}<span class="c-tag">⏱ ${c.time}</span></div><span class="c-link">התחילו ללמוד ←</span></a>`}).join('');
+g.innerHTML=COURSES.map(c=>{const d=p['course_'+c.id];return`<a href="course${c.id}.html" class="course-card" style="text-decoration:none;color:inherit"><div class="course-done" style="display:${d?'grid':'none'}">✓</div><div class="course-num">יחידה ${c.id}</div><h3>${c.title}</h3><div class="course-desc">${c.desc}</div><div class="course-tags">${c.tags.map(t=>`<span class="course-tag">${t}</span>`).join('')}<span class="course-tag">⏱ ${c.time}</span></div><span class="course-link">התחילו ללמוד ←</span></a>`}).join('');
 }
 function updateP(){
-const cnt=Object.values(getP()).filter(v=>v).length,pct=Math.round(cnt/12*100),circ=2*Math.PI*44,off=circ-(pct/100)*circ;
+const cnt=Object.values(getP()).filter(v=>v).length,pct=Math.round(cnt/12*100),circ=2*Math.PI*42,off=circ-(pct/100)*circ;
 document.getElementById('pRing').style.strokeDashoffset=off;
 document.getElementById('pPct').textContent=pct+'%';
 document.getElementById('pBar').style.width=pct+'%';
 document.getElementById('pMeta').textContent=cnt+' מתוך 12 יחידות הושלמו';
 if(cnt===0)document.getElementById('pText').textContent='עוד לא התחלת — בחר/י יחידה והתחל/י ללמוד';
-else if(cnt===12)document.getElementById('pText').textContent='🎉 כל הכבוד! השלמת את כל 12 היחידות';
+else if(cnt===12)document.getElementById('pText').textContent='כל הכבוד! השלמת את כל 12 היחידות';
 else{const n=COURSES.find(c=>!getP()['course_'+c.id]);document.getElementById('pText').textContent='היחידה הבאה: '+n.title;}
 }
-function shareWA(){window.open('https://wa.me/?text='+encodeURIComponent('🚀 המקפצה — אקדמיית AI למובילי המגזר הציבורי\n\n12 יחידות לימוד מעשיות ב-AI, מותאמות לעובדי מדינה.\n\nhttps://avi1840.github.io/ai-academy/site/index.html'),'_blank')}
-// Scroll header shadow
-window.addEventListener('scroll',()=>{document.querySelector('.header').classList.toggle('scrolled',window.scrollY>20)});
+function shareWA(){window.open('https://wa.me/?text='+encodeURIComponent('המקפצה — אקדמיית AI למובילי המגזר הציבורי\n\n12 יחידות לימוד מעשיות ב-AI, מותאמות לעובדי מדינה.\n\nhttps://avi1840.github.io/ai-academy/site/index.html'),'_blank')}
+window.addEventListener('scroll',()=>{document.querySelector('.header').style.borderBottomColor=window.scrollY>20?'var(--border)':'var(--border-light)'});
+
+// Subtle fade-in on scroll
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)'}})},{threshold:.08});
+document.querySelectorAll('.domain-card,.path-card,.course-card').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(12px)';el.style.transition='opacity .5s ease,transform .5s ease';obs.observe(el)});
+
 render();updateP();
 
-// === FEEDBACK ===
+// Feedback
 const SHEET_URL="https://script.google.com/macros/s/AKfycbwD8CMFoP5XoOwRLwK_OxMMOFKF8fS2CRpbJkNdOHjbnJIepkOLzlGrg3GQNGRqbwB6bA/exec";
-const APP_NAME="המקפצה — עיצוב A";
-async function sendFeedback({name,category,severity,text,page}){await fetch(SHEET_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/json"},body:JSON.stringify({app:APP_NAME,name:name||"אנונימי",category:category||"כללי",severity:severity||"—",text:text,page:page||window.location.pathname})})}
+async function sendFeedback(d){await fetch(SHEET_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/json"},body:JSON.stringify({app:"המקפצה — עיצוב A",name:d.name||"אנונימי",category:d.category||"כללי",severity:d.severity||"—",text:d.text,page:d.page||location.pathname})})}
 function initFeedback(){
-const btn=document.createElement('button');btn.className='feedback-fab';btn.innerHTML='💬';btn.title='שלחו משוב';
-btn.onclick=()=>document.getElementById('feedbackModal').classList.add('open');document.body.appendChild(btn);
-const m=document.createElement('div');m.id='feedbackModal';m.className='feedback-modal';
-m.innerHTML='<div class="feedback-backdrop" onclick="closeFeedback()"></div><div class="feedback-panel"><div class="feedback-header"><h3>💬 שלחו משוב</h3><button class="feedback-close" onclick="closeFeedback()">✕</button></div><form id="feedbackForm" onsubmit="submitFeedback(event)"><input type="text" id="fbName" placeholder="שם (אופציונלי)" class="fb-input"><select id="fbCategory" class="fb-input"><option value="כללי">כללי</option><option value="באג">באג</option><option value="שיפור">שיפור</option><option value="תוכן">תוכן</option><option value="עיצוב">עיצוב</option></select><select id="fbSeverity" class="fb-input"><option value="—">חומרה (אופציונלי)</option><option value="קריטי">קריטי</option><option value="שיפור">שיפור</option><option value="קטן">קטן</option></select><textarea id="fbText" placeholder="מה תרצו לשפר?" class="fb-input fb-textarea" required></textarea><button type="submit" class="fb-submit" id="fbSubmitBtn">שליחה</button></form><div id="fbSuccess" class="fb-success" style="display:none"><span>✅</span> תודה! המשוב נשלח בהצלחה</div></div>';
+const b=document.createElement('button');b.className='feedback-fab';b.innerHTML='💬';b.title='שלחו משוב';b.onclick=()=>document.getElementById('fbModal').classList.add('open');document.body.appendChild(b);
+const m=document.createElement('div');m.id='fbModal';m.className='fb-modal';
+m.innerHTML='<div class="fb-backdrop" onclick="closeFB()"></div><div class="fb-panel"><div class="fb-head"><h3>שלחו משוב</h3><button class="fb-close" onclick="closeFB()">✕</button></div><form id="fbForm" onsubmit="submitFB(event)"><input type="text" id="fbName" placeholder="שם (אופציונלי)" class="fb-inp"><select id="fbCat" class="fb-inp"><option value="כללי">כללי</option><option value="באג">באג</option><option value="שיפור">שיפור</option><option value="תוכן">תוכן</option><option value="עיצוב">עיצוב</option></select><textarea id="fbTxt" placeholder="מה תרצו לשפר?" class="fb-inp fb-ta" required></textarea><button type="submit" class="fb-sub" id="fbBtn">שליחה</button></form><div id="fbOk" class="fb-ok" style="display:none">✅ תודה! המשוב נשלח</div></div>';
 document.body.appendChild(m);
 }
-function closeFeedback(){document.getElementById('feedbackModal').classList.remove('open')}
-async function submitFeedback(e){e.preventDefault();const b=document.getElementById('fbSubmitBtn');b.textContent='שולח...';b.disabled=true;await sendFeedback({name:document.getElementById('fbName').value,category:document.getElementById('fbCategory').value,severity:document.getElementById('fbSeverity').value,text:document.getElementById('fbText').value});document.getElementById('feedbackForm').style.display='none';document.getElementById('fbSuccess').style.display='flex';setTimeout(()=>{closeFeedback();document.getElementById('feedbackForm').style.display='';document.getElementById('feedbackForm').reset();document.getElementById('fbSuccess').style.display='none';b.textContent='שליחה';b.disabled=false},2500)}
+function closeFB(){document.getElementById('fbModal').classList.remove('open')}
+async function submitFB(e){e.preventDefault();const b=document.getElementById('fbBtn');b.textContent='שולח...';b.disabled=true;await sendFeedback({name:document.getElementById('fbName').value,category:document.getElementById('fbCat').value,text:document.getElementById('fbTxt').value});document.getElementById('fbForm').style.display='none';document.getElementById('fbOk').style.display='flex';setTimeout(()=>{closeFB();document.getElementById('fbForm').style.display='';document.getElementById('fbForm').reset();document.getElementById('fbOk').style.display='none';b.textContent='שליחה';b.disabled=false},2500)}
 initFeedback();
 </script>
-
 <style>
-.feedback-fab{position:fixed;bottom:24px;left:24px;z-index:999;width:52px;height:52px;border-radius:50%;background:var(--accent);color:#fff;font-size:1.4rem;border:none;cursor:pointer;box-shadow:0 4px 16px rgba(217,119,6,.25);transition:var(--transition);display:grid;place-items:center}
-.feedback-fab:hover{transform:scale(1.1);box-shadow:0 6px 24px rgba(217,119,6,.35)}
-.feedback-modal{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;pointer-events:none;opacity:0;transition:opacity .3s}
-.feedback-modal.open{pointer-events:all;opacity:1}
-.feedback-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.3);backdrop-filter:blur(4px)}
-.feedback-panel{position:relative;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;width:90%;max-width:420px;box-shadow:var(--shadow-lg);transform:translateY(20px);transition:transform .3s}
-.feedback-modal.open .feedback-panel{transform:translateY(0)}
-.feedback-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
-.feedback-header h3{font-family:'Heebo',sans-serif;font-size:1.1rem;font-weight:700;margin:0}
-.feedback-close{background:none;border:none;font-size:1.2rem;cursor:pointer;color:var(--text2);padding:4px 8px;border-radius:6px}
-.fb-input{width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:10px;font-family:'Heebo',sans-serif;font-size:.9rem;margin-bottom:12px;background:var(--bg);color:var(--text)}
-.fb-input:focus{outline:none;border-color:var(--accent)}
-.fb-textarea{min-height:100px;resize:vertical}
-.fb-submit{width:100%;padding:12px;border:none;border-radius:10px;background:var(--text);color:#fff;font-family:'Heebo',sans-serif;font-weight:700;font-size:.95rem;cursor:pointer;transition:var(--transition)}
-.fb-submit:hover{background:#2D2520;transform:translateY(-1px)}
-.fb-submit:disabled{opacity:.6;cursor:not-allowed;transform:none}
-.fb-success{display:flex;align-items:center;justify-content:center;gap:8px;padding:20px;font-family:'Heebo',sans-serif;font-size:1rem;color:var(--green);font-weight:600}
-.fb-success span{font-size:1.5rem}
+.feedback-fab{position:fixed;bottom:24px;left:24px;z-index:999;width:48px;height:48px;border-radius:50%;background:var(--text-primary);color:var(--cream);font-size:1.2rem;border:none;cursor:pointer;transition:all .2s;display:grid;place-items:center}
+.feedback-fab:hover{transform:scale(1.05)}
+.fb-modal{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;pointer-events:none;opacity:0;transition:opacity .25s}
+.fb-modal.open{pointer-events:all;opacity:1}
+.fb-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.2);backdrop-filter:blur(4px)}
+.fb-panel{position:relative;background:var(--white);border:1px solid var(--border-light);border-radius:var(--radius);padding:28px;width:90%;max-width:400px;transform:translateY(16px);transition:transform .25s}
+.fb-modal.open .fb-panel{transform:translateY(0)}
+.fb-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+.fb-head h3{font-family:var(--font-hebrew);font-size:1rem;font-weight:700;margin:0}
+.fb-close{background:none;border:none;font-size:1.1rem;cursor:pointer;color:var(--text-tertiary);padding:4px 8px;border-radius:6px}
+.fb-inp{width:100%;padding:10px 14px;border:1px solid var(--border-light);border-radius:8px;font-family:var(--font-hebrew);font-size:.88rem;margin-bottom:10px;background:var(--cream);color:var(--text-primary)}
+.fb-inp:focus{outline:none;border-color:var(--terra)}
+.fb-ta{min-height:90px;resize:vertical}
+.fb-sub{width:100%;padding:11px;border:none;border-radius:8px;background:var(--text-primary);color:var(--cream);font-family:var(--font-hebrew);font-weight:600;font-size:.9rem;cursor:pointer;transition:all .2s}
+.fb-sub:hover{background:#2d2520}
+.fb-sub:disabled{opacity:.5;cursor:not-allowed}
+.fb-ok{display:flex;align-items:center;justify-content:center;gap:8px;padding:20px;font-family:var(--font-hebrew);font-size:.95rem;color:var(--green);font-weight:600}
 </style>
 </body>
 </html>
