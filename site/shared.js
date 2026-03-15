@@ -19,6 +19,31 @@ window.open('https://wa.me/?text='+encodeURIComponent(text),'_blank');
 }
 document.addEventListener('DOMContentLoaded',updateBtn);
 
+// === SHARE FUNCTIONS ===
+function shareTwitter(){
+  var titles={1:'🧠 אוריינות AI ועבודה אחראית',2:'🗺️ מפת המודלים',3:'✍️ הנדסת הנחיות',4:'📝 AI לכתיבה ותקשורת',5:'📊 AI לניתוח נתונים',6:'🔍 חיפוש ומחקר עם AI',7:'💡 AI לחשיבה ופתרון בעיות',8:'🛡️ אתיקה ובטיחות AI',9:'🏛️ AI לשירות הציבור',10:'⚙️ אוטומציה ותהליכי עבודה',11:'🗄️ RAG — חיבור AI למאגרי ידע',12:'💻 Claude Code'};
+  var t=titles[COURSE_ID]+' — מתוך המקפצה, אקדמיית AI למגזר הציבורי';
+  var u='https://avi1840.github.io/ai-academy/site/course'+COURSE_ID+'.html';
+  window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(t)+'&url='+encodeURIComponent(u),'_blank');
+}
+function shareLinkedIn(){
+  var u='https://avi1840.github.io/ai-academy/site/course'+COURSE_ID+'.html';
+  window.open('https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(u),'_blank');
+}
+function shareTelegram(){
+  var titles={1:'🧠 אוריינות AI ועבודה אחראית',2:'🗺️ מפת המודלים',3:'✍️ הנדסת הנחיות',4:'📝 AI לכתיבה ותקשורת',5:'📊 AI לניתוח נתונים',6:'🔍 חיפוש ומחקר עם AI',7:'💡 AI לחשיבה ופתרון בעיות',8:'🛡️ אתיקה ובטיחות AI',9:'🏛️ AI לשירות הציבור',10:'⚙️ אוטומציה ותהליכי עבודה',11:'🗄️ RAG — חיבור AI למאגרי ידע',12:'💻 Claude Code'};
+  var t=titles[COURSE_ID]+'\nמתוך המקפצה — אקדמיית AI למגזר הציבורי';
+  var u='https://avi1840.github.io/ai-academy/site/course'+COURSE_ID+'.html';
+  window.open('https://t.me/share/url?url='+encodeURIComponent(u)+'&text='+encodeURIComponent(t),'_blank');
+}
+function copyLink(btn){
+  var u='https://avi1840.github.io/ai-academy/site/course'+COURSE_ID+'.html';
+  navigator.clipboard.writeText(u).then(function(){
+    btn.classList.add('copied-link');btn.textContent='✓';
+    setTimeout(function(){btn.classList.remove('copied-link');btn.textContent='🔗';},2000);
+  });
+}
+
 
 // === FEEDBACK SYSTEM ===
 const SHEET_URL = "https://script.google.com/macros/s/AKfycbwD8CMFoP5XoOwRLwK_OxMMOFKF8fS2CRpbJkNdOHjbnJIepkOLzlGrg3GQNGRqbwB6bA/exec";
