@@ -12,203 +12,177 @@
 <style>body{transition:background .4s,color .4s}</style>
 <script>var t=localStorage.getItem("hamakpetza_theme");if(t)document.documentElement.setAttribute("data-theme",t);</script>
 </head>
-
 <body>
-
 <nav class="topbar"><div class="topbar-right"><a href="index.html" class="back-btn">→ חזרה למקפצה</a><span class="topbar-title">יחידה 12 מתוך 12</span></div><button class="thm-course" id="thmCourse" onclick="toggleCourseTheme()" title="מצב כהה / בהיר">🌙</button></nav>
 <header class="course-hero">
-
 <span class="course-badge" style="background:rgba(106,155,204,.1);color:var(--secondary)">💻 טכני — מפתחים וצוותי IT</span>
-
 <h1>Claude Code — מדריך מעשי למפתחים</h1>
-
-<p class="sub">פיתוח עם Claude Code, אוטומציה טכנית, סקריפטים, ועבודה עם API</p>
-
-<div class="meta-row"><span class="meta-item">⏱ 40 דקות</span><span class="meta-item">👥 מפתחים וצוותי IT</span><span class="meta-item">💻 טכני</span></div>
+<p class="sub">התקנה, 10 שימושים מעשיים, CLAUDE.md, Agent Skills, וטיפים מתקדמים</p>
+<div class="meta-row"><span class="meta-item">⏱ 45 דקות</span><span class="meta-item">👥 מפתחים וצוותי IT</span><span class="meta-item">💻 6 חלקים</span></div>
 </header>
-
 <main class="content">
 
 <div class="section">
-
 <div class="section-head"><div class="section-icon" style="background:rgba(106,155,204,.1)">💻</div><h2>חלק א׳: מה זה Claude Code?</h2></div>
-
-<div class="card-box"><p>Claude Code הוא כלי של Anthropic שמאפשר לעבוד עם Claude ישירות מהטרמינל. הוא קורא את הקוד שלכם, מבין את המבנה, ויכול לכתוב, לתקן ולשפר קוד — כמו מתכנת זוגי חכם.</p></div>
-
+<div class="card-box"><p><strong>Claude Code הוא עוזר פיתוח שרץ בטרמינל</strong> — הוא קורא את הקוד שלכם, מבין את המבנה, ויכול לכתוב, לתקן ולשפר קוד. כמו מתכנת זוגי חכם שמכיר את כל הפרויקט.</p></div>
 <div class="card-box"><h3>מה Claude Code יכול לעשות</h3>
-
 <ul class="green-list">
-
 <li>לכתוב קוד חדש על בסיס תיאור בשפה טבעית</li>
-
 <li>לתקן באגים ולהסביר שגיאות</li>
-
 <li>לעשות Refactoring לקוד קיים</li>
-
 <li>ליצור טסטים אוטומטיים</li>
-
 <li>לכתוב תיעוד טכני</li>
-
 <li>לנתח קוד ולמצוא בעיות אבטחה</li>
-
 <li>לעבוד עם Git — commits, branches, PRs</li>
-
+<li>להריץ פקודות ולנתח תיקיות שלמות</li>
 </ul></div>
-
-</div>
-
-<div class="section">
-
-<div class="section-head"><div class="section-icon" style="background:rgba(61,140,111,.1)">🚀</div><h2>חלק ב׳: התקנה והתחלה</h2></div>
-
-<div class="card-box"><h3>התקנה</h3>
-
-<div class="code-box">npm install -g @anthropic-ai/claude-code</div>
-
-<h3 style="margin-top:16px">שימוש בסיסי</h3>
-
-<div class="code-box"># כניסה לפרויקט
-
-cd my-project
-
-# הפעלת Claude Code
-
-claude
-
-# דוגמאות פקודות:
-
-> "הסבר מה הקוד הזה עושה"
-
-> "תקן את הבאג בקובץ server.js"
-
-> "צור API endpoint חדש ל-/users"
-
-> "כתוב טסטים ל-utils.js"</div></div>
-
-</div>
-
-<div class="section">
-
-<div class="section-head"><div class="section-icon" style="background:rgba(139,108,193,.1)">🔧</div><h2>חלק ג׳: שימושים מעשיים בממשלה</h2></div>
-
-<div class="card-box"><table>
-
-<tr><th>משימה</th><th>פקודה לדוגמה</th></tr>
-
-<tr><td>יצירת סקריפט לעיבוד נתונים</td><td>"כתוב סקריפט Python שקורא CSV ומייצר דוח סיכום"</td></tr>
-
-<tr><td>בניית API פנימי</td><td>"צור REST API ב-Node.js לניהול פניות אזרחים"</td></tr>
-
-<tr><td>אוטומציה של דוחות</td><td>"כתוב סקריפט שמייצר דוח שבועי מ-database"</td></tr>
-
-<tr><td>תיקון באגים</td><td>"יש שגיאה בדף ההרשמה — תמצא ותתקן"</td></tr>
-
-<tr><td>שיפור אבטחה</td><td>"סרוק את הקוד ומצא בעיות אבטחה פוטנציאליות"</td></tr>
-
-<tr><td>תיעוד</td><td>"כתוב README מפורט לפרויקט הזה"</td></tr>
-
-</table></div>
-
-</div>
-
-<div class="section">
-
-<div class="section-head"><div class="section-icon" style="background:rgba(251,191,36,.1)">💡</div><h2>חלק ד׳: טיפים למפתחים</h2></div>
-
-<div class="card-box">
-
+<div class="card-box"><h3>למה זה רלוונטי לממשלה?</h3>
 <ul class="green-list">
-
-<li><strong>היו ספציפיים:</strong> "צור endpoint ב-Express שמקבל POST עם שם ומייל" עדיף על "תעשה API"</li>
-
-<li><strong>תנו הקשר:</strong> "אנחנו משתמשים ב-TypeScript, PostgreSQL, ו-Express"</li>
-
-<li><strong>בקשו הסבר:</strong> "תתקן ותסביר מה היה הבאג ולמה הפתרון עובד"</li>
-
-<li><strong>בדקו תמיד:</strong> הריצו את הקוד, בדקו טסטים, אל תעשו deploy עיוור</li>
-
-<li><strong>השתמשו ב-CLAUDE.md:</strong> קובץ הגדרות בשורש הפרויקט שמלמד את Claude על הפרויקט</li>
-
+<li>האצת פיתוח מערכות פנימיות</li>
+<li>תחזוקת קוד Legacy — הבנה ושיפור של מערכות ישנות</li>
+<li>אוטומציה של תהליכי DevOps</li>
+<li>כתיבת סקריפטים לעיבוד נתונים</li>
+<li>Code Review אוטומטי — מציאת באגים ובעיות אבטחה</li>
 </ul></div>
+</div>
 
+<div class="section">
+<div class="section-head"><div class="section-icon" style="background:rgba(61,140,111,.1)">🚀</div><h2>חלק ב׳: התקנה והתחלת עבודה</h2></div>
+<div class="card-box"><h3>התקנה</h3>
+<div class="code-box">npm install -g @anthropic-ai/claude-code</div>
+<h3 style="margin-top:16px">הפעלה ראשונה</h3>
+<div class="code-box">cd /path/to/your/project
+claude</div>
+<p style="margin-top:12px">Claude Code סורק את הפרויקט, מבין את המבנה, ומוכן לעזור.</p></div>
+
+<div class="card-box"><h3>פקודות בסיסיות</h3>
+<table>
+<tr><th>פקודה</th><th>מה עושה</th></tr>
+<tr><td><code>claude</code></td><td>מפעיל Claude Code בתיקייה הנוכחית</td></tr>
+<tr><td><code>claude "תקן את הבאג"</code></td><td>שולח משימה ישירה</td></tr>
+<tr><td><code>claude commit</code></td><td>יוצר commit עם הודעה אוטומטית</td></tr>
+<tr><td><code>/help</code></td><td>מציג עזרה</td></tr>
+<tr><td><code>/clear</code></td><td>מנקה את ההקשר</td></tr>
+<tr><td><code>/compact</code></td><td>דוחס היסטוריה לחסוך הקשר</td></tr>
+</table></div>
+</div>
+
+<div class="section">
+<div class="section-head"><div class="section-icon" style="background:rgba(139,108,193,.1)">🔧</div><h2>חלק ג׳: 10 שימושים מעשיים</h2></div>
+<div class="card-box"><table>
+<tr><th>#</th><th>שימוש</th><th>פקודה לדוגמה</th></tr>
+<tr><td>1</td><td>תיקון באגים</td><td>"תבדוק למה הפונקציה calculateBenefit מחזירה ערך שגוי כשהגיל מעל 67"</td></tr>
+<tr><td>2</td><td>כתיבת טסטים</td><td>"כתוב unit tests לכל הפונקציות בקובץ eligibility-checker.js"</td></tr>
+<tr><td>3</td><td>Refactoring</td><td>"שפר את הקוד — הפוך לקריא, הוסף type hints ותיעוד"</td></tr>
+<tr><td>4</td><td>סקריפט נתונים</td><td>"כתוב סקריפט Python שקורא CSV, מסנן רשומות פתוחות מעל 90 יום, ומייצר דוח Excel"</td></tr>
+<tr><td>5</td><td>תיעוד קוד</td><td>"הוסף docstrings מפורטים לכל הפונקציות בתיקייה src/services/"</td></tr>
+<tr><td>6</td><td>Code Review</td><td>"בדוק את ה-diff האחרון. חפש: בעיות אבטחה, באגים, שיפורי ביצועים"</td></tr>
+<tr><td>7</td><td>המרת קוד</td><td>"המר את הסקריפט מ-VBScript ל-Python. שמור על אותה לוגיקה"</td></tr>
+<tr><td>8</td><td>יצירת API</td><td>"צור REST API endpoint שמקבל מספר תביעה ומחזיר סטטוס"</td></tr>
+<tr><td>9</td><td>Git אוטומטי</td><td>"claude commit" / "בדוק את כל ה-PR הפתוחים ותן סיכום"</td></tr>
+<tr><td>10</td><td>ניתוח Legacy</td><td>"נתח את הקוד בתיקייה legacy/ והסבר מה כל קובץ עושה"</td></tr>
+</table></div>
+</div>
+
+<div class="section">
+<div class="section-head"><div class="section-icon" style="background:rgba(251,191,36,.1)">📄</div><h2>חלק ד׳: CLAUDE.md — הגדרת הקשר לפרויקט</h2></div>
+<div class="card-box"><p>קובץ <code>CLAUDE.md</code> בשורש הפרויקט מלמד את Claude Code על הפרויקט שלכם — סטנדרטים, מבנה, וכללים:</p>
+<div class="code-box"># פרויקט: מערכת ניהול תביעות — ביטוח לאומי
+
+## מבנה הפרויקט
+- src/services/ — לוגיקה עסקית
+- src/api/ — נקודות קצה
+- src/models/ — מודלים של בסיס נתונים
+- tests/ — טסטים
+
+## כללים
+- כתוב קוד ב-TypeScript
+- השתמש ב-async/await
+- כל פונקציה חייבת type hints
+- טסטים עם Jest
+- הודעות commit בעברית
+
+## סטנדרטים
+- אין console.log בקוד production
+- כל endpoint חייב validation
+- טיפול בשגיאות עם try/catch</div></div>
+</div>
+
+<div class="section">
+<div class="section-head"><div class="section-icon" style="background:rgba(61,140,111,.1)">🧠</div><h2>חלק ה׳: Agent Skills — הוראות חוזרות</h2></div>
+<div class="card-box"><p><strong>Skills</strong> הם הנחיות שכותבים פעם אחת ו-Claude Code משתמש בהן שוב ושוב:</p>
+<div class="code-box"># skill: write-tests
+## description: כתיבת טסטים לפי הסטנדרט שלנו
+
+כשאתה כותב טסטים:
+1. השתמש ב-Jest
+2. כתוב לפחות 3 test cases: happy path, edge case, error case
+3. השתמש ב-describe/it בעברית
+4. הוסף mock לכל קריאת API חיצונית</div>
+<div class="code-box" style="margin-top:12px"># skill: code-review
+## description: בדיקת קוד לפי הסטנדרטים שלנו
+
+בדוק:
+- אבטחה: SQL injection, XSS, הרשאות
+- ביצועים: שאילתות כבדות, לולאות מיותרות
+- קריאות: שמות משתנים, תיעוד, מבנה
+- טסטים: האם יש כיסוי מספיק?</div></div>
+</div>
+
+<div class="section">
+<div class="section-head"><div class="section-icon" style="background:rgba(139,108,193,.1)">⚡</div><h2>חלק ו׳: טיפים מתקדמים</h2></div>
+<div class="card-box">
+<ul class="green-list">
+<li><strong>היו ספציפיים:</strong> "צור endpoint ב-Express שמקבל POST עם שם ומייל" עדיף על "תעשה API"</li>
+<li><strong>תנו הקשר:</strong> "אנחנו משתמשים ב-TypeScript, PostgreSQL, ו-Express"</li>
+<li><strong>בקשו הסבר:</strong> "תתקן ותסביר מה היה הבאג ולמה הפתרון עובד"</li>
+<li><strong>בדקו תמיד:</strong> הריצו טסטים, בדקו קוד, אל תעשו deploy עיוור</li>
+<li><strong>עבודה מקבילית:</strong> הריצו כמה instances על חלקים שונים בו-זמנית</li>
+<li><strong>שילוב GitHub:</strong> "צור PR עם תיאור מפורט" / "בדוק את ה-PR של עמית"</li>
+<li><strong>MCP Servers:</strong> הרחיבו יכולות עם כלים חיצוניים — DB, דפדפן, ועוד</li>
+</ul></div>
 </div>
 
 <div class="try-section">
-
 <h3>🎯 תרגיל מעשי</h3>
-
-<p style="margin-bottom:16px;font-family:'Heebo',sans-serif;font-size:.95rem">התקינו Claude Code ונסו:</p>
-
-<div class="prompt-box" onclick="copyPrompt(this)"><p>"צור סקריפט Python שקורא קובץ CSV עם עמודות: שם, תאריך, סטטוס. הסקריפט צריך: 1) לספור כמה רשומות בכל סטטוס 2) למצוא את התאריך הכי ישן והכי חדש 3) להדפיס סיכום יפה"</p></div>
-
+<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>תרגיל 1:</strong> התקינו Claude Code → צרו CLAUDE.md → בקשו ניתוח מבנה הפרויקט</p></div>
+<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>תרגיל 2:</strong> "צור סקריפט Python שקורא קובץ CSV עם עמודות: שם, תאריך, סטטוס. הסקריפט: 1) סופר רשומות לפי סטטוס 2) מוצא תאריך ישן וחדש 3) מדפיס סיכום יפה"</p></div>
+<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>תרגיל 3:</strong> קחו קובץ קוד קיים → בקשו Code Review → תקנו את הממצאים → צרו commit אוטומטי</p></div>
 </div>
 
 <div class="quiz-section">
-
 <h3>❓ בדקו את עצמכם</h3>
-
 <div class="quiz-q"><p>1. מה היתרון של Claude Code על פני ChatGPT לפיתוח?</p><details><summary>הציצו בתשובה</summary><p>Claude Code עובד ישירות מהטרמינל, קורא את הקוד שלכם, ומבין את מבנה הפרויקט — לא צריך להעתיק ולהדביק.</p></details></div>
-
-<div class="quiz-q"><p>2. מה חשוב לעשות אחרי שClaude Code כותב קוד?</p><details><summary>הציצו בתשובה</summary><p>תמיד לבדוק — להריץ טסטים, לבדוק את הקוד, ולא לעשות deploy עיוור.</p></details></div>
-
+<div class="quiz-q"><p>2. מה תפקיד קובץ CLAUDE.md?</p><details><summary>הציצו בתשובה</summary><p>מלמד את Claude Code על הפרויקט — מבנה, סטנדרטים, כללים, וטכנולוגיות. כמו onboarding למתכנת חדש.</p></details></div>
+<div class="quiz-q"><p>3. מה זה Agent Skills?</p><details><summary>הציצו בתשובה</summary><p>הנחיות שכותבים פעם אחת ו-Claude Code משתמש בהן שוב ושוב — למשל סטנדרט כתיבת טסטים או Code Review.</p></details></div>
 </div>
 
 <div class="summary-box">
-
 <h3>💎 סיכום</h3>
-
 <ul>
-
 <li>Claude Code = מתכנת זוגי חכם בטרמינל</li>
-
-<li>כותב, מתקן, מסביר ומתעד קוד</li>
-
-<li>מצוין לאוטומציה, סקריפטים, ו-API בממשלה</li>
-
+<li>10 שימושים: באגים, טסטים, refactoring, סקריפטים, תיעוד, review, המרה, API, Git, Legacy</li>
+<li>CLAUDE.md — הגדירו את הפרויקט פעם אחת</li>
+<li>Agent Skills — סטנדרטים חוזרים אוטומטית</li>
 <li>תמיד בדקו את הקוד לפני deploy</li>
-
 </ul>
-
 </div>
-
 </main>
 
 <section class="course-complete">
-
 <button class="complete-btn" id="completeBtn" onclick="toggleComplete()">✓ סיימתי יחידה זו</button><br>
-
 <button class="share-course-btn" onclick="shareCourse()">📱 שתפו בוואטסאפ</button>
-
 </section>
-
 <nav class="nav-bottom">
-
 <a href="course11.html" class="nav-btn nav-prev">→ יחידה 11: RAG</a>
-
 <a href="index.html" class="nav-btn nav-next">חזרה לכל היחידות ←</a>
-
 </nav>
-
 <footer class="site-footer"><p>המקפצה — מבוסס על Anthropic Claude Code in Action | מותאם למובילי AI במגזר הציבורי בישראל © 2025</p></footer>
 <script>const COURSE_ID=12;</script>
 <script src="shared.js"></script>
 <script>
-function toggleCourseTheme(){
-  var h=document.documentElement;
-  var n=h.getAttribute("data-theme")==="dark"?"light":"dark";
-  h.setAttribute("data-theme",n);
-  localStorage.setItem("hamakpetza_theme",n);
-  var btn=document.getElementById("thmCourse");
-  if(btn) btn.textContent=n==="dark"?"☀️":"🌙";
-}
-(function(){
-  var t=localStorage.getItem("hamakpetza_theme");
-  if(t){
-    document.documentElement.setAttribute("data-theme",t);
-    var btn=document.getElementById("thmCourse");
-    if(btn) btn.textContent=t==="dark"?"☀️":"🌙";
-  }
-})();
+function toggleCourseTheme(){var h=document.documentElement;var n=h.getAttribute("data-theme")==="dark"?"light":"dark";h.setAttribute("data-theme",n);localStorage.setItem("hamakpetza_theme",n);var btn=document.getElementById("thmCourse");if(btn) btn.textContent=n==="dark"?"☀️":"🌙";}
+(function(){var t=localStorage.getItem("hamakpetza_theme");if(t){document.documentElement.setAttribute("data-theme",t);var btn=document.getElementById("thmCourse");if(btn) btn.textContent=t==="dark"?"☀️":"🌙";}})();
 </script>
 </body>
 </html>

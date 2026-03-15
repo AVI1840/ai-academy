@@ -12,181 +12,137 @@
 <style>body{transition:background .4s,color .4s}</style>
 <script>var t=localStorage.getItem("hamakpetza_theme");if(t)document.documentElement.setAttribute("data-theme",t);</script>
 </head>
-
 <body>
-
 <nav class="topbar"><div class="topbar-right"><a href="index.html" class="back-btn">→ חזרה למקפצה</a><span class="topbar-title">יחידה 11 מתוך 12</span></div><button class="thm-course" id="thmCourse" onclick="toggleCourseTheme()" title="מצב כהה / בהיר">🌙</button></nav>
 <header class="course-hero">
-
 <span class="course-badge" style="background:rgba(139,108,193,.1);color:var(--purple)">🗄️ מתקדם — ארגוני</span>
-
 <h1>RAG — חיבור AI למאגרי ידע ארגוניים</h1>
-
-<p class="sub">איך לחבר AI למסמכים ונהלים פנימיים כדי לקבל תשובות מדויקות מהמידע שלכם</p>
-
-<div class="meta-row"><span class="meta-item">⏱ 40 דקות</span><span class="meta-item">👥 מנהלים וצוותי IT</span><span class="meta-item">🗄️ ארגוני</span></div>
+<p class="sub">איך לחבר AI למסמכים פנימיים, טכניקת "הדבק ושאל", כלים זמינים, ומקרי בוחן</p>
+<div class="meta-row"><span class="meta-item">⏱ 40 דקות</span><span class="meta-item">👥 מנהלים וצוותי IT</span><span class="meta-item">🗄️ 5 חלקים</span></div>
 </header>
-
 <main class="content">
 
 <div class="section">
-
-<div class="section-head"><div class="section-icon" style="background:rgba(139,108,193,.1)">🗄️</div><h2>חלק א׳: מה זה RAG ולמה זה חשוב?</h2></div>
-
+<div class="section-head"><div class="section-icon" style="background:rgba(139,108,193,.1)">🗄️</div><h2>חלק א׳: מה זה RAG ולמה זה משנה את המשחק?</h2></div>
 <div class="card-box"><h3>RAG = Retrieval Augmented Generation</h3>
-
-<p>בעברית פשוטה: חיבור AI למאגר הידע שלכם. במקום ש-AI יענה מהידע הכללי שלו, הוא קורא את המסמכים, הנהלים והמידע הפנימי של הארגון — ועונה על בסיסם.</p></div>
-
-<div class="card-box"><h3>למה זה משנה את המשחק?</h3>
-
+<p>בעברית: <strong>חיבור AI למאגר הידע שלכם.</strong> במקום ש-AI יענה מהידע הכללי שלו, הוא קורא את המסמכים, הנהלים והמידע הפנימי — ועונה על בסיסם.</p></div>
+<div class="card-box"><h3>למה זה קריטי?</h3>
 <table>
-
 <tr><th>בלי RAG</th><th>עם RAG</th></tr>
-
 <tr><td>AI עונה מידע כללי</td><td>AI עונה מהנהלים שלכם</td></tr>
-
 <tr><td>"אני חושב שהנוהל אומר..."</td><td>"לפי נוהל 4.2.1, סעיף ג..."</td></tr>
-
-<tr><td>סיכון להזיות</td><td>תשובות מבוססות מקור</td></tr>
-
+<tr><td>סיכון גבוה להזיות</td><td>תשובות מבוססות מקור</td></tr>
 <tr><td>לא מכיר את הארגון</td><td>מכיר כל מסמך שהעלו</td></tr>
-
+<tr><td>לא יכול לצטט</td><td>מפנה למקור המדויק</td></tr>
 </table></div>
-
 </div>
 
 <div class="section">
+<div class="section-head"><div class="section-icon" style="background:rgba(106,155,204,.1)">🔧</div><h2>חלק ב׳: איך RAG עובד — 4 שלבים</h2></div>
+<div class="step-box"><h4>שלב 1: העלאת מסמכים 📄</h4><p>מעלים נהלים, מסמכים, חוזרים ומידע פנימי למערכת. המערכת "קוראת" הכל ויוצרת אינדקס חכם.</p></div>
+<div class="step-box"><h4>שלב 2: שאלה מהמשתמש ❓</h4><p>עובד או אזרח שואל שאלה בשפה טבעית — "מה הנוהל לטיפול בפנייה דחופה?"</p></div>
+<div class="step-box"><h4>שלב 3: חיפוש חכם 🔍</h4><p>המערכת מוצאת את הקטעים הרלוונטיים ביותר מתוך כל המסמכים — לא חיפוש מילים, אלא הבנת משמעות.</p></div>
+<div class="step-box"><h4>שלב 4: תשובה + מקור 💡</h4><p>AI מנסח תשובה ברורה על בסיס הקטעים שנמצאו — עם הפניה למקור המדויק.</p></div>
 
-<div class="section-head"><div class="section-icon" style="background:rgba(106,155,204,.1)">🔧</div><h2>חלק ב׳: איך RAG עובד — בפשטות</h2></div>
-
-<div class="step-box"><h4>שלב 1: העלאת מסמכים 📄</h4><p>מעלים את הנהלים, המסמכים והמידע הפנימי למערכת</p></div>
-
-<div class="step-box"><h4>שלב 2: אינדוקס חכם 🔍</h4><p>המערכת "קוראת" את כל המסמכים ויוצרת אינדקס חכם שמאפשר חיפוש מהיר</p></div>
-
-<div class="step-box"><h4>שלב 3: שאלה מהמשתמש ❓</h4><p>עובד שואל שאלה — למשל: "מה הנוהל לטיפול בפנייה דחופה?"</p></div>
-
-<div class="step-box"><h4>שלב 4: חיפוש + תשובה 💡</h4><p>המערכת מוצאת את הקטעים הרלוונטיים ו-AI מנסח תשובה על בסיסם — עם הפניה למקור</p></div>
-
+<div class="tip-box">
+<strong>💡 ההבדל מחיפוש רגיל:</strong> חיפוש רגיל מוצא מסמכים שמכילים מילים. RAG מבין את השאלה, מוצא את המידע הרלוונטי, ומנסח תשובה שלמה — כמו עובד מנוסה שמכיר את כל הנהלים.
+</div>
 </div>
 
 <div class="section">
+<div class="section-head"><div class="section-icon" style="background:rgba(217,119,87,.1)">📋</div><h2>חלק ג׳: טכניקת "הדבק ושאל" — RAG ידני</h2></div>
+<div class="card-box"><p>עוד לפני שיש מערכת RAG ארגונית, אפשר לעשות RAG ידני — להדביק מסמכים ולשאול שאלות:</p></div>
 
-<div class="section-head"><div class="section-icon" style="background:rgba(61,140,111,.1)">🏛️</div><h2>חלק ג׳: שימושים ממשלתיים</h2></div>
+<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>שאלה ממוקדת:</strong> "הנה חוזר מנכ"ל מספר 2024/15 בנושא עדכון נהלי טיפול:
+[הדביקו את החוזר]
 
+שאלות:
+1. מה השינויים העיקריים לעומת הנוהל הקודם?
+2. מתי השינויים נכנסים לתוקף?
+3. מה נדרש מעובדי הסניף?
+4. האם יש חריגים?"</p></div>
+
+<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>השוואת מסמכים:</strong> "הנה שני נהלים:
+&lt;נוהל_ישן&gt;
+[הדביקו]
+&lt;/נוהל_ישן&gt;
+
+&lt;נוהל_חדש&gt;
+[הדביקו]
+&lt;/נוהל_חדש&gt;
+
+צור טבלת השוואה: מה השתנה, מה נשאר, מה חדש לגמרי."</p></div>
+</div>
+
+<div class="section">
+<div class="section-head"><div class="section-icon" style="background:rgba(61,140,111,.1)">🏛️</div><h2>חלק ד׳: שימושים ממשלתיים</h2></div>
 <div class="card-box">
-
 <ul class="green-list">
-
-<li><strong>מוקד שירות:</strong> עובד שואל "מה הזכאות של אזרח בן 67?" — מקבל תשובה מהנהלים</li>
-
-<li><strong>עובד חדש:</strong> שואל שאלות על נהלים ומקבל תשובות מיידיות עם הפניה למקור</li>
-
+<li><strong>מוקד שירות:</strong> עובד שואל "מה הזכאות של אזרח בן 67?" — מקבל תשובה מהנהלים עם הפניה למקור</li>
+<li><strong>עובד חדש:</strong> שואל שאלות על נהלים ומקבל תשובות מיידיות — כמו מנטור זמין 24/7</li>
 <li><strong>צ׳אטבוט לאזרח:</strong> אזרח שואל על שירות ומקבל תשובה מדויקת מהמידע הרשמי</li>
-
-<li><strong>ניהול ידע:</strong> חיפוש חכם בכל מסמכי הארגון במקום חיפוש ידני</li>
-
+<li><strong>ניהול ידע:</strong> חיפוש חכם בכל מסמכי הארגון — במקום חיפוש ידני בתיקיות</li>
 <li><strong>הדרכה:</strong> מערכת שעונה על שאלות מקצועיות מתוך חומרי ההדרכה</li>
-
+<li><strong>ביקורת:</strong> חיפוש מהיר בנהלים לצורך ביקורת ובדיקת עמידה בסטנדרטים</li>
 </ul></div>
-
 </div>
 
 <div class="section">
-
-<div class="section-head"><div class="section-icon" style="background:rgba(251,191,36,.1)">🛠️</div><h2>חלק ד׳: כלים זמינים היום</h2></div>
-
+<div class="section-head"><div class="section-icon" style="background:rgba(251,191,36,.1)">🛠️</div><h2>חלק ה׳: כלים זמינים היום</h2></div>
 <div class="card-box"><table>
-
-<tr><th>כלי</th><th>מה עושה</th><th>מתאים ל</th></tr>
-
-<tr><td>Claude Projects</td><td>העלאת מסמכים ושאילת שאלות</td><td>צוותים קטנים, ניסוי מהיר</td></tr>
-
-<tr><td>ChatGPT + Files</td><td>העלאת קבצים לשיחה</td><td>שימוש אישי, ניסוי</td></tr>
-
-<tr><td>NotebookLM (Google)</td><td>ניתוח מסמכים עם מקורות</td><td>מחקר, ניתוח מסמכים</td></tr>
-
-<tr><td>Microsoft Copilot</td><td>חיבור ל-SharePoint ו-Teams</td><td>ארגונים עם Microsoft 365</td></tr>
-
+<tr><th>כלי</th><th>מה עושה</th><th>מתאים ל</th><th>קושי</th></tr>
+<tr><td>Claude Projects</td><td>העלאת מסמכים ושאילת שאלות</td><td>צוותים קטנים, ניסוי מהיר</td><td>🟢 קל</td></tr>
+<tr><td>ChatGPT + Files</td><td>העלאת קבצים לשיחה</td><td>שימוש אישי, ניסוי</td><td>🟢 קל</td></tr>
+<tr><td>NotebookLM (Google)</td><td>ניתוח מסמכים עם מקורות</td><td>מחקר, ניתוח מסמכים</td><td>🟢 קל</td></tr>
+<tr><td>Microsoft Copilot</td><td>חיבור ל-SharePoint ו-Teams</td><td>ארגונים עם Microsoft 365</td><td>🟡 בינוני</td></tr>
+<tr><td>פתרון RAG מותאם</td><td>מערכת מלאה על מאגרי הארגון</td><td>ארגונים גדולים</td><td>🔴 דורש IT</td></tr>
 </table></div>
 
+<div class="tip-box">
+<strong>💡 איפה להתחיל?</strong> Claude Projects — פשוט מעלים 2-3 נהלים ושואלים שאלות. תוך 5 דקות יש לכם RAG עובד. אם זה מוכיח ערך — אפשר להתקדם לפתרון ארגוני.
+</div>
 </div>
 
 <div class="try-section">
-
 <h3>🎯 תרגיל מעשי — נסו RAG פשוט</h3>
-
 <p style="margin-bottom:16px;font-family:'Heebo',sans-serif;font-size:.95rem">פתחו <a href="https://claude.ai" target="_blank">Claude</a> → צרו Project חדש → העלו 2-3 נהלים (ללא מידע אישי) → שאלו:</p>
-
-<div class="prompt-box" onclick="copyPrompt(this)"><p>"על בסיס המסמכים שהעליתי, ענה: מה התהליך לטיפול ב[X]? ציין את המקור המדויק לכל פרט"</p></div>
-
+<div class="prompt-box" onclick="copyPrompt(this)"><p>"על בסיס המסמכים שהעליתי, ענה: מה התהליך לטיפול ב[X]? ציין את המקור המדויק לכל פרט."</p></div>
+<div class="prompt-box" onclick="copyPrompt(this)"><p>"השווה בין שני הנהלים שהעליתי. מה השתנה? מה נשאר? מה ההשלכות המעשיות על עובדי הסניף?"</p></div>
 </div>
 
 <div class="quiz-section">
-
 <h3>❓ בדקו את עצמכם</h3>
-
-<div class="quiz-q"><p>1. מה ההבדל בין AI רגיל ל-RAG?</p><details><summary>הציצו בתשובה</summary><p>AI רגיל עונה מידע כללי. RAG עונה מהמסמכים הפנימיים שלכם — עם הפניה למקור.</p></details></div>
-
-<div class="quiz-q"><p>2. איזה כלי הכי פשוט להתחיל איתו RAG?</p><details><summary>הציצו בתשובה</summary><p>Claude Projects — פשוט מעלים מסמכים ושואלים שאלות.</p></details></div>
-
+<div class="quiz-q"><p>1. מה ההבדל בין AI רגיל ל-RAG?</p><details><summary>הציצו בתשובה</summary><p>AI רגיל עונה מידע כללי ויכול להזות. RAG עונה מהמסמכים הפנימיים שלכם — עם הפניה למקור המדויק.</p></details></div>
+<div class="quiz-q"><p>2. מה טכניקת "הדבק ושאל"?</p><details><summary>הציצו בתשובה</summary><p>RAG ידני — מדביקים מסמך ל-Claude ושואלים שאלות ממוקדות. עובד גם בלי מערכת ארגונית.</p></details></div>
+<div class="quiz-q"><p>3. איזה כלי הכי פשוט להתחיל?</p><details><summary>הציצו בתשובה</summary><p>Claude Projects — מעלים מסמכים ושואלים שאלות. תוך 5 דקות יש RAG עובד.</p></details></div>
 </div>
 
 <div class="summary-box">
-
 <h3>💎 סיכום</h3>
-
 <ul>
-
-<li>RAG = חיבור AI למידע הפנימי שלכם</li>
-
-<li>תשובות מדויקות עם הפניה למקור — פחות הזיות</li>
-
-<li>אפשר להתחיל היום עם Claude Projects או NotebookLM</li>
-
-<li>שימושים: מוקד שירות, עובדים חדשים, צ׳אטבוט לאזרח</li>
-
+<li>RAG = חיבור AI למידע הפנימי שלכם — תשובות מדויקות עם מקור</li>
+<li>טכניקת "הדבק ושאל" — RAG ידני שעובד כבר היום</li>
+<li>התחילו עם Claude Projects או NotebookLM — 5 דקות להתחלה</li>
+<li>שימושים: מוקד שירות, עובדים חדשים, צ׳אטבוט, ניהול ידע</li>
+<li>פחות הזיות — כי התשובה מבוססת על מקור רשמי</li>
 </ul>
-
 </div>
-
 </main>
 
 <section class="course-complete">
-
 <button class="complete-btn" id="completeBtn" onclick="toggleComplete()">✓ סיימתי יחידה זו</button><br>
-
 <button class="share-course-btn" onclick="shareCourse()">📱 שתפו בוואטסאפ</button>
-
 </section>
-
 <nav class="nav-bottom">
-
 <a href="course10.html" class="nav-btn nav-prev">→ יחידה 10: אוטומציה</a>
-
 <a href="course12.html" class="nav-btn nav-next">יחידה 12: Claude Code ←</a>
-
 </nav>
-
 <footer class="site-footer"><p>המקפצה — מבוסס על Anthropic MCP + RAG | מותאם למובילי AI במגזר הציבורי בישראל © 2025</p></footer>
 <script>const COURSE_ID=11;</script>
 <script src="shared.js"></script>
 <script>
-function toggleCourseTheme(){
-  var h=document.documentElement;
-  var n=h.getAttribute("data-theme")==="dark"?"light":"dark";
-  h.setAttribute("data-theme",n);
-  localStorage.setItem("hamakpetza_theme",n);
-  var btn=document.getElementById("thmCourse");
-  if(btn) btn.textContent=n==="dark"?"☀️":"🌙";
-}
-(function(){
-  var t=localStorage.getItem("hamakpetza_theme");
-  if(t){
-    document.documentElement.setAttribute("data-theme",t);
-    var btn=document.getElementById("thmCourse");
-    if(btn) btn.textContent=t==="dark"?"☀️":"🌙";
-  }
-})();
+function toggleCourseTheme(){var h=document.documentElement;var n=h.getAttribute("data-theme")==="dark"?"light":"dark";h.setAttribute("data-theme",n);localStorage.setItem("hamakpetza_theme",n);var btn=document.getElementById("thmCourse");if(btn) btn.textContent=n==="dark"?"☀️":"🌙";}
+(function(){var t=localStorage.getItem("hamakpetza_theme");if(t){document.documentElement.setAttribute("data-theme",t);var btn=document.getElementById("thmCourse");if(btn) btn.textContent=t==="dark"?"☀️":"🌙";}})();
 </script>
 </body>
 </html>

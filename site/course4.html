@@ -12,171 +12,157 @@
 <style>body{transition:background .4s,color .4s}</style>
 <script>var t=localStorage.getItem("hamakpetza_theme");if(t)document.documentElement.setAttribute("data-theme",t);</script>
 </head>
-
 <body>
 
 <nav class="topbar"><div class="topbar-right"><a href="index.html" class="back-btn">→ חזרה למקפצה</a><span class="topbar-title">יחידה 4 מתוך 12</span></div><button class="thm-course" id="thmCourse" onclick="toggleCourseTheme()" title="מצב כהה / בהיר">🌙</button></nav>
 <header class="course-hero">
-
 <span class="course-badge" style="background:rgba(217,119,87,.1);color:var(--accent)">📝 ישומי — לכל עובדי המדינה</span>
-
 <h1>AI לכתיבה ותקשורת בשירות הציבורי</h1>
-
-<p class="sub">ניסוח מכתבים, הנגשת מידע, תרגום בירוקרטית לשפה פשוטה — עם 6 תבניות מוכנות</p>
-
-<div class="meta-row"><span class="meta-item">⏱ 35 דקות</span><span class="meta-item">👥 כל עובדי המדינה</span><span class="meta-item">📋 6 תבניות</span></div>
+<p class="sub">ניסוח מכתבים, הנגשת מידע, תרגום בירוקרטית לשפה פשוטה — עם 10 תבניות מוכנות וצ׳קליסט עריכה</p>
+<div class="meta-row"><span class="meta-item">⏱ 40 דקות</span><span class="meta-item">👥 כל עובדי המדינה</span><span class="meta-item">📋 10 תבניות</span></div>
 </header>
 
 <main class="content">
 
 <div class="section">
+<div class="section-head"><div class="section-icon" style="background:rgba(61,140,111,.1)">✍️</div><h2>חלק א׳: AI ככותב עזר — לא ככותב ראשי</h2></div>
 
-<div class="section-head"><div class="section-icon" style="background:rgba(61,140,111,.1)">✍️</div><h2>חלק א׳: למה כתיבה עם AI משנה את המשחק?</h2></div>
+<div class="card-box">
+<h3>הגישה הנכונה</h3>
+<p>AI כותב טיוטה ראשונה → אתם עורכים, מדייקים ומאשרים. זו לא עצלנות — זו יעילות. כתיבה היא אחת המשימות הנפוצות ביותר בשירות הציבורי, ו-AI חוסך 50-70% מהזמן תוך שיפור האיכות.</p>
+</div>
 
-<div class="card-box"><p>כתיבה היא אחת המשימות הנפוצות ביותר בשירות הציבורי — מכתבים לאזרחים, סיכומי ישיבות, מיילים פנימיים, תוכן לאתר. AI חוסך 50-70% מזמן הכתיבה ומשפר משמעותית את איכות התוצר.</p></div>
-
-<div class="card-box"><h3>✅ מה AI יכול לעשות בכתיבה?</h3>
-
+<div class="card-box"><h3>למה זה עובד בשירות הציבורי?</h3>
 <ul class="green-list">
-
-<li>לנסח מכתבים רשמיים בטון מכבד ובשפה ברורה</li>
-
-<li>לתרגם שפה בירוקרטית לשפה פשוטה שכל אזרח יבין</li>
-
-<li>לסכם ישיבות ודיונים ארוכים לנקודות עיקריות</li>
-
-<li>להתאים טון ורמת שפה לקהל יעד שונה</li>
-
-<li>ליצור תבניות מכתבים חוזרות שחוסכות שעות עבודה</li>
-
+<li><strong>חיסכון זמן:</strong> מכתב שלוקח 30 דקות → 5 דקות עם AI + עריכה</li>
+<li><strong>עקביות:</strong> כל המכתבים באותו סטנדרט מקצועי</li>
+<li><strong>הנגשה:</strong> תרגום שפה בירוקרטית לשפה שכולם מבינים</li>
+<li><strong>רב-לשוניות:</strong> ניסוח בעברית, ערבית, רוסית, אמהרית — בדקות</li>
+<li><strong>התאמה לקהל:</strong> אותו מסר, מותאם למנהל / לעובד / לאזרח</li>
 </ul></div>
-
 </div>
 
 <div class="section">
+<div class="section-head"><div class="section-icon" style="background:rgba(217,119,87,.1)">📋</div><h2>חלק ב׳: 10 תבניות כתיבה מוכנות לשימוש</h2></div>
+<p style="color:var(--text2);margin-bottom:20px;font-family:'Heebo',sans-serif;font-size:.95rem">לחצו על כל תבנית כדי להעתיק. הדביקו ב-Claude או ChatGPT והתאימו לצורך שלכם.</p>
 
-<div class="section-head"><div class="section-icon" style="background:rgba(217,119,87,.1)">📋</div><h2>חלק ב׳: 6 תבניות כתיבה מוכנות</h2></div>
+<div class="card-box"><h3>1. 📨 מכתב אישור תביעה/בקשה</h3>
+<div class="prompt-box" onclick="copyPrompt(this)"><p>כתוב מכתב רשמי לתושב שמודיע שתביעתו ל[סוג גמלה/בקשה] אושרה. כלול: תאריך תחילת זכאות, סכום חודשי, דרכי פנייה לשאלות. הטון: חם ומקצועי. אורך: עד 15 שורות.</p></div></div>
 
-<p style="color:var(--text2);margin-bottom:20px;font-family:'Heebo',sans-serif;font-size:.95rem">לחצו על כל תבנית כדי להעתיק. הדביקו ב-Claude או ChatGPT והתאימו.</p>
+<div class="card-box"><h3>2. 🙏 מכתב דחייה אמפתי</h3>
+<div class="prompt-box" onclick="copyPrompt(this)"><p>כתוב מכתב דחייה אמפתי לתושב שתביעתו ל[סוג] נדחתה. כלול: סיבת הדחייה בשפה מובנת (לא משפטית), זכות ערעור ולוח זמנים, מספר טלפון לייעוץ. הימנע משפה משפטית מורכבת. הטון: מכבד ואמפתי.</p></div></div>
 
-<div class="card-box"><h3>1. 📨 מכתב אישור</h3>
+<div class="card-box"><h3>3. 💬 תשובה לפניית תושב</h3>
+<div class="prompt-box" onclick="copyPrompt(this)"><p>כתוב תשובה לפנייה הבאה של תושב. הטון: סבלני ומכבד. ענה על כל השאלות שהועלו. כלול: אישור קבלת הפנייה, תשובה ענייניית, הפניה לגורם מתאים אם צריך, פרטי קשר. הפנייה: [הדביקו]</p></div></div>
 
-<div class="prompt-box" onclick="copyPrompt(this)"><p>כתוב מכתב רשמי מטעם [שם הגוף] שמאשר לאזרח/ית את [סוג הבקשה]. המכתב צריך לכלול: פנייה אישית ומכבדת, ציון מספר הפנייה והתאריך, פירוט מה אושר ומה השלבים הבאים, פרטי קשר לשאלות. טון: רשמי אך חם ונגיש.</p></div></div>
+<div class="card-box"><h3>4. 📝 סיכום ישיבה מובנה</h3>
+<div class="prompt-box" onclick="copyPrompt(this)"><p>הנה רשימת נקודות מישיבה. כתוב סיכום מסודר עם: נוכחים, נושאים שנדונו, החלטות שהתקבלו, משימות ואחראים (מי-מה-מתי), תאריך ישיבה הבאה. הנקודות: [הדביקו]</p></div></div>
 
-<div class="card-box"><h3>2. 🙏 מכתב דחייה מכבד</h3>
+<div class="card-box"><h3>5. 📖 הנגשת נוהל לתושב</h3>
+<div class="prompt-box" onclick="copyPrompt(this)"><p>קח את הנוהל הפנימי הבא וכתוב אותו מחדש כדף הסבר לתושב. השתמש בשפה פשוטה, נקודות ממוספרות, ודוגמאות. מבנה: מי זכאי → מה צריך → איך מגישים → כמה זמן לוקח → לאן פונים. הנוהל: [הדביקו]</p></div></div>
 
-<div class="prompt-box" onclick="copyPrompt(this)"><p>כתוב מכתב דחייה מכבד מטעם [שם הגוף] לבקשת [סוג הבקשה]. המכתב צריך: להודות על הפנייה, להסביר את סיבת הדחייה בשפה ברורה (לא משפטית), לציין אפשרויות ערעור, להפנות לגורם מסייע. טון: אמפתי, מכבד.</p></div></div>
+<div class="card-box"><h3>6. 📧 מייל פנימי לצוות</h3>
+<div class="prompt-box" onclick="copyPrompt(this)"><p>כתוב מייל לצוות בנושא [שינוי נוהל/עדכון/הנחיה חדשה]. כלול: מה השתנה, מתי זה נכנס לתוקף, מה נדרש מכל עובד, לאן לפנות בשאלות. טון: מקצועי וידידותי. Subject מומלץ בתחילת המייל.</p></div></div>
 
-<div class="card-box"><h3>3. 📖 הנגשת נוהל</h3>
+<div class="card-box"><h3>7. 🌐 תוכן לאתר / פורטל</h3>
+<div class="prompt-box" onclick="copyPrompt(this)"><p>כתוב טקסט לדף אינטרנט שמסביר לתושב איך להגיש בקשה ל[סוג שירות]. מבנה: מי זכאי → מה צריך להביא → איך מגישים (אונליין/סניף) → כמה זמן לוקח → שאלות נפוצות. שפה פשוטה, פסקאות קצרות.</p></div></div>
 
-<div class="prompt-box" onclick="copyPrompt(this)"><p>קח את הנוהל הבא ותרגם אותו לשפה פשוטה שאזרח ללא רקע מקצועי יבין: [הדביקו כאן את הנוהל]. הנחיות: החלף מונחים מקצועיים במילים יומיומיות, פרק משפטים ארוכים, הוסף כותרות משנה ונקודות תבליט, שמור על הדיוק המשפטי.</p></div></div>
+<div class="card-box"><h3>8. 🔄 תרגום לשפה פשוטה</h3>
+<div class="prompt-box" onclick="copyPrompt(this)"><p>תרגם את הפסקה המשפטית/בירוקרטית הבאה לשפה שאדם ללא השכלה משפטית יבין. שמור על הדיוק אבל הפשט את המילים. החלף מונחים מקצועיים במילים יומיומיות. הפסקה: [הדביקו]</p></div></div>
 
-<div class="card-box"><h3>4. 📝 סיכום ישיבה</h3>
+<div class="card-box"><h3>9. 🎤 הכנת מצגת</h3>
+<div class="prompt-box" onclick="copyPrompt(this)"><p>הכן 8 שקפים למצגת בנושא [X]. כל שקף: כותרת + 3-4 נקודות תבליט + הערה למציג. קהל יעד: [מנהלים/עובדים/תושבים]. כלול שקף פתיחה ושקף סיכום עם 3 takeaways.</p></div></div>
 
-<div class="prompt-box" onclick="copyPrompt(this)"><p>סכם את הישיבה הבאה בפורמט מובנה: [הדביקו תמלול/רשימות]. פורמט: נושא ותאריך, משתתפים, 3-5 נקודות עיקריות, החלטות שהתקבלו, משימות להמשך (מי, מה, עד מתי), נושאים פתוחים.</p></div></div>
-
-<div class="card-box"><h3>5. 📧 מייל פנימי</h3>
-
-<div class="prompt-box" onclick="copyPrompt(this)"><p>כתוב מייל פנימי מטעם [תפקיד] ל[קהל יעד] בנושא [הנושא]. המייל צריך: נושא (subject) ברור, פסקת פתיחה עם הקשר, גוף עם נקודות עיקריות בתבליטים, קריאה לפעולה ברורה. טון: מקצועי אך ידידותי.</p></div></div>
-
-<div class="card-box"><h3>6. 🌐 תוכן לאתר / רשת חברתית</h3>
-
-<div class="prompt-box" onclick="copyPrompt(this)"><p>כתוב פוסט ל[פלטפורמה] עבור [שם הגוף] בנושא [הנושא]. הנחיות: שפה נגישה, פסקאות קצרות, קריאה לפעולה, הצע 3 כותרות ואימוג׳ים מתאימים. אורך: [קצר/בינוני/ארוך].</p></div></div>
-
+<div class="card-box"><h3>10. 🌍 כתיבה/תרגום לשפות נוספות</h3>
+<div class="prompt-box" onclick="copyPrompt(this)"><p>תרגם את המכתב/ההודעה הבאה ל[ערבית/רוסית/אמהרית/אנגלית]. שמור על הטון הרשמי אך הידידותי. ודא שהתרגום מתאים תרבותית ולא רק מילולית. הטקסט: [הדביקו]</p></div></div>
 </div>
 
+<!-- לפני ואחרי -->
 <div class="section">
-
 <div class="section-head"><div class="section-icon" style="background:rgba(106,155,204,.1)">🔄</div><h2>חלק ג׳: לפני ואחרי — הנגשת שפה</h2></div>
 
 <div class="compare">
-
 <div class="compare-bad"><p style="font-size:.9rem">בהתאם להוראות סעיף 127ל(ב) לחוק הביטוח הלאומי [נוסח משולב], התשנ"ה-1995, ולאחר בחינת מכלול הנתונים, הרינו להודיעך כי תביעתך לגמלת נכות כללית נדחתה, מאחר שאחוז הנכות (40%) אינו עומד בתנאי הסף (60%).</p></div>
-
-<div class="compare-good"><p style="font-size:.9rem"><strong>שלום,</strong> פנית אלינו בבקשה לקצבת נכות. בדקנו את הבקשה. <strong>לצערנו, הבקשה לא אושרה</strong> — אחוז הנכות שנקבע (40%) נמוך מהמינימום (60%). <strong>מה אפשר לעשות:</strong> להגיש ערעור תוך 60 יום, להתקשר לשאלות.</p></div>
-
+<div class="compare-good"><p style="font-size:.9rem"><strong>שלום,</strong> פנית אלינו בבקשה לקצבת נכות. בדקנו את הבקשה. <strong>לצערנו, הבקשה לא אושרה</strong> — אחוז הנכות שנקבע (40%) נמוך מהמינימום הנדרש (60%). <strong>מה אפשר לעשות:</strong> להגיש ערעור תוך 60 יום. לשאלות: 04-XXXXXXX.</p></div>
 </div>
 
+<div class="compare" style="margin-top:16px">
+<div class="compare-bad"><p style="font-size:.9rem">הנדון: עדכון בדבר שינוי מדיניות הטיפול בפניות ציבור בהתאם להנחיית מנכ"ל 2024/15 — נא לפעול בהתאם לאלתר.</p></div>
+<div class="compare-good"><p style="font-size:.9rem"><strong>צוות יקר,</strong> החל מ-1.3 משתנה הנוהל לטיפול בפניות ציבור. <strong>מה חדש:</strong> זמן מענה ירד ל-5 ימים. <strong>מה נדרש מכם:</strong> לעדכן את התבניות. שאלות? פנו לרונית.</p></div>
+</div>
 </div>
 
+<!-- צ'קליסט עריכה -->
+<div class="section">
+<div class="section-head"><div class="section-icon" style="background:rgba(61,140,111,.1)">✅</div><h2>חלק ד׳: צ׳קליסט עריכה — לפני שליחה</h2></div>
+
+<div class="card-box">
+<h3>🔍 בדקו כל טיוטה שAI כתב:</h3>
+<ul class="yellow-list">
+<li><strong>דיוק עובדתי:</strong> המידע נכון? תאריכים, סכומים, נהלים — מאומתים?</li>
+<li><strong>פרטיות:</strong> אין מידע אישי שלא צריך להיות?</li>
+<li><strong>טון:</strong> מתאים לקהל היעד? מכבד? לא מתנשא?</li>
+<li><strong>שפה:</strong> פשוטה ומובנת? אין מונחים מיותרים?</li>
+<li><strong>פרטי קשר:</strong> יש מספר טלפון / מייל לשאלות?</li>
+<li><strong>סטנדרט ארגוני:</strong> המכתב עומד בסטנדרטים של הארגון?</li>
+<li><strong>קריאה לפעולה:</strong> ברור מה הצעד הבא של הנמען?</li>
+</ul>
+</div>
+
+<div class="tip-box">
+<strong>💡 טיפ:</strong> שמרו את הצ׳קליסט הזה כקובץ על שולחן העבודה. עם הזמן זה הופך לאוטומטי — 30 שניות בדיקה שחוסכות בעיות.
+</div>
+</div>
+
+<!-- תרגיל -->
 <div class="try-section">
-
 <h3>🎯 תרגיל מעשי</h3>
+<p style="margin-bottom:16px;font-family:'Heebo',sans-serif;font-size:.95rem">קחו מכתב שכתבתם לאחרונה ונסו:</p>
 
-<div class="prompt-box" onclick="copyPrompt(this)"><p>קח את הפסקה הבאה מנוהל פנימי (ללא מידע אישי) וכתוב אותה מחדש בשפה פשוטה שאזרח יבין. שמור על הדיוק אבל הפוך את השפה לנגישה: [הדביקו פסקה]</p></div>
+<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>תרגיל 1 — שיפור מכתב קיים:</strong><br>"שפר את המכתב הבא — הפוך אותו לברור יותר, אמפתי יותר, ובשפה פשוטה יותר. שמור על כל המידע החשוב: [הדביקו מכתב]"</p></div>
 
+<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>תרגיל 2 — התאמה לקהלים:</strong><br>"קח את ההודעה הבאה וכתוב אותה ב-3 גרסאות: 1) למנהל בכיר (תמציתי ועניני) 2) לעובד שטח (מעשי עם הנחיות) 3) לאזרח (פשוט ונגיש). ההודעה: [הדביקו]"</p></div>
 </div>
 
+<!-- חידון -->
 <div class="quiz-section">
-
 <h3>❓ בדקו את עצמכם</h3>
-
-<div class="quiz-q"><p>1. מה הדבר הראשון שצריך לעשות לפני שמבקשים מ-AI לכתוב מכתב לאזרח?</p><details><summary>הציצו בתשובה</summary><p>לוודא שאין מידע אישי מזהה בפרומפט (ת.ז., שם מלא, כתובת).</p></details></div>
-
-<div class="quiz-q"><p>2. מה היתרון של תבניות כתיבה מוכנות?</p><details><summary>הציצו בתשובה</summary><p>חוסכות זמן, מבטיחות עקביות, ומאפשרות לכל עובד לייצר תוצר איכותי.</p></details></div>
-
-<div class="quiz-q"><p>3. למה חשוב לציין טון רצוי בפרומפט?</p><details><summary>הציצו בתשובה</summary><p>כי AI יכול לכתוב בטונים שונים מאוד — רשמי, ידידותי, אמפתי. בלי הנחיה, התוצאה עלולה לא להתאים.</p></details></div>
-
+<div class="quiz-q"><p>1. מה הדבר הראשון שצריך לעשות לפני שמבקשים מ-AI לכתוב מכתב לאזרח?</p><details><summary>הציצו בתשובה</summary><p>לוודא שאין מידע אישי מזהה בפרומפט (ת.ז., שם מלא, כתובת). להסיר כל פרט מזהה לפני ההזנה.</p></details></div>
+<div class="quiz-q"><p>2. למה חשוב לציין טון רצוי בפרומפט?</p><details><summary>הציצו בתשובה</summary><p>כי AI יכול לכתוב בטונים שונים מאוד — רשמי, ידידותי, אמפתי, קר. בלי הנחיה, התוצאה עלולה לא להתאים לקהל היעד.</p></details></div>
+<div class="quiz-q"><p>3. מה חשוב לבדוק בצ׳קליסט לפני שליחת מכתב שAI כתב?</p><details><summary>הציצו בתשובה</summary><p>דיוק עובדתי, פרטיות, טון מתאים, שפה פשוטה, פרטי קשר, סטנדרט ארגוני, וקריאה לפעולה ברורה.</p></details></div>
+<div class="quiz-q"><p>4. כמה זמן AI חוסך בממוצע בכתיבה?</p><details><summary>הציצו בתשובה</summary><p>50-70% מזמן הכתיבה — מכתב שלוקח 30 דקות יכול להיכתב ב-5 דקות + עריכה.</p></details></div>
 </div>
 
 <div class="summary-box">
-
 <h3>💎 סיכום — מה לזכור?</h3>
-
 <ul>
-
-<li>AI חוסך 50-70% מזמן הכתיבה בשירות הציבורי</li>
-
-<li>6 תבניות מוכנות: אישור, דחייה, הנגשה, סיכום, מייל, תוכן</li>
-
-<li>תמיד ציינו טון, קהל יעד ופורמט רצוי</li>
-
-<li>הנגשת שפה — אחד השימושים החזקים ביותר</li>
-
+<li>AI חוסך 50-70% מזמן הכתיבה — אבל אתם תמיד עורכים ומאשרים</li>
+<li>10 תבניות מוכנות: אישור, דחייה, תשובה, סיכום, הנגשה, מייל, אתר, תרגום, מצגת, שפות</li>
+<li>תמיד ציינו טון, קהל יעד ופורמט רצוי בפרומפט</li>
+<li>צ׳קליסט עריכה — 30 שניות שמונעות בעיות</li>
+<li>הנגשת שפה — אחד השימושים החזקים ביותר בממשלה</li>
 <li>לעולם לא להזין מידע אישי מזהה</li>
-
 </ul>
-
 </div>
 
 </main>
 
 <section class="course-complete">
-
 <button class="complete-btn" id="completeBtn" onclick="toggleComplete()">✓ סיימתי יחידה זו</button><br>
-
 <button class="share-course-btn" onclick="shareCourse()">📱 שתפו בוואטסאפ</button>
-
 </section>
 
 <nav class="nav-bottom">
-
 <a href="course3.html" class="nav-btn nav-prev">→ יחידה 3: הנדסת הנחיות</a>
-
 <a href="course5.html" class="nav-btn nav-next">יחידה 5: ניתוח נתונים ←</a>
-
 </nav>
 
 <footer class="site-footer"><p>המקפצה — מבוסס על Anthropic ו-OpenAI | מותאם למובילי AI במגזר הציבורי בישראל © 2025</p></footer>
 <script>const COURSE_ID=4;</script>
 <script src="shared.js"></script>
 <script>
-function toggleCourseTheme(){
-  var h=document.documentElement;
-  var n=h.getAttribute("data-theme")==="dark"?"light":"dark";
-  h.setAttribute("data-theme",n);
-  localStorage.setItem("hamakpetza_theme",n);
-  var btn=document.getElementById("thmCourse");
-  if(btn) btn.textContent=n==="dark"?"☀️":"🌙";
-}
-(function(){
-  var t=localStorage.getItem("hamakpetza_theme");
-  if(t){
-    document.documentElement.setAttribute("data-theme",t);
-    var btn=document.getElementById("thmCourse");
-    if(btn) btn.textContent=t==="dark"?"☀️":"🌙";
-  }
-})();
+function toggleCourseTheme(){var h=document.documentElement;var n=h.getAttribute("data-theme")==="dark"?"light":"dark";h.setAttribute("data-theme",n);localStorage.setItem("hamakpetza_theme",n);var btn=document.getElementById("thmCourse");if(btn) btn.textContent=n==="dark"?"☀️":"🌙";}
+(function(){var t=localStorage.getItem("hamakpetza_theme");if(t){document.documentElement.setAttribute("data-theme",t);var btn=document.getElementById("thmCourse");if(btn) btn.textContent=t==="dark"?"☀️":"🌙";}})();
 </script>
 </body>
 </html>

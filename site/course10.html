@@ -12,167 +12,152 @@
 <style>body{transition:background .4s,color .4s}</style>
 <script>var t=localStorage.getItem("hamakpetza_theme");if(t)document.documentElement.setAttribute("data-theme",t);</script>
 </head>
-
 <body>
-
 <nav class="topbar"><div class="topbar-right"><a href="index.html" class="back-btn">→ חזרה למקפצה</a><span class="topbar-title">יחידה 10 מתוך 12</span></div><button class="thm-course" id="thmCourse" onclick="toggleCourseTheme()" title="מצב כהה / בהיר">🌙</button></nav>
 <header class="course-hero">
-
 <span class="course-badge" style="background:rgba(61,140,111,.1);color:var(--green)">⚙️ מתקדם</span>
-
 <h1>אוטומציה ותהליכי עבודה עם AI</h1>
-
-<p class="sub">זיהוי תהליכים לאוטומציה, בניית Workflows, חיסכון בזמן ושיפור יעילות</p>
-
-<div class="meta-row"><span class="meta-item">⏱ 40 דקות</span><span class="meta-item">👥 מנהלים ומובילים</span><span class="meta-item">⚙️ אוטומציה</span></div>
+<p class="sub">3 רמות אוטומציה, זיהוי תהליכים, בניית Workflows, וספריית פרומפטים אישית</p>
+<div class="meta-row"><span class="meta-item">⏱ 40 דקות</span><span class="meta-item">👥 מנהלים ומובילים</span><span class="meta-item">⚙️ 3 רמות</span></div>
 </header>
-
 <main class="content">
 
 <div class="section">
-
-<div class="section-head"><div class="section-icon" style="background:rgba(61,140,111,.1)">⚙️</div><h2>חלק א׳: מה אפשר לאוטומט?</h2></div>
-
-<div class="card-box"><p>לא כל תהליך מתאים לאוטומציה. הכלל: אם עושים את זה שוב ושוב, באותו אופן, עם מעט שיקול דעת — זה מועמד מצוין.</p></div>
-
-<div class="card-box"><h3>מטריצת אוטומציה</h3>
-
+<div class="section-head"><div class="section-icon" style="background:rgba(61,140,111,.1)">⚙️</div><h2>חלק א׳: מה זה אוטומציה עם AI?</h2></div>
+<div class="card-box"><p><strong>אוטומציה = לגרום למשימות חוזרות לקרות מהר יותר (או לבד).</strong> לא כל תהליך מתאים. הכלל: אם עושים את זה שוב ושוב, באותו אופן, עם מעט שיקול דעת — זה מועמד מצוין.</p></div>
+<div class="card-box"><h3>לפני ואחרי</h3>
 <table>
-
-<tr><th>סוג משימה</th><th>דוגמה</th><th>פוטנציאל</th></tr>
-
-<tr><td>חוזרת + פשוטה</td><td>מיון מיילים, תזכורות</td><td>🟢 גבוה מאוד</td></tr>
-
-<tr><td>חוזרת + מורכבת</td><td>סיכום ישיבות, דוחות שבועיים</td><td>🟢 גבוה (עם AI)</td></tr>
-
-<tr><td>חד-פעמית + פשוטה</td><td>ניסוח מכתב ספציפי</td><td>🟡 בינוני</td></tr>
-
-<tr><td>חד-פעמית + מורכבת</td><td>קביעת מדיניות חדשה</td><td>🔴 נמוך (AI כעוזר)</td></tr>
-
+<tr><th>תהליך ידני</th><th>עם AI</th><th>חיסכון</th></tr>
+<tr><td>עובד קורא תביעה ומסכם</td><td>AI מסכם ב-30 שניות</td><td>~20 דקות</td></tr>
+<tr><td>פקיד מחפש נוהל רלוונטי</td><td>AI מוצא ומציג הסעיף</td><td>~15 דקות</td></tr>
+<tr><td>מנהל כותב דוח שבועי</td><td>AI מייצר טיוטה מנתונים</td><td>~2 שעות</td></tr>
+<tr><td>עובד מנסח 20 מכתבים דומים</td><td>AI מייצר עם התאמות</td><td>~3 שעות</td></tr>
+<tr><td>צוות עונה על אותן שאלות</td><td>צ׳אטבוט עונה 24/7</td><td>~שעות ביום</td></tr>
 </table></div>
-
 </div>
 
 <div class="section">
+<div class="section-head"><div class="section-icon" style="background:rgba(106,155,204,.1)">📊</div><h2>חלק ב׳: 3 רמות אוטומציה — מאיפה מתחילים?</h2></div>
 
-<div class="section-head"><div class="section-icon" style="background:rgba(106,155,204,.1)">🔄</div><h2>חלק ב׳: 5 תהליכים שכל משרד יכול לאוטומט</h2></div>
-
-<div class="card-box">
-
+<div class="card-box"><h3>🟢 רמה 1: אוטומציה אישית (התחילו כאן!)</h3>
+<p>דברים שכל עובד יכול לעשות לבד, עכשיו:</p>
 <ul class="green-list">
+<li><strong>ספריית פרומפטים:</strong> שמרו 10-15 פרומפטים מוכנים למשימות חוזרות</li>
+<li><strong>תבניות מכתבים:</strong> צרו תבנית עם AI פעם אחת, השתמשו שוב ושוב</li>
+<li><strong>סיכום יומי:</strong> בסוף כל יום, תנו ל-AI לסכם מה עשיתם</li>
+</ul>
+<div class="code-box" style="direction:rtl;text-align:right">📁 הפרומפטים שלי:
+├── סיכום מסמך.txt
+├── מכתב אישור.txt
+├── מכתב דחייה.txt
+├── סיכום ישיבה.txt
+├── תרגום לערבית.txt
+├── ניתוח נתונים חודשי.txt
+├── הכנה לישיבה.txt
+└── הנגשת נוהל.txt</div>
+</div>
 
-<li><strong>סיכום ישיבות:</strong> הקליטו → תמללו → בקשו מ-AI סיכום מובנה עם משימות</li>
-
-<li><strong>דוח שבועי:</strong> צרו תבנית → AI ממלא מנתונים → אתם מאשרים</li>
-
-<li><strong>מענה לפניות חוזרות:</strong> זהו 20 השאלות הנפוצות → צרו תשובות עם AI → שלבו במערכת</li>
-
-<li><strong>הכנת רקע לישיבה:</strong> AI מסכם מסמכים רלוונטיים → אתם מוסיפים תובנות</li>
-
-<li><strong>בדיקת מסמכים:</strong> AI בודק שלמות ועקביות → אתם מאשרים</li>
-
+<div class="card-box"><h3>🟡 רמה 2: אוטומציה צוותית</h3>
+<p>דברים שצוות יכול ליישם:</p>
+<ul class="yellow-list">
+<li><strong>מסמך שאלות נפוצות:</strong> שמתעדכן עם AI מפניות חוזרות</li>
+<li><strong>קליטת עובד חדש:</strong> חומרי הדרכה שנוצרים ב-AI</li>
+<li><strong>דוחות צוותיים:</strong> תבנית + AI = דוח שבועי ב-10 דקות</li>
+<li><strong>תשובות סטנדרטיות:</strong> בנק תשובות מוכנות לפניות חוזרות</li>
 </ul></div>
 
+<div class="card-box"><h3>🔴 רמה 3: אוטומציה ארגונית (דורש תמיכת IT)</h3>
+<ul class="red-list">
+<li><strong>צ׳אטבוט לתושבים:</strong> מענה 24/7 לשאלות נפוצות באתר</li>
+<li><strong>סיכום תביעות אוטומטי:</strong> AI מסכם + עובד מאשר</li>
+<li><strong>ניתוב פניות חכם:</strong> AI מסווג ומנתב לגורם המתאים</li>
+<li><strong>מערכת RAG:</strong> חיבור AI למאגר הנהלים הפנימי</li>
+</ul></div>
 </div>
 
 <div class="section">
-
-<div class="section-head"><div class="section-icon" style="background:rgba(139,108,193,.1)">📋</div><h2>חלק ג׳: איך לבנות Workflow עם AI</h2></div>
-
-<div class="card-box"><h3>שיטת 4 שלבים</h3>
-
+<div class="section-head"><div class="section-icon" style="background:rgba(217,119,87,.1)">🔍</div><h2>חלק ג׳: איך לזהות תהליכים לאוטומציה?</h2></div>
+<div class="card-box"><h3>4 שאלות מפתח:</h3>
 <table>
-
-<tr><th>שלב</th><th>מה עושים</th><th>דוגמה</th></tr>
-
-<tr><td>1. מפו</td><td>רשמו את כל השלבים בתהליך</td><td>תהליך טיפול בפנייה: קבלה → מיון → טיפול → מענה</td></tr>
-
-<tr><td>2. סמנו</td><td>סמנו מה AI יכול לעשות</td><td>AI: מיון + טיוטת מענה. אדם: טיפול + אישור</td></tr>
-
-<tr><td>3. בנו</td><td>צרו פרומפטים לכל שלב</td><td>פרומפט למיון, פרומפט לטיוטת מענה</td></tr>
-
-<tr><td>4. בדקו</td><td>הריצו ובדקו תוצאות</td><td>בדיקת 10 פניות לדוגמה</td></tr>
-
+<tr><th>שאלה</th><th>אם כן</th></tr>
+<tr><td>האם אני עושה את זה יותר מפעם בשבוע?</td><td>🟢 מועמד לאוטומציה</td></tr>
+<tr><td>האם זה עוקב אחרי תבנית קבועה?</td><td>🟢 מועמד מצוין</td></tr>
+<tr><td>האם טעות כאן קריטית?</td><td>🟡 AI עוזר + בקרה אנושית</td></tr>
+<tr><td>האם זה לוקח יותר מ-15 דקות?</td><td>🟢 שווה לנסות</td></tr>
 </table></div>
 
-<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>מיפוי תהליך:</strong> "אני רוצה לאוטומט את התהליך הבא: [תארו]. מפה את כל השלבים, סמן מה AI יכול לעשות ומה דורש אדם, והצע Workflow מעשי"</p></div>
+<div class="card-box"><h3>מטריצת אוטומציה</h3>
+<table>
+<tr><th>סוג משימה</th><th>דוגמה</th><th>פוטנציאל</th></tr>
+<tr><td>חוזרת + פשוטה</td><td>מיון מיילים, תזכורות</td><td>🟢 גבוה מאוד</td></tr>
+<tr><td>חוזרת + מורכבת</td><td>סיכום ישיבות, דוחות</td><td>🟢 גבוה (עם AI)</td></tr>
+<tr><td>חד-פעמית + פשוטה</td><td>ניסוח מכתב ספציפי</td><td>🟡 בינוני</td></tr>
+<tr><td>חד-פעמית + מורכבת</td><td>קביעת מדיניות</td><td>🔴 נמוך (AI כעוזר)</td></tr>
+</table></div>
+</div>
 
+<div class="section">
+<div class="section-head"><div class="section-icon" style="background:rgba(139,108,193,.1)">🔄</div><h2>חלק ד׳: Workflow — שרשור פעולות</h2></div>
+<div class="card-box"><h3>שיטת 4 שלבים לבניית Workflow</h3>
+<table>
+<tr><th>שלב</th><th>מה עושים</th><th>דוגמה</th></tr>
+<tr><td>1. מפו</td><td>רשמו כל שלב בתהליך</td><td>קבלה → מיון → טיפול → מענה</td></tr>
+<tr><td>2. סמנו</td><td>מה AI יכול לעשות</td><td>AI: מיון + טיוטה. אדם: טיפול + אישור</td></tr>
+<tr><td>3. בנו</td><td>צרו פרומפט לכל שלב</td><td>פרומפט למיון, פרומפט לטיוטה</td></tr>
+<tr><td>4. בדקו</td><td>הריצו ובדקו תוצאות</td><td>10 פניות לדוגמה</td></tr>
+</table></div>
+
+<div class="card-box"><h3>דוגמה: תהליך טיפול בפנייה</h3>
+<div class="step-box"><h4>שלב 1: [AI] סיווג הפנייה</h4><p>תלונה / שאלה / בקשה / דחוף</p></div>
+<div class="step-box"><h4>שלב 2: [AI] חילוץ פרטים</h4><p>נושא, דחיפות, פרטי פונה</p></div>
+<div class="step-box"><h4>שלב 3: [AI] מציאת נוהל רלוונטי</h4><p>חיפוש במאגר הנהלים</p></div>
+<div class="step-box"><h4>שלב 4: [AI] ניסוח טיוטת תשובה</h4><p>על בסיס הנוהל והפנייה</p></div>
+<div class="step-box"><h4>שלב 5: [אדם] בדיקה ואישור</h4><p>עריכה, התאמה, אישור סופי</p></div>
+<div class="step-box"><h4>שלב 6: [מערכת] שליחה</h4><p>שליחה לתושב + תיעוד</p></div>
+</div>
+
+<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>מיפוי תהליך:</strong> "אני רוצה לאוטומט את התהליך הבא: [תארו]. מפה את כל השלבים, סמן מה AI יכול לעשות ומה דורש אדם, והצע Workflow מעשי עם פרומפט לכל שלב"</p></div>
 </div>
 
 <div class="try-section">
-
-<h3>🎯 תרגיל מעשי</h3>
-
-<div class="prompt-box" onclick="copyPrompt(this)"><p>"חשוב על 3 משימות שאני עושה כל שבוע ב[תפקיד שלכם]. לכל משימה: 1) כמה זמן לוקחת 2) האם AI יכול לעזור 3) כמה זמן אחסוך 4) מה הפרומפט המתאים"</p></div>
-
+<h3>🎯 תרגיל מעשי — מיפוי אישי</h3>
+<div class="prompt-box" onclick="copyPrompt(this)"><p>"רשום 5 משימות חוזרות בעבודה שלי כ[תפקיד]. לכל משימה: כמה זמן לוקחת, כמה פעמים בשבוע, האם AI יכול לעזור, כמה זמן אחסוך, ומה הפרומפט המתאים. דרג לפי ROI."</p></div>
+<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>בניית ספריית פרומפטים:</strong> "אני [תפקיד] ב[משרד]. צור לי ספריית 10 פרומפטים מוכנים למשימות היומיומיות שלי. לכל פרומפט: שם, תיאור קצר, הפרומפט עצמו, ודוגמה לשימוש."</p></div>
 </div>
 
 <div class="quiz-section">
-
 <h3>❓ בדקו את עצמכם</h3>
-
-<div class="quiz-q"><p>1. איזה סוג משימה הכי מתאים לאוטומציה עם AI?</p><details><summary>הציצו בתשובה</summary><p>משימות חוזרות ופשוטות — שם ה-ROI הגבוה ביותר.</p></details></div>
-
-<div class="quiz-q"><p>2. מהם 4 שלבי בניית Workflow?</p><details><summary>הציצו בתשובה</summary><p>מפו → סמנו → בנו → בדקו.</p></details></div>
-
+<div class="quiz-q"><p>1. מאיזו רמת אוטומציה כדאי להתחיל?</p><details><summary>הציצו בתשובה</summary><p>רמה 1 — אוטומציה אישית. ספריית פרומפטים ותבניות שכל עובד יכול ליצור לבד, עכשיו.</p></details></div>
+<div class="quiz-q"><p>2. מהם 4 שלבי בניית Workflow?</p><details><summary>הציצו בתשובה</summary><p>מפו (כל השלבים) → סמנו (מה AI עושה) → בנו (פרומפט לכל שלב) → בדקו (הריצו ובדקו).</p></details></div>
+<div class="quiz-q"><p>3. איזה סוג משימה הכי מתאים לאוטומציה?</p><details><summary>הציצו בתשובה</summary><p>משימות חוזרות שעוקבות אחרי תבנית קבועה — שם ה-ROI הגבוה ביותר.</p></details></div>
 </div>
 
 <div class="summary-box">
-
 <h3>💎 סיכום</h3>
-
 <ul>
-
-<li>התחילו ממשימות חוזרות ופשוטות — שם ה-ROI הגבוה ביותר</li>
-
-<li>AI לא מחליף — הוא מאיץ ומשחרר זמן לעבודה משמעותית</li>
-
-<li>שיטת 4 שלבים: מפו → סמנו → בנו → בדקו</li>
-
+<li>3 רמות: אישית (התחילו כאן!) → צוותית → ארגונית</li>
+<li>ספריית פרומפטים אישית — ההשקעה הכי משתלמת</li>
+<li>4 שלבים: מפו → סמנו → בנו → בדקו</li>
+<li>שרשור פעולות (Workflow) — AI עושה 80%, אתם מאשרים</li>
 <li>תמיד בקרה אנושית על תוצאות</li>
-
 </ul>
-
 </div>
-
 </main>
 
 <section class="course-complete">
-
 <button class="complete-btn" id="completeBtn" onclick="toggleComplete()">✓ סיימתי יחידה זו</button><br>
-
 <button class="share-course-btn" onclick="shareCourse()">📱 שתפו בוואטסאפ</button>
-
 </section>
-
 <nav class="nav-bottom">
-
 <a href="course9.html" class="nav-btn nav-prev">→ יחידה 9: שירות הציבור</a>
-
 <a href="course11.html" class="nav-btn nav-next">יחידה 11: RAG ←</a>
-
 </nav>
-
-<footer class="site-footer"><p>המקפצה — מותאם למובילי AI במגזר הציבורי בישראל © 2025</p></footer>
+<footer class="site-footer"><p>המקפצה — מבוסס על Anthropic Agents & Workflows | מותאם למובילי AI במגזר הציבורי בישראל © 2025</p></footer>
 <script>const COURSE_ID=10;</script>
 <script src="shared.js"></script>
 <script>
-function toggleCourseTheme(){
-  var h=document.documentElement;
-  var n=h.getAttribute("data-theme")==="dark"?"light":"dark";
-  h.setAttribute("data-theme",n);
-  localStorage.setItem("hamakpetza_theme",n);
-  var btn=document.getElementById("thmCourse");
-  if(btn) btn.textContent=n==="dark"?"☀️":"🌙";
-}
-(function(){
-  var t=localStorage.getItem("hamakpetza_theme");
-  if(t){
-    document.documentElement.setAttribute("data-theme",t);
-    var btn=document.getElementById("thmCourse");
-    if(btn) btn.textContent=t==="dark"?"☀️":"🌙";
-  }
-})();
+function toggleCourseTheme(){var h=document.documentElement;var n=h.getAttribute("data-theme")==="dark"?"light":"dark";h.setAttribute("data-theme",n);localStorage.setItem("hamakpetza_theme",n);var btn=document.getElementById("thmCourse");if(btn) btn.textContent=n==="dark"?"☀️":"🌙";}
+(function(){var t=localStorage.getItem("hamakpetza_theme");if(t){document.documentElement.setAttribute("data-theme",t);var btn=document.getElementById("thmCourse");if(btn) btn.textContent=t==="dark"?"☀️":"🌙";}})();
 </script>
 </body>
 </html>

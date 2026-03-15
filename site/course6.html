@@ -24,7 +24,7 @@
 
 <p class="sub">מחקר מדיניות, סקירת ספרות, השוואת גישות בין מדינות — ומציאת מידע רלוונטי במהירות</p>
 
-<div class="meta-row"><span class="meta-item">⏱ 35 דקות</span><span class="meta-item">👥 מנהלים ועובדים</span><span class="meta-item">📋 4 תרגילים</span></div>
+<div class="meta-row"><span class="meta-item">⏱ 35 דקות</span><span class="meta-item">👥 מנהלים ועובדים</span><span class="meta-item">📋 "הדבק ושאל" + 4 פרומפטים</span></div>
 </header>
 
 <main class="content">
@@ -54,8 +54,34 @@
 </div>
 
 <div class="section">
+<div class="section-head"><div class="section-icon" style="background:rgba(139,108,193,.1)">🗺️</div><h2>חלק ב׳: טכניקת "הדבק ושאל" — הדרך הכי יעילה</h2></div>
+<div class="card-box"><h3>הטכניקה הבסיסית</h3>
+<p>במקום לשאול AI שאלות כלליות, <strong>הדביקו את המסמך</strong> (או חלק ממנו) ושאלו שאלה ממוקדת. כך AI עונה מהמידע שלכם — לא מהידע הכללי שלו.</p>
+<table>
+<tr><th>שלב</th><th>מה עושים</th></tr>
+<tr><td>1</td><td>העתיקו את המסמך (או חלק) ל-Claude</td></tr>
+<tr><td>2</td><td>שאלו שאלה ממוקדת</td></tr>
+<tr><td>3</td><td>קבלו תשובה מבוססת על המסמך בלבד</td></tr>
+<tr><td>4</td><td>אמתו — האם התשובה מדויקת?</td></tr>
+</table></div>
 
-<div class="section-head"><div class="section-icon" style="background:rgba(139,108,193,.1)">🗺️</div><h2>חלק ב׳: שיטת מחקר ב-3 שלבים</h2></div>
+<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>שאלה ממוקדת ממסמך:</strong> "הנה חוזר מנכ"ל בנושא [X]:
+[הדביקו את החוזר]
+
+שאלות:
+1. מה השינויים העיקריים?
+2. מתי נכנס לתוקף?
+3. מה נדרש מעובדי הסניף?
+4. האם יש חריגים?"</p></div>
+
+<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>השוואת מסמכים:</strong> "הנה שני נהלים:
+&lt;נוהל_ישן&gt;[הדביקו]&lt;/נוהל_ישן&gt;
+&lt;נוהל_חדש&gt;[הדביקו]&lt;/נוהל_חדש&gt;
+צור טבלת השוואה: מה השתנה, מה נשאר, מה חדש לגמרי."</p></div>
+</div>
+
+<div class="section">
+<div class="section-head"><div class="section-icon" style="background:rgba(217,119,87,.1)">🔍</div><h2>חלק ג׳: שיטת מחקר ב-3 שלבים</h2></div>
 
 <div class="card-box"><table>
 
@@ -73,7 +99,7 @@
 
 <div class="section">
 
-<div class="section-head"><div class="section-icon" style="background:rgba(61,140,111,.1)">💬</div><h2>חלק ג׳: פרומפטים למחקר</h2></div>
+<div class="section-head"><div class="section-icon" style="background:rgba(61,140,111,.1)">💬</div><h2>חלק ד׳: פרומפטים למחקר</h2></div>
 
 <div class="prompt-box" onclick="copyPrompt(this)"><p><strong>סקירת מדיניות:</strong> "סקור את הגישות השונות של 5 מדינות מפותחות לנושא [X]. לכל מדינה ציין: הגישה, יתרונות, חסרונות, ורלוונטיות לישראל"</p></div>
 

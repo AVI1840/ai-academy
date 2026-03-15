@@ -12,155 +12,144 @@
 <style>body{transition:background .4s,color .4s}</style>
 <script>var t=localStorage.getItem("hamakpetza_theme");if(t)document.documentElement.setAttribute("data-theme",t);</script>
 </head>
-
 <body>
-
-<nav class="topbar"><div class="topbar-right"><a href="index.html" class="back-btn">→ חזרה למקפצה</a><span class="topbar-title">יחידה 7 מתוך 12</span></div><button class="thm-course" id="thmCourse" onclick="toggleCourseTheme()" title="מצב כהה / בהיר">🌙</button></nav>
+<nav c" onclick="toggleCourseTheme()" title="מצב כהה / בהיר">🌙</button></nav>
 <header class="course-hero">
-
 <span class="course-badge" style="background:rgba(139,108,193,.1);color:var(--purple)">💡 מתקדם</span>
-
 <h1>AI לחשיבה אסטרטגית ופתרון בעיות</h1>
-
-<p class="sub">חשיבה מערכתית, ניתוח סיכונים, קבלת החלטות ותכנון אסטרטגי עם AI</p>
-
-<div class="meta-row"><span class="meta-item">⏱ 35 דקות</span><span class="meta-item">👥 מנהלים ומובילים</span><span class="meta-item">📋 5 תרגילים</span></div>
+<p class="sub">6 טכניקות חשיבה מוכחות, ניתוח סיכונים, קבלת החלטות ותכנון אסטרטגי</p>
+<div class="meta-row"><span class="meta-item">⏱ 40 דקות</span><span class="meta-item">👥 מנהלים ומובילים</span><span class="meta-item">📋 6 טכניקות</span></div>
 </header>
-
 <main class="content">
-
 <div class="section">
-
 <div class="section-head"><div class="section-icon" style="background:rgba(139,108,193,.1)">💡</div><h2>חלק א׳: AI כשותף לחשיבה</h2></div>
-
-<div class="card-box"><p>AI לא רק כותב ומסכם — הוא יכול לשמש כשותף חשיבה שמאתגר אתכם, מציע זוויות חדשות, ועוזר לנתח בעיות מורכבות. במיוחד שימושי למנהלים שצריכים לקבל החלטות.</p></div>
-
-<div class="card-box"><h3>4 דרכים להשתמש ב-AI לחשיבה</h3>
-
+<div class="card-box"><p>AI לא רק כותב ומסכם — הוא שותף חשיבה שמאתגר, מציע זוויות חדשות, ועוזר לנתח בעיות מורכבות. הוא לא מתעייף, לא מתבייש לשאול, ולא נכנע ללחץ קבוצתי.</p></div>
+<div class="card-box"><h3>מתי להשתמש ב-AI לחשיבה?</h3>
 <table>
-
-<tr><th>שימוש</th><th>דוגמה ממשלתית</th></tr>
-
-<tr><td>ניתוח SWOT</td><td>ניתוח חוזקות/חולשות של תוכנית דיגיטציה חדשה</td></tr>
-
-<tr><td>ניתוח סיכונים</td><td>מיפוי סיכונים בפרויקט שירות חדש לאזרח</td></tr>
-
-<tr><td>סיעור מוחות מובנה</td><td>יצירת 20 רעיונות לשיפור שירות במשרד</td></tr>
-
-<tr><td>עורך דין של השטן</td><td>"מצא 5 סיבות למה התוכנית הזו תיכשל"</td></tr>
-
+<tr><th>מצב</th><th>דוגמה</th><th>טכניקה</th></tr>
+<tr><td>תכנון פרויקט</<td>SWOT + תכנון לאחור</td></tr>
+<tr><td>פתרון בעיה</td><td>עלייה בזמני טיפול</td><td>5 Whys</td></tr>
+<tr><td>קבלת החלטה</td><td>איחוד סניפים</td><td>ריבוי פרספקטיבות</td></tr>
+<tr><td>הכנה לישיבה</td><td>שאלות קשות צפויות</td><td>עורך דין של השטן</td></tr>
+<tr><td>מניעת כשלים</td><td>סיכונים בפרויקט</td><td>Pre-Mortem</td></tr>
 </table></div>
-
 </div>
 
 <div class="section">
+h2></div>
 
-<div class="section-head"><div class="section-icon" style="background:rgba(106,155,204,.1)">🧩</div><h2>חלק ב׳: טכניקות חשיבה עם AI</h2></div>
+<div class="card-box"><h3>טכניקה 1: ניתוח SWOT</h3>
+<p>ניתוח שיטתי של חוזקות, חולשות, הזדמנויות ואיומים — לפני החלטה אסטרטגית.</p></div>
+<div class="prompt-box" onclick="copyPrompt(this)"><p>בצע ניתוח SWOT למהלך הבא: [תארו].
+חוזקות, חולשות, הזדמנויות, איומים.
+כלול שיקולים: תקציב, כוח אדם, טכנולוגיה, שביעות רצון אזרחים.
+לכל קטגוריה 3-4 נקודות מפורטות.</p></div>
 
-<div class="card-box"><h3>טכניקה 1: שרשרת חשיבה (Chain of Thought)</h3>
+<div class="card-box"><h3>טכניקה 2: חשיבה צעד-אחר-צעד</h3>
+<p>פירוק בעיה לשלבים במקום לקפוץ למסקנה:</p></div>
+<div class="prompt-box" onclick="copyPrompt(this)"><p>אני צריך לשפר את תהליך [X]. חשוב צעד אחר צעד:
+1. מה התהליך הנוכחי?
+2. איפה צווארי הבקבוק?
+3. מה אפשר לייעל עם טכנולוגיה?
+4. מה אפשר לייעל בלי טכנולוגיה?
+5. מה סדר העדיפויות?
+6. מה הסיכונים בכל שינוי?
+7. מה הצעד הראשון מחר בבוקר?</p></div>
 
-<p>בקשו מ-AI לחשוב שלב אחרי שלב במקום לקפוץ למסקנה:</p></div>
+<div class="card-box"><h3>טכניקה 3: עורך דין של השטן</h3>
+<p>בקשו מ-AI לתקוף את הרעיון — למצוא חולשות והתנגדויות:</p></div>
+<div class="prompt-box" onclick="copyPrompt(this)"><p>אני מתכנן [תארו תוכנית].
+שחק מבקר ביקורתי:
+- מצא 5 חולשות
+- מה יכול להשתבש?
+- מה ההתנגדויות הצפויות?
+- מה התרחיש הגרוע ביותר?
+- לכל חולשה הצע פתרון
+- דרג סיכונים מגבוה לנמוך</p></div>
 
-<div class="prompt-box" onclick="copyPrompt(this)"><p>"נתח את הבעיה הבאה צעד אחר צעד: [תארו את הבעיה]. בכל שלב: 1) מה אנחנו יודעים 2) מה חסר 3) מה המסקנה עד כה"</p></div>
+<div class="card-box"><h3>טכניקה 4: ריבוי פרספקטיבות</h3>
+<p>ניתוח מנקודות מבט שונות — כל בעל עניין רואה אחרת:</p></div>
+<div class="prompt-box" onclick="copyPrompt(this)"><p>נתח את ההחלטה [X] מ-4 זוויות:
+1. זווית האזרח — מה ירוויח/יפסיד?
+2. זווית העובד — איך ישפיע על עבודתו?
+3. זווית הארגון — עלויות, יעילות, סיכונים
+4. זווית משפטית — מגבלות רגולטוריות?
+לכל זווית: חששות, ציפיות, המלצות.</p></div>
 
-<div class="card-box"><h3>טכניקה 2: ריבוי פרספקטיבות</h3>
+div class="card-box"><h3>טכניקה 5: ניתוח 5 Whys</h3>
+<p>שאלו "למה?" 5 פעמים להגיע לשורש הבעיה:</p></div>
+<div class="prompt-box" onclick="copyPrompt(this)"><p>הבעיה: [תארו].
+בצע ניתוח "5 למה":
+לכל שלב — מה התשובה? למה זה קורה? מה הפתרון?
+בסוף: מה שורש הבעיה האמיתי ומה הפתרון המומלץ?</p></div>
 
-<p>בקשו מ-AI לנתח מנקודות מבט שונות:</p></div>
+<div class="card-box"><h3>טכניקה 6: Pre-Mortem + תכנון לאחור</h3>
+<p>דמיינו כישלון ותכננו לאחור למניעתו:</p></div>
+<div c 5 הסיבות?
 
-<div class="prompt-box" onclick="copyPrompt(this)"><p>"נתח את ההחלטה [X] מ-4 נקודות מבט: 1) האזרח 2) עובד השטח 3) המנהל 4) משרד האוצר. לכל נקודת מבט: חששות, ציפיות, והמלצות"</p></div>
-
-<div class="card-box"><h3>טכניקה 3: Pre-Mortem</h3>
-
-<p>דמיינו שהפרויקט נכשל — ובקשו מ-AI לנתח למה:</p></div>
-
-<div class="prompt-box" onclick="copyPrompt(this)"><p>"דמיין שעברה שנה והפרויקט [X] נכשל לחלוטין. מהן 5 הסיבות הסבירות ביותר לכישלון? ומה היינו יכולים לעשות אחרת?"</p></div>
-
+תכנון לאחור — המטרה: [Y] תוך שנה.
+- מה צריך לקרות בחודש 12?
+- בחודש 6?
+- בחודש 1?
+- מה הצעד הראשון מחר?</p></div>
 </div>
 
 <div class="section">
+<div class="section-head"><div class="section-icon" style="background:rgba(61,140,111,.1)">📋</div><h2>חלק ג׳: פרומפטים לחשיבה ניהולית</h2></div>
 
-<div class="section-head"><div class="section-icon" style="background:rgba(61,140,111,.1)">📋</div><h2>חלק ג׳: פרומפטים לקבלת החלטות</h2></div>
+<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>נייר עמדה:</strong> "כתוב נייר עמדה בן עמוד בנושא [X]. מבנה: רקע, מצב קיים, 3 חלופות עם יתרונות וחסרונות, המלצה מנומקת, צעדים הבאים"</p></div>
 
-<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>ניתוח חלופות:</strong> "יש לי 3 חלופות ל[X]: א) [חלופה 1] ב) [חלופה 2] ג) [חלופה 3]. נתח כל חלופה: עלות, זמן, סיכון, השפעה על אזרחים, ותן המלצה מנומקת"</p></div>
+<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>הכנה לישיבה:</strong> "אני הולך לישיבה בנושא [X]. הכן: 5 שאלות חכמות לשאול, 3 נקודות שחשוב להעלות, רשימת סיכונים, ו-2 הצעות לפעולה"</p></div>
 
-<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>ניתוח סיכונים:</strong> "מפה את הסיכונים בפרויקט [X]. לכל סיכון: הסתברות (גבוה/בינוני/נמוך), השפעה, ופעולת מניעה מומלצת"</p></div>
+<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>ניתוח כשל:</strong> "תהליך [X] נכשל. עזור לנתח: מה קרה, למה, מה אפשר היה לעשות אחרת, מה הלקח לעתיד, ומה הצעד הראשון לתיקון"</p></div>
 
+<div c. חשוב מחוץ לקופסה. כלול רעיונות טכנולוגיים ולא-טכנולוגיים. לכל רעיון: תיאור קצר, עלות משוערת, וזמן יישום"</p></div>
+
+<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>סימולציית תפקידים:</strong> "אני מתכונן לפגישה עם [מנהל בכיר / נציג אוצר / ועד עובדים]. שחק את התפקיד שלהם ושאל אותי שאלות קשות. הנושא: [תארו]"</p></div>
 </div>
 
 <div class="try-section">
-
 <h3>🎯 תרגיל מעשי</h3>
-
-<div class="prompt-box" onclick="copyPrompt(this)"><p>"אני מתמודד/ת עם האתגר הבא: [תארו]. עזור לי לנתח: 1) מה שורש הבעיה 2) מי המושפעים 3) 3 פתרונות אפשריים עם יתרונות וחסרונות 4) המלצה מנומקת"</p></div>
-
+<p style="margin-bottom:16px;font-family:'Heebo',sans-serif;font-size:.95rem">חשבו על אתגר אמיתי מהעבודה ונסו:</p>
+<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>תרגיל 1:</strong> תארו בעיה ב-3 משפטים → בקשו ניתוח 5 Whys → בדקו אם הגעתם לתובנה חדשה</p></div>
+<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>תרגיל 2:</strong> קחו החלטה שאתם מתלבטים בה → בקשו ניתוח מ-4 פרספקטיבות → האם זה שינה את דעתכם?</p></div>
+<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>תרגיל 3עד ראשון"</p></div>
 </div>
 
 <div class="quiz-section">
-
 <h3>❓ בדקו את עצמכם</h3>
-
-<div class="quiz-q"><p>1. מה היתרון של טכניקת Pre-Mortem?</p><details><summary>הציצו בתשובה</summary><p>היא מאלצת אתכם לחשוב על כישלונות אפשריים מראש — ולמנוע אותם.</p></details></div>
-
-<div class="quiz-q"><p>2. למה כדאי לבקש מ-AI ריבוי פרספקטיבות?</p><details><summary>הציצו בתשובה</summary><p>כי אנחנו נוטים לראות דברים מזווית אחת. AI יכול להציג נקודות מבט שלא חשבנו עליהן.</p></details></div>
-
+<div class="quiz-q"><p>1. מה היתרון של טכניקת Pre-Mortem?</p><details><summary>הציצו בתשובה</summary><p>מאלצת לחשוב על כישלונות אפשריים מראש — ולמנוע אותם. קל יותר לזהות סיכונים כש"מדמיינים" שהפרויקט כבר נכשל.</p></details></div>
+<div יהן.</p></details></div>
+<div class="quiz-q"><p>3. מה ההבדל בין 5 Whys ל-SWOT?</p><details><summary>הציצו בתשובה</summary><p>5 Whys חופר לעומק לשורש בעיה קיימת. SWOT מנתח מצב כולל (חוזקות, חולשות, הזדמנויות, איומים) לפני קבלת החלטה.</p></details></div>
+<div class="quiz-q"><p>4. מתי להשתמש בסימולציית תפקידים?</p><details><summary>הציצו בתשובה</summary><p>לפני פגישה חשובה — AI משחק את הצד השני ושואל שאלות קשות, כך שתגיעו מוכנים.</p></details></div>
 </div>
 
 <div class="summary-box">
-
 <h3>💎 סיכום</h3>
-
 <ul>
-
-<li>AI הוא שותף חשיבה מצוין — לא מחליף את שיקול הדעת שלכם</li>
-
-<li>שרשרת חשיבה, ריבוי פרספקטיבות ו-Pre-Mortem — 3 טכניקות חזקות</li>
-
+<li>AI הוא שותף חשיבה — לא מחליף את שיקול הדעת שלכם</li>
+<li>6 טכניקות: SWOT, צעד-אחר-צעד, עורך דין של השטן, פרספקטיבות, 5 Whys, Pre-Mortem</li>
 <li>בקשו מ-AI לאתגר אתכם, לא רק להסכים</li>
-
+<li>סימולציית תפקידים — הכנה מצוינת לפגישות</li>
 <li>ההחלטה הסופית תמיד שלכם</li>
-
 </ul>
-
 </div>
-
 </main>
 
 <section class="course-complete">
-
 <button class="complete-btn" id="completeBtn" onclick="toggleComplete()">✓ סיימתי יחידה זו</button><br>
-
 <button class="share-course-btn" onclick="shareCourse()">📱 שתפו בוואטסאפ</button>
-
-</section>
-
+</sect>
 <nav class="nav-bottom">
-
 <a href="course6.html" class="nav-btn nav-prev">→ יחידה 6: חיפוש ומחקר</a>
-
 <a href="course8.html" class="nav-btn nav-next">יחידה 8: אתיקה ובטיחות ←</a>
-
 </nav>
-
-<footer class="site-footer"><p>המקפצה — מבוסס על Anthropic ו-OpenAI | מותאם למובילי AI במגזר הציבורי בישראל © 2025</p></footer>
+<footer class="site-footer"><p>המקפצה — מבוסס על Anthropic Extended Thinking | מותאם למובילי AI במגזר הציבורי בישראל © 2025</p></footer>
 <script>const COURSE_ID=7;</script>
 <script src="shared.js"></script>
 <script>
-function toggleCourseTheme(){
-  var h=document.documentElement;
-  var n=h.getAttribute("data-theme")==="dark"?"light":"dark";
-  h.setAttribute("data-theme",n);
-  localStorage.setItem("hamakpetza_theme",n);
-  var btn=document.getElementById("thmCourse");
-  if(btn) btn.textContent=n==="dark"?"☀️":"🌙";
-}
-(function(){
-  var t=localStorage.getItem("hamakpetza_theme");
-  if(t){
-    document.documentElement.setAttribute("data-theme",t);
-    var btn=document.getElementById("thmCourse");
-    if(btn) btn.textContent=t==="dark"?"☀️":"🌙";
-  }
-})();
+function toggleCourseTheme(){var rk";h.setAttribute("data-theme",n);localStorage.setItem("hamakpetza_theme",n);var btn=document.getElementById("thmCourse");if(btn) btn.textContent=n==="dark"?"☀️":"🌙";}
+(function(){var t=localStorage.getItem("hamakpetza_theme");if(t){document.documentElement.setAttribute("data-theme",t);var btn=document.getElementById("thmCourse");if(btn) btn.textContent=t==="dark"?"☀️":"🌙";}})();
 </script>
 </body>
 </html>

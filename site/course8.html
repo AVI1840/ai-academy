@@ -12,189 +12,157 @@
 <style>body{transition:background .4s,color .4s}</style>
 <script>var t=localStorage.getItem("hamakpetza_theme");if(t)document.documentElement.setAttribute("data-theme",t);</script>
 </head>
-
 <body>
-
 <nav class="topbar"><div class="topbar-right"><a href="index.html" class="back-btn">→ חזרה למקפצה</a><span class="topbar-title">יחידה 8 מתוך 12</span></div><button class="thm-course" id="thmCourse" onclick="toggleCourseTheme()" title="מצב כהה / בהיר">🌙</button></nav>
 <header class="course-hero">
-
 <span class="course-badge" style="background:rgba(199,92,74,.1);color:var(--red)">🛡️ חובה — לכל עובדי המדינה</span>
-
 <h1>אתיקה, בטיחות ורגולציה של AI בממשלה</h1>
-
-<p class="sub">הטיות, פרטיות, שקיפות, רגולציה — ומדיניות שימוש אחראי ב-AI במגזר הציבורי</p>
-
-<div class="meta-row"><span class="meta-item">⏱ 35 דקות</span><span class="meta-item">👥 כל עובדי המדינה</span><span class="meta-item">🛡️ חובה</span></div>
+<p class="sub">10 כללי זהב, 4 תרחישים לדיון, צ׳קליסט אישי — ומדיניות שימוש אחראי</p>
+<div class="meta-row"><span class="meta-item">⏱ 40 דקות</span><span class="meta-item">👥 כל עובדי המדינה</span><span class="meta-item">🛡️ חובה</span></div>
 </header>
-
 <main class="content">
-
 <div class="section">
-
 <div class="section-head"><div class="section-icon" style="background:rgba(199,92,74,.1)">⚠️</div><h2>חלק א׳: למה אתיקה ב-AI חשובה במיוחד בממשלה?</h2></div>
-
-<div class="card-box"><p>כשעובד מדינה משתמש ב-AI, ההחלטות משפיעות על אזרחים אמיתיים. טעות של AI בקביעת זכאות, בניסוח מכתב, או בניתוח נתונים — יכולה לפגוע באנשים. לכן האחריות שלנו גדולה יותר.</p></div>
-
+<div class="card-box"><h3>הממשלה שונה מהמגזר הפרטי</h3>
+<ul class="yellow-list">
+<li><strong>אתם משרתים את כל האזרחים</strong> — ללא אפליה, ללא העדפה</li>
+<li><strong>ההחלטות שלכם משפיעות על חיים</strong> — גמלאות, זכאויות, קצבאות</li>
+<li><strong>יש חובת שקיפות ואמון ציבורי</strong> — האזרח סומך עליכם</li>
+<li><strong>רגולציה ופרטיות מחמירות</strong> — חוק הגנת הפרטיות, תקנות אבטחת מידע</li>
+</ul></div>
 <div class="card-box"><h3>5 סיכונים מרכזיים</h3>
-
 <table>
-
-<tr><th>סיכון</th><th>דוגמה</th><th>מה עושים</th></tr>
-
-<tr><td>הטיות (Bias)</td><td>AI שמפלה לפי מגדר, גיל או מוצא</td><td>בדיקה ידנית של תוצאות</td></tr>
-
-<tr><td>הזיות (Hallucinations)</td><td>AI שממציא עובדות או מקורות</td><td>אימות מול מקור רשמי</td></tr>
-
-<tr><td>דליפת מידע</td><td>הזנת פרטים אישיים לכלי חיצוני</td><td>לעולם לא להזין מידע אישי</td></tr>
-
-<tr><td>חוסר שקיפות</td><td>החלטה שהתקבלה "כי AI אמר"</td><td>תיעוד ושקיפות בתהליך</td></tr>
-
-<tr><td>תלות יתר</td><td>הפסקת חשיבה עצמאית</td><td>AI ככלי עזר, לא מחליף</td></tr>
-
+<tr><th>סיכון</th><th>דוגמה</th><th>איך מונעים</th></tr>
+<tr><td>הטיה (Bias)</td><td>AI ממליץ לדחות תביעות מאוכלוסייה מסוימת</td><td>בדיקת תוצאות לפי פילוחים</td></tr>
+<tr><td>דליפת מידע</td><td>עובד מזין ת.ז. לכלי חיצוני</td><td>הנחיות ברורות + כלים מאושרים</td></tr>
+<tr><td>הזיות</td><td>AI "ממציא" נוהל שלא קיים</td><td>אימות מול מקור רשמי</td></tr>
+<tr><td>חוסר שקיפות</td><td>תושב לא יודע שהתשובה מ-AI</td><td>מדיניות גילוי ברורה</td></tr>
+<tr><td>תלות יתר</td><td>עובדים מפסיקים לחשוב</td><td>AI ככלי עזר, לא מחליט</td></tr>
 </table></div>
-
 </div>
 
 <div class="section">
+<div class="section-head"><div class="section-icon" style="background:rgba(251,191,36,.1)">🏆</div><h2>חלק ב׳: 10 כללי זהב לשימוש ב-AI בשירות הציבורי</h2></div>
+<div class="card-box">
+<table>
+<tr><th>#</th><th>כלל</th><th>הסבר</th></tr>
+<tr><td>1</td><td>🔒 לעולם אל תזין מידע מזהה</td><td>ת.ז., שם, כתובת, טלפון — לא לכלי AI חיצוני</td></tr>
+<tr><td>2</td><td>🔍 תמיד בדוק את התוצאה</td><td>AI טועה, במיוחד בנתונים ספציפיים ובסעיפי חוק</td></tr>
+<tr><td>3</td><td>📢 ציין כשתוכן נוצר בעזרת AI</td><td>שקיפות בונה אמון — גם פנימית וגם כלפי אזרחים</td></tr>
+<tr><td>4</td><td>🚫 אל תשתמש ב-AI לקבלת החלטות</td><td>על זכאות — רק עם בקרה אנושית מלאה</td></tr>
+<tr><td>5</td><td>✅ השתמש רק בכלים מאושרים</td><td>כלים שאושרו ע"י מערכות המידע של הארגון</td></tr>
+<tr><td>6</td><td>⚖️ שמור על הגינות</td><td>בדוק שהתוצאות לא מפלות אוכלוסייה כלשהי</td></tr>
+<tr><td>7</td><td>📝 תעד את השימוש</td><td>רשום מתי ואיך השתמשת ב-AI בתהליך עבודה</td></tr>
+<tr><td>8</td><td>👥 הכשר את הצוות</td><td>אל תניח שכולם יודעים — הדרכה היא חובה</td></tr>
+<tr><td>9</td><td>🚨 דווח על בעיות</td><td>גילית טעות או הטיה? דווח מיד לממונה</td></tr>
+<tr><td>10</td><td>📚 עדכן ולמד</td><td>התחום מתפתח — המדיניות צריכה להתעדכן</td></tr>
+</table>
+</div>
+</div>
 
-<div class="section-head"><div class="section-icon" style="background:rgba(199,92,74,.1)">🔴</div><h2>חלק ב׳: קווים אדומים — מה אסור</h2></div>
+<div class="section">
+<div class="section-head"><div class="section-icon" style="background:rgba(139,108,193,.1)">💬</div><h2>חלק ג׳: 4 תרחישים לדיון — מה עושים?</h2></div>
 
-<div class="card-box"><h3>🔴 אסור בהחלט</h3>
+<div class="card-box">
+<h3>תרחיש 1: דליפת מידע אישי</h3>
+<p><strong>המצב:</strong> עובד מזין תביעת נכות מלאה (כולל שם ות.ז.) ל-ChatGPT כדי לקבל סיכום.</p>
+<p style="color:var(--red);font-weight:600;margin-top:8px">❌ הבעיה: דליפת מידע אישי לשרת חיצוני — הפרת פרטיות חמורה</p>
+<p style="color:var(--green);font-weight:600;margin-top:4px">✅ הפתרון: להזין רק את הטקסט ללא פרטים מזהים, או להשתמש בכלי פנימי מאושר</p>
+</div>
 
+<div class="card-box">
+<h3>תרחיש 2: דירוג עובדים עם AI</h3>
+<p><strong>המצב:</strong> מנהל סניף משתמש ב-AI כדי לדרג עובדים לפי ביצועים על בסיס נתוני המערכת.</p>
+<p style="color:var(--red);font-weight:600;margin-top:8px">❌ הבעיה: AI עלול להטות על בסיס נתונים לא מייצגים — אפליה סמויה</p>
+<p style="color:var(--green);font-weight:600;margin-top:4px">✅ הפתרון: AI יכול לעזור לארגן נתונים, אבל הדירוג והשיקול חייבים להיות אנושיים</p>
+</div>
+
+<div class="card-box">
+<h3>תרחיש 3: צ׳אטבוט שטועה</h3>
+<p><strong>המצב:</strong> צ׳אטבוט באתר אומר לתושב שהוא זכאי לגמלה — אבל הוא לא.</p>
+<p style="color:var(--red);font-weight:600;margin-top:8px">❌ הבעיה: מידע שגוי שיוצר ציפיות ופגיעה באמון הציבור</p>
+<p style="color:var(--green);font-weight:600;margin-top:4px">✅ הפתרון: כל תשובה של צ׳אטבוט חייבת הסתייגות + הפניה לבדיקה אנושית</p>
+</div>
+
+<div class="card-box">
+<h3>תרחיש 4: תרגום ללא בדיקה</h3>
+<p><strong>המצב:</strong> עובדת משתמשת ב-AI לתרגום מכתב רשמי לערבית ושולחת בלי בדיקה.</p>
+<p style="color:var(--red);font-weight:600;margin-top:8px">❌ הבעיה: תרגום AI עלול להכיל שגיאות משמעותיות — במיוחד במונחים משפטיים</p>
+<p style="color:var(--green);font-weight:600;margin-top:4px">✅ הפתרון: תמיד לתת לדובר שפת אם לבדוק תרגומים רשמיים</p>
+</div>
+</div>
+
+<div class="section">
+<div class="section-head"><div class="section-icon" style="background:rgba(61,140,111,.1)">📋</div><h2>חלק ד׳: צ׳קליסט אישי — לפני כל שימוש ב-AI</h2></div>
+<div class="card-box"><h3>🟡 5 שאלות שחובה לשאול:</h3>
+<ul class="yellow-list">
+<li><strong>האם יש כאן מידע אישי?</strong> אם כן — הסירו אותו לפני ההזנה</li>
+<li><strong>האם התוצאה תשפיע על אזרח?</strong> אם כן — בדקו פעמיים מול מקור רשמי</li>
+<li><strong>האם אני יכול/ה לאמת?</strong> אם לא — אל תסמכו על התשובה</li>
+<li><strong>האם ברור שזו טיוטה?</strong> ולא החלטה סופית</li>
+<li><strong>האם אני שקוף/ה?</strong> לגבי השימוש ב-AI</li>
+</ul></div>
+
+<div class="card-box"><h3>🔴 קווים אדומים — מה אסור</h3>
 <ul class="red-list">
-
-<li>להזין מידע אישי מזהה (ת.ז., שם מלא, כתובת, מצב רפואי) לכלי AI חיצוני</li>
-
-<li>לקבל החלטות על זכאות אזרחים על בסיס AI בלבד</li>
-
-<li>להשתמש ב-AI ללא בקרה אנושית בתהליכים שמשפיעים על אנשים</li>
-
-<li>לשתף מסמכים מסווגים או רגישים עם כלי AI</li>
-
+<li>להזין מידע אישי מזהה לכלי AI חיצוני</li>
+<li>לקבל החלטות על זכאות על בסיס AI בלבד</li>
+<li>להשתמש ללא בקרה אנושית בתהליכים שמשפיעים על אנשים</li>
+<li>לשתף מסמכים מסווגים או רגישים</li>
 <li>להציג תוצאת AI כעובדה מאומתת בלי בדיקה</li>
-
 </ul></div>
 
 <div class="card-box"><h3>✅ מותר ומומלץ</h3>
-
 <ul class="green-list">
-
 <li>לעבוד עם נתונים אנונימיים או מצרפיים</li>
-
 <li>לנסח טיוטות ללא פרטים מזהים</li>
-
 <li>ללמוד, לחקור ולהתנסות</li>
-
 <li>לסכם נהלים ומסמכים פומביים</li>
-
-<li>לבקש עזרה בחשיבה וניתוח</li>
-
+<li>לבקש עזרה בחשיבה, ניתוח ותכנון</li>
 </ul></div>
-
-</div>
-
-<div class="section">
-
-<div class="section-head"><div class="section-icon" style="background:rgba(251,191,36,.1)">📋</div><h2>חלק ג׳: צ׳קליסט לשימוש אחראי</h2></div>
-
-<div class="card-box"><h3>🟡 לפני כל שימוש ב-AI, שאלו את עצמכם:</h3>
-
-<ul class="yellow-list">
-
-<li>האם יש כאן מידע אישי? אם כן — הסירו אותו</li>
-
-<li>האם התוצאה תשפיע על אזרח? אם כן — בדקו פעמיים</li>
-
-<li>האם אני יכול/ה לאמת את התשובה? אם לא — אל תסמכו עליה</li>
-
-<li>האם ברור שזו טיוטה ולא החלטה סופית?</li>
-
-<li>האם אני שקוף/ה לגבי השימוש ב-AI?</li>
-
-</ul></div>
-
 </div>
 
 <div class="try-section">
-
 <h3>🎯 תרגיל מעשי</h3>
-
-<div class="prompt-box" onclick="copyPrompt(this)"><p>"אני עובד/ת מדינה. כתוב לי מדיניות שימוש ב-AI של 10 סעיפים לצוות שלי. כלול: מה מותר, מה אסור, איך לבדוק תוצאות, ואיך לשמור על פרטיות"</p></div>
-
-<p style="color:var(--text2);font-size:.9rem;margin-top:12px;font-family:'Heebo',sans-serif">💡 השתמשו בתוצאה כבסיס למדיניות אמיתית בצוות שלכם</p>
-
+<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>כתיבת מדיניות:</strong> "אני עובד/ת מדינה. כתוב מדיניות שימוש ב-AI של 10 סעיפים לצוות שלי. כלול: מה מותר, מה אסור, איך לבדוק תוצאות, איך לשמור על פרטיות, ואיך לתעד שימוש"</p></div>
+<div class="prompt-box" onclick="copyPrompt(this)"><p><strong>דיון צוותי:</strong> "חשבו על 3 מצבים בעבודה שבהם AI יכול לעזור. לכל מצב: מה הסיכון האתי? איך מתמודדים? מה הקו האדום?"</p></div>
 </div>
 
 <div class="quiz-section">
-
 <h3>❓ בדקו את עצמכם</h3>
-
-<div class="quiz-q"><p>1. מה הסיכון הגדול ביותר בשימוש ב-AI בממשלה?</p><details><summary>הציצו בתשובה</summary><p>דליפת מידע אישי — הזנת פרטים מזהים של אזרחים לכלי AI חיצוני.</p></details></div>
-
+<div class="quiz-q"><p>1. מה הסיכון הגדול ביותר בשימוש ב-AI בממשלה?</p><details><summary>הציצו בתשובה</summary><p>דליפת מידע אישי — הזנת פרטים מזהים של אזרחים לכלי AI חיצוני. זו הפרת פרטיות חמורה.</p></details></div>
 <div class="quiz-q"><p>2. מתי מותר להשתמש ב-AI לקבלת החלטות?</p><details><summary>הציצו בתשובה</summary><p>רק ככלי עזר — ההחלטה הסופית חייבת להיות של אדם, עם בקרה אנושית מלאה.</p></details></div>
-
-<div class="quiz-q"><p>3. מה לעשות כשAI נותן תשובה שנשמעת משכנעת?</p><details><summary>הציצו בתשובה</summary><p>לאמת מול מקור רשמי. AI יכול להזות (hallucinate) — לייצר מידע שנשמע אמין אבל שגוי.</p></details></div>
-
+<div class="quiz-q"><p>3. עובד רוצה לסכם תביעה עם AI. מה הצעד הראשון?</p><details><summary>הציצו בתשובה</summary><p>להסיר כל מידע מזהה (שם, ת.ז., כתובת) לפני ההזנה. או להשתמש בכלי פנימי מאושר.</p></details></div>
+<div class="quiz-q"><p>4. מה לעשות כשAI נותן תשובה משכנעת?</p><details><summary>הציצו בתשובה</summary><p>לאמת מול מקור רשמי. AI יכול להזות — לייצר מידע שנשמע אמין אבל שגוי לחלוטין.</p></details></div>
 </div>
 
 <div class="summary-box">
-
 <h3>💎 סיכום</h3>
-
 <ul>
-
-<li>אחריות מוגברת — החלטות AI משפיעות על אזרחים</li>
-
+<li>10 כללי זהב — שמרו אותם כמדיניות צוותית</li>
+<li>אחריות מוגברת — החלטות AI משפיעות על אזרחים אמיתיים</li>
 <li>לעולם לא להזין מידע אישי לכלי AI חיצוני</li>
-
-<li>תמיד בקרה אנושית על תוצאות AI</li>
-
-<li>שקיפות — ציינו כשתוכן נוצר בעזרת AI</li>
-
-<li>AI ככלי עזר, לא כמקבל החלטות</li>
-
+<li>4 תרחישים — דנו בהם עם הצוות</li>
+<li>צ׳קליסט 5 שאלות — לפני כל שימוש</li>
+<li>שקיפות, בקרה אנושית, ותיעוד — תמיד</li>
 </ul>
-
 </div>
-
 </main>
 
 <section class="course-complete">
-
 <button class="complete-btn" id="completeBtn" onclick="toggleComplete()">✓ סיימתי יחידה זו</button><br>
-
 <button class="share-course-btn" onclick="shareCourse()">📱 שתפו בוואטסאפ</button>
-
 </section>
-
 <nav class="nav-bottom">
-
 <a href="course7.html" class="nav-btn nav-prev">→ יחידה 7: חשיבה ופתרון בעיות</a>
-
 <a href="course9.html" class="nav-btn nav-next">יחידה 9: שירות הציבור ←</a>
-
 </nav>
-
 <footer class="site-footer"><p>המקפצה — מבוסס על Anthropic AI Fluency | מותאם למובילי AI במגזר הציבורי בישראל © 2025</p></footer>
 <script>const COURSE_ID=8;</script>
 <script src="shared.js"></script>
 <script>
-function toggleCourseTheme(){
-  var h=document.documentElement;
-  var n=h.getAttribute("data-theme")==="dark"?"light":"dark";
-  h.setAttribute("data-theme",n);
-  localStorage.setItem("hamakpetza_theme",n);
-  var btn=document.getElementById("thmCourse");
-  if(btn) btn.textContent=n==="dark"?"☀️":"🌙";
-}
-(function(){
-  var t=localStorage.getItem("hamakpetza_theme");
-  if(t){
-    document.documentElement.setAttribute("data-theme",t);
-    var btn=document.getElementById("thmCourse");
-    if(btn) btn.textContent=t==="dark"?"☀️":"🌙";
-  }
-})();
+function toggleCourseTheme(){var h=document.documentElement;var n=h.getAttribute("data-theme")==="dark"?"light":"dark";h.setAttribute("data-theme",n);localStorage.setItem("hamakpetza_theme",n);var btn=document.getElementById("thmCourse");if(btn) btn.textContent=n==="dark"?"☀️":"🌙";}
+(function(){var t=localStorage.getItem("hamakpetza_theme");if(t){document.documentElement.setAttribute("data-theme",t);var btn=document.getElementById("thmCourse");if(btn) btn.textContent=t==="dark"?"☀️":"🌙";}})();
 </script>
 </body>
 </html>
