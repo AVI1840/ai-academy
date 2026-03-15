@@ -410,6 +410,133 @@ body::after {
 <div class="grid-3" id="coursesGrid"></div>
 </section>
 
+<!-- HOW IT WORKS -->
+<style>
+.steps-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+.step-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 28px 20px; text-align: center;
+  transition: all .3s var(--ease); position: relative; overflow: hidden;
+}
+.step-card::before {
+  content: ''; position: absolute; inset: 0;
+  background: var(--grad-subtle); opacity: 0; transition: opacity .3s;
+}
+.step-card:hover::before { opacity: 1; }
+.step-card:hover { border-color: var(--border-hover); transform: translateY(-3px); box-shadow: var(--glow-indigo); }
+.step-num {
+  width: 36px; height: 36px; border-radius: 50%; background: var(--grad);
+  color: #fff; font-weight: 800; font-size: .85rem; display: grid; place-items: center;
+  margin: 0 auto 12px; font-family: var(--font-heb); position: relative; z-index: 1;
+}
+.step-icon { font-size: 1.8rem; margin-bottom: 10px; position: relative; z-index: 1; }
+.step-card h3 { font-size: .88rem; font-weight: 700; margin-bottom: 4px; position: relative; z-index: 1; }
+.step-card p { font-size: .78rem; color: var(--text-muted); line-height: 1.6; font-family: var(--font-heb); position: relative; z-index: 1; }
+</style>
+
+<section class="sec" id="how">
+<div class="sec-label">איך זה עובד</div>
+<h2 class="sec-title">4 שלבים בכל יחידה</h2>
+<p class="sec-desc">מתיאוריה לתרגול מעשי — כל יחידה בנויה באותו מבנה</p>
+<div class="steps-grid">
+<div class="step-card"><div class="step-num">1</div><div class="step-icon">📖</div><h3>תיאוריה</h3><p>הסבר ברור ומותאם למגזר הציבורי</p></div>
+<div class="step-card"><div class="step-num">2</div><div class="step-icon">💬</div><h3>פרומפטים מוכנים</h3><p>50+ פרומפטים להעתקה ושימוש מיידי</p></div>
+<div class="step-card"><div class="step-num">3</div><div class="step-icon">🛠️</div><h3>תרגול מעשי</h3><p>תרגילים מותאמים לעבודה היומיומית</p></div>
+<div class="step-card"><div class="step-num">4</div><div class="step-icon">✅</div><h3>שאלות בדיקה</h3><p>בדקו שהבנתם לפני שממשיכים</p></div>
+</div>
+</section>
+
+<!-- WHO IS IT FOR -->
+<style>
+.personas-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+.persona-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 24px 20px; text-align: center;
+  transition: all .3s var(--ease); position: relative; overflow: hidden;
+}
+.persona-card::before {
+  content: ''; position: absolute; inset: 0;
+  background: var(--grad-subtle); opacity: 0; transition: opacity .3s;
+}
+.persona-card:hover::before { opacity: 1; }
+.persona-card:hover { border-color: var(--border-hover); transform: translateY(-3px); box-shadow: var(--glow-indigo); }
+.persona-icon { font-size: 2rem; margin-bottom: 10px; position: relative; z-index: 1; }
+.persona-card h3 { font-size: .88rem; font-weight: 700; margin-bottom: 4px; position: relative; z-index: 1; }
+.persona-card p { font-size: .78rem; color: var(--text-muted); line-height: 1.6; font-family: var(--font-heb); position: relative; z-index: 1; }
+</style>
+
+<section class="sec" id="who">
+<div class="sec-label">למי מתאים</div>
+<h2 class="sec-title">מותאם לכל תפקיד</h2>
+<p class="sec-desc">ההכשרה מותאמת למגוון תפקידים במגזר הציבורי</p>
+<div class="personas-grid">
+<div class="persona-card"><div class="persona-icon">👤</div><h3>עובד מדינה</h3><p>שרוצה להתחיל לעבוד עם AI ביום-יום</p></div>
+<div class="persona-card"><div class="persona-icon">👔</div><h3>מנהל</h3><p>שרוצה להוביל שינוי דיגיטלי בצוות</p></div>
+<div class="persona-card"><div class="persona-icon">🚀</div><h3>מוביל AI</h3><p>שרוצה כלים מתקדמים ומתודולוגיה</p></div>
+<div class="persona-card"><div class="persona-icon">💻</div><h3>איש IT</h3><p>שרוצה להכיר RAG, Claude Code וכלים טכניים</p></div>
+</div>
+</section>
+
+<!-- FAQ -->
+<style>
+.faq-list { max-width: 700px; margin: 0 auto; }
+.faq-item {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); margin-bottom: 8px; overflow: hidden;
+  transition: border-color .3s var(--ease);
+}
+.faq-item:hover { border-color: var(--border-hover); }
+.faq-q {
+  padding: 18px 24px; cursor: pointer; display: flex; align-items: center;
+  justify-content: space-between; font-weight: 600; font-size: .9rem;
+  font-family: var(--font-heb); user-select: none;
+}
+.faq-q::after { content: '+'; font-size: 1.1rem; color: var(--text-muted); transition: transform .3s; }
+.faq-item.open .faq-q::after { transform: rotate(45deg); color: #818cf8; }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height .4s ease, padding .3s; }
+.faq-item.open .faq-a { max-height: 200px; padding: 0 24px 18px; }
+.faq-a p { font-size: .85rem; color: var(--text-secondary); line-height: 1.75; font-family: var(--font-heb); }
+</style>
+
+<section class="sec" id="faq">
+<div class="sec-label">שאלות נפוצות</div>
+<h2 class="sec-title">שאלות ותשובות</h2>
+<p class="sec-desc">תשובות לשאלות שנשאלות הכי הרבה</p>
+<div class="faq-list">
+<div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">כמה זמן לוקח לסיים את כל ההכשרה?</div><div class="faq-a"><p>כ-7 שעות סה״כ. אפשר ללמוד בקצב שלכם — יחידה ביום, שתיים בשבוע, או הכל ביום אחד.</p></div></div>
+<div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">צריך ידע טכני מוקדם?</div><div class="faq-a"><p>לא. יחידות 1–9 מתאימות לכל עובד מדינה ללא רקע טכני. יחידות 11–12 מיועדות לאנשי IT.</p></div></div>
+<div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">איך מקבלים תעודת סיום?</div><div class="faq-a"><p>משלימים את כל 12 היחידות. כשמגיעים ל-100% — מופיע כפתור להורדת תעודה מעוצבת.</p></div></div>
+<div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">על מה מבוססת ההכשרה?</div><div class="faq-a"><p>על סילבוס Anthropic AI Fluency עם התאמות לממשלת ישראל. נבנה ותוקף עם כ-6 כלי AI.</p></div></div>
+</div>
+</section>
+
+<!-- SHARE -->
+<style>
+.share-section { max-width: 700px; margin: 0 auto; padding: 0 32px 80px; text-align: center; position: relative; z-index: 1; }
+.share-btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 24px; }
+.share-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 11px 22px; border-radius: 10px; font-weight: 600; font-size: .84rem;
+  color: #fff; transition: all .2s var(--ease); border: none; cursor: pointer;
+  font-family: var(--font-heb);
+}
+.share-btn:hover { transform: translateY(-1px); color: #fff; }
+.share-wa { background: #25D366; box-shadow: 0 0 12px rgba(37,211,102,.12); }
+.share-li { background: #0A66C2; box-shadow: 0 0 12px rgba(10,102,194,.12); }
+.share-cp { background: var(--bg-card); color: var(--text); border: 1px solid var(--border); }
+.share-cp:hover { border-color: var(--indigo); color: #818cf8; }
+</style>
+
+<section class="share-section">
+<div class="sec-label">שיתוף</div>
+<h2 class="sec-title">שתפו עם קולגות</h2>
+<div class="share-btns">
+<a class="share-btn share-wa" href="https://wa.me/?text=%D7%94%D7%9E%D7%A7%D7%A4%D7%A6%D7%94%20%E2%80%94%20%D7%90%D7%A7%D7%93%D7%9E%D7%99%D7%99%D7%AA%20AI%20%D7%9C%D7%9E%D7%95%D7%91%D7%99%D7%9C%D7%99%20%D7%94%D7%9E%D7%92%D7%96%D7%A8%20%D7%94%D7%A6%D7%99%D7%91%D7%95%D7%A8%D7%99%0Ahttps%3A%2F%2Favi1840.github.io%2Fai-academy%2Fsite%2F" target="_blank">שתפו בוואטסאפ</a>
+<a class="share-btn share-li" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Favi1840.github.io%2Fai-academy%2Fsite%2F" target="_blank">שתפו בלינקדאין</a>
+<button class="share-btn share-cp" onclick="navigator.clipboard.writeText('https://avi1840.github.io/ai-academy/site/');this.innerHTML='✅ הועתק'">העתיקו קישור</button>
+</div>
+</section>
+
 <!-- CTA BANNER -->
 <style>
 .cta-wrap { max-width: 1200px; margin: 0 auto; padding: 0 32px 80px; position: relative; z-index: 1; }
@@ -513,7 +640,7 @@ body::after {
 <!-- RESPONSIVE -->
 <style>
 @media(max-width:900px){
-  .grid-3 { grid-template-columns: repeat(2,1fr); }
+  .grid-3, .steps-grid, .personas-grid { grid-template-columns: repeat(2,1fr); }
   .hero h1 { font-size: 2.8rem; }
   .nav { display: none; position: absolute; top: 56px; right: 0; left: 0; background: rgba(9,9,11,.95); backdrop-filter: blur(20px); flex-direction: column; padding: 20px 32px; gap: 14px; border-bottom: 1px solid var(--border); }
   .nav.open { display: flex; }
@@ -521,15 +648,17 @@ body::after {
   .progress-card { flex-direction: column; text-align: center; }
 }
 @media(max-width:600px){
-  .grid-3 { grid-template-columns: 1fr; }
+  .grid-3, .steps-grid, .personas-grid { grid-template-columns: 1fr; }
   .hero { padding: 72px 20px 56px; }
   .hero h1 { font-size: 2.2rem; }
   .hero-stats { gap: 10px; }
   .hero-stat { min-width: auto; padding: 16px 20px; }
   .hero-stat strong { font-size: 1.8rem; }
   .sec-title { font-size: 1.6rem; }
-  .sec, .progress-section, .cta-wrap, .about-sec { padding-right: 20px; padding-left: 20px; }
+  .sec, .progress-section, .cta-wrap, .about-sec, .share-section { padding-right: 20px; padding-left: 20px; }
   .cta-box { padding: 40px 24px; }
+  .share-btns { flex-direction: column; align-items: center; }
+  .share-btn { width: 100%; justify-content: center; }
 }
 @media print {
   .header,.progress-section,.wa-wrap,.cta-wrap,.footer,.feedback-fab { display: none; }
@@ -585,7 +714,7 @@ const observer=new IntersectionObserver(entries=>{
 },{threshold:.08,rootMargin:'0px 0px -40px 0px'});
 
 function initAnimations(){
-  const els=document.querySelectorAll('.glass-card,.path-card,.course-card,.hero-stat,.progress-card,.cta-box');
+  const els=document.querySelectorAll('.glass-card,.path-card,.course-card,.hero-stat,.progress-card,.cta-box,.step-card,.persona-card,.faq-item');
   els.forEach((el,i)=>{
     el.style.opacity='0';
     el.style.transform='translateY(24px)';
