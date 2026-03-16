@@ -1,0 +1,320 @@
+---
+slug: "claude-code"
+title: "AI Engineering — פיתוח תוכנה עם AI"
+courseNumber: 12
+duration: "50 דקות קריאה"
+audience: "מפתחים וצוותי IT"
+exerciseCount: 5
+domain: "ai-product-leadership"
+path: "advanced"
+difficulty: "advanced"
+description: "פיתוח תוכנה עם כלי AI — Claude Code, GitHub Copilot, Cursor ועוד. דיבוג, code review ואוטומציה"
+deliverables:
+  - "תהליך פיתוח עם AI"
+---
+
+## 1. למה זה חשוב לממשלה
+
+צוותי IT ממשלתיים עומדים בפני אתגר ייחודי: **פרויקטים רבים, אנשים מעטים, ועדיפויות שמשתנות**. ממוצע גודל צוות IT ביחידה ממשלתית: 3-7 מפתחים. ממוצע תור פנים-ארגוני לפיתוח: 4-6 חודשים.
+
+כלי AI לפיתוח עובדים ישירות בסביבת הפיתוח שלכם — קוראים קוד, כותבים קוד, מדבגים, מבצעים code review, ומבצעים פעולות מהטרמינל. תחשבו עליהם כ**מפתח בכיר שזמין 24/7**, לא נמאס, ומבצע כל משימה עם סבלנות מלאה.
+
+**מה שהשתנה:** בעבר, AI בפיתוח = "השלמת קוד" (Copilot). היום, כלים כמו Claude Code, Cursor ו-GitHub Copilot Workspace הם **סוכני פיתוח** שיכולים לקחת Feature Request ולממש אותה end-to-end.
+
+---
+
+## 2. מושג הליבה: כלי AI לפיתוח — מ-Copilot ועד סוכן אוטונומי
+
+<KeyTerms>
+- **AI Agent** — מערכת AI שלא רק עונה אלא פועלת: קוראת קבצים, מריצה פקודות, מבצעת שינויים, ובודקת תוצאות — בצורה אוטונומית
+- **Agentic Loop** — לולאת Plan → Act → Observe → Plan: AI מתכנן, מבצע פעולה, רואה את התוצאה, ומתכנן שלב הבא
+- **Context Window בפיתוח** — כמות הקוד ש-AI יכול לקרוא ולהחזיק "בראש" בו-זמנית
+- **Tool Use** — יכולת AI להשתמש בכלים: bash, קריאת קבצים, כתיבת קבצים, חיפוש בקוד, הרצת טסטים
+- **Rules/Instructions File** — קובץ הנחיות שאתם כותבים ו-AI קורא בתחילת כל session — "חוקי הפרויקט". ב-Claude Code: `CLAUDE.md`, ב-Cursor: `.cursorrules`, ב-Copilot: `.github/copilot-instructions.md`
+- **Vibe Coding** — סגנון פיתוח שבו מתארים מה רוצים בשפה טבעית, ו-AI כותב את הקוד. מהיר, אבל דורש code review קפדני
+</KeyTerms>
+
+### טבלת השוואה: כלי AI לפיתוח
+
+| יכולת | GitHub Copilot | Claude Code | Cursor | ChatGPT Code Interpreter |
+|-------|---------------|-------------|--------|--------------------------|
+| השלמת קוד (inline) | ✅ מצוין | ❌ (CLI) | ✅ מצוין | ❌ |
+| כתיבת פונקציות | ✅ | ✅ | ✅ | ✅ |
+| Refactoring | חלקי | ✅ | ✅ | חלקי |
+| Code Review | ✅ (Copilot Chat) | ✅ | ✅ | ❌ |
+| Debugging | חלקי | ✅ | ✅ | חלקי |
+| Feature end-to-end | ✅ (Copilot Workspace) | ✅ | ✅ | ❌ |
+| הרצת פקודות | ❌ | ✅ | ✅ (טרמינל) | ✅ (Python) |
+| שיחה על ארכיטקטורה | ✅ (Chat) | ✅ | ✅ | ✅ |
+| אינטגרציה עם IDE | VS Code, JetBrains | CLI (כל סביבה) | VS Code fork | דפדפן |
+| **מתאים ל** | השלמת קוד יומיומית | משימות מורכבות, CLI | פיתוח מלא ב-IDE | ניתוח נתונים, סקריפטים |
+| **עלות** | $10-39/חודש | API usage | $20-40/חודש | $20/חודש |
+
+> **איזה כלי לבחור?** אין כלי אחד שמנצח בכל דבר. מפתחים רבים משלבים: **Copilot** להשלמת קוד שוטפת + **Claude Code** או **Cursor** למשימות מורכבות. למשרדים שעובדים עם Microsoft 365 — Copilot משתלב בטבעיות. לצוותים שמעדיפים CLI — Claude Code.
+
+---
+
+## 3. איך הטכנולוגיה עובדת — כלי AI לפיתוח מבפנים
+
+### הלולאה האג'נטית (Claude Code, Cursor, Copilot Workspace)
+
+```
+[1] קריאת הבקשה שלכם
+     ↓
+[2] Exploration — קורא קבצי קוד רלוונטיים
+     ↓
+[3] Planning — "אצטרך לשנות X, Y, Z"
+     ↓
+[4] Execution — כותב/משנה קוד
+     ↓
+[5] Verification — מריץ טסטים, בודק build
+     ↓
+[6] הצגת תוצאה + שאלת אישור
+```
+
+### מה כלי AI לפיתוח רואים?
+
+כשכלי AI אגנטי (Claude Code, Cursor, Copilot Workspace) מופעל בפרויקט, הוא יכול:
+- **לקרוא** כל קובץ בפרויקט (עם הרשאה)
+- **לחפש** ב-codebase לפי pattern או keyword
+- **להריץ** פקודות bash (npm, git, pytest, etc.) — ב-Claude Code וב-Cursor
+- **לכתוב** ולערוך קבצים
+- **לבדוק** תוצאות compile/test
+
+---
+
+## 4. שיטות מעשיות — 5 שימושים יומיומיים
+
+### שימוש 1: Feature Request מלאה
+
+<PromptBlock title="פרומפט: Feature Request">
+אנחנו עובדים על מערכת ניהול בקשות.
+[תאר את הפרויקט ב-3-5 שורות]
+
+אני רוצה להוסיף: [תאר את הפיצ'ר]
+
+דרישות:
+- [דרישה 1]
+- [דרישה 2]
+- [דרישה 3]
+
+Stack: [TypeScript/Python/etc.] + [Framework]
+
+לפני שמתחיל: שאל אותי 3 שאלות להבהרת דרישות שחשובות לך ביותר.
+</PromptBlock>
+
+### שימוש 2: Code Review מעמיק
+
+<PromptBlock title="פרומפט: Code Review">
+עשה code review ל-PR הזה:
+[הדבק diff או קישור]
+
+תמקד ב:
+1. בעיות אבטחה (injection, auth, data exposure)
+2. ביצועים (N+1 queries, memory leaks)
+3. maintainability (naming, complexity, duplication)
+4. edge cases שלא טופלו
+5. בדיקות שחסרות
+
+פורמט: חומרה (Critical/High/Medium/Low) + הסבר + הצעה לתיקון
+</PromptBlock>
+
+### שימוש 3: Debugging מובנה
+
+<PromptBlock title="פרומפט: Debugging">
+יש לי bug. הנה מה שקורה:
+
+**תיאור:** [מה קורה לעומת מה אמור לקרות]
+**שגיאה:** [הדבק error message/stack trace]
+**קוד הבעייתי:** [הדבק קוד]
+
+**מה ניסיתי עד כה:** [רשום מה בדקת]
+
+אנא:
+1. הסבר מה גורם לבאג
+2. הצע 2-3 פתרונות אפשריים
+3. המלץ על הפתרון הטוב ביותר + הסבר למה
+</PromptBlock>
+
+### שימוש 4: כתיבת טסטים
+
+<PromptBlock title="פרומפט: כתיבת Tests">
+כתוב טסטים עבור הפונקציה הזו:
+[הדבק קוד]
+
+כלול:
+- Happy path (מקרה תקין)
+- Edge cases (קלט ריק, null, מספרים גדולים)
+- Error cases (מה קורה כשהקלט לא תקין)
+- Integration tests אם רלוונטי
+
+Framework: [Jest/Pytest/Vitest]
+Coverage יעד: 90%
+</PromptBlock>
+
+### שימוש 5: מיגרציה ו-Refactoring
+
+<PromptBlock title="פרומפט: Refactoring">
+אני צריך לעשות refactoring ל:
+[תאר את הקוד/מודול]
+
+**הבעיה הנוכחית:** [למה הקוד הנוכחי בעייתי]
+**המטרה:** [מה אני רוצה להשיג]
+**אילוצים:** [מה לא ניתן לשנות — API, DB schema, etc.]
+
+לפני שמתחיל:
+1. הצג את הגישה שאתה מתכנן
+2. פרט את הסיכונים
+3. אני אאשר לפני שמתחיל לשנות קוד
+</PromptBlock>
+
+---
+
+## 5. קובץ הנחיות לפרויקט — ה"חוקה" של הפיתוח עם AI
+
+כל כלי AI לפיתוח תומך בקובץ הנחיות שמגדיר את כללי הפרויקט:
+- **Claude Code:** `CLAUDE.md` בשורש הפרויקט
+- **Cursor:** `.cursorrules` בשורש הפרויקט
+- **GitHub Copilot:** `.github/copilot-instructions.md`
+
+הקובץ הוא ה-"instructions" ש-AI קורא בכל session. השקיעו בו:
+
+```markdown
+# Project: [שם הפרויקט]
+
+## Context
+[מה המערכת עושה, מי המשתמשים, ההקשר הממשלתי]
+
+## Architecture
+[תיאור קצר של ארכיטקטורה — מה בצד שרת, מה בצד לקוח]
+
+## Tech Stack
+- Frontend: [React/Angular/Vue + versions]
+- Backend: [Node/Python/Java + versions]
+- DB: [PostgreSQL/MongoDB + ORM]
+- Testing: [Jest/Pytest]
+
+## Coding Standards
+- [כללים: ESLint config, naming conventions]
+- [עברית בהערות? עברית בUI strings?]
+- [Security rules: no secrets in code, input validation]
+
+## What NOT to change
+- [קבצים שאסור לגעת]
+- [patterns שיש להימנע מהם]
+
+## Running the Project
+- Install: `npm install`
+- Dev: `npm run dev`
+- Test: `npm test`
+- Build: `npm run build`
+```
+
+---
+
+## 6. מקרה בוחן — מנהל IT בממשלה
+
+**ההקשר:** צוות של 4 מפתחים צריך לבנות מערכת לניהול 500 בקשות אזרח ביום — במשך 3 חודשים.
+
+**לפני AI-assisted development:**
+- Sprint 1: דרישות + DB schema = 3 שבועות
+- Sprint 2-4: Backend APIs = 6 שבועות
+- Sprint 5-6: Frontend = 4 שבועות
+- Sprint 7: Testing + fixes = 2 שבועות
+
+**עם כלי AI (Claude Code + Copilot):**
+- DB schema: AI כתב על בסיס spec — 2 שעות (לעומת 3 ימים)
+- CRUD APIs: AI כתב + tests — 4 ימים (לעומת 4 שבועות)
+- Frontend: AI כתב רכיבים (Copilot להשלמות, Claude Code למשימות גדולות) — 2 שבועות (לעומת 4 שבועות)
+- Testing: AI כתב unit + integration tests — 3 ימים
+
+**תוצאה:** פרויקט של 3 חודשים הושלם ב-6 שבועות.
+
+**הלקח:** כלי AI לפיתוח לא מחליפים מפתחים — הם מכפילים את יכולתם. המפתחים עסקו ב-design decisions, code review, ו-architecture בעוד AI כתב קוד.
+
+---
+
+## 7. אבטחה ו-best practices בממשלה
+
+### כללים שאסור לעבור
+
+❌ **לא מעלים מידע אישי לכלי AI** — code עם נתוני אמת, ID-ים, סיסמאות
+
+❌ **לא מוסרים credentials** — לכלים אגנטיים יש גישה לטרמינל, לא לסיסמאות
+
+❌ **מאמתים security code שAI כותב** — בדיקת injection, auth, הצפנה
+
+✅ **Code review לכל PR שAI כתב** — AI טועה. לא מבצעים push ללא בדיקה
+
+✅ **קובץ הנחיות כולל security guidelines** — AI יפעל לפיהן
+
+✅ **Audit trail** — git commit history הוא הlog של מה AI עשה
+
+---
+
+## 8. תרגולים ושאלות לבדיקה
+
+<QuizQuestion
+  id="claude-code-q1"
+  question="מפתח ביקש מכלי AI (Claude Code / Cursor / Copilot) לכתוב authentication module. מה הצעד הבא שעליו לעשות?"
+  options={[
+    "לעשות git push ישירות לproduction",
+    "לבדוק אבטחה, לקרוא את הקוד, ולהריץ את הטסטים לפני push",
+    "לשאול את הצוות האם הם מאמינים ב-AI",
+    "לתת ל-AI לעשות deploy ישירות"
+  ]}
+  correctIndex={1}
+  explanation="קוד authentication הוא קוד אבטחה קריטי. גם אם AI כותב טוב, חייבים: (1) לקרוא ולהבין כל שורה; (2) לבדוק SQL injection, CSRF, session management; (3) להריץ טסטים; (4) code review על ידי עמית. כלי AI יכולים לעשות טעויות אבטחה עדינות — ובממשלה, טעות auth = פרצת אבטחה לנתוני אזרחים."
+/>
+
+<QuizQuestion
+  id="claude-code-q2"
+  question="מה המטרה של קובץ הנחיות לפרויקט (CLAUDE.md / .cursorrules / copilot-instructions)?"
+  options={[
+    "לאחסן credentials ו-API keys של הפרויקט",
+    "לספק לכלי ה-AI הקשר, כללים ומוסכמות הפרויקט בכל session",
+    "לתעד את כל השינויים שAI עשה",
+    "לאפשר ל-AI גישה ל-database בייצור"
+  ]}
+  correctIndex={1}
+  explanation="קובץ הנחיות (CLAUDE.md, .cursorrules וכו') הוא ה'constitution' של הפרויקט מבחינת AI — מה המערכת עושה, stack, כללי coding, מה אסור לשנות. בלי קובץ הנחיות, AI מנחש הקשר ועשוי לייצר קוד שאינו מתאים לסגנון/ארכיטקטורה שלכם. מעולם לא מאחסנים בו credentials — הוא מושמע ל-context, לא לאבטחה."
+/>
+
+<QuizQuestion
+  id="claude-code-q3"
+  question="מנהל IT רואה שכלי AI כתב 500 שורות קוד ב-30 דקות. מה עליו לחשוש?"
+  options={[
+    "AI כתב יותר מדי ויגרום לbug",
+    "הקוד נכתב מהר מדי ולכן בוודאי שגוי",
+    "יתכן שיש edge cases, בעיות אבטחה, או הנחות שגויות שדורשות review קפדני",
+    "אין ממה לחשוש — AI מושלם"
+  ]}
+  correctIndex={2}
+  explanation="מהירות היא יתרון — אבל לא ערובה לנכונות. 500 שורות ב-30 דקות עשויות לכלול: edge cases לא מטופלים, הנחות שגויות על DB schema, בעיות אבטחה, קוד שעובד אבל לא readable. Code review קפדני לא אופציונלי — הוא חובה. AI הוא junior developer מאוד מהיר שצריך senior oversight."
+/>
+
+<QuizQuestion
+  id="claude-code-q4"
+  question="מה ההבדל בין 'Vibe Coding' לבין 'Engineering עם AI'?"
+  options={[
+    "Vibe Coding הוא לסטארטאפים, Engineering עם AI הוא לממשלה",
+    "Vibe Coding = תיאור בשפה טבעית ללא בקרה; Engineering עם AI = ספק spec, review, tests, ו-oversight קפדני",
+    "Vibe Coding מהיר יותר ולכן עדיף תמיד",
+    "אין הבדל — זה אותה גישה"
+  ]}
+  correctIndex={1}
+  explanation="Vibe Coding — תאר מה אתה רוצה, קבל קוד, deploy. מהיר, אבל מסוכן ללא review. Engineering עם AI — כותבים spec מדויקה, AI מממש, מריצים tests, עושים code review, בודקים אבטחה, ואז deploy. בממשלה, שבה קוד מעבד נתוני אזרחים ומשפיע על זכויות — Engineering עם AI בלבד. Vibe Coding לprototypes ו-POCs."
+/>
+
+<QuizQuestion
+  id="claude-code-q5"
+  question="מפתח ממשלתי רוצה לתת לכלי AI (Claude Code / Cursor) גישה לDB ייצור כדי לדבג בעיה. מה עליו לעשות?"
+  options={[
+    "לתת גישה — AI צריך נתונים אמיתיים לדיבוג",
+    "לא לתת גישה — לייצר DB של בדיקה עם נתוני dummy במקום",
+    "לתת גישה רק לread, לא לwrite",
+    "לבדוק עם AI האם הוא שומר על פרטיות"
+  ]}
+  correctIndex={1}
+  explanation="DB ייצור מכיל נתוני אזרחים אמיתיים — מספרי תעודת זהות, כתובות, נתונים רפואיים. חיבור כלי AI לDB ייצור הוא סיכון אבטחה ופרטיות קריטי. הגישה הנכונה: ייצרו DB בדיקה עם נתוני dummy (fake data) שמדמים את המבנה. AI יכול לדבג על בסיס מבנה זהה ללא חשיפת נתונים אמיתיים."
+/>

@@ -1,8 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Frank+Ruhl+Libre:wght@300;400;500;700;900&family=Fira+Code:wght@400;500&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ─── Animations (must be before @layer for Tailwind to see them) ─────────── */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseSoft {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.55; }
+}
 
 @layer base {
   html {
@@ -11,15 +31,21 @@
     scroll-behavior: smooth;
   }
 
+  /* Ensure minimum 16px font size on all viewports */
+  @media (max-width: 480px) {
+    html {
+      font-size: 16px;
+    }
+  }
+
   body {
-    @apply bg-bg text-text font-body;
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading;
+    font-family: var(--font-heebo), 'Heebo', 'Assistant', 'Rubik', sans-serif;
   }
 
   ::selection {
@@ -27,13 +53,103 @@
     color: #141413;
   }
 
+  /* Universal focus-visible indicator for keyboard navigation */
   :focus-visible {
-    @apply outline-2 outline-offset-2 outline-accent;
+    outline: 2px solid #d97757;
+    outline-offset: 2px;
+  }
+
+  /* Remove default focus ring for mouse users */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /* Skip-to-content link (hidden until focused) */
+  .skip-to-content {
+    position: absolute;
+    top: -100%;
+    right: 1rem;
+    z-index: 9999;
+    padding: 0.75rem 1.5rem;
+    background: #d97757;
+    color: white;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    transition: top 0.2s;
+  }
+  .skip-to-content:focus {
+    top: 1rem;
+  }
+
+  /* Smooth momentum scroll on iOS */
+  * {
+    -webkit-overflow-scrolling: touch;
   }
 }
 
 @layer components {
   .reading-column {
-    @apply max-w-reading mx-auto px-6;
+    max-inline-size: 48rem;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
   }
+
+  .content-block {
+    margin-block-start: 1.5rem;
+    margin-block-end: 1.5rem;
+  }
+
+  .sidebar-item {
+    padding-inline-start: 1rem;
+    padding-inline-end: 0.75rem;
+    border-inline-start: 3px solid transparent;
+  }
+
+  .sidebar-item-active {
+    border-inline-start-color: #d97757;
+  }
+
+  /* Card hover lift */
+  .card-hover {
+    @apply transition-all duration-200 hover:shadow-md hover:-translate-y-0.5;
+  }
+}
+
+@layer utilities {
+  /* ─── RTL-safe border-inline-start ─── */
+  .border-is-2 {
+    border-inline-start-width: 2px;
+    border-inline-start-style: solid;
+  }
+
+  /* ─── Animation utilities ─── */
+  .animate-fade-in    { animation: fadeIn 0.55s ease-out both; }
+  .animate-slide-up   { animation: slideUp 0.5s ease-out both; }
+  .animate-fade-in-up { animation: fadeInUp 0.65s ease-out both; }
+  .animate-pulse-soft { animation: pulseSoft 2s ease-in-out infinite; }
+
+  /* ─── Inline spacing utilities (RTL-safe) ─── */
+  .mis-0 { margin-inline-start: 0; }
+  .mis-1 { margin-inline-start: 0.25rem; }
+  .mis-2 { margin-inline-start: 0.5rem; }
+  .mis-3 { margin-inline-start: 0.75rem; }
+  .mis-4 { margin-inline-start: 1rem; }
+
+  .mie-0 { margin-inline-end: 0; }
+  .mie-1 { margin-inline-end: 0.25rem; }
+  .mie-2 { margin-inline-end: 0.5rem; }
+  .mie-3 { margin-inline-end: 0.75rem; }
+  .mie-4 { margin-inline-end: 1rem; }
+
+  .pis-0 { padding-inline-start: 0; }
+  .pis-1 { padding-inline-start: 0.25rem; }
+  .pis-2 { padding-inline-start: 0.5rem; }
+  .pis-3 { padding-inline-start: 0.75rem; }
+  .pis-4 { padding-inline-start: 1rem; }
+
+  .pie-0 { padding-inline-end: 0; }
+  .pie-1 { padding-inline-end: 0.25rem; }
+  .pie-2 { padding-inline-end: 0.5rem; }
+  .pie-3 { padding-inline-end: 0.75rem; }
+  .pie-4 { padding-inline-end: 1rem; }
 }

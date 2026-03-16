@@ -9,7 +9,7 @@ export default function NotFound() {
         <p className="text-muted mb-8">הדף שחיפשת לא קיים או שהכתובת שגויה.</p>
         <Link
           href="/"
-          className="inline-block px-6 py-3 rounded-xl bg-accent text-white font-heading font-semibold
+          className="inline-block px-6 py-3 min-h-[44px] rounded-xl bg-accent text-white font-heading font-semibold
                      hover:bg-accent/90 transition-colors"
         >
           חזרה לדף הבית →

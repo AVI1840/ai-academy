@@ -6,18 +6,18 @@
 
 ## Tasks
 
-- [ ] 1. הקמת תשתית Next.js, Tailwind CSS ומערכת עיצוב
-  - [ ] 1.1 Initialize Next.js project with TypeScript, Tailwind CSS, and `@tailwindcss/typography` plugin
+- [x] 1. הקמת תשתית Next.js, Tailwind CSS ומערכת עיצוב
+  - [x] 1.1 Initialize Next.js project with TypeScript, Tailwind CSS, and `@tailwindcss/typography` plugin
     - Create `package.json` with dependencies: `next`, `react`, `react-dom`, `tailwindcss`, `@tailwindcss/typography`, `next-mdx-remote`
     - Configure `next.config.mjs` with `output: 'export'`, `basePath: '/ai-academy'`, `images: { unoptimized: true }`, `trailingSlash: true`
     - _Requirements: 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 12.3_
 
-  - [ ] 1.2 Configure Tailwind design tokens and RTL typography
+  - [x] 1.2 Configure Tailwind design tokens and RTL typography
     - Create `tailwind.config.ts` with custom colors (`bg: #faf9f5`, `text: #141413`, `accent: #d97757`, `secondary: #6a9bcc`), font families (Heebo, Frank Ruhl Libre, Fira Code), base font size 18px/1.7, `maxWidth.reading: 48rem`
     - Configure `typography` plugin with RTL direction, serif body, sans-serif headings
     - _Requirements: 1.4, 1.5, 1.6, 10.1, 10.2, 10.3, 10.5, 10.6_
 
-  - [ ] 1.3 Create root layout with RTL, Hebrew fonts, and CSP
+  - [x] 1.3 Create root layout with RTL, Hebrew fonts, and CSP
     - Create `src/app/layout.tsx` with `dir="rtl"` and `lang="he"` on `<html>` element
     - Load Google Fonts (Heebo, Frank Ruhl Libre) over HTTPS
     - Add Content Security Policy meta tag restricting script-src to self
@@ -35,11 +35,11 @@
     - Use `fc.constantFrom(...colorPairs)` generator
     - **Validates: Requirements 11.2**
 
-- [ ] 2. Checkpoint — תשתית בסיסית
+- [x] 2. Checkpoint — תשתית בסיסית
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 3. מודלי נתונים, קטלוג קורסים ומנוע progress
-  - [ ] 3.1 Create data models and TypeScript interfaces
+- [x] 3. מודלי נתונים, קטלוג קורסים ומנוע progress
+  - [x] 3.1 Create data models and TypeScript interfaces
     - Create `src/data/course-catalog.ts` with `COURSE_CATALOG` (12 courses), `DOMAINS` (6 domains), `PATHS` (3 paths)
     - Define TypeScript types: `CourseFrontmatter`, `LearningDomain`, `LearningPath`, `DomainInfo`, `PathInfo`, `ProgressState`
     - _Requirements: 14.1, 14.2, 14.3_
@@ -49,7 +49,7 @@
     - Verify catalog contains exactly 12 courses, each in exactly one domain and one path, no duplicates
     - **Validates: Requirements 14.1, 14.2, 14.3**
 
-  - [ ] 3.3 Implement localStorage progress API (`src/lib/progress.ts`)
+  - [x] 3.3 Implement localStorage progress API (`src/lib/progress.ts`)
     - Implement `loadProgress()`: read from localStorage key `hamakpetza_progress`, parse JSON, handle corrupt data by resetting to default empty state
     - Implement `saveProgress(state: ProgressState)`: serialize and write to localStorage
     - Implement `markModuleComplete(courseNumber: number)`: add to completedModules array
@@ -79,18 +79,18 @@
     - For any course completion, the containing domain's progress increments by 1
     - **Validates: Requirements 3.4**
 
-- [ ] 4. Checkpoint — מודלי נתונים ו-progress
+- [x] 4. Checkpoint — מודלי נתונים ו-progress
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 5. רכיבי Layout — AppShell ו-Sidebar
-  - [ ] 5.1 Implement AppShell component (`src/components/layout/AppShell.tsx`)
+- [x] 5. רכיבי Layout — AppShell ו-Sidebar
+  - [x] 5.1 Implement AppShell component (`src/components/layout/AppShell.tsx`)
     - Create grid layout: sidebar (fixed/collapsible) + main content area (`max-w-3xl`)
     - Manage sidebar open/close state
     - Respond to 768px breakpoint for default collapsed state
     - Wrap children with Error Boundary at root level
     - _Requirements: 1.6, 2.5, 13.1_
 
-  - [ ] 5.2 Implement Sidebar component (`src/components/layout/Sidebar.tsx`)
+  - [x] 5.2 Implement Sidebar component (`src/components/layout/Sidebar.tsx`)
     - Display 12 courses grouped by 6 LearningDomains
     - Collapsed state: domain icons only; Expanded state: full course list with completion checkmarks
     - Active course highlighted with accent color `#d97757`
@@ -121,8 +121,8 @@
     - Test mobile overlay behavior
     - _Requirements: 2.1, 2.2, 2.3, 2.4, 2.5_
 
-- [ ] 6. רכיבי MDX — PromptBlock, QuizQuestion, KeyTerms
-  - [ ] 6.1 Implement PromptBlock component (`src/components/mdx/PromptBlock.tsx`)
+- [x] 6. רכיבי MDX — PromptBlock, QuizQuestion, KeyTerms
+  - [x] 6.1 Implement PromptBlock component (`src/components/mdx/PromptBlock.tsx`)
     - Render prompt text in monospace font within visually distinct container
     - Copy-to-clipboard button at top-left (RTL)
     - Show checkmark icon for 2 seconds after successful copy
@@ -144,7 +144,7 @@
     - Use `fc.string().filter(s => s.includes('\n'))` generator
     - **Validates: Requirements 5.6**
 
-  - [ ] 6.4 Implement QuizQuestion component (`src/components/mdx/QuizQuestion.tsx`)
+  - [x] 6.4 Implement QuizQuestion component (`src/components/mdx/QuizQuestion.tsx`)
     - Display question with multiple answer options
     - On answer selection: visual correct/incorrect indication
     - "חשוף תשובה" button to reveal correct answer + explanation
@@ -171,16 +171,16 @@
     - Use `fc.record({ selectedIndex: fc.nat(), revealed: fc.boolean() })` generator
     - **Validates: Requirements 7.6**
 
-  - [ ] 6.8 Implement KeyTerms component (`src/components/mdx/KeyTerms.tsx`)
+  - [x] 6.8 Implement KeyTerms component (`src/components/mdx/KeyTerms.tsx`)
     - Display key terms in a styled glossary-like container
     - Support Hebrew RTL text
     - _Requirements: 4.2_
 
-- [ ] 7. Checkpoint — רכיבי Layout ו-MDX
+- [x] 7. Checkpoint — רכיבי Layout ו-MDX
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 8. AudioPlayer ו-WhatsApp Share
-  - [ ] 8.1 Implement AudioPlayer component (`src/components/mdx/AudioPlayer.tsx`)
+- [x] 8. AudioPlayer ו-WhatsApp Share
+  - [x] 8.1 Implement AudioPlayer component (`src/components/mdx/AudioPlayer.tsx`)
     - Sticky positioning at top of viewport
     - Play, pause, seek controls
     - Display current position and total duration
@@ -196,7 +196,7 @@
     - AudioPlayer visible iff frontmatter contains non-empty audioUrl
     - **Validates: Requirements 6.4, 6.5**
 
-  - [ ] 8.3 Implement WhatsAppShare component (`src/components/course/WhatsAppShare.tsx`)
+  - [x] 8.3 Implement WhatsAppShare component (`src/components/course/WhatsAppShare.tsx`)
     - Generate WhatsApp share URL: `https://wa.me/?text={encodedMessage}`
     - Format message in Hebrew with course title and direct link
     - Support both 'course' and 'progress' share types
@@ -208,8 +208,8 @@
     - Use `fc.tuple(fc.unicodeString(), fc.webUrl())` generator
     - **Validates: Requirements 8.2, 8.4**
 
-- [ ] 9. Dashboard ומעקב התקדמות
-  - [ ] 9.1 Implement Dashboard page (`src/app/page.tsx` + `src/components/dashboard/Dashboard.tsx`)
+- [x] 9. Dashboard ומעקב התקדמות
+  - [x] 9.1 Implement Dashboard page (`src/app/page.tsx` + `src/components/dashboard/Dashboard.tsx`)
     - Display 6 DomainCards with ProgressRing for each LearningDomain
     - Calculate and display overall completion percentage (completedModules.length / 12 * 100)
     - Present 3 LearningPaths with visual distinction
@@ -219,12 +219,12 @@
     - Load progress from localStorage on mount
     - _Requirements: 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 14.4_
 
-  - [ ] 9.2 Implement DomainCard and ProgressRing components
+  - [x] 9.2 Implement DomainCard and ProgressRing components
     - Create `src/components/dashboard/DomainCard.tsx`: visual card per domain with course list and completion status
     - Create `src/components/dashboard/ProgressRing.tsx`: circular SVG progress indicator
     - _Requirements: 3.1, 3.4_
 
-  - [ ] 9.3 Implement PathSelector component (`src/components/dashboard/PathSelector.tsx`)
+  - [x] 9.3 Implement PathSelector component (`src/components/dashboard/PathSelector.tsx`)
     - Display 3 learning paths with visual distinction
     - On path selection, highlight relevant courses
     - _Requirements: 3.3, 14.5_
@@ -241,17 +241,17 @@
     - Test progress calculation display
     - _Requirements: 3.1, 3.2, 3.3, 3.7_
 
-- [ ] 10. Checkpoint — AudioPlayer, WhatsApp, Dashboard
+- [x] 10. Checkpoint — AudioPlayer, WhatsApp, Dashboard
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 11. מנוע MDX וניתוב דינמי לקורסים
-  - [ ] 11.1 Implement MDX compilation utilities (`src/lib/mdx.ts` + `src/lib/courses.ts`)
+- [x] 11. מנוע MDX וניתוב דינמי לקורסים
+  - [x] 11.1 Implement MDX compilation utilities (`src/lib/mdx.ts` + `src/lib/courses.ts`)
     - Create `getAllCourses()`: read all MDX files from `content/courses/`, extract frontmatter
     - Create `getCourseBySlug(slug: string)`: load and compile specific MDX file with `next-mdx-remote`
     - Create `getCourseSlugs()`: return all slugs for `generateStaticParams`
     - _Requirements: 4.1, 4.4, 15.1, 15.4_
 
-  - [ ] 11.2 Implement ModuleRenderer component (`src/components/course/ModuleRenderer.tsx`)
+  - [x] 11.2 Implement ModuleRenderer component (`src/components/course/ModuleRenderer.tsx`)
     - Render MDX content with Tailwind Typography (`prose`) styling
     - Inject custom components: PromptBlock, QuizQuestion, KeyTerms, AudioPlayer
     - Display CourseHeader with frontmatter metadata (title, duration, audience, exercise count)
@@ -270,7 +270,7 @@
     - For any registered component name, MDX containing that tag renders without error
     - **Validates: Requirements 4.2**
 
-  - [ ] 11.5 Create dynamic course route (`src/app/course/[slug]/page.tsx`)
+  - [x] 11.5 Create dynamic course route (`src/app/course/[slug]/page.tsx`)
     - Implement `generateStaticParams` returning all 12 course slugs
     - Load MDX content via `getCourseBySlug`
     - Render with ModuleRenderer
@@ -278,7 +278,7 @@
     - Include WhatsAppShare button
     - _Requirements: 15.1, 15.2, 15.4_
 
-  - [ ] 11.6 Implement CourseNav component (`src/components/course/CourseNav.tsx`)
+  - [x] 11.6 Implement CourseNav component (`src/components/course/CourseNav.tsx`)
     - Previous/next course navigation links at bottom of each course page
     - Course 1: no previous link; Course 12: no next link
     - _Requirements: 15.5_
@@ -294,16 +294,16 @@
     - Use `fc.integer({ min: 1, max: 12 })` generator
     - **Validates: Requirements 15.5**
 
-  - [ ] 11.9 Create styled 404 page (`src/app/not-found.tsx`)
+  - [x] 11.9 Create styled 404 page (`src/app/not-found.tsx`)
     - Hebrew-language 404 page with navigation back to Dashboard
     - Consistent with DesignSystem styling
     - _Requirements: 15.3_
 
-- [ ] 12. Checkpoint — MDX engine וניתוב
+- [x] 12. Checkpoint — MDX engine וניתוב
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 13. מיגרציית תוכן — המרת 12 קורסי HTML ל-MDX
-  - [ ] 13.1 Create MDX template and migrate courses 1-4
+- [x] 13. מיגרציית תוכן — המרת 12 קורסי HTML ל-MDX
+  - [x] 13.1 Create MDX template and migrate courses 1-4
     - Create `content/courses/` directory structure
     - Convert `site/course1.html` → `01-ai-literacy.mdx` with frontmatter
     - Convert `site/course2.html` → `02-model-map.mdx` with frontmatter
@@ -314,7 +314,7 @@
     - Add proper frontmatter metadata (title, duration, audience, domain, path)
     - _Requirements: 9.1, 9.2, 9.3, 9.4, 9.6_
 
-  - [ ] 13.2 Migrate courses 5-8
+  - [x] 13.2 Migrate courses 5-8
     - Convert `site/course5.html` → `05-ai-data-analysis.mdx`
     - Convert `site/course6.html` → `06-ai-research.mdx`
     - Convert `site/course7.html` → `07-ai-strategic-thinking.mdx`
@@ -323,7 +323,7 @@
     - Add proper frontmatter metadata
     - _Requirements: 9.1, 9.2, 9.3, 9.4, 9.6_
 
-  - [ ] 13.3 Migrate courses 9-12
+  - [x] 13.3 Migrate courses 9-12
     - Convert `site/course9.html` → `09-ai-public-service.mdx`
     - Convert `site/course10.html` → `10-ai-automation.mdx`
     - Convert `site/course11.html` → `11-rag.mdx`
@@ -337,11 +337,11 @@
     - For all 12 courses, visible text from rendered MDX ≈ visible text from original HTML
     - **Validates: Requirements 9.5**
 
-- [ ] 14. Checkpoint — מיגרציית תוכן
+- [x] 14. Checkpoint — מיגרציית תוכן
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 15. נגישות, רספונסיביות ואבטחה
-  - [ ] 15.1 Accessibility audit and fixes
+- [x] 15. נגישות, רספונסיביות ואבטחה
+  - [x] 15.1 Accessibility audit and fixes
     - Add ARIA labels to all interactive elements (buttons, nav, audio controls) in Hebrew
     - Ensure full keyboard navigation with visible focus indicators on all interactive elements
     - Use semantic HTML elements (`nav`, `main`, `article`, `aside`, `header`, `footer`)
@@ -350,14 +350,14 @@
     - Ensure minimum 16px font size on all viewports
     - _Requirements: 11.1, 11.3, 11.4, 11.5, 11.6, 11.7, 13.4, 13.6_
 
-  - [ ] 15.2 Mobile responsiveness pass
+  - [x] 15.2 Mobile responsiveness pass
     - Verify layout adapts for viewports 320px–1920px
     - Sidebar: overlay with hamburger below 768px
     - AudioPlayer: compact single-row below 768px
     - PromptBlock: horizontal scroll for long lines on mobile
     - _Requirements: 13.1, 13.2, 13.3, 13.5_
 
-  - [ ] 15.3 Implement PII scanner hook (`src/lib/pii-scanner.ts` + `.kiro/hooks/`)
+  - [x] 15.3 Implement PII scanner hook (`src/lib/pii-scanner.ts` + `.kiro/hooks/`)
     - Create PII pattern scanner for Israeli ID (9 digits), email, phone patterns
     - Scan only text-based files: `.ts`, `.tsx`, `.mdx`, `.md`, `.json`
     - Skip binary files
@@ -377,17 +377,17 @@
     - Use `fc.tuple(fc.string(), fc.constantFrom('.ts', '.tsx', '.mdx', '.md', '.json', '.png', '.jpg'))` generator
     - **Validates: Requirements 16.4**
 
-- [ ] 16. Checkpoint — נגישות ואבטחה
+- [x] 16. Checkpoint — נגישות ואבטחה
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 17. GitHub Pages deployment ואינטגרציה סופית
-  - [ ] 17.1 Configure GitHub Actions workflow for static deployment
+- [x] 17. GitHub Pages deployment ואינטגרציה סופית
+  - [x] 17.1 Configure GitHub Actions workflow for static deployment
     - Create `.github/workflows/deploy.yml`: build with `next build`, deploy `/out` to `gh-pages` branch
     - Set `basePath: '/ai-academy'` in all asset references
     - Verify static export produces all 12 course routes + dashboard + 404
     - _Requirements: 12.3, 15.4_
 
-  - [ ] 17.2 Wire all components together and final integration
+  - [x] 17.2 Wire all components together and final integration ✅
     - Ensure AppShell wraps all pages with Sidebar + AudioPlayer state
     - Verify Dashboard loads progress and displays all 6 domains
     - Verify course pages render MDX with all custom components
@@ -395,7 +395,7 @@
     - Verify WhatsApp share on course pages and Dashboard
     - _Requirements: 1.1–1.6, 2.1–2.6, 3.1–3.7, 4.1–4.6, 15.1–15.5_
 
-- [ ] 18. Final checkpoint — אינטגרציה סופית
+- [x] 18. Final checkpoint — אינטגרציה סופית
   - Ensure all tests pass, ask the user if questions arise.
 
 ## הערות

@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "name": "PII Scanner",
+  "description": "Scans files for PII patterns (Israeli ID numbers, email addresses, phone numbers) before any write operation. Blocks writes containing PII and displays warnings with file and line number details. Only scans text-based files (.ts, .tsx, .mdx, .md, .json).",
+  "version": "1",
+  "when": {
+    "type": "preToolUse",
+    "toolTypes": [
+      "write"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Before allowing this file write, scan the content for PII patterns using the rules from hamakpetza/src/lib/pii-scanner.ts:\n\n1. Check if the file being written has a scannable extension (.ts, .tsx, .mdx, .md, .json). If not, allow the write.\n2. If scannable, check the content for these PII patterns:\n   - Israeli ID numbers: 9 consecutive digits (\\b\\d{9}\\b)\n   - Email addresses: standard email pattern\n   - Israeli phone numbers: 0[2-9] followed by 7-8 digits\n3. If ANY PII is detected:\n   - BLOCK the write operation\n   - Display a warning listing each match with: PII type, the matched value, file name, and line number\n   - Format: \"⚠️ PII detected in {file}:{line} — {type}: {value}\"\n4. If no PII is found, allow the write to proceed."
+  }
+}

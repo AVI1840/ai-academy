@@ -12,9 +12,10 @@ export default function CourseNav({ prevCourse, nextCourse }: CourseNavProps) {
       {prevCourse ? (
         <Link
           href={`/course/${prevCourse.slug}/`}
-          className="flex flex-col items-start gap-1 text-sm text-muted hover:text-accent transition-colors group"
+          className="flex flex-col items-start gap-1 text-sm text-muted hover:text-accent transition-colors group min-h-[44px] justify-center"
+          aria-label={`הקורס הקודם: ${prevCourse.title}`}
         >
-          <span className="text-xs text-muted/60">← הקורס הקודם</span>
+          <span className="text-xs text-muted/60" aria-hidden="true">← הקורס הקודם</span>
           <span className="font-heading font-medium group-hover:text-accent">
             {prevCourse.title.split('—')[0].trim()}
           </span>
@@ -24,9 +25,10 @@ export default function CourseNav({ prevCourse, nextCourse }: CourseNavProps) {
       {nextCourse ? (
         <Link
           href={`/course/${nextCourse.slug}/`}
-          className="flex flex-col items-end gap-1 text-sm text-muted hover:text-accent transition-colors group"
+          className="flex flex-col items-end gap-1 text-sm text-muted hover:text-accent transition-colors group min-h-[44px] justify-center"
+          aria-label={`הקורס הבא: ${nextCourse.title}`}
         >
-          <span className="text-xs text-muted/60">הקורס הבא →</span>
+          <span className="text-xs text-muted/60" aria-hidden="true">הקורס הבא →</span>
           <span className="font-heading font-medium group-hover:text-accent">
             {nextCourse.title.split('—')[0].trim()}
           </span>

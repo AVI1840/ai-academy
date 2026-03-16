@@ -16,7 +16,15 @@ export default function ProgressRing({
   const offset = circumference - (percentage / 100) * circumference;
 
   return (
-    <div className="relative inline-flex items-center justify-center" style={{ width: size, height: size }}>
+    <div
+      className="relative inline-flex items-center justify-center"
+      style={{ width: size, height: size }}
+      role="progressbar"
+      aria-valuenow={percentage}
+      aria-valuemin={0}
+      aria-valuemax={100}
+      aria-label={`${percentage}% הושלם`}
+    >
       <svg width={size} height={size} className="-rotate-90">
         <circle
           cx={size / 2}

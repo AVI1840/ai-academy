@@ -28,7 +28,7 @@ export default function CourseComplete({ courseNumber }: CourseCompleteProps) {
     <button
       onClick={toggle}
       className={`
-        w-full py-3 rounded-xl text-sm font-heading font-semibold transition-all
+        w-full py-3 min-h-[44px] rounded-xl text-sm font-heading font-semibold transition-all
         ${completed
           ? 'bg-green-50 border border-green-300 text-green-700 hover:bg-green-100'
           : 'bg-accent text-white hover:bg-accent/90'

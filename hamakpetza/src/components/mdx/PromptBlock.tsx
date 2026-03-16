@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useRef, useId } from 'react';
 
 interface PromptBlockProps {
   children: string;
@@ -9,51 +9,58 @@ interface PromptBlockProps {
 
 export default function PromptBlock({ children, title }: PromptBlockProps) {
   const [copied, setCopied] = useState(false);
+  const preRef = useRef<HTMLPreElement>(null);
+  const uniqueId = useId();
 
   const handleCopy = useCallback(async () => {
     try {
-      await navigator.clipboard.writeText(children);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch {
-      // Fallback: select text
-      const el = document.getElementById('prompt-text');
-      if (el) {
-        const range = document.createRange();
-        range.selectNodeContents(el);
-        const sel = window.getSelection();
-        sel?.removeAllRanges();
-        sel?.addRange(range);
+      if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+        await navigator.clipboard.writeText(children);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      } else {
+        selectFallback();
       }
+    } catch {
+      selectFallback();
     }
   }, [children]);
 
+  const selectFallback = useCallback(() => {
+    const el = preRef.current;
+    if (el) {
+      const range = document.createRange();
+      range.selectNodeContents(el);
+      const sel = window.getSelection();
+      sel?.removeAllRanges();
+      sel?.addRange(range);
+    }
+  }, []);
+
   return (
-    <div className="relative my-6 rounded-xl border border-accent/20 bg-accent-light/30 p-5">
-      {title && (
-        <div className="mb-3 text-xs font-heading font-semibold text-accent">
-          💬 {title}
-        </div>
-      )}
-      {!title && (
-        <div className="mb-3 text-xs font-heading font-semibold text-accent">
-          💬 פרומפט
-        </div>
-      )}
-      <button
-        onClick={handleCopy}
-        className="absolute top-3 left-3 px-3 py-1.5 rounded-md text-xs font-medium
-                   bg-bg border border-border text-muted hover:text-accent hover:border-accent
-                   transition-colors"
-        aria-label="העתק פרומפט"
-      >
-        {copied ? '✓ הועתק' : 'העתק'}
-      </button>
+    <div className="relative my-6 rounded-xl border border-accent/20 bg-accent-light/50 p-5">
+      <div className="mb-3 flex items-center justify-between">
+        <span className="text-xs font-heading font-semibold text-accent">
+          {title || 'פרומפט'}
+        </span>
+        <button
+          onClick={handleCopy}
+          className="px-3 py-1.5 rounded-md text-xs font-medium
+                     bg-bg border border-border text-muted hover:text-accent hover:border-accent
+                     transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
+          aria-label={copied ? 'הפרומפט הועתק' : 'העתק פרומפט ללוח'}
+        >
+          {copied ? '✓ הועתק' : 'העתק'}
+        </button>
+      </div>
       <pre
-        id="prompt-text"
-        className="font-mono text-sm leading-relaxed text-text whitespace-pre-wrap break-words
-                   overflow-x-auto max-w-full"
-        dir="rtl"
+        ref={preRef}
+        id={uniqueId}
+        className="font-mono text-sm leading-relaxed text-text
+                   whitespace-pre overflow-x-auto
+                   sm:whitespace-pre-wrap sm:break-words
+                   max-w-full"
+        dir="auto"
       >
         {children}
       </pre>

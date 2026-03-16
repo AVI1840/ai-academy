@@ -1,0 +1,19 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "המקפצה — Next.js Dev Server",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 3000,
+      "cwd": "hamakpetza"
+    },
+    {
+      "name": "המקפצה — Vitest Watch",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "test:watch"],
+      "port": 51204,
+      "cwd": "hamakpetza"
+    }
+  ]
+}

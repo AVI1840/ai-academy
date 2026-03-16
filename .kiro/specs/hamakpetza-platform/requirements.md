@@ -1,259 +1,217 @@
-# מסמך דרישות — "המקפצה" (The Springboard)
-
-## מבוא
-
-"המקפצה" היא פלטפורמת למידת AI פרימיום עבור כ-1,000 מובילי AI במגזר הציבורי בישראל, מכל משרדי הממשלה. הפלטפורמה מחליפה את אתר ה-HTML הסטטי הקיים באפליקציית Next.js מודרנית עם עיצוב ברמת Anthropic, ממשק עברי מלא בכיוון RTL, ו-12 קורסים מעשיים בבינה מלאכותית. הפלטפורמה מיועדת ללמידה עצמית, ללא צורך ברקע טכני, עם דגש על יישום מעשי בעבודה הממשלתית.
-
-## מילון מונחים (Glossary)
-
-- **Platform**: אפליקציית Next.js המהווה את פלטפורמת הלמידה "המקפצה"
-- **Dashboard**: דף הבית האינטראקטיבי המציג התקדמות הלומד ב-6 תחומי למידה
-- **ModuleRenderer**: רכיב המרנדר תוכן MDX עם רכיבי Tailwind Typography מותאמים
-- **PromptBlock**: רכיב UI המציג פרומפטים בפונט monospace עם כפתור העתקה ללוח
-- **AudioPlayer**: נגן שמע דביק (sticky) לשילוב תוכן NotebookLM
-- **Sidebar**: תפריט צד מתקפל לניווט בין קורסים ומודולים
-- **CourseModule**: יחידת תוכן בודדת מתוך 12 הקורסים בפלטפורמה
-- **LearningDomain**: אחד מ-6 תחומי הלמידה (בסיס, הנדסת AI, פיתוח בסיוע AI, בניית מוצרי AI, AI לממשלה, מנהיגות מוצר AI)
-- **LearningPath**: אחד מ-3 מסלולי הלמידה (בסיס, יישומי, מתקדם)
-- **QuizQuestion**: רכיב שאלת בדיקה עם פונקציונליות חשיפת תשובה
-- **DesignSystem**: מערכת העיצוב בהשראת Anthropic הכוללת צבעים, טיפוגרפיה ורכיבים
-- **ContentMigration**: תהליך המרת 12 דפי HTML סטטיים לתוכן MDX מובנה
+# Requirements — המקפצה AI Leadership Academy
+**Version:** 2.0 (post-audit rewrite, 2026-03-16)
 
 ---
 
-## דרישות
+## Product Vision
 
-### דרישה 1: תשתית Next.js עם תמיכת RTL
+המקפצה is the elite AI leadership operating system for the Israeli government.
+It is not a course catalog. It is a structured knowledge environment for senior officials, policy architects, and technology strategists who build AI-native government at scale.
 
-**סיפור משתמש:** כמפתח, אני רוצה תשתית Next.js מוגדרת עם Tailwind CSS ותמיכת RTL מלאה, כדי שהפלטפורמה תתמוך בממשק עברי מלא מהיסוד.
+The platform enables leaders to:
+- Build mental models of AI systems — not just use tools
+- Acquire engineering literacy without becoming engineers
+- Deploy AI systems across government with confidence and accountability
+- Lead AI strategy, governance, and product decisions with authority
 
-#### קריטריוני קבלה
-
-1. THE Platform SHALL render all pages with `dir="rtl"` and `lang="he"` attributes on the HTML element
-2. THE Platform SHALL use CSS logical properties (`margin-inline-start`, `padding-inline-end`) instead of physical direction properties (`margin-left`, `padding-right`) for all layout styling
-3. THE Platform SHALL load and apply Hebrew fonts (Heebo for headings, Frank Ruhl Libre for body text) with appropriate fallbacks
-4. WHEN a page is loaded, THE Platform SHALL apply the DesignSystem color tokens: background `#faf9f5`, text `#141413`, accent `#d97757`, secondary `#6a9bcc`
-5. THE Platform SHALL use a base font size of 18px with a line-height of 1.7 for body text
-6. THE Platform SHALL constrain the main reading column to a maximum width of `max-w-3xl` (48rem)
+**Tagline:** מערכת ההפעלה של מנהיגות ה-AI הממשלתית
 
 ---
 
-### דרישה 2: מערכת ניווט — Sidebar מתקפל
+## Core Product Principles
 
-**סיפור משתמש:** כלומד, אני רוצה תפריט צד מתקפל שמאפשר ניווט בין 12 הקורסים, כדי שאוכל לעבור בקלות בין מודולים בלי לאבד את ההקשר.
-
-#### קריטריוני קבלה
-
-1. THE Sidebar SHALL display a navigable list of all 12 CourseModules grouped by LearningDomain
-2. WHEN the user clicks the toggle button, THE Sidebar SHALL collapse or expand with a smooth CSS transition
-3. WHILE the Sidebar is collapsed, THE Platform SHALL display only icons for each LearningDomain
-4. THE Sidebar SHALL visually indicate the currently active CourseModule using the accent color (`#d97757`)
-5. WHEN the viewport width is below 768px, THE Sidebar SHALL default to a collapsed state
-6. THE Sidebar SHALL indicate completion status for each CourseModule using a visual checkmark or progress indicator
+1. **Depth over breadth** — each module produces a real artifact, not just awareness
+2. **Engineering literacy for leaders** — enough technical understanding to lead, not to code
+3. **Government-first context** — every example, case study, and exercise is government-specific
+4. **Progressive mastery** — each module builds on the previous; the learning path is a curriculum, not a menu
+5. **Minimal cognitive overhead** — the UI disappears; the content is the product
+6. **No performative engagement** — no gamification, no streaks, no leaderboards
 
 ---
 
-### דרישה 3: Dashboard אינטראקטיבי עם מעקב התקדמות
+## Feature Requirements
 
-**סיפור משתמש:** כמוביל AI במגזר הציבורי, אני רוצה לוח מחוונים שמציג את ההתקדמות שלי ב-6 תחומי למידה, כדי שאוכל לעקוב אחרי הלמידה שלי לאורך 24 שבועות.
+### FR-01: Learning Roadmap
+- Display a clear 6-domain learning progression on the Dashboard
+- Each domain has 2 modules in a defined sequence
+- Visual progress indication per domain (completion ring)
+- A "Continue Learning" CTA surfaces the last visited module (from `lastVisited` in localStorage)
 
-#### קריטריוני קבלה
+### FR-02: Module Pages
+- Each module renders MDX with: CourseHeader, body content, PromptBlocks, QuizQuestions, KeyTerms
+- AudioPlayer (if `audioUrl` present) shown at top, sticky while scrolling
+- "Mark Complete" button at bottom of module
+- Prev/Next module navigation links
 
-1. THE Dashboard SHALL display progress visualization for each of the 6 LearningDomains
-2. THE Dashboard SHALL calculate and display overall completion percentage based on completed CourseModules
-3. THE Dashboard SHALL present the 3 LearningPaths (בסיס, יישומי, מתקדם) with visual distinction between them
-4. WHEN a user completes a CourseModule, THE Dashboard SHALL update the corresponding LearningDomain progress indicator
-5. THE Dashboard SHALL persist progress data in the browser's localStorage
-6. WHEN the Dashboard is loaded, THE Dashboard SHALL restore previously saved progress from localStorage
-7. THE Dashboard SHALL display the author credit: "אביעד יצחקי, מוביל AI ושותפויות, מינהלי גמלאות ביטוח לאומי"
+### FR-03: Prompt Labs
+- Every module has at least one `<PromptBlock>` with:
+  - Visible prompt text in monospace font
+  - One-click copy-to-clipboard
+  - Copy confirmation (2s checkmark)
+  - Fallback for non-HTTPS environments
+  - **Unique ID per instance** — `useId()` or `useRef` to avoid DOM collision between multiple blocks on same page
 
----
+### FR-04: Interactive Quizzes
+- Every module ends with a `<QuizQuestion>` set
+- Answer state (selectedIndex, revealed) persists to localStorage per `quizId`
+- Correct/incorrect visual feedback on answer reveal
+- Explanation shown after reveal
 
-### דרישה 4: רנדור תוכן MDX עם רכיבים מותאמים
+### FR-05: Progress Persistence
+- All progress stored client-side in localStorage (`hamakpetza_progress`)
+- Versioned schema (version: 1) with migration fallback
+- No PII stored (only course numbers, quiz IDs, timestamps)
+- `getCompletionPercentage()` uses `COURSE_CATALOG.length` as denominator — **not hardcoded 12**
 
-**סיפור משתמש:** כמפתח תוכן, אני רוצה מערכת רנדור MDX עם רכיבים מותאמים, כדי שאוכל לכתוב תוכן קורסים עשיר עם אלמנטים אינטראקטיביים.
+### FR-06: Sidebar Navigation
+- Right-anchored sidebar (RTL) showing all 12 modules grouped by 6 domains
+- Expanded: full course titles with completion indicators
+- Collapsed: domain color indicators only — **no emojis**
+- Active course highlighted with `border-inline-start` accent (RTL-correct, not `border-left`)
+- Mobile: overlay mode with backdrop dismissal
+- On resize from mobile to desktop, sidebar state resets correctly
 
-#### קריטריוני קבלה
+### FR-07: Audio Learning
+- `AudioPlayer` visible if `audioUrl` is defined in course frontmatter
+- Sticky at top of module page during scroll
+- Controls: play/pause, seek bar, time display
+- ARIA labels in Hebrew
 
-1. THE ModuleRenderer SHALL parse and render MDX content files with Tailwind Typography (`prose`) styling
-2. THE ModuleRenderer SHALL support embedding custom components (PromptBlock, QuizQuestion, KeyTerms) within MDX content
-3. THE ModuleRenderer SHALL render Hebrew text with correct RTL typography including proper list markers and blockquote alignment
-4. WHEN an MDX file contains a frontmatter section, THE ModuleRenderer SHALL extract metadata (title, duration, audience, exercise count) and display it in the course header
-5. THE ModuleRenderer SHALL apply the DesignSystem typography: serif font for body text, sans-serif font for headings
-6. WHEN an MDX file references an invalid component, THE ModuleRenderer SHALL render a visible error placeholder instead of crashing
-
----
-
-### דרישה 5: רכיב PromptBlock עם העתקה ללוח
-
-**סיפור משתמש:** כלומד, אני רוצה לראות פרומפטים מעוצבים עם כפתור העתקה, כדי שאוכל להעתיק פרומפטים ישירות לכלי AI שלי.
-
-#### קריטריוני קבלה
-
-1. THE PromptBlock SHALL display prompt text in a monospace font within a visually distinct container
-2. THE PromptBlock SHALL include a copy-to-clipboard button positioned at the top-left corner of the block (RTL layout)
-3. WHEN the user clicks the copy button, THE PromptBlock SHALL copy the prompt text to the system clipboard
-4. WHEN the text is successfully copied, THE PromptBlock SHALL display a visual confirmation (checkmark icon) for 2 seconds
-5. IF the clipboard API is unavailable, THEN THE PromptBlock SHALL fall back to a text selection method and display an instructional tooltip
-6. THE PromptBlock SHALL support multi-line prompts with preserved whitespace and line breaks
-
----
-
-### דרישה 6: נגן שמע דביק (Sticky AudioPlayer)
-
-**סיפור משתמש:** כלומד, אני רוצה נגן שמע דביק שמנגן תוכן NotebookLM, כדי שאוכל להאזין לתוכן תוך כדי גלילה בחומר הכתוב.
-
-#### קריטריוני קבלה
-
-1. THE AudioPlayer SHALL remain fixed at the top of the viewport while the user scrolls through content
-2. THE AudioPlayer SHALL provide play, pause, and seek controls
-3. THE AudioPlayer SHALL display the current playback position and total duration
-4. WHEN a CourseModule includes an audio URL in its frontmatter, THE AudioPlayer SHALL load and prepare the audio source
-5. WHEN no audio URL is provided for a CourseModule, THE AudioPlayer SHALL remain hidden
-6. WHILE audio is playing and the user navigates to a different CourseModule, THE AudioPlayer SHALL continue playback without interruption
+### FR-08: Static Export
+- Platform builds as fully static HTML via `next export`
+- All 12 course routes pre-generated via `generateStaticParams`
+- Compatible with GitHub Pages at `/ai-academy` basePath
+- No server-side runtime dependencies
 
 ---
 
-### דרישה 7: שאלות בדיקה (QuizQuestion) עם חשיפת תשובה
+## Acceptance Criteria
 
-**סיפור משתמש:** כלומד, אני רוצה שאלות בדיקה בתוך הקורסים עם אפשרות לחשוף את התשובה, כדי שאוכל לבדוק את ההבנה שלי.
+### AC-01: RTL & Internationalization
+- `<html lang="he" dir="rtl">` on every page
+- All interactive elements use CSS logical properties (not `left/right` for directional styling)
+- Sidebar active indicator uses `border-inline-start`, not `border-left`
+- All user-facing text is Hebrew
 
-#### קריטריוני קבלה
+### AC-02: Accessibility
+- All interactive elements have ARIA labels in Hebrew
+- Focus visible on keyboard navigation (`outline: 2px solid #d97757`)
+- Touch targets minimum 44×44px on mobile
+- Semantic HTML: `<nav>`, `<main>`, `<article>`, `<aside>`, `<header>`, `<footer>`
+- **No emoji used as primary visual communication** (emojis only decorative with `aria-hidden`)
 
-1. THE QuizQuestion SHALL display a question with multiple answer options
-2. WHEN the user selects an answer, THE QuizQuestion SHALL visually indicate whether the answer is correct or incorrect
-3. THE QuizQuestion SHALL include a "חשוף תשובה" (reveal answer) button
-4. WHEN the user clicks the reveal button, THE QuizQuestion SHALL display the correct answer with an explanation
-5. WHILE the answer has not been revealed, THE QuizQuestion SHALL keep the explanation hidden
-6. THE QuizQuestion SHALL save the user's answer state to localStorage for progress tracking
+### AC-03: Typography & Readability
+- Body: Frank Ruhl Libre, 18px, line-height 1.7
+- Headings: Heebo
+- Monospace: Fira Code (prompt blocks)
+- Maximum content width: 48rem (reading column) for articles
+- Dashboard uses a wider container (max-w-5xl) for the domain grid
+- Background: #faf9f5 (warm cream — low eyestrain)
 
----
+### AC-04: Performance
+- Static export — no server round-trips for content
+- MDX serialized server-side (not client-side) — eliminates loading flash
+- Progress loaded from localStorage on mount with immediate UI update
 
-### דרישה 8: שיתוף WhatsApp לוויראליות
+### AC-05: Data Integrity
+- No duplicate course numbers in COURSE_CATALOG
+- Every course appears in exactly one domain
+- `getDomainProgress` checks `completedModules.includes(courseNumber)` — **not positional index**
+- `getCompletionPercentage` uses `COURSE_CATALOG.length` as denominator
 
-**סיפור משתמש:** כלומד, אני רוצה כפתורי שיתוף WhatsApp, כדי שאוכל לשתף קורסים ותובנות עם עמיתים בממשלה.
-
-#### קריטריוני קבלה
-
-1. THE Platform SHALL display a WhatsApp share button on each CourseModule page
-2. WHEN the user clicks the WhatsApp share button, THE Platform SHALL open the WhatsApp share dialog with a pre-formatted message containing the course title and URL
-3. THE Platform SHALL include a WhatsApp share button on the Dashboard for sharing overall progress
-4. THE Platform SHALL format the shared message in Hebrew with the course name and a direct link to the specific module
-
----
-
-### דרישה 9: מיגרציית תוכן מ-HTML סטטי ל-MDX
-
-**סיפור משתמש:** כמפתח תוכן, אני רוצה להמיר את 12 דפי הקורסים הקיימים מ-HTML סטטי לפורמט MDX, כדי שהתוכן ישתלב בפלטפורמה החדשה עם כל הרכיבים המותאמים.
-
-#### קריטריוני קבלה
-
-1. THE ContentMigration SHALL convert all 12 existing HTML course pages into MDX files with proper frontmatter
-2. THE ContentMigration SHALL preserve all textual content, tables, lists, and structural hierarchy from the original HTML
-3. THE ContentMigration SHALL replace inline HTML prompt boxes with PromptBlock components
-4. THE ContentMigration SHALL replace inline HTML exercise sections with QuizQuestion components where applicable
-5. FOR ALL 12 CourseModules, rendering the migrated MDX content then comparing the visible text output SHALL produce equivalent content to the original HTML pages (round-trip content preservation)
-6. THE ContentMigration SHALL add appropriate frontmatter metadata (title, duration, audience, domain, path) to each MDX file
-
----
-
-### דרישה 10: מערכת עיצוב בהשראת Anthropic
-
-**סיפור משתמש:** כלומד, אני רוצה ממשק פרימיום מינימליסטי בהשראת Anthropic, כדי שחוויית הלמידה תהיה נעימה ומקצועית.
-
-#### קריטריוני קבלה
-
-1. THE DesignSystem SHALL define the following color tokens: background `#faf9f5`, text `#141413`, accent `#d97757`, secondary `#6a9bcc`
-2. THE DesignSystem SHALL use sans-serif fonts (Heebo/Assistant/Rubik) for headings and serif fonts (Frank Ruhl Libre/Alef) for body text
-3. THE DesignSystem SHALL optimize for cognitive load with generous whitespace, clear visual hierarchy, and a maximum reading column width of 48rem
-4. THE DesignSystem SHALL provide consistent component styling for cards, buttons, badges, and navigation elements across all pages
-5. THE DesignSystem SHALL use warm, muted tones consistent with the Anthropic design aesthetic rather than high-contrast neon colors
-6. THE Platform SHALL apply the DesignSystem tokens through Tailwind CSS configuration (`tailwind.config.js`) as custom theme extensions
+### AC-06: Security
+- CSP meta tag must allow `script-src 'unsafe-inline'` (required for Next.js static export hydration)
+- No PII in localStorage (Israeli ID, email, phone patterns absent — verified by test)
+- External links use `rel="noopener noreferrer"`
+- No user authentication, no session tokens, no server-side data
 
 ---
 
-### דרישה 11: נגישות WCAG AA ו-Lighthouse 90+
+## Non-Requirements (Explicit Exclusions)
 
-**סיפור משתמש:** כמוביל AI בממשלה, אני רוצה שהפלטפורמה תעמוד בתקני נגישות WCAG AA, כדי שכל עובדי המדינה יוכלו להשתמש בה.
-
-#### קריטריוני קבלה
-
-1. THE Platform SHALL achieve a Lighthouse Accessibility score of 90 or above on all pages
-2. THE Platform SHALL provide sufficient color contrast ratios (minimum 4.5:1 for normal text, 3:1 for large text) between text and background colors
-3. THE Platform SHALL include appropriate ARIA labels on all interactive elements (buttons, navigation, audio controls)
-4. THE Platform SHALL support full keyboard navigation including focus indicators on all interactive elements
-5. WHEN the AudioPlayer is active, THE AudioPlayer SHALL provide accessible controls with ARIA labels in Hebrew
-6. THE Platform SHALL include `alt` text or `aria-label` for all non-decorative visual elements
-7. THE Platform SHALL use semantic HTML elements (`nav`, `main`, `article`, `aside`, `header`, `footer`) for page structure
+- No gamification (streaks, badges, leaderboards, confetti)
+- No user accounts or authentication
+- No server-side rendering or database
+- No analytics or tracking
+- No social feed or peer comparison
+- **No WhatsApp share on the main Dashboard progress section**
+- **No emoji as domain identifiers in navigation or domain cards**
 
 ---
 
-### דרישה 12: אבטחה בהתאם ל-NIST RMF
+## Content Requirements
 
-**סיפור משתמש:** כמנהל מערכת, אני רוצה שהפלטפורמה תעמוד בדרישות אבטחה של NIST RMF ללא אחסון PII, כדי שהפלטפורמה תהיה בטוחה לשימוש ממשלתי.
+### CR-01: Module Structure
+Every module MDX file must include these sections in order:
+1. **Opening Insight** — a specific government scenario or real incident
+2. **Key Terms** (`<KeyTerms>`) — 4–6 defined terms
+3. **Concept Explanation** — how the technology works, engineered for non-engineers
+4. **Government Case Study** — a real or plausible government implementation
+5. **Exercises** — 2–3 concrete exercises with clear success criteria
+6. **Prompt Lab** — 3–5 `<PromptBlock>` components with usable prompts
+7. **Failure Analysis** — 2–3 common failure modes and how to avoid them
+8. **Self-Assessment** (`<QuizQuestion>`) — 3–5 questions
 
-#### קריטריוני קבלה
+### CR-02: Module Deliverables
+Every module must produce at least one real artifact:
+- Foundation modules → mental model diagram, comparison matrix
+- Engineering modules → prompt library, system prompt template
+- Dev workflow modules → data analysis framework, research checklist
+- Product building modules → spec.md, workflow map
+- Government systems modules → ethics audit checklist, service blueprint
+- Leadership modules → RAG architecture diagram, AI project charter
 
-1. THE Platform SHALL execute entirely on the client side without transmitting user data to external servers
-2. THE Platform SHALL store progress data exclusively in the browser's localStorage without collecting personally identifiable information (PII)
-3. THE Platform SHALL serve all content as static assets deployable on GitHub Pages
-4. IF a user clears browser data, THEN THE Platform SHALL handle the missing localStorage data gracefully by resetting progress to initial state
-5. THE Platform SHALL include Content Security Policy (CSP) headers that restrict script sources to same-origin
-6. THE Platform SHALL load external fonts from Google Fonts over HTTPS only
-
----
-
-### דרישה 13: רספונסיביות למובייל
-
-**סיפור משתמש:** כלומד, אני רוצה שהפלטפורמה תעבוד היטב במכשירים ניידים, כדי שאוכל ללמוד גם מהטלפון.
-
-#### קריטריוני קבלה
-
-1. THE Platform SHALL adapt layout responsively for viewports from 320px to 1920px width
-2. WHEN the viewport width is below 768px, THE Sidebar SHALL collapse to an overlay menu accessible via a hamburger button
-3. WHEN the viewport width is below 768px, THE AudioPlayer SHALL resize to a compact single-row layout
-4. THE Platform SHALL ensure all touch targets are at least 44x44 pixels on mobile devices
-5. THE PromptBlock SHALL display a horizontally scrollable container for long prompt lines on mobile viewports instead of wrapping
-6. THE Platform SHALL maintain readable font sizes (minimum 16px) on all viewport sizes to prevent iOS zoom on input focus
-
----
-
-### דרישה 14: מבנה 12 הקורסים ו-6 תחומי למידה
-
-**סיפור משתמש:** כמעצב תוכנית לימודים, אני רוצה מבנה ברור של 12 קורסים מחולקים ל-6 תחומים ו-3 מסלולים, כדי שהלומדים יוכלו לנווט בתוכנית הלימודים.
-
-#### קריטריוני קבלה
-
-1. THE Platform SHALL organize the following 12 CourseModules: (1) אוריינות AI, (2) מפת המודלים, (3) הנדסת הנחיות, (4) AI לכתיבה ותקשורת, (5) AI לניתוח נתונים, (6) חיפוש ומחקר עם AI, (7) AI לחשיבה אסטרטגית, (8) אתיקה ובטיחות AI בממשלה, (9) AI לשירות הציבור, (10) אוטומציה ותהליכי עבודה, (11) RAG — חיבור AI למאגרי ידע, (12) Claude Code למפתחים
-2. THE Platform SHALL group CourseModules into 6 LearningDomains: Foundation, AI Engineering, AI-Assisted Dev, Building AI Products, AI for Gov, AI Product Leadership
-3. THE Platform SHALL assign each CourseModule to one of 3 LearningPaths: בסיס (Foundation), יישומי (Applied), מתקדם (Advanced)
-4. THE Dashboard SHALL display the 24-week course timeline with LearningDomain milestones
-5. WHEN a user selects a LearningPath, THE Platform SHALL highlight the relevant CourseModules and recommended order
+### CR-03: Frontmatter — Required Fields
+```yaml
+slug: string            # matches COURSE_CATALOG slug exactly
+title: string           # matches COURSE_CATALOG title exactly
+courseNumber: number
+duration: string
+audience: string
+exerciseCount: number
+domain: LearningDomain
+path: LearningPath
+difficulty: 'foundation' | 'intermediate' | 'advanced'
+description: string
+deliverables: string[]  # list of artifacts produced
+```
 
 ---
 
-### דרישה 15: ניתוב דינמי למודולי קורס
+## Learning Architecture
 
-**סיפור משתמש:** כלומד, אני רוצה שכל קורס יהיה נגיש דרך URL ייחודי, כדי שאוכל לשתף קישורים ישירים לקורסים ספציפיים.
+### 6 Domains — Progression Map
 
-#### קריטריוני קבלה
+```
+FOUNDATION (יסודות)
+  01 · אוריינות AI ועבודה אחראית       → artifact: responsible-use framework
+  02 · מפת המודלים                     → artifact: model selection matrix
 
-1. THE Platform SHALL generate dynamic routes for each CourseModule using the pattern `/course/[slug]`
-2. WHEN a user navigates to a course URL, THE Platform SHALL load the corresponding MDX content and render it with the ModuleRenderer
-3. IF a user navigates to a non-existent course URL, THEN THE Platform SHALL display a styled 404 page with navigation back to the Dashboard
-4. THE Platform SHALL support static site generation (SSG) for all course routes to enable GitHub Pages deployment
-5. THE Platform SHALL include navigation links (previous/next course) at the bottom of each CourseModule page
+AI ENGINEERING (הנדסת AI)
+  03 · הנדסת הנחיות                    → artifact: system prompt library
+  04 · AI לכתיבה ותקשורת               → artifact: writing template kit
 
----
+AI DEVELOPMENT WORKFLOWS (זרימות עבודה עם AI)
+  05 · AI לניתוח נתונים                → artifact: analysis prompt framework
+  06 · חיפוש ומחקר עם AI              → artifact: research workflow SOP
 
-### דרישה 16: Kiro Agent Hooks לסריקת אבטחה
+BUILDING AI PRODUCTS (בניית מוצרי AI)
+  07 · AI לחשיבה אסטרטגית             → artifact: strategic analysis template
+  10 · אוטומציה ותהליכי עבודה          → artifact: workflow automation spec
 
-**סיפור משתמש:** כמפתח, אני רוצה hooks של Kiro Agent שמריצים סריקת אבטחה לפני commit, כדי למנוע הכנסת מידע רגיש לקוד.
+AI FOR GOVERNMENT SYSTEMS (מערכות AI לממשלה)
+  08 · אתיקה ובטיחות AI בממשלה        → artifact: AI ethics audit checklist
+  09 · AI לשירות הציבור               → artifact: citizen service AI blueprint
 
-#### קריטריוני קבלה
+AI LEADERSHIP & GOVERNANCE (מנהיגות AI)
+  11 · RAG — חיבור AI למאגרי ידע      → artifact: RAG architecture design
+  12 · Claude Code למפתחים            → artifact: AI development workflow
+```
 
-1. THE Platform SHALL include a pre-commit hook configuration that scans staged files for PII patterns (Israeli ID numbers, email addresses, phone numbers)
-2. WHEN the pre-commit hook detects a PII pattern, THE hook SHALL block the commit and display a warning message specifying the file and line number
-3. THE Platform SHALL include the hook configuration in the `.kiro/` directory structure
-4. THE hook SHALL scan only text-based files (`.ts`, `.tsx`, `.mdx`, `.md`, `.json`) and skip binary files
+### 3 Learning Paths
 
+| Path | Hebrew | Modules | Audience |
+|---|---|---|---|
+| foundation | יסודות | 1, 2, 8 | All government staff |
+| applied | יישומי | 3, 4, 5, 6, 7, 9, 10 | Practitioners & managers |
+| advanced | מתקדם | 11, 12 | AI leads & engineering teams |

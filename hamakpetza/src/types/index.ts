@@ -19,12 +19,7 @@ export interface CourseFrontmatter {
   path: LearningPath;
   audioUrl?: string;
   description: string;
-  difficulty?: string;
-  skills_learned?: string;
-  learning_objectives?: string;
-  estimated_time?: string;
 }
-
 
 export interface DomainInfo {
   id: LearningDomain;
@@ -50,12 +45,4 @@ export interface ProgressState {
   }>;
   lastVisited: string | null;
   updatedAt: string;
-}
-
-export interface QuizQuestionData {
-  question: string;
-  options: string[];
-  correctIndex: number;
-  explanation: string;
-  id: string;
 }

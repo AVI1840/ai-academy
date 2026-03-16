@@ -9,6 +9,7 @@ const config: Config = {
     extend: {
       colors: {
         bg: '#faf9f5',
+        surface: '#f5f4f0',
         text: '#141413',
         accent: '#d97757',
         'accent-light': '#f5ebe6',
@@ -18,8 +19,8 @@ const config: Config = {
         border: '#e5e4df',
       },
       fontFamily: {
-        heading: ['Heebo', 'Assistant', 'Rubik', 'sans-serif'],
-        body: ['"Frank Ruhl Libre"', 'Alef', 'serif'],
+        heading: ['var(--font-heebo)', 'Heebo', 'Assistant', 'Rubik', 'sans-serif'],
+        body: ['var(--font-frank-ruhl-libre)', '"Frank Ruhl Libre"', 'Alef', 'serif'],
         mono: ['"Fira Code"', 'monospace'],
       },
       fontSize: {
@@ -27,6 +28,7 @@ const config: Config = {
       },
       maxWidth: {
         reading: '48rem',
+        dashboard: '72rem',
       },
       typography: {
         DEFAULT: {
