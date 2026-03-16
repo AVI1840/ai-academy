@@ -261,7 +261,7 @@ export default function Dashboard() {
                       ? 'border-border bg-bg hover:border-accent/40 hover:shadow-sm hover:-translate-y-px cursor-pointer'
                       : 'border-border/40 bg-bg/40 opacity-40 pointer-events-none'
                     }
-                    ${isCompleted ? 'bg-green-50/60 border-green-200/60' : ''}
+                    ${isCompleted ? 'bg-green-900/20 border-green-800/40' : ''}
                   `}
                   tabIndex={isHighlighted ? 0 : -1}
                   aria-disabled={!isHighlighted}
@@ -270,7 +270,7 @@ export default function Dashboard() {
                   <span
                     className={`w-9 h-9 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center text-sm font-heading font-bold flex-shrink-0 transition-colors
                       ${isCompleted
-                        ? 'bg-green-100 text-green-700'
+                        ? 'bg-green-900/30 text-green-400'
                         : 'bg-accent-light text-accent group-hover:bg-accent group-hover:text-white'
                       }
                     `}

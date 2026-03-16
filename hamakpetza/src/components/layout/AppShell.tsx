@@ -101,9 +101,9 @@ export default function AppShell({ children, currentSlug = null }: AppShellProps
         {/* Toggle button */}
         <button
           onClick={() => setSidebarOpen(prev => !prev)}
-          className="fixed top-4 right-4 z-50 w-11 h-11 rounded-lg bg-bg border border-border
+          className="fixed top-4 right-4 z-50 w-11 h-11 rounded-lg bg-surface border border-border
                      flex items-center justify-center text-muted hover:text-text hover:border-accent
-                     transition-colors shadow-sm md:right-auto md:left-4"
+                     transition-colors shadow-sm"
           aria-label={sidebarOpen ? 'סגור תפריט' : 'פתח תפריט'}
           aria-expanded={sidebarOpen}
           aria-controls="sidebar-nav"
@@ -111,11 +111,11 @@ export default function AppShell({ children, currentSlug = null }: AppShellProps
           <span aria-hidden="true">{sidebarOpen ? '✕' : '☰'}</span>
         </button>
 
-        {/* Main content area — children apply reading-column (max-w-3xl) */}
+        {/* Main content area */}
         <main
           id="main-content"
-          className={`transition-all duration-300 ${
-            sidebarOpen && !isMobile ? 'mr-72' : 'mr-0 md:mr-16'
+          className={`transition-all duration-300 min-h-screen ${
+            sidebarOpen && !isMobile ? 'mr-72' : isMobile ? 'mr-0' : 'mr-16'
           }`}
         >
           {children}

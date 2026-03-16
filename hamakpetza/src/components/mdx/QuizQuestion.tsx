@@ -42,10 +42,10 @@ export default function QuizQuestion({ question, options, correctIndex, explanat
 
     if (revealed) {
       if (index === correctIndex) {
-        return `${base} border-green-500 bg-green-50 text-green-800 font-medium`;
+        return `${base} border-green-600 bg-green-900/20 text-green-400 font-medium`;
       }
       if (selected === index && index !== correctIndex) {
-        return `${base} border-red-400 bg-red-50 text-red-700`;
+        return `${base} border-red-600 bg-red-900/20 text-red-400`;
       }
       return `${base} border-border bg-bg text-muted`;
     }
@@ -94,7 +94,7 @@ export default function QuizQuestion({ question, options, correctIndex, explanat
                 {icon && (
                   <span
                     className={`flex-shrink-0 text-base font-bold ${
-                      icon === '✓' ? 'text-green-600' : 'text-red-500'
+                      icon === '✓' ? 'text-green-400' : 'text-red-400'
                     }`}
                     aria-hidden="true"
                   >
@@ -130,7 +130,7 @@ export default function QuizQuestion({ question, options, correctIndex, explanat
         >
           <div className="flex items-start gap-2 justify-end">
             <div>
-              <span className="font-semibold text-green-700">✓ תשובה נכונה: </span>
+              <span className="font-semibold text-green-400">✓ תשובה נכונה: </span>
               {options[correctIndex]}
             </div>
           </div>

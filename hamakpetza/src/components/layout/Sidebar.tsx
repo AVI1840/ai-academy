@@ -66,10 +66,10 @@ export default function Sidebar({ isOpen, onToggle, currentSlug }: SidebarProps)
         id="sidebar-nav"
         className={`
           fixed top-0 right-0 h-full z-40
-          bg-bg border-l border-border
+          bg-surface border-l border-border
           overflow-y-auto overflow-x-hidden
           transition-[width] duration-300 ease-in-out
-          ${isOpen ? 'w-72' : 'w-0 md:w-16'}
+          ${isOpen ? 'w-72' : 'w-0'}
         `}
         onKeyDown={handleKeyDown}
         ref={navRef}
@@ -187,7 +187,7 @@ function CourseLink({ course, isActive, isCompleted, onNavigate }: CourseLinkPro
     >
       <span className="w-5 text-center flex-shrink-0">
         {isCompleted
-          ? <span className="text-green-600" aria-hidden="true">✓</span>
+          ? <span className="text-green-400" aria-hidden="true">✓</span>
           : <span className="text-muted text-xs">{course.courseNumber}</span>
         }
       </span>

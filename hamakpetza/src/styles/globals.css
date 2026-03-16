@@ -49,8 +49,8 @@
   }
 
   ::selection {
-    background-color: #f5ebe6;
-    color: #141413;
+    background-color: rgba(217,119,87,0.3);
+    color: #e8e6e3;
   }
 
   /* Universal focus-visible indicator for keyboard navigation */

@@ -58,8 +58,8 @@ export default function LiveStats({ completedCount }: LiveStatsProps) {
       icon: '🔥',
       value: myStats.dailyStreak,
       label: `יום${myStats.dailyStreak === 1 ? '' : ' רצוף'}`,
-      color: 'text-orange-600',
-      bg: 'bg-orange-50',
+      color: 'text-orange-400',
+      bg: 'bg-orange-900/20',
     },
     ...(global
       ? [
@@ -74,8 +74,8 @@ export default function LiveStats({ completedCount }: LiveStatsProps) {
             icon: '✅',
             value: global.totalLessonsCompleted.toLocaleString('he-IL'),
             label: 'יחידות נלמדו (כולל)',
-            color: 'text-green-700',
-            bg: 'bg-green-50',
+            color: 'text-green-400',
+            bg: 'bg-green-900/20',
           },
         ]
       : [
@@ -99,7 +99,7 @@ export default function LiveStats({ completedCount }: LiveStatsProps) {
           הסטטיסטיקות שלי
         </h2>
         {global && (
-          <span className="inline-flex items-center gap-1 text-xs text-green-600">
+          <span className="inline-flex items-center gap-1 text-xs text-green-400">
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
             עדכון בזמן אמת
           </span>

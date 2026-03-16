@@ -30,7 +30,7 @@ export default function CourseComplete({ courseNumber }: CourseCompleteProps) {
       className={`
         w-full py-3 min-h-[44px] rounded-xl text-sm font-heading font-semibold transition-all
         ${completed
-          ? 'bg-green-50 border border-green-300 text-green-700 hover:bg-green-100'
+          ? 'bg-green-900/30 border border-green-700/40 text-green-400 hover:bg-green-900/50'
           : 'bg-accent text-white hover:bg-accent/90'
         }
       `}

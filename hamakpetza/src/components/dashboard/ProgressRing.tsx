@@ -31,7 +31,7 @@ export default function ProgressRing({
           cy={size / 2}
           r={radius}
           fill="none"
-          stroke="#e5e4df"
+          stroke="#2a2d3e"
           strokeWidth={strokeWidth}
         />
         <circle

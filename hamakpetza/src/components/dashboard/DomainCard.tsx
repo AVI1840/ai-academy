@@ -38,7 +38,7 @@ export default function DomainCard({ domain, courses, completedCount }: DomainCa
                 {domain.icon}
               </span>
               {isAllDone && (
-                <span className="text-xs px-2 py-0.5 rounded-full bg-green-100 text-green-700 font-medium">
+                <span className="text-xs px-2 py-0.5 rounded-full bg-green-900/30 text-green-400 font-medium">
                   הושלם ✓
                 </span>
               )}
@@ -71,7 +71,7 @@ export default function DomainCard({ domain, courses, completedCount }: DomainCa
                   <span
                     className={`w-4 h-4 rounded-full flex items-center justify-center text-[10px] flex-shrink-0 transition-colors
                       ${isDone
-                        ? 'bg-green-100 text-green-600'
+                        ? 'bg-green-900/30 text-green-400'
                         : 'bg-border text-muted group-hover/link:bg-accent-light group-hover/link:text-accent'
                       }`}
                     aria-hidden="true"

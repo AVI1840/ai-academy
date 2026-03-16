@@ -54,7 +54,7 @@ describe('QuizQuestion', () => {
     fireEvent.click(screen.getByText('חשוף תשובה →'));
 
     const correctOption = screen.getByRole('radio', { name: /תשובה 2/ });
-    expect(correctOption.className).toContain('border-green-500');
+    expect(correctOption.className).toContain('border-green-600');
   });
 
   it('shows incorrect indication (red) on reveal for wrong answer', () => {
@@ -64,7 +64,7 @@ describe('QuizQuestion', () => {
     fireEvent.click(screen.getByText('חשוף תשובה →'));
 
     const wrongOption = screen.getByRole('radio', { name: /תשובה 1/ });
-    expect(wrongOption.className).toContain('border-red-400');
+    expect(wrongOption.className).toContain('border-red-600');
   });
 
   it('shows explanation after reveal', () => {
@@ -137,7 +137,7 @@ describe('QuizQuestion', () => {
     expect(screen.getByText(defaultProps.explanation)).toBeTruthy();
     // Correct answer should have green styling
     const correctOption = screen.getByRole('radio', { name: /תשובה 2/ });
-    expect(correctOption.className).toContain('border-green-500');
+    expect(correctOption.className).toContain('border-green-600');
   });
 
   it('has ARIA radiogroup role on options container', () => {
