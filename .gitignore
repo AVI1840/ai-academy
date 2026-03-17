@@ -1,6 +1,7 @@
 node_modules/
 hamakpetza/node_modules/
 hamakpetza/.next/
+hamakpetza/out/
 .next/
 *.lock
 dist/
