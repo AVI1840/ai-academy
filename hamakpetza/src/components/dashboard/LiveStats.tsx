@@ -31,7 +31,7 @@ export default function LiveStats({ completedCount }: LiveStatsProps) {
       { icon: '👥', value: global.totalVisitors.toLocaleString('he-IL'), label: 'לומדים בקהילה', color: 'text-text' },
       { icon: '✅', value: global.totalLessonsCompleted.toLocaleString('he-IL'), label: 'יחידות נלמדו (כולל)', color: 'text-green-400' },
     ] : [
-      { icon: '🏛️', value: '1,000+', label: 'מובילי AI', color: 'text-text' },
+      { icon: '🏛️', value: 'ממשלה', label: 'למובילי AI בממשלה', color: 'text-text' },
     ]),
   ];
 
