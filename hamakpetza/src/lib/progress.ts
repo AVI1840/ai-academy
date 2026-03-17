@@ -1,4 +1,5 @@
 import { ProgressState } from '@/types';
+import { COURSE_CATALOG } from '@/data/course-catalog';
 
 const STORAGE_KEY = 'hamakpetza_progress';
 
@@ -70,7 +71,7 @@ export function setLastVisited(slug: string): void {
 
 export function getCompletionPercentage(): number {
   const state = loadProgress();
-  return Math.round((state.completedModules.length / 12) * 100);
+  return Math.round((state.completedModules.length / COURSE_CATALOG.length) * 100);
 }
 
 export function getDomainProgress(courseNumbers: number[]): { completed: number; total: number } {

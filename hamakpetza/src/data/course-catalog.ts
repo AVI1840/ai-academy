@@ -106,6 +106,13 @@ export const COURSE_CATALOG: CourseFrontmatter[] = [
     domain: 'ai-assisted-dev', path: 'applied',
     description: 'כלי Google לניהול ידע ומחקר מבוסס מסמכים — ניתוח, סיכום ויצירת פודקאסטים',
   },
+  {
+    courseNumber: 16, slug: 'ai-agents',
+    title: 'סוכני AI — מהאוטומציה לאוטונומיה',
+    duration: '55 דקות קריאה', audience: 'מנהלים טכנולוגיים ומפתחים', exerciseCount: 5,
+    domain: 'ai-product-leadership', path: 'advanced',
+    description: 'מה הם AI Agents, איך הם עובדים, כלים מרכזיים (Claude Code, LangGraph, CrewAI, MCP), ויישומים ממשלתיים',
+  },
 ];
 
 export const DOMAINS: DomainInfo[] = [
@@ -114,7 +121,7 @@ export const DOMAINS: DomainInfo[] = [
   { id: 'ai-assisted-dev', nameHe: 'עבודה עם AI', icon: '🤝', color: '#7c9a5e', courses: [5, 6, 15] },
   { id: 'building-ai-products', nameHe: 'בניית פתרונות', icon: '🔧', color: '#b07cc6', courses: [7, 10] },
   { id: 'ai-for-gov', nameHe: 'AI לממשלה', icon: '🏛️', color: '#c4915e', courses: [8, 9, 14] },
-  { id: 'ai-product-leadership', nameHe: 'מנהיגות טכנולוגית', icon: '🚀', color: '#5e8fb0', courses: [11, 12] },
+  { id: 'ai-product-leadership', nameHe: 'מנהיגות טכנולוגית', icon: '🚀', color: '#5e8fb0', courses: [11, 12, 16] },
 ];
 
 export const PATHS: PathInfo[] = [
@@ -130,8 +137,8 @@ export const PATHS: PathInfo[] = [
   },
   {
     id: 'advanced', nameHe: 'מתקדם',
-    courseNumbers: [11, 12],
-    description: 'נושאים מתקדמים למובילים טכנולוגיים — RAG ופיתוח תוכנה עם AI',
+    courseNumbers: [11, 12, 16],
+    description: 'נושאים מתקדמים למובילים טכנולוגיים — RAG, פיתוח תוכנה עם AI, וסוכני AI',
   },
 ];
 

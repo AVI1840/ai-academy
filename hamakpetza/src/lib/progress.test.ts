@@ -162,12 +162,12 @@ describe('progress API', () => {
       markModuleComplete(1);
       markModuleComplete(2);
       markModuleComplete(3);
-      // 3/12 * 100 = 25
-      expect(getCompletionPercentage()).toBe(25);
+      // 3/16 * 100 = 18.75 → 19
+      expect(getCompletionPercentage()).toBe(19);
     });
 
-    it('returns 100 when all 12 modules completed', () => {
-      for (let i = 1; i <= 12; i++) markModuleComplete(i);
+    it('returns 100 when all 16 modules completed', () => {
+      for (let i = 1; i <= 16; i++) markModuleComplete(i);
       expect(getCompletionPercentage()).toBe(100);
     });
   });

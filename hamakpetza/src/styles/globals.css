@@ -77,3 +77,12 @@ html.light {
   .pis-0 { padding-inline-start: 0; } .pis-1 { padding-inline-start: 0.25rem; } .pis-2 { padding-inline-start: 0.5rem; } .pis-3 { padding-inline-start: 0.75rem; } .pis-4 { padding-inline-start: 1rem; }
   .pie-0 { padding-inline-end: 0; } .pie-1 { padding-inline-end: 0.25rem; } .pie-2 { padding-inline-end: 0.5rem; } .pie-3 { padding-inline-end: 0.75rem; } .pie-4 { padding-inline-end: 1rem; }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

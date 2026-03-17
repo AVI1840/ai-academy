@@ -7,6 +7,9 @@ import CourseNav from '@/components/course/CourseNav';
 import CourseComplete from '@/components/course/CourseComplete';
 import SocialShare from '@/components/course/SocialShare';
 import AudioPlayer from '@/components/mdx/AudioPlayer';
+import ReadingProgress from '@/components/course/ReadingProgress';
+import TableOfContents from '@/components/course/TableOfContents';
+import ScrollToTop from '@/components/course/ScrollToTop';
 
 export function generateStaticParams() {
   return COURSE_CATALOG.map(c => ({ slug: c.slug }));
@@ -41,6 +44,9 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
 
   return (
     <AppShell currentSlug={params.slug}>
+      <ReadingProgress />
+      <TableOfContents />
+      <ScrollToTop />
       {course.audioUrl && <AudioPlayer src={course.audioUrl} title={course.title} />}
 
       <article className="reading-column py-8 sm:py-12">

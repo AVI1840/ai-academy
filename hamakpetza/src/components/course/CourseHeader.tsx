@@ -11,7 +11,16 @@ export default function CourseHeader({ frontmatter }: CourseHeaderProps) {
   const courseUrl = `https://avi1840.github.io/ai-academy/course/${frontmatter.slug}/`;
 
   return (
-    <header className="mb-12 pb-10 border-b border-border relative">
+    <header className="mb-12 pb-10 border-b border-border relative overflow-hidden">
+      {domain && (
+        <div
+          className="absolute inset-0 pointer-events-none"
+          aria-hidden="true"
+          style={{
+            background: `radial-gradient(ellipse 80% 60% at 80% -20%, ${domain.color}22 0%, transparent 60%)`,
+          }}
+        />
+      )}
       <nav className="flex items-center gap-1.5 text-xs text-muted mb-6 relative" aria-label="path">
         <Link href="/" className="hover:text-accent transition-colors font-heading">המקפצה</Link>
         <span className="opacity-40">/</span>

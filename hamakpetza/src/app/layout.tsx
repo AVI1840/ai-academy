@@ -18,13 +18,14 @@ const frankRuhlLibre = Frank_Ruhl_Libre({
 
 export const metadata: Metadata = {
   title: 'המקפצה — אקדמיית AI למובילי המגזר הציבורי',
-  description: 'מערכת ההפעלה של מנהיגות AI בממשלת ישראל — 15 יחידות מעשיות, חינמיות לחלוטין. ChatGPT, Gemini, NotebookLM, ענן ממשלתי, RAG ועוד.',
+  description: 'מערכת ההפעלה של מנהיגות AI בממשלת ישראל — 16 יחידות מעשיות, חינמיות לחלוטין. ChatGPT, Gemini, NotebookLM, ענן ממשלתי, RAG, סוכני AI ועוד.',
   metadataBase: new URL('https://avi1840.github.io/ai-academy'),
   keywords: ['AI', 'בינה מלאכותית', 'ממשלה', 'מגזר ציבורי', 'ChatGPT', 'Gemini', 'למידה', 'קורס'],
   authors: [{ name: 'אביעד יצחקי' }],
+  icons: { icon: '/ai-academy/favicon.svg' },
   openGraph: {
     title: '🚀 המקפצה — אקדמיית AI למגזר הציבורי',
-    description: 'מה AI יכול לעשות בשבילך? 15 יחידות מעשיות — ChatGPT, Gemini, NotebookLM, ענן נימבוס, RAG ועוד. חינם לכל עובדי המדינה.',
+    description: 'מה AI יכול לעשות בשבילך? 16 יחידות מעשיות — ChatGPT, Gemini, NotebookLM, ענן נימבוס, RAG, סוכני AI ועוד. חינם לכל עובדי המדינה.',
     type: 'website',
     locale: 'he_IL',
     url: 'https://avi1840.github.io/ai-academy/',
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: '🚀 המקפצה — אקדמיית AI ממשלתית',
-    description: '15 יחידות AI מעשיות וחינמיות למובילי המגזר הציבורי בישראל',
+    description: '16 יחידות AI מעשיות וחינמיות למובילי המגזר הציבורי בישראל',
   },
 };
 
