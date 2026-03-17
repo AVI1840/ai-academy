@@ -2,177 +2,78 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ─── Theme CSS Variables ─────────────────────────────────────────────────── */
-
 :root {
-  /* Dark theme (default) */
-  --color-bg: #0f1117;
-  --color-surface: #1a1d2e;
-  --color-text: #e8e6e3;
-  --color-muted: #9ca3af;
-  --color-border: #2a2d3e;
-  --color-accent-light: rgba(217,119,87,0.12);
-  --color-secondary-light: rgba(106,155,204,0.12);
+  --color-bg: #0a0c14;
+  --color-surface: #12152a;
+  --color-surface-2: #181c35;
+  --color-text: #eae8e4;
+  --color-muted: #8b92a8;
+  --color-border: #1e2240;
+  --color-accent-light: rgba(217,119,87,0.10);
+  --color-secondary-light: rgba(106,155,204,0.10);
+  --color-glow: rgba(217,119,87,0.06);
+  --color-glass: rgba(18,21,42,0.7);
+  --shadow-card: 0 2px 20px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.03);
+  --shadow-glow: 0 0 40px rgba(217,119,87,0.08);
 }
 
 html.light {
-  --color-bg: #faf9f7;
+  --color-bg: #f8f7f4;
   --color-surface: #ffffff;
+  --color-surface-2: #f3f2ee;
   --color-text: #1a1a2e;
   --color-muted: #6b7280;
-  --color-border: #e5e4df;
-  --color-accent-light: rgba(217,119,87,0.08);
-  --color-secondary-light: rgba(106,155,204,0.08);
+  --color-border: #e2e0db;
+  --color-accent-light: rgba(217,119,87,0.07);
+  --color-secondary-light: rgba(106,155,204,0.07);
+  --color-glow: rgba(217,119,87,0.04);
+  --color-glass: rgba(255,255,255,0.8);
+  --shadow-card: 0 2px 16px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.04);
+  --shadow-glow: 0 0 40px rgba(217,119,87,0.06);
 }
 
-/* ─── Animations (must be before @layer for Tailwind to see them) ─────────── */
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes pulseSoft {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0.55; }
-}
+@keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(20px) } to { opacity: 1; transform: translateY(0) } }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(28px) } to { opacity: 1; transform: translateY(0) } }
+@keyframes pulseSoft { 0%,100% { opacity: 1 } 50% { opacity: 0.55 } }
+@keyframes shimmer { 0% { background-position: -200% 0 } 100% { background-position: 200% 0 } }
+@keyframes float { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-6px) } }
 
 @layer base {
-  html {
-    direction: rtl;
-    font-size: 18px;
-    scroll-behavior: smooth;
-  }
-
-  /* Ensure minimum 16px font size on all viewports */
-  @media (max-width: 480px) {
-    html {
-      font-size: 16px;
-    }
-  }
-
-  body {
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-heebo), 'Heebo', 'Assistant', 'Rubik', sans-serif;
-  }
-
-  ::selection {
-    background-color: rgba(217,119,87,0.3);
-    color: var(--color-text);
-  }
-
-  /* Universal focus-visible indicator for keyboard navigation */
-  :focus-visible {
-    outline: 2px solid #d97757;
-    outline-offset: 2px;
-  }
-
-  /* Remove default focus ring for mouse users */
-  :focus:not(:focus-visible) {
-    outline: none;
-  }
-
-  /* Skip-to-content link (hidden until focused) */
-  .skip-to-content {
-    position: absolute;
-    top: -100%;
-    right: 1rem;
-    z-index: 9999;
-    padding: 0.75rem 1.5rem;
-    background: #d97757;
-    color: white;
-    font-weight: 600;
-    border-radius: 0.5rem;
-    transition: top 0.2s;
-  }
-  .skip-to-content:focus {
-    top: 1rem;
-  }
-
-  /* Smooth momentum scroll on iOS */
-  * {
-    -webkit-overflow-scrolling: touch;
-  }
+  html { direction: rtl; font-size: 18px; scroll-behavior: smooth; }
+  @media (max-width: 480px) { html { font-size: 16px; } }
+  body { line-height: 1.7; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  h1,h2,h3,h4,h5,h6 { font-family: var(--font-heebo), 'Heebo', 'Assistant', 'Rubik', sans-serif; }
+  ::selection { background-color: rgba(217,119,87,0.3); color: var(--color-text); }
+  :focus-visible { outline: 2px solid #d97757; outline-offset: 2px; }
+  :focus:not(:focus-visible) { outline: none; }
+  .skip-to-content { position: absolute; top: -100%; right: 1rem; z-index: 9999; padding: 0.75rem 1.5rem; background: #d97757; color: white; font-weight: 600; border-radius: 0.5rem; transition: top 0.2s; }
+  .skip-to-content:focus { top: 1rem; }
+  * { -webkit-overflow-scrolling: touch; }
 }
 
 @layer components {
-  .reading-column {
-    max-inline-size: 48rem;
-    margin-inline: auto;
-    padding-inline: 1.5rem;
-  }
-
-  .content-block {
-    margin-block-start: 1.5rem;
-    margin-block-end: 1.5rem;
-  }
-
-  .sidebar-item {
-    padding-inline-start: 1rem;
-    padding-inline-end: 0.75rem;
-    border-inline-start: 3px solid transparent;
-  }
-
-  .sidebar-item-active {
-    border-inline-start-color: #d97757;
-  }
-
-  /* Card hover lift */
-  .card-hover {
-    @apply transition-all duration-200 hover:shadow-md hover:-translate-y-0.5;
-  }
+  .reading-column { max-inline-size: 48rem; margin-inline: auto; padding-inline: 1.5rem; }
+  .content-block { margin-block-start: 1.5rem; margin-block-end: 1.5rem; }
+  .sidebar-item { padding-inline-start: 1rem; padding-inline-end: 0.75rem; border-inline-start: 3px solid transparent; }
+  .sidebar-item-active { border-inline-start-color: #d97757; }
+  .card-hover { @apply transition-all duration-200 hover:shadow-md hover:-translate-y-0.5; }
+  .glass-card { background: var(--color-glass); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid var(--color-border); box-shadow: var(--shadow-card); }
+  .glow-border { position: relative; }
+  .glow-border::before { content: ''; position: absolute; inset: -1px; border-radius: inherit; background: linear-gradient(135deg, rgba(217,119,87,0.2), transparent 40%, transparent 60%, rgba(106,155,204,0.15)); z-index: -1; opacity: 0; transition: opacity 0.3s; }
+  .glow-border:hover::before { opacity: 1; }
 }
 
 @layer utilities {
-  /* ─── RTL-safe border-inline-start ─── */
-  .border-is-2 {
-    border-inline-start-width: 2px;
-    border-inline-start-style: solid;
-  }
-
-  /* ─── Animation utilities ─── */
-  .animate-fade-in    { animation: fadeIn 0.55s ease-out both; }
-  .animate-slide-up   { animation: slideUp 0.5s ease-out both; }
+  .border-is-2 { border-inline-start-width: 2px; border-inline-start-style: solid; }
+  .animate-fade-in { animation: fadeIn 0.55s ease-out both; }
+  .animate-slide-up { animation: slideUp 0.5s ease-out both; }
   .animate-fade-in-up { animation: fadeInUp 0.65s ease-out both; }
   .animate-pulse-soft { animation: pulseSoft 2s ease-in-out infinite; }
-
-  /* ─── Inline spacing utilities (RTL-safe) ─── */
-  .mis-0 { margin-inline-start: 0; }
-  .mis-1 { margin-inline-start: 0.25rem; }
-  .mis-2 { margin-inline-start: 0.5rem; }
-  .mis-3 { margin-inline-start: 0.75rem; }
-  .mis-4 { margin-inline-start: 1rem; }
-
-  .mie-0 { margin-inline-end: 0; }
-  .mie-1 { margin-inline-end: 0.25rem; }
-  .mie-2 { margin-inline-end: 0.5rem; }
-  .mie-3 { margin-inline-end: 0.75rem; }
-  .mie-4 { margin-inline-end: 1rem; }
-
-  .pis-0 { padding-inline-start: 0; }
-  .pis-1 { padding-inline-start: 0.25rem; }
-  .pis-2 { padding-inline-start: 0.5rem; }
-  .pis-3 { padding-inline-start: 0.75rem; }
-  .pis-4 { padding-inline-start: 1rem; }
-
-  .pie-0 { padding-inline-end: 0; }
-  .pie-1 { padding-inline-end: 0.25rem; }
-  .pie-2 { padding-inline-end: 0.5rem; }
-  .pie-3 { padding-inline-end: 0.75rem; }
-  .pie-4 { padding-inline-end: 1rem; }
+  .animate-shimmer { animation: shimmer 3s linear infinite; background-size: 200% 100%; }
+  .animate-float { animation: float 4s ease-in-out infinite; }
+  .mis-0 { margin-inline-start: 0; } .mis-1 { margin-inline-start: 0.25rem; } .mis-2 { margin-inline-start: 0.5rem; } .mis-3 { margin-inline-start: 0.75rem; } .mis-4 { margin-inline-start: 1rem; }
+  .mie-0 { margin-inline-end: 0; } .mie-1 { margin-inline-end: 0.25rem; } .mie-2 { margin-inline-end: 0.5rem; } .mie-3 { margin-inline-end: 0.75rem; } .mie-4 { margin-inline-end: 1rem; }
+  .pis-0 { padding-inline-start: 0; } .pis-1 { padding-inline-start: 0.25rem; } .pis-2 { padding-inline-start: 0.5rem; } .pis-3 { padding-inline-start: 0.75rem; } .pis-4 { padding-inline-start: 1rem; }
+  .pie-0 { padding-inline-end: 0; } .pie-1 { padding-inline-end: 0.25rem; } .pie-2 { padding-inline-end: 0.5rem; } .pie-3 { padding-inline-end: 0.75rem; } .pie-4 { padding-inline-end: 1rem; }
 }

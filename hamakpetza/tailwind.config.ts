@@ -10,6 +10,7 @@ const config: Config = {
       colors: {
         bg: 'var(--color-bg)',
         surface: 'var(--color-surface)',
+        'surface-2': 'var(--color-surface-2)',
         text: 'var(--color-text)',
         accent: '#d97757',
         'accent-light': 'var(--color-accent-light)',
