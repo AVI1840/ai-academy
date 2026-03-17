@@ -45,7 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           httpEquiv="Content-Security-Policy"
           content={[
             "default-src 'self'",
-            "script-src 'self'",
+            "script-src 'self' 'unsafe-inline'",
             "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
             "font-src https://fonts.gstatic.com",
             "img-src 'self' data:",
@@ -53,6 +53,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             // Firebase Realtime Database (optional analytics)
             "connect-src 'self' https://*.firebaseio.com https://*.googleapis.com",
           ].join('; ')}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var t=localStorage.getItem('hamakpetza_theme');if(t==='light')document.documentElement.classList.add('light')}catch(e){}`,
+          }}
         />
       </head>
       <body className="min-h-screen bg-bg text-text font-body">

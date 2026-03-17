@@ -18,12 +18,12 @@ interface ModuleRendererProps {
 function ErrorPlaceholder({ componentName }: { componentName: string }) {
   return (
     <div
-      className="my-4 rounded-lg border border-red-300 bg-red-50 p-4 text-sm text-red-700 font-heading"
+      className="my-4 rounded-lg border border-red-600/40 bg-red-900/20 p-4 text-sm text-red-400 font-heading"
       role="alert"
       dir="rtl"
     >
       <span className="font-semibold">רכיב חסר:</span>{' '}
-      <code className="font-mono text-xs bg-red-100 px-1 py-0.5 rounded">{componentName}</code>
+      <code className="font-mono text-xs bg-red-900/30 px-1 py-0.5 rounded">{componentName}</code>
       {' '}— לא ניתן לטעון את הרכיב הזה.
     </div>
   );
@@ -60,15 +60,27 @@ const knownComponents: Record<string, React.ComponentType<any>> = {
 };
 
 /**
+ * Built-in MDX component names that should NOT be intercepted.
+ * These are internal to the MDX runtime (wrapper, Fragment, etc.)
+ * and standard HTML elements (lowercase names).
+ */
+const MDX_BUILTINS = new Set(['wrapper', 'Fragment', '_missingMdxReference']);
+
+/**
  * Proxy handler that returns an ErrorPlaceholder for any unregistered component
  * accessed in MDX content, preventing crashes from invalid/missing components.
+ * Passes through MDX built-in names and lowercase HTML element names.
  */
 const componentProxy = new Proxy(knownComponents, {
   get(target, prop: string) {
     if (prop in target) {
       return target[prop];
     }
-    // Return an error placeholder for any unknown component
+    // Let MDX built-ins and HTML elements pass through (return undefined so MDX uses defaults)
+    if (MDX_BUILTINS.has(prop) || /^[a-z]/.test(prop)) {
+      return undefined;
+    }
+    // Return an error placeholder for any unknown custom component (PascalCase)
     return function UnknownComponent() {
       return <ErrorPlaceholder componentName={prop} />;
     };

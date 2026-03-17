@@ -2,6 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─── Theme CSS Variables ─────────────────────────────────────────────────── */
+
+:root {
+  /* Dark theme (default) */
+  --color-bg: #0f1117;
+  --color-surface: #1a1d2e;
+  --color-text: #e8e6e3;
+  --color-muted: #9ca3af;
+  --color-border: #2a2d3e;
+  --color-accent-light: rgba(217,119,87,0.12);
+  --color-secondary-light: rgba(106,155,204,0.12);
+}
+
+html.light {
+  --color-bg: #faf9f7;
+  --color-surface: #ffffff;
+  --color-text: #1a1a2e;
+  --color-muted: #6b7280;
+  --color-border: #e5e4df;
+  --color-accent-light: rgba(217,119,87,0.08);
+  --color-secondary-light: rgba(106,155,204,0.08);
+}
+
 /* ─── Animations (must be before @layer for Tailwind to see them) ─────────── */
 
 @keyframes fadeIn {
@@ -50,7 +73,7 @@
 
   ::selection {
     background-color: rgba(217,119,87,0.3);
-    color: #e8e6e3;
+    color: var(--color-text);
   }
 
   /* Universal focus-visible indicator for keyboard navigation */

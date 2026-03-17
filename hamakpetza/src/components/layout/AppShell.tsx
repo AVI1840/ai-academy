@@ -2,6 +2,7 @@
 
 import React, { Component, useState, useEffect, type ReactNode } from 'react';
 import Sidebar from './Sidebar';
+import ThemeToggle from './ThemeToggle';
 
 // --- Error Boundary ---
 
@@ -98,18 +99,21 @@ export default function AppShell({ children, currentSlug = null }: AppShellProps
           currentSlug={currentSlug}
         />
 
-        {/* Toggle button */}
-        <button
-          onClick={() => setSidebarOpen(prev => !prev)}
-          className="fixed top-4 right-4 z-50 w-11 h-11 rounded-lg bg-surface border border-border
-                     flex items-center justify-center text-muted hover:text-text hover:border-accent
-                     transition-colors shadow-sm"
-          aria-label={sidebarOpen ? 'סגור תפריט' : 'פתח תפריט'}
-          aria-expanded={sidebarOpen}
-          aria-controls="sidebar-nav"
-        >
-          <span aria-hidden="true">{sidebarOpen ? '✕' : '☰'}</span>
-        </button>
+        {/* Toggle buttons */}
+        <div className="fixed top-4 right-4 z-50 flex items-center gap-2">
+          <button
+            onClick={() => setSidebarOpen(prev => !prev)}
+            className="w-11 h-11 rounded-lg bg-surface border border-border
+                       flex items-center justify-center text-muted hover:text-text hover:border-accent
+                       transition-colors shadow-sm"
+            aria-label={sidebarOpen ? 'סגור תפריט' : 'פתח תפריט'}
+            aria-expanded={sidebarOpen}
+            aria-controls="sidebar-nav"
+          >
+            <span aria-hidden="true">{sidebarOpen ? '✕' : '☰'}</span>
+          </button>
+          <ThemeToggle />
+        </div>
 
         {/* Main content area */}
         <main

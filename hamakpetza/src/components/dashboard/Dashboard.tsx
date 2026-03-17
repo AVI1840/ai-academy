@@ -11,6 +11,7 @@ import PathSelector from './PathSelector';
 import ProgressRing from './ProgressRing';
 import LiveStats from './LiveStats';
 import SocialShare from '../course/SocialShare';
+import ThemeToggle from '../layout/ThemeToggle';
 
 // ─── Hero SVG ────────────────────────────────────────────────────────────────
 function HeroIllustration() {
@@ -161,6 +162,11 @@ export default function Dashboard() {
                 <p className="text-xs text-muted mt-0.5">{s.label}</p>
               </div>
             ))}
+          </div>
+
+          {/* Theme selector */}
+          <div className="mt-6 flex justify-center md:justify-start">
+            <ThemeToggle variant="full" />
           </div>
         </div>
       </header>
