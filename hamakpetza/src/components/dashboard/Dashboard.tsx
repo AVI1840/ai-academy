@@ -129,6 +129,29 @@ export default function Dashboard() {
 
         <LiveStats completedCount={completedModules.length} />
 
+        {/* For Whom */}
+        <section className="mb-12 glass-card rounded-2xl p-6 sm:p-8" aria-label="למי זה מיועד">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-1 h-5 rounded-full bg-accent" />
+            <h2 className="font-heading text-sm font-bold text-muted uppercase tracking-wider">למי זה מיועד במגזר הציבורי</h2>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            {[
+              { icon: '💡', label: 'מנהלי חדשנות' },
+              { icon: '🖥️', label: 'מנהלי דיגיטל ומערכות מידע' },
+              { icon: '📋', label: 'צוותי מדיניות ואסטרטגיה' },
+              { icon: '📊', label: 'אנליסטים ומובילי דאטה' },
+              { icon: '🤝', label: 'צוותי שירות לאזרח' },
+              { icon: '🏛️', label: 'יזמי GovTech' },
+            ].map(({ icon, label }) => (
+              <div key={label} className="flex items-center gap-3 p-3 rounded-xl bg-surface/50 border border-border/50">
+                <span className="text-xl flex-shrink-0" aria-hidden="true">{icon}</span>
+                <span className="text-sm font-heading font-medium text-text/80 leading-snug">{label}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Learning Paths */}
         <section className="mb-14" aria-label="מסלולי למידה">
           <div className="flex items-center gap-3 mb-6">
