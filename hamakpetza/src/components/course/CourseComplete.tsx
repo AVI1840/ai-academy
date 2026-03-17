@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import { loadProgress, markModuleComplete, markModuleIncomplete } from '@/lib/progress';
+import { trackLessonComplete } from '@/lib/analytics';
+import { COURSE_CATALOG } from '@/data/course-catalog';
 
 interface CourseCompleteProps {
   courseNumber: number;
@@ -20,6 +22,9 @@ export default function CourseComplete({ courseNumber }: CourseCompleteProps) {
       setCompleted(false);
     } else {
       markModuleComplete(courseNumber);
+      const course = COURSE_CATALOG.find(c => c.courseNumber === courseNumber);
+      const durationMinutes = course ? (parseInt(course.duration, 10) || 35) : 35;
+      trackLessonComplete(courseNumber, durationMinutes);
       setCompleted(true);
     }
   };

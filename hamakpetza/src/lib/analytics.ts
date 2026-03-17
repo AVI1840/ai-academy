@@ -166,8 +166,13 @@ export function trackPageView(): void {
   saveAnalytics(data);
 
   // Fire-and-forget to Firebase
-  void firebaseIncrement('globalStats/totalVisitors', 0); // first visit only via set below
   const today = new Date().toISOString().slice(0, 10);
+  // Count unique visitors only once per browser
+  const alreadyCounted = localStorage.getItem('hamakpetza_counted');
+  if (!alreadyCounted) {
+    localStorage.setItem('hamakpetza_counted', '1');
+    void firebaseIncrement('globalStats/totalVisitors', 1);
+  }
   void firebaseSet(`visitors/${data.userId}/lastSeen`, today);
   void firebaseSet(`visitors/${data.userId}/streak`, data.dailyStreak);
   void firebaseIncrement(`dailyActive/${today}`, 1);
@@ -185,12 +190,18 @@ export function trackLessonComplete(courseNumber: number, durationMinutes: numbe
     // Push to Firebase
     void firebaseIncrement('globalStats/totalLessonsCompleted');
     void firebaseSet(`visitors/${data.userId}/lessonsCompleted`, data.lessonsCompleted.length);
+    void firebaseIncrement(`courseStats/${courseNumber}/completions`);
   }
 }
 
 /** Get local analytics for display */
 export function getMyStats(): AnalyticsData {
   return loadAnalytics();
+}
+
+/** Returns the configured Firebase DB URL (or null if not set) */
+export function getFirebaseDbUrl(): string | null {
+  return process.env.NEXT_PUBLIC_FIREBASE_DB_URL ?? null;
 }
 
 /** Total learning time in hours/minutes label */

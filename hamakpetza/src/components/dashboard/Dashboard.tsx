@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { COURSE_CATALOG, DOMAINS } from '@/data/course-catalog';
 import { loadProgress } from '@/lib/progress';
-import { trackPageView } from '@/lib/analytics';
+import { trackPageView, fetchGlobalStats } from '@/lib/analytics';
 import { LearningPath, ProgressState } from '@/types';
 import DomainCard from './DomainCard';
 import PathSelector from './PathSelector';
@@ -13,20 +13,16 @@ import LiveStats from './LiveStats';
 import SocialShare from '../course/SocialShare';
 import ThemeToggle from '../layout/ThemeToggle';
 
-const HERO_STATS = [
-  { value: String(COURSE_CATALOG.length), label: 'יחידות למידה', icon: '📚' },
-  { value: '6', label: 'תחומי ידע', icon: '🧠' },
-  { value: '1,000+', label: 'מובילי AI', icon: '👥' },
-  { value: 'חינם', label: 'לחלוטין', icon: '🎁' },
-];
 
 export default function Dashboard() {
   const [progress, setProgress] = useState<ProgressState | null>(null);
   const [selectedPath, setSelectedPath] = useState<LearningPath | null>(null);
+  const [visitorCount, setVisitorCount] = useState<number | null>(null);
 
   useEffect(() => {
     setProgress(loadProgress());
     trackPageView();
+    fetchGlobalStats().then(s => { if (s) setVisitorCount(s.totalVisitors); });
   }, []);
 
   const completedModules = progress?.completedModules ?? [];
@@ -82,15 +78,29 @@ export default function Dashboard() {
             </div>
 
             {/* Stats grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 max-w-3xl mx-auto">
-              {HERO_STATS.map((s, i) => (
-                <div key={s.label} className="glass-card rounded-2xl p-4 sm:p-5 text-center animate-fade-in-up" style={{ animationDelay: `${i * 100}ms` }}>
-                  <span className="text-2xl block mb-2" aria-hidden="true">{s.icon}</span>
-                  <p className="font-heading font-black text-2xl sm:text-3xl text-accent leading-none">{s.value}</p>
-                  <p className="text-xs text-muted mt-1.5">{s.label}</p>
+            {(() => {
+              const heroStats = [
+                { value: String(COURSE_CATALOG.length), label: 'יחידות למידה', icon: '📚' },
+                { value: '6', label: 'תחומי ידע', icon: '🧠' },
+                {
+                  value: visitorCount !== null ? visitorCount.toLocaleString('he-IL') : 'ממשלה',
+                  label: visitorCount !== null ? 'מובילים רשומים' : 'למובילי AI בממשלה',
+                  icon: '🏛️',
+                },
+                { value: 'חינם', label: 'לחלוטין', icon: '🎁' },
+              ];
+              return (
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 max-w-3xl mx-auto">
+                  {heroStats.map((s, i) => (
+                    <div key={s.label} className="glass-card rounded-2xl p-4 sm:p-5 text-center animate-fade-in-up" style={{ animationDelay: `${i * 100}ms` }}>
+                      <span className="text-2xl block mb-2" aria-hidden="true">{s.icon}</span>
+                      <p className="font-heading font-black text-2xl sm:text-3xl text-accent leading-none">{s.value}</p>
+                      <p className="text-xs text-muted mt-1.5">{s.label}</p>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              );
+            })()}
           </div>
         </div>
 
@@ -194,7 +204,7 @@ export default function Dashboard() {
           <p className="text-sm text-muted">נבנה ע״י <span className="font-semibold text-text">אביעד יצחקי</span></p>
           <p className="text-xs text-muted/60 mt-1">מוביל AI ושותפויות, מינהלי גמלאות ביטוח לאומי</p>
           <div className="mt-5 flex justify-center">
-            <SocialShare title="המקפצה — אקדמיית AI ממשלתית" url="https://avi1840.github.io/ai-academy/" description="15 יחידות למידה חינמיות ב-AI למובילי המגזר הציבורי בישראל 🏛️" />
+            <SocialShare title="המקפצה — אקדמיית AI ממשלתית" url="https://avi1840.github.io/ai-academy/" description={`${totalCourses} יחידות למידה חינמיות ב-AI למובילי המגזר הציבורי בישראל 🏛️`} />
           </div>
         </footer>
       </main>

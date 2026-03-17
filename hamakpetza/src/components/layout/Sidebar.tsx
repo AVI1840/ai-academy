@@ -80,7 +80,7 @@ function DomainGroup({ domain, isOpen, currentSlug, completedModules, onNavigate
     <div className="mb-1" role="group" aria-label={domain.nameHe}>
       <div className="flex items-center gap-2 px-5 py-2 text-muted">
         <span className="text-sm flex-shrink-0">{domain.icon}</span>
-        {isOpen && <span className="text-[11px] font-heading font-bold tracking-wide uppercase" style={{ color: domain.color }}>{domain.nameHe}</span>}
+        {isOpen && <span className="text-xs font-heading font-bold tracking-wide uppercase" style={{ color: domain.color }}>{domain.nameHe}</span>}
       </div>
       {isOpen && domainCourses.map(course => (
         <CourseLink key={course.slug} course={course} isActive={currentSlug === course.slug} isCompleted={completedModules.includes(course.courseNumber)} onNavigate={onNavigate} />
@@ -93,12 +93,12 @@ function CourseLink({ course, isActive, isCompleted, onNavigate }: { course: Cou
   const displayTitle = course.title.includes('—') ? course.title.split('—')[0].trim() : course.title;
   return (
     <Link href={`/course/${course.slug}/`} onClick={onNavigate}
-      className={`flex items-center gap-2.5 px-6 py-2 text-sm transition-all duration-150 min-h-[40px] ${isActive ? 'bg-accent/10 text-accent font-semibold border-is-2 border-accent' : 'text-text/60 hover:bg-accent-light/40 hover:text-text'}`}
+      className={`flex items-center gap-2.5 px-6 py-2 text-sm transition-all duration-150 min-h-[44px] ${isActive ? 'bg-accent/10 text-accent font-semibold border-is-2 border-accent' : 'text-text/75 hover:bg-accent-light/40 hover:text-text'}`}
       aria-current={isActive ? 'page' : undefined}>
       <span className="w-5 text-center flex-shrink-0">
         {isCompleted ? <span className="text-green-400 text-xs">✓</span> : <span className="text-muted/50 text-[11px]">{course.courseNumber}</span>}
       </span>
-      <span className="truncate text-[13px]">{displayTitle}</span>
+      <span className="truncate text-sm">{displayTitle}</span>
     </Link>
   );
 }
