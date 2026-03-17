@@ -2,17 +2,17 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "המקפצה — Next.js Dev Server",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev"],
+      "name": "hamakpetza-static",
+      "runtimeExecutable": "cmd.exe",
+      "runtimeArgs": ["/c", "node", "serve-local.mjs"],
       "port": 3000,
       "cwd": "hamakpetza"
     },
     {
-      "name": "המקפצה — Vitest Watch",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "test:watch"],
-      "port": 51204,
+      "name": "hamakpetza-dev",
+      "runtimeExecutable": "cmd.exe",
+      "runtimeArgs": ["/c", "npm", "run", "dev"],
+      "port": 3000,
       "cwd": "hamakpetza"
     }
   ]
