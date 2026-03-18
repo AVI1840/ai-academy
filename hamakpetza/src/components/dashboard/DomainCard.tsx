@@ -15,11 +15,11 @@ export default function DomainCard({ domain, courses, completedCount, completedM
   const nextCourse = courses.find(c => !completedModules.includes(c.courseNumber)) ?? courses[0];
 
   return (
-    <div className="group relative rounded-2xl overflow-hidden glass-card glow-border transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-glow)]">
+    <div className="group relative rounded-2xl overflow-hidden glass-card glow-border transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-glow)] h-full flex flex-col">
       {/* Colored gradient top */}
-      <div className="h-1.5 w-full" style={{ background: `linear-gradient(90deg, ${domain.color}, ${domain.color}88)` }} />
+      <div className="h-1.5 w-full flex-shrink-0" style={{ background: `linear-gradient(90deg, ${domain.color}, ${domain.color}88)` }} />
 
-      <div className="p-6">
+      <div className="p-6 flex flex-col flex-1">
         {/* Header */}
         <div className="flex items-start justify-between mb-5">
           <div className="flex-1 min-w-0">
@@ -36,7 +36,7 @@ export default function DomainCard({ domain, courses, completedCount, completedM
         </div>
 
         {/* Course list */}
-        <ul className="space-y-1" role="list">
+        <ul className="space-y-1 flex-1" role="list">
           {courses.map((course, idx) => {
             const isDone = completedModules.includes(course.courseNumber);
             return (

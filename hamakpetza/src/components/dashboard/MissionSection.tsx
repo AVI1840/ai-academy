@@ -39,7 +39,8 @@ export default function MissionSection() {
           className="font-heading font-black text-text leading-tight mb-6"
           style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)' }}
         >
-          להאיץ פי&nbsp;
+          להפוך כל עובד ציבור<br />
+          ל
           <span
             style={{
               background: 'linear-gradient(135deg, #d97753, #6a9bcc)',
@@ -47,14 +48,13 @@ export default function MissionSection() {
               WebkitTextFillColor: 'transparent',
             }}
           >
-            ×10
+            מוביל AI
           </span>
-          &nbsp;את יכולות ה-AI<br />
-          במגזר הציבורי
+          {' '}בארגון שלו
         </h2>
         <p className="text-muted text-lg max-w-2xl mx-auto leading-relaxed">
-          באמצעות ידע מעשי, כלים ומתודולוגיות — שמאפשרים לכל עובד ציבור להפוך מ"משתמש"
-          ל<strong className="text-text">מוביל AI</strong> בארגון שלו.
+          ידע מעשי, כלים ומתודולוגיות שמאפשרים לעובדי המדינה לרתום AI לעבודה היומיומית —
+          ולשדרג את <strong className="text-text">השירות לאזרח פי 10</strong>.
         </p>
       </div>
 
