@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://avi1840.github.io/ai-academy/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url><loc>https://avi1840.github.io/ai-academy/course/ai-literacy/</loc><priority>0.8</priority></url>
+  <url><loc>https://avi1840.github.io/ai-academy/course/model-map/</loc><priority>0.8</priority></url>
+  <url><loc>https://avi1840.github.io/ai-academy/course/prompt-engineering/</loc><priority>0.8</priority></url>
+  <url><loc>https://avi1840.github.io/ai-academy/course/ai-writing/</loc><priority>0.8</priority></url>
+  <url><loc>https://avi1840.github.io/ai-academy/course/ai-data-analysis/</loc><priority>0.8</priority></url>
+  <url><loc>https://avi1840.github.io/ai-academy/course/ai-research/</loc><priority>0.8</priority></url>
+  <url><loc>https://avi1840.github.io/ai-academy/course/ai-strategic-thinking/</loc><priority>0.8</priority></url>
+  <url><loc>https://avi1840.github.io/ai-academy/course/ai-ethics-gov/</loc><priority>0.8</priority></url>
+  <url><loc>https://avi1840.github.io/ai-academy/course/ai-public-service/</loc><priority>0.8</priority></url>
+  <url><loc>https://avi1840.github.io/ai-academy/course/ai-automation/</loc><priority>0.8</priority></url>
+  <url><loc>https://avi1840.github.io/ai-academy/course/rag/</loc><priority>0.8</priority></url>
+  <url><loc>https://avi1840.github.io/ai-academy/course/claude-code/</loc><priority>0.8</priority></url>
+  <url><loc>https://avi1840.github.io/ai-academy/course/cloud-nimbus/</loc><priority>0.8</priority></url>
+  <url><loc>https://avi1840.github.io/ai-academy/course/ai-gov-international/</loc><priority>0.8</priority></url>
+  <url><loc>https://avi1840.github.io/ai-academy/course/notebooklm/</loc><priority>0.8</priority></url>
+  <url><loc>https://avi1840.github.io/ai-academy/course/ai-agents/</loc><priority>0.8</priority></url>
+</urlset>

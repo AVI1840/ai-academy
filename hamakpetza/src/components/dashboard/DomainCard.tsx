@@ -6,12 +6,13 @@ interface DomainCardProps {
   domain: DomainInfo;
   courses: CourseFrontmatter[];
   completedCount: number;
+  completedModules?: number[];
 }
 
-export default function DomainCard({ domain, courses, completedCount }: DomainCardProps) {
+export default function DomainCard({ domain, courses, completedCount, completedModules = [] }: DomainCardProps) {
   const percentage = courses.length > 0 ? Math.round((completedCount / courses.length) * 100) : 0;
   const isAllDone = completedCount === courses.length && courses.length > 0;
-  const nextCourse = courses.find((_, i) => i >= completedCount) ?? courses[0];
+  const nextCourse = courses.find(c => !completedModules.includes(c.courseNumber)) ?? courses[0];
 
   return (
     <div className="group relative rounded-2xl overflow-hidden glass-card glow-border transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-glow)]">
@@ -37,7 +38,7 @@ export default function DomainCard({ domain, courses, completedCount }: DomainCa
         {/* Course list */}
         <ul className="space-y-1" role="list">
           {courses.map((course, idx) => {
-            const isDone = idx < completedCount;
+            const isDone = completedModules.includes(course.courseNumber);
             return (
               <li key={course.slug}>
                 <Link href={`/course/${course.slug}/`}

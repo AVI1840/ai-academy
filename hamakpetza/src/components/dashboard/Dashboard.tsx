@@ -237,6 +237,7 @@ export default function Dashboard() {
                   domain={domain}
                   courses={selectedPath ? filteredCourses : courses}
                   completedCount={completedCount}
+                  completedModules={completedModules}
                 />
               );
             })}

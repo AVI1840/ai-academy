@@ -24,17 +24,19 @@ export const metadata: Metadata = {
   authors: [{ name: 'אביעד יצחקי' }],
   icons: { icon: '/ai-academy/favicon.svg' },
   openGraph: {
-    title: '🚀 המקפצה — אקדמיית AI למגזר הציבורי',
-    description: 'מה AI יכול לעשות בשבילך? 16 יחידות מעשיות — ChatGPT, Gemini, NotebookLM, ענן נימבוס, RAG, סוכני AI ועוד. חינם לכל עובדי המדינה.',
+    title: 'המקפצה — אקדמיית AI למגזר הציבורי',
+    description: '16 יחידות למידה מעשיות וחינמיות — Prompt Engineering, RAG, סוכני AI, ענן ממשלתי, NotebookLM ועוד. לכל מי שמוביל AI בממשלה.',
     type: 'website',
     locale: 'he_IL',
     url: 'https://avi1840.github.io/ai-academy/',
     siteName: 'המקפצה',
+    images: [{ url: '/ai-academy/og-image.svg', width: 1200, height: 630, alt: 'המקפצה — אקדמיית AI למגזר הציבורי' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '🚀 המקפצה — אקדמיית AI ממשלתית',
-    description: '16 יחידות AI מעשיות וחינמיות למובילי המגזר הציבורי בישראל',
+    title: 'המקפצה — אקדמיית AI למגזר הציבורי',
+    description: '16 יחידות למידה מעשיות וחינמיות למובילי AI במגזר הציבורי בישראל',
+    images: ['/ai-academy/og-image.svg'],
   },
 };
 

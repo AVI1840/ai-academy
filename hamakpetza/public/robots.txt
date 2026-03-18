@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://avi1840.github.io/ai-academy/sitemap.xml
