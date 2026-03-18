@@ -75,18 +75,19 @@ export default function Dashboard() {
 
             {/* Tagline */}
             <p className="text-xl md:text-2xl text-muted font-heading font-medium mb-2 max-w-2xl mx-auto leading-snug">
-              כשעובד ציבור שולט ב-AI —{' '}
+              משדרגים את{' '}
               <span style={{
                 background: 'linear-gradient(135deg, #d97753, #6a9bcc)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
               }}>
-                השירות לאזרח משתדרג ×10
+                מערכת ההפעלה
               </span>
+              {' '}של המגזר הציבורי
             </p>
             <p className="text-sm text-muted/60 max-w-xl mx-auto mb-10 leading-relaxed">
-              {totalCourses} יחידות מעשיות — מאוריינות AI ועד RAG, ענן ממשלתי וסוכנים אוטונומיים.
-              חינם, ללא הרשמה — לכל עובד ציבור שרוצה להוביל.
+              {totalCourses} יחידות מעשיות שהופכות עובדי מדינה ממשתמשי AI — למובילי שינוי.
+              חינם, ללא הרשמה.
             </p>
 
             {/* CTA */}
