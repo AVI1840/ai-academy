@@ -48,7 +48,7 @@ export default function Sidebar({ isOpen, onToggle, currentSlug }: SidebarProps)
                 <span className="text-xl">🚀</span>
                 <div>
                   <span className="font-heading text-lg font-bold text-text block leading-tight">המקפצה</span>
-                  <span className="text-[10px] text-muted">אקדמיית AI למגזר הציבורי</span>
+                  <span className="text-xs text-muted">אקדמיית AI למגזר הציבורי</span>
                 </div>
               </div>
             </Link>

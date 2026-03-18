@@ -35,8 +35,7 @@ jobs:
         run: npm run build
         working-directory: hamakpetza
         env:
-          # Add Firebase env var here when ready:
-          # NEXT_PUBLIC_FIREBASE_DB_URL: ${{ secrets.FIREBASE_DB_URL }}
+          NEXT_PUBLIC_FIREBASE_DB_URL: ${{ secrets.NEXT_PUBLIC_FIREBASE_DB_URL }}
           NODE_ENV: production
 
       - name: Upload artifact

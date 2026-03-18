@@ -24,7 +24,7 @@ const WHO_FOR = [
   { icon: '📋', label: 'צוותי מדיניות ואסטרטגיה' },
   { icon: '📊', label: 'אנליסטים ומובילי דאטה' },
   { icon: '🤝', label: 'צוותי שירות לאזרח' },
-  { icon: '🏛️', label: 'שותפי GovTech' },
+  { icon: '🏛️', label: 'יזמי GovTech' },
 ];
 
 export default function Dashboard() {

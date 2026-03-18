@@ -119,7 +119,7 @@ export default function AppShell({ children, currentSlug = null }: AppShellProps
         <main
           id="main-content"
           className={`transition-all duration-300 min-h-screen ${
-            sidebarOpen && !isMobile ? 'mr-72' : isMobile ? 'mr-0' : 'mr-16'
+            sidebarOpen && !isMobile ? 'mr-72' : 'mr-0'
           }`}
         >
           {children}
