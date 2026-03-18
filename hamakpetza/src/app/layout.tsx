@@ -30,13 +30,13 @@ export const metadata: Metadata = {
     locale: 'he_IL',
     url: 'https://avi1840.github.io/ai-academy/',
     siteName: 'המקפצה',
-    images: [{ url: '/ai-academy/og-image.svg', width: 1200, height: 630, alt: 'המקפצה — אקדמיית AI למגזר הציבורי' }],
+    images: [{ url: '/ai-academy/og-image.png', width: 1200, height: 630, alt: 'המקפצה — אקדמיית AI למגזר הציבורי' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'המקפצה — אקדמיית AI למגזר הציבורי',
     description: '16 יחידות למידה מעשיות וחינמיות למובילי AI במגזר הציבורי בישראל',
-    images: ['/ai-academy/og-image.svg'],
+    images: ['/ai-academy/og-image.png'],
   },
 };
 
