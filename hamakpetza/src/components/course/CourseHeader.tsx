@@ -4,12 +4,12 @@ import { COURSE_CATALOG, DOMAINS } from '@/data/course-catalog';
 import SocialShare from './SocialShare';
 
 const DOMAIN_HERO_IMAGES: Record<string, string> = {
-  'foundation':           '/ai-academy/images/amb9.jpg',
-  'ai-engineering':       '/ai-academy/images/amb8.jpg',
-  'ai-assisted-dev':      '/ai-academy/images/amb11.jpg',
-  'building-ai-products': '/ai-academy/images/amb10.jpg',
-  'ai-for-gov':           '/ai-academy/images/amb1.jpg',
-  'ai-product-leadership':'/ai-academy/images/amb4.jpg',
+  'foundation':           '/ai-academy/images/amb-hourglass.png',
+  'ai-engineering':       '/ai-academy/images/amb-neural.png',
+  'ai-assisted-dev':      '/ai-academy/images/amb-cubes.png',
+  'building-ai-products': '/ai-academy/images/amb-gem.png',
+  'ai-for-gov':           '/ai-academy/images/amb-compass.png',
+  'ai-product-leadership':'/ai-academy/images/amb-hero.png',
 };
 
 interface CourseHeaderProps { frontmatter: CourseFrontmatter; }
@@ -31,18 +31,26 @@ export default function CourseHeader({ frontmatter }: CourseHeaderProps) {
           }}
         />
       )}
-      {/* Decorative course image — visible left panel, fades right */}
-      <div className="absolute top-0 left-0 bottom-0 w-80 pointer-events-none overflow-hidden" aria-hidden="true">
+      {/* Decorative course image — left panel */}
+      <div className="absolute top-0 left-0 bottom-0 w-72 pointer-events-none overflow-hidden hidden lg:block" aria-hidden="true">
         <img
           src={heroImg}
           alt=""
           className="absolute inset-0 w-full h-full object-cover"
-          style={{ opacity: 0.32, filter: 'blur(1px)', objectPosition: 'center' }}
+          style={{ opacity: 0.42, objectPosition: 'center top' }}
         />
+        {/* Fade toward content */}
         <div className="absolute inset-0" style={{
-          background: 'linear-gradient(to right, transparent 20%, var(--color-bg) 100%)'
+          background: 'linear-gradient(to right, transparent 0%, var(--color-bg) 70%)'
+        }} />
+        {/* Top/bottom vignette */}
+        <div className="absolute inset-0" style={{
+          background: 'linear-gradient(to bottom, var(--color-bg) 0%, transparent 15%, transparent 85%, var(--color-bg) 100%)'
         }} />
       </div>
+
+      {/* Content pushed right of image on large screens */}
+      <div className="relative z-10 lg:pr-0">
       <nav className="flex items-center gap-1.5 text-xs text-muted mb-6 relative" aria-label="path">
         <Link href="/" className="hover:text-accent transition-colors font-heading">המקפצה</Link>
         <span className="opacity-40">/</span>
@@ -65,6 +73,7 @@ export default function CourseHeader({ frontmatter }: CourseHeaderProps) {
           <span className="px-3 py-1.5 rounded-xl text-xs bg-accent/10 text-accent font-heading font-medium border border-accent/20">{frontmatter.exerciseCount} תרגילים</span>
         </div>
         <SocialShare title={frontmatter.title} url={courseUrl} description={`למדתי "${frontmatter.title}" בהמקפצה`} variant="compact" />
+      </div>
       </div>
     </header>
   );
