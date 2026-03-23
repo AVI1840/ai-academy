@@ -136,6 +136,16 @@ html.light .amb-6 { opacity: 0.10; }
   .glow-border { position: relative; }
   .glow-border::before { content: ''; position: absolute; inset: -1px; border-radius: inherit; background: linear-gradient(135deg, rgba(217,119,87,0.2), transparent 40%, transparent 60%, rgba(106,155,204,0.15)); z-index: -1; opacity: 0; transition: opacity 0.3s; }
   .glow-border:hover::before { opacity: 1; }
+
+  /* Decorative image panels — lower opacity in light mode */
+  .course-header-img { opacity: 0.30; transition: opacity var(--transition-theme); }
+  html.light .course-header-img { opacity: 0.16; }
+
+  .dashboard-hero-img { opacity: 0.48; transition: opacity var(--transition-theme); }
+  html.light .dashboard-hero-img { opacity: 0.22; }
+
+  .dashboard-waves-img { opacity: 0.28; transition: opacity var(--transition-theme); }
+  html.light .dashboard-waves-img { opacity: 0.12; }
 }
 
 @layer utilities {

@@ -64,28 +64,29 @@ export default function Dashboard() {
           <img
             src="/ai-academy/images/amb-hero.png"
             alt=""
-            className="absolute inset-0 w-full h-full object-cover"
-            style={{ opacity: 0.48, objectPosition: 'center center' }}
+            className="absolute inset-0 w-full h-full object-cover dashboard-hero-img"
+            style={{ objectPosition: 'center center' }}
           />
-          {/* Fade left toward text */}
+          {/* Wide soft fade left toward text */}
           <div className="absolute inset-0" style={{
-            background: 'linear-gradient(to left, transparent 20%, var(--color-bg) 80%)'
+            background: 'linear-gradient(to left, transparent 0%, var(--color-bg) 72%)'
           }} />
           {/* Vignette top/bottom */}
           <div className="absolute inset-0" style={{
-            background: 'linear-gradient(to bottom, var(--color-bg) 0%, transparent 18%, transparent 82%, var(--color-bg) 100%)'
+            background: 'linear-gradient(to bottom, var(--color-bg) 0%, transparent 22%, transparent 78%, var(--color-bg) 100%)'
           }} />
         </div>
-        {/* Left accent — amber→navy fluid waves, warm+cool contrast */}
-        <div className="absolute top-0 left-0 bottom-0 w-72 pointer-events-none overflow-hidden hidden xl:block" aria-hidden="true">
+        {/* Left accent — amber→navy fluid waves */}
+        <div className="absolute top-0 left-0 bottom-0 w-[26rem] pointer-events-none overflow-hidden hidden xl:block" aria-hidden="true">
           <img
             src="/ai-academy/images/amb-waves.png"
             alt=""
-            className="absolute inset-0 w-full h-full object-cover"
-            style={{ opacity: 0.28, objectPosition: 'center' }}
+            className="absolute inset-0 w-full h-full object-cover dashboard-waves-img"
+            style={{ objectPosition: 'center' }}
           />
+          {/* Wide soft fade right */}
           <div className="absolute inset-0" style={{
-            background: 'linear-gradient(to right, transparent 0%, var(--color-bg) 85%)'
+            background: 'linear-gradient(to right, transparent 0%, var(--color-bg) 62%)'
           }} />
           <div className="absolute inset-0" style={{
             background: 'linear-gradient(to bottom, var(--color-bg) 0%, transparent 20%, transparent 80%, var(--color-bg) 100%)'

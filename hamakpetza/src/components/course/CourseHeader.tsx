@@ -31,21 +31,21 @@ export default function CourseHeader({ frontmatter }: CourseHeaderProps) {
           }}
         />
       )}
-      {/* Decorative course image — left panel */}
-      <div className="absolute top-0 left-0 bottom-0 w-72 pointer-events-none overflow-hidden hidden lg:block" aria-hidden="true">
+      {/* Decorative course image — left panel, wide fade */}
+      <div className="absolute top-0 left-0 bottom-0 w-[26rem] pointer-events-none overflow-hidden hidden lg:block" aria-hidden="true">
         <img
           src={heroImg}
           alt=""
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ opacity: 0.42, objectPosition: 'center top' }}
+          className="absolute inset-0 w-full h-full object-cover course-header-img"
+          style={{ opacity: 0.30, objectPosition: 'center top' }}
         />
-        {/* Fade toward content */}
+        {/* Soft fade right — starts subtle, fully gone by 58% */}
         <div className="absolute inset-0" style={{
-          background: 'linear-gradient(to right, transparent 0%, var(--color-bg) 70%)'
+          background: 'linear-gradient(to right, transparent 0%, var(--color-bg) 58%)'
         }} />
-        {/* Top/bottom vignette */}
+        {/* Top/bottom vignette — stronger */}
         <div className="absolute inset-0" style={{
-          background: 'linear-gradient(to bottom, var(--color-bg) 0%, transparent 15%, transparent 85%, var(--color-bg) 100%)'
+          background: 'linear-gradient(to bottom, var(--color-bg) 0%, transparent 22%, transparent 78%, var(--color-bg) 100%)'
         }} />
       </div>
 
