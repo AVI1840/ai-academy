@@ -101,6 +101,8 @@ export default function AppShell({ children, currentSlug = null }: AppShellProps
           <div className="amb amb-3" />
           <div className="amb amb-4" />
           <div className="amb amb-5" />
+          <div className="amb amb-6" />
+          <div className="amb amb-7" />
         </div>
 
         <Sidebar

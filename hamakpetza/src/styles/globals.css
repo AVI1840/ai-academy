@@ -57,40 +57,54 @@ nav, aside, header, footer,
   background-size: cover;
   background-position: center;
 }
-/* Dodecahedron — amber gold, navy bg */
+/* Dodecahedron — amber gold, navy sky */
 .amb-1 {
-  width: 780px; height: 440px; top: -160px; right: -100px;
-  background-image: url('/images/amb1.jpg');
+  width: 760px; height: 428px; top: -140px; right: -80px;
+  background-image: url('/ai-academy/images/amb1.jpg');
   border-radius: 40%;
-  opacity: 0.22;
+  opacity: 0.24;
 }
-/* Clay + glass — terracotta warm */
+/* Clay + glass orb — terracotta warm */
 .amb-2 {
-  width: 620px; height: 350px; top: 40%; left: -200px;
-  background-image: url('/images/amb2.jpg');
+  width: 600px; height: 338px; top: 38%; left: -180px;
+  background-image: url('/ai-academy/images/amb2.jpg');
   border-radius: 50%;
-  opacity: 0.16;
+  opacity: 0.18;
 }
-/* Cube network — rose-copper glow */
+/* Glass cube network — rose-copper glow */
 .amb-3 {
-  width: 800px; height: 450px; bottom: -240px; right: 15%;
-  background-image: url('/images/amb3.jpg');
+  width: 780px; height: 439px; bottom: -220px; right: 12%;
+  background-image: url('/ai-academy/images/amb3.jpg');
   border-radius: 40%;
-  opacity: 0.14;
+  opacity: 0.15;
 }
 /* Fluid waves — terracotta/peach/slate */
 .amb-4 {
-  width: 560px; height: 315px; top: 55%; right: -80px;
-  background-image: url('/images/amb4.jpg');
+  width: 680px; height: 383px; top: 50%; right: -60px;
+  background-image: url('/ai-academy/images/amb4.jpg');
+  border-radius: 50%;
+  opacity: 0.14;
+}
+/* Sunset arch — golden warm light */
+.amb-5 {
+  width: 620px; height: 349px; bottom: 18%; left: 8%;
+  background-image: url('/ai-academy/images/amb5.jpg');
+  border-radius: 50%;
+  opacity: 0.17;
+}
+/* Neural network — warm amber nodes */
+.amb-6 {
+  width: 540px; height: 304px; top: 20%; left: 25%;
+  background-image: url('/ai-academy/images/amb6.jpg');
+  border-radius: 50%;
+  opacity: 0.12;
+}
+/* Crystal cube — golden sunset */
+.amb-7 {
+  width: 500px; height: 281px; bottom: 5%; right: 30%;
+  background-image: url('/ai-academy/images/amb7.jpg');
   border-radius: 50%;
   opacity: 0.13;
-}
-/* Wood + glass — walnut amber */
-.amb-5 {
-  width: 580px; height: 326px; bottom: 20%; left: 10%;
-  background-image: url('/images/amb5.jpg');
-  border-radius: 50%;
-  opacity: 0.15;
 }
 /* Light mode: very subtle */
 html.light .amb-1 { opacity: 0.07; }
@@ -98,6 +112,8 @@ html.light .amb-2 { opacity: 0.06; }
 html.light .amb-3 { opacity: 0.05; }
 html.light .amb-4 { opacity: 0.04; }
 html.light .amb-5 { opacity: 0.05; }
+html.light .amb-6 { opacity: 0.04; }
+html.light .amb-7 { opacity: 0.04; }
 
 @keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
 @keyframes slideUp { from { opacity: 0; transform: translateY(20px) } to { opacity: 1; transform: translateY(0) } }
