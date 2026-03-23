@@ -1,102 +1,143 @@
-name: דוח שבועי — המקפצה
+name: Weekly Email Report — המקפצה
 
 on:
   schedule:
-    # כל יום ראשון בשעה 08:00 (ישראל קיץ = UTC+3 → 05:00 UTC)
+    # כל יום ראשון 08:00 ישראל (UTC+3 → 05:00 UTC)
     - cron: '0 5 * * 0'
-  workflow_dispatch: # הפעלה ידנית מ-GitHub Actions
+  workflow_dispatch:   # הפעלה ידנית מ-Actions
 
 jobs:
-  weekly-report:
+  send-report:
     runs-on: ubuntu-latest
-    permissions:
-      issues: write
-
     steps:
-      - name: Generate weekly report
-        uses: actions/github-script@v7
+      - name: Fetch Firebase & Send Email
         env:
-          FIREBASE_DB_URL: ${{ secrets.FIREBASE_DB_URL }}
-        with:
-          script: |
-            const dbUrl = process.env.FIREBASE_DB_URL;
-            if (!dbUrl) {
-              core.warning('FIREBASE_DB_URL לא מוגדר — דלג על הדוח');
-              return;
-            }
+          FIREBASE_URL: https://hamakpetza-ba5dd-default-rtdb.firebaseio.com
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: |
+          python3 << 'PYEOF'
+          import json, os, smtplib, urllib.request
+          from email.mime.multipart import MIMEMultipart
+          from email.mime.text import MIMEText
+          from datetime import date, timedelta
 
-            // ── Fetch data from Firebase ──────────────────────────
-            async function get(path) {
-              const res = await fetch(`${dbUrl}/${path}.json`);
-              return res.ok ? res.json() : null;
-            }
+          BASE = os.environ['FIREBASE_URL']
 
-            const [globalStats, dailyActive] = await Promise.all([
-              get('globalStats'),
-              get('dailyActive'),
-            ]);
+          def fetch(path):
+              try:
+                  with urllib.request.urlopen(f"{BASE}/{path}.json") as r:
+                      return json.loads(r.read())
+              except:
+                  return None
 
-            const totalVisitors = globalStats?.totalVisitors ?? 0;
-            const totalLessons  = globalStats?.totalLessonsCompleted ?? 0;
+          global_stats  = fetch('globalStats')  or {}
+          daily_active  = fetch('dailyActive')   or {}
+          course_stats  = fetch('courseStats')   or {}
 
-            // ── Weekly active (last 7 days) ───────────────────────
-            let weeklyActive = 0;
-            if (dailyActive) {
-              const today = new Date();
-              for (let i = 0; i < 7; i++) {
-                const d = new Date(today);
-                d.setDate(today.getDate() - i);
-                const key = d.toISOString().slice(0, 10);
-                weeklyActive += dailyActive[key] ?? 0;
-              }
-            }
+          total_visitors = global_stats.get('totalVisitors', 0)
+          total_lessons  = global_stats.get('totalLessonsCompleted', 0)
 
-            // ── Daily breakdown table (last 7 days) ──────────────
-            const rows = [];
-            const days = ['ראשון','שני','שלישי','רביעי','חמישי','שישי','שבת'];
-            for (let i = 6; i >= 0; i--) {
-              const d = new Date();
-              d.setDate(d.getDate() - i);
-              const key  = d.toISOString().slice(0, 10);
-              const count = dailyActive?.[key] ?? 0;
-              const dayName = days[d.getDay()];
-              const bar = '█'.repeat(Math.min(count, 20)) + (count > 20 ? `…(${count})` : '');
-              rows.push(`| ${key} (${dayName}) | ${count} | ${bar} |`);
-            }
+          # ── 7-day activity ─────────────────────────────────────
+          today = date.today()
+          week_total = 0
+          day_rows = ""
+          day_names = ['ראשון','שני','שלישי','רביעי','חמישי','שישי','שבת']
+          for i in range(6, -1, -1):
+              d = today - timedelta(days=i)
+              count = daily_active.get(d.isoformat(), 0)
+              week_total += count
+              name = day_names[d.weekday()]
+              bar_len = min(count, 24)
+              bar = '█' * bar_len + ('…' if count > 24 else '')
+              color = '#d97757' if count > 0 else '#3a3d52'
+              day_rows += f"""
+                <tr>
+                  <td style="padding:5px 14px;color:#8b92a8;font-size:13px;">{d.isoformat()} <span style="color:#4b5563">({name})</span></td>
+                  <td style="padding:5px 14px;font-family:monospace;color:{color};">{bar} <b>{count}</b></td>
+                </tr>"""
 
-            // ── Build issue body ──────────────────────────────────
-            const weekStart = new Date();
-            weekStart.setDate(weekStart.getDate() - 6);
-            const weekLabel = `${weekStart.toISOString().slice(0,10)} – ${new Date().toISOString().slice(0,10)}`;
+          # ── Top 5 courses ──────────────────────────────────────
+          top = sorted(course_stats.items(),
+                       key=lambda x: x[1].get('completions', 0) if isinstance(x[1], dict) else 0,
+                       reverse=True)[:5]
+          course_rows = ""
+          for slug, stats in top:
+              c = stats.get('completions', 0) if isinstance(stats, dict) else 0
+              if c > 0:
+                  course_rows += f"""
+                    <tr>
+                      <td style="padding:5px 14px;color:#8b92a8;font-size:13px;">{slug}</td>
+                      <td style="padding:5px 14px;color:#6a9bcc;font-weight:bold;">{c} השלמות</td>
+                    </tr>"""
+          if not course_rows:
+              course_rows = '<tr><td colspan="2" style="padding:8px 14px;color:#4b5563;">אין נתונים עדיין</td></tr>'
 
-            const body = [
-              `## 📊 דוח שבועי — המקפצה`,
-              `**שבוע:** ${weekLabel}`,
-              ``,
-              `### סיכום כולל`,
-              `| מדד | ערך |`,
-              `|---|---|`,
-              `| 👥 סה"כ מבקרים ייחודיים | **${totalVisitors.toLocaleString('he-IL')}** |`,
-              `| 🎓 סה"כ שיעורים שהושלמו | **${totalLessons.toLocaleString('he-IL')}** |`,
-              `| 📅 מבקרים שבוע זה | **${weeklyActive.toLocaleString('he-IL')}** |`,
-              ``,
-              `### פעילות יומית (7 ימים אחרונים)`,
-              `| תאריך | כניסות | גרף |`,
-              `|---|---|---|`,
-              ...rows,
-              ``,
-              `---`,
-              `*דוח זה נוצר אוטומטית כל יום ראשון · [המקפצה](https://avi1840.github.io/ai-academy/)*`,
-            ].join('\n');
+          week_label = f"{today - timedelta(days=6)} – {today}"
 
-            const title = `📊 דוח שבועי — ${weekLabel}`;
+          html = f"""<!DOCTYPE html>
+          <html dir="rtl" lang="he">
+          <head><meta charset="UTF-8"></head>
+          <body style="margin:0;padding:0;background:#0b0c10;font-family:'Segoe UI',Arial,sans-serif;direction:rtl;">
+          <div style="max-width:580px;margin:0 auto;padding:32px 16px;">
 
-            await github.rest.issues.create({
-              owner: context.repo.owner,
-              repo:  context.repo.repo,
-              title,
-              body,
-              labels: ['analytics', 'weekly-report'],
-            });
+            <div style="background:linear-gradient(135deg,#1a1c28,#161820);border:1px solid #252840;border-radius:16px;padding:28px 32px;margin-bottom:20px;text-align:center;">
+              <div style="font-size:36px;margin-bottom:8px;">🚀</div>
+              <h1 style="margin:0;color:#e8e6dc;font-size:22px;font-weight:900;">דוח שבועי — המקפצה</h1>
+              <p style="margin:8px 0 0;color:#6b7280;font-size:13px;">{week_label}</p>
+            </div>
 
-            console.log(`✅ Issue created: ${title}`);
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;">
+              <div style="background:#161820;border:1px solid #252840;border-radius:12px;padding:20px 16px;text-align:center;">
+                <div style="font-size:34px;font-weight:900;color:#d97757;">{total_visitors:,}</div>
+                <div style="color:#8b92a8;font-size:12px;margin-top:4px;">👥 סה"כ לומדים</div>
+              </div>
+              <div style="background:#161820;border:1px solid #252840;border-radius:12px;padding:20px 16px;text-align:center;">
+                <div style="font-size:34px;font-weight:900;color:#6a9bcc;">{week_total:,}</div>
+                <div style="color:#8b92a8;font-size:12px;margin-top:4px;">📅 פעילים השבוע</div>
+              </div>
+              <div style="background:#161820;border:1px solid #252840;border-radius:12px;padding:20px 16px;text-align:center;">
+                <div style="font-size:34px;font-weight:900;color:#a78bfa;">{total_lessons:,}</div>
+                <div style="color:#8b92a8;font-size:12px;margin-top:4px;">🎓 יחידות הושלמו</div>
+              </div>
+              <div style="background:#161820;border:1px solid #252840;border-radius:12px;padding:20px 16px;text-align:center;">
+                <div style="font-size:34px;font-weight:900;color:#34d399;">16</div>
+                <div style="color:#8b92a8;font-size:12px;margin-top:4px;">📚 יחידות באתר</div>
+              </div>
+            </div>
+
+            <div style="background:#161820;border:1px solid #252840;border-radius:12px;padding:20px;margin-bottom:16px;">
+              <h2 style="margin:0 0 14px;color:#e8e6dc;font-size:15px;">📊 פעילות יומית — 7 ימים אחרונים</h2>
+              <table style="width:100%;border-collapse:collapse;">{day_rows}</table>
+            </div>
+
+            <div style="background:#161820;border:1px solid #252840;border-radius:12px;padding:20px;margin-bottom:20px;">
+              <h2 style="margin:0 0 14px;color:#e8e6dc;font-size:15px;">🏆 יחידות הנלמדות ביותר</h2>
+              <table style="width:100%;border-collapse:collapse;">{course_rows}</table>
+            </div>
+
+            <div style="text-align:center;color:#4b5563;font-size:12px;">
+              <a href="https://avi1840.github.io/ai-academy/" style="color:#d97757;text-decoration:none;">🔗 המקפצה — AI למגזר הציבורי</a>
+              &nbsp;·&nbsp; דוח אוטומטי · נשלח כל יום ראשון
+            </div>
+          </div>
+          </body></html>"""
+
+          # ── Send via Gmail SMTP ────────────────────────────────
+          user = os.environ.get('GMAIL_USER', '')
+          pwd  = os.environ.get('GMAIL_APP_PASSWORD', '')
+          if not user or not pwd:
+              print("⚠️  GMAIL_USER / GMAIL_APP_PASSWORD לא מוגדרים — דלג")
+              exit(0)
+
+          msg = MIMEMultipart('alternative')
+          msg['Subject'] = f'📊 המקפצה — דוח שבועי | {today.strftime("%d/%m/%Y")}'
+          msg['From']    = f'המקפצה Analytics <{user}>'
+          msg['To']      = 'AVIAD1840@gmail.com'
+          msg.attach(MIMEText(html, 'html', 'utf-8'))
+
+          with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
+              smtp.login(user, pwd)
+              smtp.send_message(msg)
+              print(f"✅ Email sent! visitors={total_visitors}, week={week_total}, lessons={total_lessons}")
+          PYEOF
