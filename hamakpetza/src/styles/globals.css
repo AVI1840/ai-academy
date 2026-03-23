@@ -51,46 +51,53 @@ nav, aside, header, footer,
   pointer-events: none; z-index: 0; overflow: hidden;
 }
 .amb {
-  position: absolute; border-radius: 50%;
-  filter: blur(130px);
+  position: absolute;
+  filter: blur(140px);
   transition: opacity var(--transition-theme);
+  background-size: cover;
+  background-position: center;
 }
-/* Warm copper — neural network */
+/* Dodecahedron — amber gold, navy bg */
 .amb-1 {
-  width: 700px; height: 700px; top: -180px; right: -120px;
-  background: radial-gradient(circle at 40% 40%, #d97757 0%, #a84020 55%, transparent 100%);
-  opacity: 0.18;
+  width: 780px; height: 440px; top: -160px; right: -100px;
+  background-image: url('/images/amb1.jpg');
+  border-radius: 40%;
+  opacity: 0.22;
 }
-/* Terracotta — desert arch */
+/* Clay + glass — terracotta warm */
 .amb-2 {
-  width: 580px; height: 580px; top: 42%; left: -180px;
-  background: radial-gradient(circle at 60% 50%, #c87050 0%, #904020 55%, transparent 100%);
+  width: 620px; height: 350px; top: 40%; left: -200px;
+  background-image: url('/images/amb2.jpg');
+  border-radius: 50%;
+  opacity: 0.16;
+}
+/* Cube network — rose-copper glow */
+.amb-3 {
+  width: 800px; height: 450px; bottom: -240px; right: 15%;
+  background-image: url('/images/amb3.jpg');
+  border-radius: 40%;
   opacity: 0.14;
 }
-/* Warm gold — sand cube */
-.amb-3 {
-  width: 750px; height: 750px; bottom: -280px; right: 22%;
-  background: radial-gradient(circle at 50% 50%, #e8c060 0%, #c09030 55%, transparent 100%);
-  opacity: 0.10;
-}
-/* Cool steel — crystal */
+/* Fluid waves — terracotta/peach/slate */
 .amb-4 {
-  width: 480px; height: 480px; top: 52%; right: -100px;
-  background: radial-gradient(circle at 40% 50%, #8090c0 0%, #4060a0 55%, transparent 100%);
-  opacity: 0.08;
+  width: 560px; height: 315px; top: 55%; right: -80px;
+  background-image: url('/images/amb4.jpg');
+  border-radius: 50%;
+  opacity: 0.13;
 }
-/* Fluid waves terracotta */
+/* Wood + glass — walnut amber */
 .amb-5 {
-  width: 520px; height: 520px; bottom: 22%; left: 12%;
-  background: radial-gradient(circle at 50% 50%, #c87060 0%, #804030 55%, transparent 100%);
-  opacity: 0.12;
+  width: 580px; height: 326px; bottom: 20%; left: 10%;
+  background-image: url('/images/amb5.jpg');
+  border-radius: 50%;
+  opacity: 0.15;
 }
-/* Light mode: subtle */
-html.light .amb-1 { opacity: 0.06; }
-html.light .amb-2 { opacity: 0.05; }
-html.light .amb-3 { opacity: 0.04; }
-html.light .amb-4 { opacity: 0.03; }
-html.light .amb-5 { opacity: 0.04; }
+/* Light mode: very subtle */
+html.light .amb-1 { opacity: 0.07; }
+html.light .amb-2 { opacity: 0.06; }
+html.light .amb-3 { opacity: 0.05; }
+html.light .amb-4 { opacity: 0.04; }
+html.light .amb-5 { opacity: 0.05; }
 
 @keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
 @keyframes slideUp { from { opacity: 0; transform: translateY(20px) } to { opacity: 1; transform: translateY(0) } }
