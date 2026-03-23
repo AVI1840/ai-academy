@@ -59,16 +59,33 @@ export default function Dashboard() {
           backgroundSize: '60px 60px',
         }} />
 
-        {/* Floating hero image — decorative */}
-        <div className="absolute top-0 left-0 bottom-0 w-96 pointer-events-none overflow-hidden hidden md:block" aria-hidden="true">
+        {/* Hero image — right side (RTL start), large & visible */}
+        <div className="absolute top-0 right-0 bottom-0 w-[45%] pointer-events-none overflow-hidden hidden lg:block" aria-hidden="true">
           <img
             src="/ai-academy/images/amb9.jpg"
             alt=""
             className="absolute inset-0 w-full h-full object-cover"
-            style={{ opacity: 0.15, filter: 'blur(1px)', objectPosition: 'center' }}
+            style={{ opacity: 0.38, objectPosition: '40% center' }}
+          />
+          {/* Fade left toward text */}
+          <div className="absolute inset-0" style={{
+            background: 'linear-gradient(to left, transparent 30%, var(--color-bg) 85%)'
+          }} />
+          {/* Vignette top/bottom */}
+          <div className="absolute inset-0" style={{
+            background: 'linear-gradient(to bottom, var(--color-bg) 0%, transparent 20%, transparent 80%, var(--color-bg) 100%)'
+          }} />
+        </div>
+        {/* Second decorative image — left side accent */}
+        <div className="absolute top-0 left-0 bottom-0 w-64 pointer-events-none overflow-hidden hidden xl:block" aria-hidden="true">
+          <img
+            src="/ai-academy/images/amb11.jpg"
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ opacity: 0.18, objectPosition: 'center' }}
           />
           <div className="absolute inset-0" style={{
-            background: 'linear-gradient(to right, transparent 0%, var(--color-bg) 90%)'
+            background: 'linear-gradient(to right, transparent 0%, var(--color-bg) 100%)'
           }} />
         </div>
 

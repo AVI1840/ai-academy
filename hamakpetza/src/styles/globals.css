@@ -50,60 +50,60 @@ nav, aside, header, footer,
   position: fixed; inset: 0;
   pointer-events: none; z-index: 0; overflow: hidden;
 }
-/* ── Ambient Glow — radial-gradient blobs from image colour palettes ──── */
+/* ── Ambient Glow — warm amber + cool blue/teal contrast (like Linear.app) ── */
 .amb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(90px);
+  filter: blur(100px);
   transition: opacity var(--transition-theme);
   pointer-events: none;
 }
-/* TOP-RIGHT — molten amber/gold (from amb9 molten glass orb) */
+/* TOP-RIGHT — vivid amber/gold anchor */
 .amb-1 {
-  width: 800px; height: 800px; top: -300px; right: -300px;
-  background: radial-gradient(circle at 40% 40%, #f0b830 0%, #c07010 40%, transparent 70%);
+  width: 860px; height: 860px; top: -340px; right: -340px;
+  background: radial-gradient(circle at 38% 38%, #ffb830 0%, #d07010 35%, #8a3800 65%, transparent 75%);
+  opacity: 0.65;
+}
+/* BOTTOM-LEFT — deep copper/coral */
+.amb-2 {
+  width: 740px; height: 740px; bottom: -280px; left: -280px;
+  background: radial-gradient(circle at 62% 62%, #e05a18 0%, #a02808 38%, transparent 70%);
   opacity: 0.55;
 }
-/* BOTTOM-LEFT — copper-red (from amb10 copper icosahedron) */
-.amb-2 {
-  width: 700px; height: 700px; bottom: -260px; left: -260px;
-  background: radial-gradient(circle at 60% 60%, #d05a20 0%, #a03010 40%, transparent 70%);
-  opacity: 0.50;
-}
-/* TOP-LEFT — brass/amber (from amb8 compass) */
+/* TOP-LEFT — cool blue/teal CONTRAST (counterbalances warm right) */
 .amb-3 {
-  width: 640px; height: 640px; top: -240px; left: -240px;
-  background: radial-gradient(circle at 55% 55%, #c09020 0%, #906010 40%, transparent 70%);
-  opacity: 0.40;
+  width: 700px; height: 700px; top: -260px; left: -260px;
+  background: radial-gradient(circle at 55% 55%, #4488cc 0%, #2255a0 38%, transparent 70%);
+  opacity: 0.35;
 }
-/* BOTTOM-RIGHT — terracotta/peach (from amb4 fluid waves) */
+/* BOTTOM-RIGHT — indigo/purple CONTRAST */
 .amb-4 {
-  width: 680px; height: 680px; bottom: -250px; right: -250px;
-  background: radial-gradient(circle at 45% 45%, #d07040 0%, #a04828 40%, transparent 70%);
-  opacity: 0.45;
+  width: 680px; height: 680px; bottom: -260px; right: -260px;
+  background: radial-gradient(circle at 45% 45%, #6655dd 0%, #3322aa 38%, transparent 70%);
+  opacity: 0.28;
 }
-/* CENTER-RIGHT — soft amber mid-page accent */
+/* CENTER-RIGHT — warm amber edge mid-page */
 .amb-5 {
-  width: 560px; height: 560px; top: 38%; right: -240px;
-  background: radial-gradient(circle at 40% 50%, #e09030 0%, #b06010 40%, transparent 70%);
-  opacity: 0.30;
+  width: 580px; height: 580px; top: 35%; right: -260px;
+  background: radial-gradient(circle at 40% 50%, #e8961e 0%, #b05800 40%, transparent 70%);
+  opacity: 0.38;
 }
-/* CENTER-LEFT — terracotta mid-page accent */
+/* CENTER-LEFT — cool teal edge mid-page */
 .amb-6 {
-  width: 520px; height: 520px; top: 43%; left: -220px;
-  background: radial-gradient(circle at 60% 50%, #c06030 0%, #903818 40%, transparent 70%);
+  width: 540px; height: 540px; top: 40%; left: -240px;
+  background: radial-gradient(circle at 60% 50%, #2288bb 0%, #115588 40%, transparent 70%);
   opacity: 0.28;
 }
 /* Hidden extras */
 .amb-7, .amb-8, .amb-9, .amb-10, .amb-11, .amb-12 {
   opacity: 0; pointer-events: none;
 }
-/* Light mode — much softer */
-html.light .amb-1 { opacity: 0.20; }
+/* Light mode — very soft */
+html.light .amb-1 { opacity: 0.22; }
 html.light .amb-2 { opacity: 0.18; }
-html.light .amb-3 { opacity: 0.14; }
-html.light .amb-4 { opacity: 0.16; }
-html.light .amb-5 { opacity: 0.10; }
+html.light .amb-3 { opacity: 0.12; }
+html.light .amb-4 { opacity: 0.10; }
+html.light .amb-5 { opacity: 0.13; }
 html.light .amb-6 { opacity: 0.10; }
 
 @keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }

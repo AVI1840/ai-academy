@@ -31,16 +31,16 @@ export default function CourseHeader({ frontmatter }: CourseHeaderProps) {
           }}
         />
       )}
-      {/* Decorative course image — blurred, fades into background */}
-      <div className="absolute top-0 left-0 bottom-0 w-72 pointer-events-none overflow-hidden" aria-hidden="true">
+      {/* Decorative course image — visible left panel, fades right */}
+      <div className="absolute top-0 left-0 bottom-0 w-80 pointer-events-none overflow-hidden" aria-hidden="true">
         <img
           src={heroImg}
           alt=""
           className="absolute inset-0 w-full h-full object-cover"
-          style={{ opacity: 0.18, filter: 'blur(2px)', objectPosition: 'center' }}
+          style={{ opacity: 0.32, filter: 'blur(1px)', objectPosition: 'center' }}
         />
         <div className="absolute inset-0" style={{
-          background: 'linear-gradient(to right, transparent 0%, var(--color-bg) 85%)'
+          background: 'linear-gradient(to right, transparent 20%, var(--color-bg) 100%)'
         }} />
       </div>
       <nav className="flex items-center gap-1.5 text-xs text-muted mb-6 relative" aria-label="path">
