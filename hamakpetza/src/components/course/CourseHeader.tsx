@@ -3,10 +3,20 @@ import { CourseFrontmatter } from '@/types';
 import { COURSE_CATALOG, DOMAINS } from '@/data/course-catalog';
 import SocialShare from './SocialShare';
 
+const DOMAIN_HERO_IMAGES: Record<string, string> = {
+  'foundation':           '/ai-academy/images/amb9.jpg',
+  'ai-engineering':       '/ai-academy/images/amb8.jpg',
+  'ai-assisted-dev':      '/ai-academy/images/amb11.jpg',
+  'building-ai-products': '/ai-academy/images/amb10.jpg',
+  'ai-for-gov':           '/ai-academy/images/amb1.jpg',
+  'ai-product-leadership':'/ai-academy/images/amb4.jpg',
+};
+
 interface CourseHeaderProps { frontmatter: CourseFrontmatter; }
 
 export default function CourseHeader({ frontmatter }: CourseHeaderProps) {
   const domain = DOMAINS.find(d => d.id === frontmatter.domain);
+  const heroImg = DOMAIN_HERO_IMAGES[frontmatter.domain] ?? '/ai-academy/images/amb9.jpg';
   const totalCourses = COURSE_CATALOG.length;
   const courseUrl = `https://avi1840.github.io/ai-academy/course/${frontmatter.slug}/`;
 
@@ -21,6 +31,18 @@ export default function CourseHeader({ frontmatter }: CourseHeaderProps) {
           }}
         />
       )}
+      {/* Decorative course image — blurred, fades into background */}
+      <div className="absolute top-0 left-0 bottom-0 w-72 pointer-events-none overflow-hidden" aria-hidden="true">
+        <img
+          src={heroImg}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ opacity: 0.18, filter: 'blur(2px)', objectPosition: 'center' }}
+        />
+        <div className="absolute inset-0" style={{
+          background: 'linear-gradient(to right, transparent 0%, var(--color-bg) 85%)'
+        }} />
+      </div>
       <nav className="flex items-center gap-1.5 text-xs text-muted mb-6 relative" aria-label="path">
         <Link href="/" className="hover:text-accent transition-colors font-heading">המקפצה</Link>
         <span className="opacity-40">/</span>

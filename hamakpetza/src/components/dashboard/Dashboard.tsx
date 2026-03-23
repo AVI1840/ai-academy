@@ -59,6 +59,19 @@ export default function Dashboard() {
           backgroundSize: '60px 60px',
         }} />
 
+        {/* Floating hero image — decorative */}
+        <div className="absolute top-0 left-0 bottom-0 w-96 pointer-events-none overflow-hidden hidden md:block" aria-hidden="true">
+          <img
+            src="/ai-academy/images/amb9.jpg"
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ opacity: 0.15, filter: 'blur(1px)', objectPosition: 'center' }}
+          />
+          <div className="absolute inset-0" style={{
+            background: 'linear-gradient(to right, transparent 0%, var(--color-bg) 90%)'
+          }} />
+        </div>
+
         <div className="relative max-w-6xl mx-auto px-4 sm:px-8 pt-20 pb-16">
           <div className="text-center animate-slide-up">
 
