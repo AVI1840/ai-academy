@@ -92,7 +92,17 @@ export default function AppShell({ children, currentSlug = null }: AppShellProps
 
   return (
     <ErrorBoundary>
-      <div className="min-h-screen bg-bg">
+      <div className="min-h-screen bg-bg relative">
+
+        {/* Ambient Glow — blurred colour-mesh behind everything */}
+        <div className="ambient-glow" aria-hidden="true">
+          <div className="amb amb-1" />
+          <div className="amb amb-2" />
+          <div className="amb amb-3" />
+          <div className="amb amb-4" />
+          <div className="amb amb-5" />
+        </div>
+
         <Sidebar
           isOpen={sidebarOpen}
           onToggle={() => setSidebarOpen(prev => !prev)}
@@ -103,14 +113,14 @@ export default function AppShell({ children, currentSlug = null }: AppShellProps
         <div className="fixed top-4 right-4 z-50 flex items-center gap-2">
           <button
             onClick={() => setSidebarOpen(prev => !prev)}
-            className="w-11 h-11 rounded-lg bg-surface border border-border
-                       flex items-center justify-center text-muted hover:text-text hover:border-accent
-                       transition-colors shadow-sm"
+            className="w-10 h-10 rounded-full bg-white/5 backdrop-blur-md border border-white/10
+                       flex items-center justify-center text-muted hover:text-text hover:bg-white/10
+                       transition-all duration-300 shadow-sm"
             aria-label={sidebarOpen ? 'סגור תפריט' : 'פתח תפריט'}
             aria-expanded={sidebarOpen}
             aria-controls="sidebar-nav"
           >
-            <span aria-hidden="true">{sidebarOpen ? '✕' : '☰'}</span>
+            <span aria-hidden="true" className="text-sm">{sidebarOpen ? '✕' : '☰'}</span>
           </button>
           <ThemeToggle />
         </div>
@@ -118,7 +128,7 @@ export default function AppShell({ children, currentSlug = null }: AppShellProps
         {/* Main content area */}
         <main
           id="main-content"
-          className={`transition-all duration-300 min-h-screen ${
+          className={`relative z-10 transition-all duration-500 min-h-screen ${
             sidebarOpen && !isMobile ? 'mr-72' : 'mr-0'
           }`}
         >

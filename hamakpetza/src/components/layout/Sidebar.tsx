@@ -39,7 +39,7 @@ export default function Sidebar({ isOpen, onToggle, currentSlug }: SidebarProps)
     <>
       {isOpen && <div className="fixed inset-0 bg-black/40 backdrop-blur-sm z-30 md:hidden" onClick={onToggle} aria-hidden="true" />}
       <nav aria-label="ניווט קורסים" id="sidebar-nav" ref={navRef} onKeyDown={handleKeyDown}
-        className={`fixed top-0 right-0 h-full z-40 bg-surface/95 backdrop-blur-xl border-l border-border overflow-y-auto overflow-x-hidden transition-[width] duration-300 ease-in-out ${isOpen ? 'w-72' : 'w-0'}`}>
+        className={`fixed top-0 right-0 h-full z-40 bg-surface/90 backdrop-blur-2xl border-l border-white/[0.07] overflow-y-auto overflow-x-hidden transition-[width] duration-500 ease-out ${isOpen ? 'w-72' : 'w-0'}`}>
         <div className={`h-full flex flex-col transition-opacity duration-200 ${isOpen ? 'opacity-100' : 'opacity-0'}`}>
           {/* Header */}
           <div className="p-5 border-b border-border flex-shrink-0">
@@ -93,7 +93,11 @@ function CourseLink({ course, isActive, isCompleted, onNavigate }: { course: Cou
   const displayTitle = course.title.includes('—') ? course.title.split('—')[0].trim() : course.title;
   return (
     <Link href={`/course/${course.slug}/`} onClick={onNavigate}
-      className={`flex items-center gap-2.5 px-6 py-2 text-sm transition-all duration-150 min-h-[44px] ${isActive ? 'bg-accent/10 text-accent font-semibold border-is-2 border-accent' : 'text-text/75 hover:bg-accent-light/40 hover:text-text'}`}
+      className={`flex items-center gap-2.5 text-sm transition-all duration-500 ease-out min-h-[44px] mx-2 rounded-xl px-4 ${
+        isActive
+          ? 'bg-white/[0.07] backdrop-blur-md border border-white/10 text-accent font-semibold border-is-2 border-accent shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]'
+          : 'text-text/70 hover:bg-accent/[0.07] hover:text-text border border-transparent'
+      }`}
       aria-current={isActive ? 'page' : undefined}>
       <span className="w-5 text-center flex-shrink-0">
         {isCompleted ? <span className="text-green-400 text-xs">✓</span> : <span className="text-muted/50 text-[11px]">{course.courseNumber}</span>}

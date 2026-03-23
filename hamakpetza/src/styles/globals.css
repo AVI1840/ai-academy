@@ -3,34 +3,94 @@
 @tailwind utilities;
 
 :root {
-  --color-bg: #0a0c14;
-  --color-surface: #12152a;
-  --color-surface-2: #181c35;
-  --color-text: #eae8e4;
+  --color-bg: #0b0c10;
+  --color-surface: #161820;
+  --color-surface-2: #1e2030;
+  --color-text: #e8e6dc;
   --color-muted: #8b92a8;
-  --color-border: #1e2240;
+  --color-border: #252840;
   --color-accent-light: rgba(217,119,87,0.10);
   --color-secondary-light: rgba(106,155,204,0.10);
-  --color-glow: rgba(217,119,87,0.06);
-  --color-glass: rgba(18,21,42,0.7);
-  --shadow-card: 0 2px 20px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.03);
-  --shadow-glow: 0 0 40px rgba(217,119,87,0.08);
+  --color-glow: rgba(217,119,87,0.08);
+  --color-glass: rgba(22,24,32,0.75);
+  --shadow-card: 0 2px 20px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05);
+  --shadow-glow: 0 0 40px rgba(217,119,87,0.10);
+  --transition-theme: 0.7s ease;
 }
 
 html.light {
-  --color-bg: #f8f7f4;
+  --color-bg: #faf9f5;
   --color-surface: #ffffff;
-  --color-surface-2: #f3f2ee;
-  --color-text: #1a1a2e;
+  --color-surface-2: #f0ede6;
+  --color-text: #141413;
   --color-muted: #6b7280;
-  --color-border: #e2e0db;
+  --color-border: #e2ddd5;
   --color-accent-light: rgba(217,119,87,0.07);
   --color-secondary-light: rgba(106,155,204,0.07);
   --color-glow: rgba(217,119,87,0.04);
-  --color-glass: rgba(255,255,255,0.8);
-  --shadow-card: 0 2px 16px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.04);
+  --color-glass: rgba(255,255,255,0.85);
+  --shadow-card: 0 2px 16px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.8);
   --shadow-glow: 0 0 40px rgba(217,119,87,0.06);
 }
+
+/* ── Smooth theme crossfade ────────────────────────── */
+html { transition: background-color var(--transition-theme); }
+body { transition: background-color var(--transition-theme), color 0.4s ease; }
+nav, aside, header, footer,
+[class*="bg-surface"], [class*="bg-bg"],
+[class*="border-border"] {
+  transition: background-color var(--transition-theme),
+              border-color var(--transition-theme),
+              color 0.4s ease,
+              box-shadow var(--transition-theme);
+}
+
+/* ── Ambient Glow Layer ────────────────────────────── */
+.ambient-glow {
+  position: fixed; inset: 0;
+  pointer-events: none; z-index: 0; overflow: hidden;
+}
+.amb {
+  position: absolute; border-radius: 50%;
+  filter: blur(130px);
+  transition: opacity var(--transition-theme);
+}
+/* Warm copper — neural network */
+.amb-1 {
+  width: 700px; height: 700px; top: -180px; right: -120px;
+  background: radial-gradient(circle at 40% 40%, #d97757 0%, #a84020 55%, transparent 100%);
+  opacity: 0.18;
+}
+/* Terracotta — desert arch */
+.amb-2 {
+  width: 580px; height: 580px; top: 42%; left: -180px;
+  background: radial-gradient(circle at 60% 50%, #c87050 0%, #904020 55%, transparent 100%);
+  opacity: 0.14;
+}
+/* Warm gold — sand cube */
+.amb-3 {
+  width: 750px; height: 750px; bottom: -280px; right: 22%;
+  background: radial-gradient(circle at 50% 50%, #e8c060 0%, #c09030 55%, transparent 100%);
+  opacity: 0.10;
+}
+/* Cool steel — crystal */
+.amb-4 {
+  width: 480px; height: 480px; top: 52%; right: -100px;
+  background: radial-gradient(circle at 40% 50%, #8090c0 0%, #4060a0 55%, transparent 100%);
+  opacity: 0.08;
+}
+/* Fluid waves terracotta */
+.amb-5 {
+  width: 520px; height: 520px; bottom: 22%; left: 12%;
+  background: radial-gradient(circle at 50% 50%, #c87060 0%, #804030 55%, transparent 100%);
+  opacity: 0.12;
+}
+/* Light mode: subtle */
+html.light .amb-1 { opacity: 0.06; }
+html.light .amb-2 { opacity: 0.05; }
+html.light .amb-3 { opacity: 0.04; }
+html.light .amb-4 { opacity: 0.03; }
+html.light .amb-5 { opacity: 0.04; }
 
 @keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
 @keyframes slideUp { from { opacity: 0; transform: translateY(20px) } to { opacity: 1; transform: translateY(0) } }
