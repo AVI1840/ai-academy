@@ -116,8 +116,10 @@ export default function AppShell({ children, currentSlug = null }: AppShellProps
           currentSlug={currentSlug}
         />
 
-        {/* Toggle buttons */}
-        <div className="fixed top-4 right-4 z-50 flex items-center gap-2">
+        {/* Toggle buttons — shift left when sidebar is open on desktop */}
+        <div className={`fixed top-4 z-50 flex items-center gap-2 transition-all duration-500 ${
+          sidebarOpen && !isMobile ? 'right-[19rem]' : 'right-4'
+        }`}>
           <button
             onClick={() => setSidebarOpen(prev => !prev)}
             className="w-10 h-10 rounded-full bg-white/5 backdrop-blur-md border border-white/10

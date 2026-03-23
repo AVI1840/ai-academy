@@ -142,18 +142,18 @@ nav, aside, header, footer,
   opacity: 0.13;
 }
 /* Light mode: very subtle */
-html.light .amb-1  { opacity: 0.07; }
-html.light .amb-2  { opacity: 0.06; }
-html.light .amb-3  { opacity: 0.05; }
-html.light .amb-4  { opacity: 0.04; }
-html.light .amb-5  { opacity: 0.05; }
-html.light .amb-6  { opacity: 0.04; }
-html.light .amb-7  { opacity: 0.04; }
-html.light .amb-8  { opacity: 0.05; }
-html.light .amb-9  { opacity: 0.06; }
-html.light .amb-10 { opacity: 0.05; }
-html.light .amb-11 { opacity: 0.04; }
-html.light .amb-12 { opacity: 0.04; }
+html.light .amb-1  { opacity: 0.14; }
+html.light .amb-2  { opacity: 0.12; }
+html.light .amb-3  { opacity: 0.10; }
+html.light .amb-4  { opacity: 0.09; }
+html.light .amb-5  { opacity: 0.11; }
+html.light .amb-6  { opacity: 0.09; }
+html.light .amb-7  { opacity: 0.09; }
+html.light .amb-8  { opacity: 0.11; }
+html.light .amb-9  { opacity: 0.13; }
+html.light .amb-10 { opacity: 0.10; }
+html.light .amb-11 { opacity: 0.09; }
+html.light .amb-12 { opacity: 0.09; }
 
 @keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
 @keyframes slideUp { from { opacity: 0; transform: translateY(20px) } to { opacity: 1; transform: translateY(0) } }
