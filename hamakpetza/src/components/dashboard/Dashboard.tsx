@@ -59,25 +59,23 @@ export default function Dashboard() {
           backgroundSize: '60px 60px',
         }} />
 
-        {/* Hero image — right side (RTL start), large & visible */}
-        <div className="absolute top-0 right-0 bottom-0 w-[48%] pointer-events-none overflow-hidden hidden lg:block" aria-hidden="true">
+        {/* Hero image — full-width background on mobile, right-side panel on lg+ */}
+        <div className="absolute inset-0 lg:left-auto lg:w-[48%] pointer-events-none overflow-hidden" aria-hidden="true">
           <img
             src="/ai-academy/images/amb-hero.png"
             alt=""
             className="absolute inset-0 w-full h-full object-cover dashboard-hero-img"
             style={{ objectPosition: 'center center' }}
           />
-          {/* Wide soft fade left toward text */}
-          <div className="absolute inset-0" style={{
-            background: 'linear-gradient(to left, transparent 0%, var(--color-bg) 72%)'
-          }} />
+          {/* Responsive fade: sides on mobile, left-only on desktop */}
+          <div className="absolute inset-0 hero-img-fade" />
           {/* Vignette top/bottom */}
           <div className="absolute inset-0" style={{
             background: 'linear-gradient(to bottom, var(--color-bg) 0%, transparent 22%, transparent 78%, var(--color-bg) 100%)'
           }} />
         </div>
-        {/* Left accent — amber→navy fluid waves */}
-        <div className="absolute top-0 left-0 bottom-0 w-[26rem] pointer-events-none overflow-hidden hidden xl:block" aria-hidden="true">
+        {/* Left accent — amber→navy fluid waves, shown from lg+ */}
+        <div className="absolute top-0 left-0 bottom-0 w-[26rem] pointer-events-none overflow-hidden hidden lg:block" aria-hidden="true">
           <img
             src="/ai-academy/images/amb-waves.png"
             alt=""

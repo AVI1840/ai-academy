@@ -31,19 +31,17 @@ export default function CourseHeader({ frontmatter }: CourseHeaderProps) {
           }}
         />
       )}
-      {/* Decorative course image — left panel, wide fade */}
-      <div className="absolute top-0 left-0 bottom-0 w-[26rem] pointer-events-none overflow-hidden hidden lg:block" aria-hidden="true">
+      {/* Decorative course image — full-width background on mobile, left panel on lg+ */}
+      <div className="absolute inset-0 lg:right-auto lg:w-[26rem] pointer-events-none overflow-hidden" aria-hidden="true">
         <img
           src={heroImg}
           alt=""
           className="absolute inset-0 w-full h-full object-cover course-header-img"
-          style={{ opacity: 0.30, objectPosition: 'center top' }}
+          style={{ objectPosition: 'center top' }}
         />
-        {/* Soft fade right — starts subtle, fully gone by 58% */}
-        <div className="absolute inset-0" style={{
-          background: 'linear-gradient(to right, transparent 0%, var(--color-bg) 58%)'
-        }} />
-        {/* Top/bottom vignette — stronger */}
+        {/* Responsive fade: sides on mobile, right-only on desktop */}
+        <div className="absolute inset-0 course-img-fade" />
+        {/* Top/bottom vignette */}
         <div className="absolute inset-0" style={{
           background: 'linear-gradient(to bottom, var(--color-bg) 0%, transparent 22%, transparent 78%, var(--color-bg) 100%)'
         }} />

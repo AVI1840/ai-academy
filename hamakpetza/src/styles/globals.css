@@ -146,6 +146,40 @@ html.light .amb-6 { opacity: 0.10; }
 
   .dashboard-waves-img { opacity: 0.28; transition: opacity var(--transition-theme); }
   html.light .dashboard-waves-img { opacity: 0.12; }
+
+  /* Mobile: lower opacity so text stays readable over full-width bg images */
+  @media (max-width: 1023px) {
+    .dashboard-hero-img { opacity: 0.15; }
+    html.light .dashboard-hero-img { opacity: 0.10; }
+    .course-header-img { opacity: 0.12; }
+    html.light .course-header-img { opacity: 0.07; }
+  }
+
+  /* Responsive gradient fade for hero image:
+     mobile → fade from both sides; desktop → fade left toward text */
+  .hero-img-fade {
+    background:
+      linear-gradient(to right, var(--color-bg) 0%, transparent 55%),
+      linear-gradient(to left, var(--color-bg) 0%, transparent 55%);
+  }
+  @media (min-width: 1024px) {
+    .hero-img-fade {
+      background: linear-gradient(to left, transparent 0%, var(--color-bg) 72%);
+    }
+  }
+
+  /* Responsive gradient fade for course header image:
+     mobile → fade from both sides; desktop → fade right toward content */
+  .course-img-fade {
+    background:
+      linear-gradient(to right, var(--color-bg) 0%, transparent 45%),
+      linear-gradient(to left, var(--color-bg) 0%, transparent 45%);
+  }
+  @media (min-width: 1024px) {
+    .course-img-fade {
+      background: linear-gradient(to right, transparent 0%, var(--color-bg) 58%);
+    }
+  }
 }
 
 @layer utilities {
