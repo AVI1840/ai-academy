@@ -3,6 +3,7 @@
 import React, { Component, useState, useEffect, type ReactNode } from 'react';
 import Sidebar from './Sidebar';
 import ThemeToggle from './ThemeToggle';
+import FeedbackModal from '@/components/FeedbackModal';
 
 // --- Error Boundary ---
 
@@ -133,6 +134,8 @@ export default function AppShell({ children, currentSlug = null }: AppShellProps
           </button>
           <ThemeToggle />
         </div>
+
+        <FeedbackModal />
 
         {/* Main content area */}
         <main

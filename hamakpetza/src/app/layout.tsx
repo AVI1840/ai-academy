@@ -53,8 +53,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             "font-src https://fonts.gstatic.com",
             "img-src 'self' data:",
             "media-src 'self'",
-            // Firebase Realtime Database (optional analytics)
-            "connect-src 'self' https://*.firebaseio.com https://*.googleapis.com",
+            // Firebase Realtime Database (optional analytics) + Google Apps Script (feedback)
+            "connect-src 'self' https://*.firebaseio.com https://*.googleapis.com https://script.google.com",
           ].join('; ')}
         />
         <script
