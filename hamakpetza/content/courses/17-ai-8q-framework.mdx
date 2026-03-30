@@ -357,3 +357,41 @@ Q8 — ROI משוער:
 
 השב בעברית. היה ספציפי, ישיר ומעשי.
 </PromptBlock>
+
+---
+
+## 🛠️ הטמע את הסקיל ישירות ב-Claude Code שלך
+
+הפרומפט מעלה עובד מעולה — אבל **מובילים שרוצים כלי קבוע** יכולים להטמיע את מסגרת 8Q כ-Skill ב-Claude Code.
+
+**מה זה נותן:**
+- פקודה אחת (`הערך מזמין`) מריצה את כל הניתוח
+- מסמך הכרעה מלא — מוכן לוועדת היגוי
+- מעודכן עם מסגרת AI Journey של מערך הדיגיטל
+
+### הוראות התקנה (2 דקות)
+
+**שלב 1 — הורד את הסקיל:**
+
+- 📥 [SKILL.md — לוגיקת ההערכה](/ai-academy/downloads/ai-initiative-evaluator-SKILL.md)
+- 📥 [reference.md — מסגרת AI Journey המלאה](/ai-academy/downloads/ai-initiative-evaluator-reference.md)
+
+**שלב 2 — מקם בפרויקט:**
+```
+הפרויקט שלך/
+└── .claude/
+    └── skills/
+        └── ai-initiative-evaluator/
+            ├── SKILL.md
+            └── reference.md
+```
+
+**שלב 3 — השתמש:**
+```
+הערך מזמין: [תאר את הרעיון/הפרויקט]
+```
+Claude Code מריץ אוטומטית 8Q + BUY vs BUILD + ROI ומחזיר מסמך הכרעה.
+
+---
+
+*הסקיל פותח על-ידי **אביעד יצחקי** — מוביל AI, מערך הדיגיטל הלאומי, ומוטמע ב-[AI Academy](https://avi1840.github.io/ai-academy/)*
