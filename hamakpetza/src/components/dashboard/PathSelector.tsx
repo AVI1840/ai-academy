@@ -12,6 +12,7 @@ const pathMeta: Record<LearningPath, { icon: string; gradient: string }> = {
   foundation: { icon: '🏗️', gradient: 'from-amber-500/10 to-orange-500/5' },
   applied: { icon: '🛠️', gradient: 'from-blue-500/10 to-cyan-500/5' },
   advanced: { icon: '🚀', gradient: 'from-purple-500/10 to-pink-500/5' },
+  'gov-leadership': { icon: '🏛️', gradient: 'from-emerald-500/10 to-teal-500/5' },
 };
 
 export default function PathSelector({ selectedPath, onSelect }: PathSelectorProps) {

@@ -6,7 +6,7 @@ export type LearningDomain =
   | 'ai-for-gov'
   | 'ai-product-leadership';
 
-export type LearningPath = 'foundation' | 'applied' | 'advanced';
+export type LearningPath = 'foundation' | 'applied' | 'advanced' | 'gov-leadership';
 
 export interface CourseFrontmatter {
   slug: string;

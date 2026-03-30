@@ -113,6 +113,49 @@ export const COURSE_CATALOG: CourseFrontmatter[] = [
     domain: 'ai-product-leadership', path: 'advanced',
     description: 'מה הם AI Agents, איך הם עובדים, כלים מרכזיים (Claude Code, LangGraph, CrewAI, MCP), ויישומים ממשלתיים',
   },
+  // ─── מנהיגות ממשלתית — מבוסס AI Journey, מערך הדיגיטל הלאומי ───
+  {
+    courseNumber: 17, slug: 'ai-8q-framework',
+    title: 'מסגרת ה-8 שאלות לאימוץ AI',
+    duration: '40 דקות קריאה', audience: 'מנהלים, CDO, CISO, מובילי AI', exerciseCount: 4,
+    domain: 'ai-for-gov', path: 'gov-leadership',
+    description: 'מסגרת מעשית של 8 שאלות לבחינת כדאיות ואפשרות אימוץ AI בארגון ממשלתי — מהגדרת הבעיה ועד מדידת ROI',
+  },
+  {
+    courseNumber: 18, slug: 'ai-change-management',
+    title: 'ניהול שינוי עם AI בממשלה',
+    duration: '35 דקות קריאה', audience: 'מנהלים, CDO, מובילי שינוי ארגוני', exerciseCount: 3,
+    domain: 'ai-for-gov', path: 'gov-leadership',
+    description: 'כיצד מובילים אימוץ AI בארגון ממשלתי — שלבי AI4ME → AI-First → AI-Driven, ניהול התנגדויות ובניית תרבות AI',
+  },
+  {
+    courseNumber: 19, slug: 'ai-finops',
+    title: 'FinOps לפרויקטי AI — ניהול עלויות חכם',
+    duration: '40 דקות קריאה', audience: 'CDO, CIO, מנהלי תקציב, מובילי AI', exerciseCount: 4,
+    domain: 'ai-product-leadership', path: 'gov-leadership',
+    description: 'כיצד מנהלים עלויות AI בצורה חכמה — מודלי תמחור LLM, Tokens, Batch vs Real-Time, Caching ומדידת ROI אמיתי',
+  },
+  {
+    courseNumber: 20, slug: 'ai-architecture',
+    title: 'ארכיטקטורת AI — BUY vs BUILD',
+    duration: '45 דקות קריאה', audience: 'CDO, CIO, ארכיטקטים, מובילי טכנולוגיה', exerciseCount: 4,
+    domain: 'ai-product-leadership', path: 'gov-leadership',
+    description: 'כיצד מקבלים החלטת BUY vs BUILD לפרויקט AI — Landing Zone ממשלתי, נימבוס, VPC, Firewall וארכיטקטורת ענן ממשלתית',
+  },
+  {
+    courseNumber: 21, slug: 'ai-governance',
+    title: 'ממשל AI — COE, GOVAI ו-AI WATCH',
+    duration: '40 דקות קריאה', audience: 'CDO, מנכ"לים, מנהלי AI, ועדות היגוי', exerciseCount: 3,
+    domain: 'ai-for-gov', path: 'gov-leadership',
+    description: 'כיצד בונים מסגרת ממשל AI ארגונית — Center of Excellence, מנגנוני פיקוח, AI WATCH, מדיניות AI ותפקידי CDO/CISO/DPO',
+  },
+  {
+    courseNumber: 22, slug: 'ai-privacy-gdpr',
+    title: 'פרטיות ב-AI — GDPR, DPO ורגולציה',
+    duration: '40 דקות קריאה', audience: 'DPO, יועמ"ש, מנהלים, CDO', exerciseCount: 4,
+    domain: 'ai-for-gov', path: 'gov-leadership',
+    description: 'חוק הגנת הפרטיות וGDPR בעידן ה-AI הממשלתי — Privacy by Design, DPIA, סיווג נתונים, EU AI Act ותפקיד ה-DPO',
+  },
 ];
 
 export const DOMAINS: DomainInfo[] = [
@@ -120,8 +163,8 @@ export const DOMAINS: DomainInfo[] = [
   { id: 'ai-engineering', nameHe: 'הנדסת AI', icon: '⚙️', color: '#6a9bcc', courses: [3, 4] },
   { id: 'ai-assisted-dev', nameHe: 'עבודה עם AI', icon: '🤝', color: '#7c9a5e', courses: [5, 6, 15] },
   { id: 'building-ai-products', nameHe: 'בניית פתרונות', icon: '🔧', color: '#b07cc6', courses: [7, 10] },
-  { id: 'ai-for-gov', nameHe: 'AI לממשלה', icon: '🏛️', color: '#c4915e', courses: [8, 9, 14] },
-  { id: 'ai-product-leadership', nameHe: 'מנהיגות טכנולוגית', icon: '🚀', color: '#5e8fb0', courses: [11, 12, 16] },
+  { id: 'ai-for-gov', nameHe: 'AI לממשלה', icon: '🏛️', color: '#c4915e', courses: [8, 9, 14, 17, 18, 21, 22] },
+  { id: 'ai-product-leadership', nameHe: 'מנהיגות טכנולוגית', icon: '🚀', color: '#5e8fb0', courses: [11, 12, 16, 19, 20] },
 ];
 
 export const PATHS: PathInfo[] = [
@@ -139,6 +182,11 @@ export const PATHS: PathInfo[] = [
     id: 'advanced', nameHe: 'מתקדם',
     courseNumbers: [11, 12, 16],
     description: 'נושאים מתקדמים למובילים טכנולוגיים — RAG, פיתוח תוכנה עם AI, וסוכני AI',
+  },
+  {
+    id: 'gov-leadership', nameHe: 'מנהיגות ממשלתית',
+    courseNumbers: [17, 18, 19, 20, 21, 22],
+    description: 'מסגרת AI Journey של מערך הדיגיטל — ניהול, ממשל ואסטרטגיה לאימוץ AI בממשלה עבור CDO, CISO ו-DPO',
   },
 ];
 
