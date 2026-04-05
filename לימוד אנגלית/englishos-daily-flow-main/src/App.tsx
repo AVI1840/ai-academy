@@ -18,8 +18,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <div className="dark min-h-screen bg-zinc-950 md:flex md:items-start md:justify-center">
-          <div className="w-full max-w-lg min-h-screen bg-background md:shadow-2xl">
+        <div className="dark min-h-screen bg-background">
           <Routes>
             <Route path="/" element={<HomeScreen />} />
             <Route path="/session" element={<FlashcardSession />} />
@@ -28,7 +27,6 @@ const App = () => (
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-          </div>
         </div>
       </BrowserRouter>
     </TooltipProvider>
