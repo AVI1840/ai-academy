@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap');
+
+@layer base {
+  :root {
+    --background: 220 20% 97%;
+    --foreground: 220 20% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 10%;
+    --primary: 160 84% 39%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 14% 92%;
+    --secondary-foreground: 220 20% 20%;
+    --muted: 220 14% 94%;
+    --muted-foreground: 220 10% 46%;
+    --accent: 160 84% 39%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 13% 90%;
+    --input: 220 13% 90%;
+    --ring: 160 84% 39%;
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Custom tokens */
+    --success: 160 84% 39%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --streak: 38 92% 50%;
+    --card-elevated: 0 0% 100%;
+    --progress-track: 220 14% 92%;
+    --progress-fill: 160 84% 39%;
+  }
+
+  .dark {
+    --background: 224 30% 7%;
+    --foreground: 210 20% 92%;
+    --card: 224 25% 11%;
+    --card-foreground: 210 20% 92%;
+    --popover: 224 25% 11%;
+    --popover-foreground: 210 20% 92%;
+    --primary: 160 84% 44%;
+    --primary-foreground: 224 30% 7%;
+    --secondary: 224 20% 16%;
+    --secondary-foreground: 210 20% 85%;
+    --muted: 224 20% 16%;
+    --muted-foreground: 220 10% 55%;
+    --accent: 160 84% 44%;
+    --accent-foreground: 224 30% 7%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 224 20% 18%;
+    --input: 224 20% 18%;
+    --ring: 160 84% 44%;
+
+    --sidebar-background: 224 25% 10%;
+    --sidebar-foreground: 210 20% 85%;
+    --sidebar-primary: 160 84% 44%;
+    --sidebar-primary-foreground: 224 30% 7%;
+    --sidebar-accent: 224 20% 15%;
+    --sidebar-accent-foreground: 210 20% 85%;
+    --sidebar-border: 224 20% 18%;
+    --sidebar-ring: 160 84% 44%;
+
+    --success: 160 84% 44%;
+    --success-foreground: 224 30% 7%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 224 30% 7%;
+    --streak: 38 92% 50%;
+    --card-elevated: 224 22% 14%;
+    --progress-track: 224 20% 16%;
+    --progress-fill: 160 84% 44%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  html {
+    @apply scroll-smooth;
+  }
+}
+
+@layer utilities {
+  .text-rtl {
+    direction: rtl;
+    text-align: right;
+  }
+}
+
+/* Flashcard flip animation */
+.flashcard-container {
+  perspective: 1000px;
+}
+.flashcard-inner {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+.flashcard-inner.flipped {
+  transform: rotateY(180deg);
+}
+.flashcard-front,
+.flashcard-back {
+  backface-visibility: hidden;
+}
+.flashcard-back {
+  transform: rotateY(180deg);
+}
