@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&family=Nunito:wght@400;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 140 10% 97%;
+    --foreground: 150 30% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 150 30% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 30% 12%;
+
+    --primary: 153 100% 24%;
+    --primary-foreground: 60 100% 97%;
+
+    --secondary: 48 100% 50%;
+    --secondary-foreground: 150 30% 12%;
+
+    --muted: 140 15% 92%;
+    --muted-foreground: 150 10% 40%;
+
+    --accent: 48 100% 50%;
+    --accent-foreground: 150 30% 12%;
+
+    --destructive: 0 72% 65%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 134 61% 41%;
+    --success-foreground: 0 0% 100%;
+
+    --border: 140 15% 88%;
+    --input: 140 15% 88%;
+    --ring: 153 100% 24%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Custom tokens */
+    --gold: 48 100% 50%;
+    --gold-light: 48 100% 70%;
+    --gold-dark: 40 100% 40%;
+    --pitch: 120 40% 45%;
+    --pitch-light: 120 35% 55%;
+    --pitch-dark: 130 50% 25%;
+    --sky: 200 80% 60%;
+    --sky-light: 200 80% 85%;
+    
+    /* New warm tokens */
+    --warm: 30 100% 55%;
+    --warm-light: 30 100% 80%;
+    --celebration: 280 70% 60%;
+    --celebration-light: 280 70% 85%;
+    --energy: 170 80% 45%;
+    --energy-light: 170 60% 80%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Rubik', sans-serif;
+    direction: rtl;
+  }
+
+  .font-english {
+    font-family: 'Nunito', sans-serif;
+    direction: ltr;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-card/90 backdrop-blur-lg border border-border/40 shadow-xl;
+    box-shadow: 0 8px 32px rgba(0, 122, 61, 0.08), 0 2px 8px rgba(0,0,0,0.04);
+  }
+
+  .glass-card-warm {
+    @apply bg-card/90 backdrop-blur-lg border border-border/30;
+    box-shadow: 0 8px 32px rgba(255, 215, 0, 0.12), 0 2px 8px rgba(0,0,0,0.04);
+  }
+
+  .pitch-gradient {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--pitch-dark)) 0%,
+      hsl(var(--pitch)) 40%,
+      hsl(var(--pitch-light)) 100%
+    );
+  }
+
+  .gold-gradient {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--gold-dark)) 0%,
+      hsl(var(--gold)) 50%,
+      hsl(var(--gold-light)) 100%
+    );
+  }
+
+  .sky-gradient {
+    background: linear-gradient(
+      180deg,
+      hsl(var(--sky)) 0%,
+      hsl(var(--sky-light)) 100%
+    );
+  }
+
+  .stadium-bg {
+    background: linear-gradient(
+      180deg,
+      hsl(153 100% 18%) 0%,
+      hsl(var(--pitch)) 30%,
+      hsl(var(--primary)) 70%,
+      hsl(153 100% 30%) 100%
+    );
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stadium-bg::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 40%, rgba(255,215,0,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 60%, rgba(255,255,255,0.05) 0%, transparent 40%);
+    animation: float 12s ease-in-out infinite;
+  }
+
+  .celebration-gradient {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--gold-dark)) 0%,
+      hsl(var(--gold)) 30%,
+      hsl(var(--warm)) 60%,
+      hsl(var(--gold-light)) 100%
+    );
+  }
+
+  .warm-gradient {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--warm)) 0%,
+      hsl(var(--warm-light)) 100%
+    );
+  }
+
+  .tap-target {
+    @apply min-h-[48px] min-w-[48px];
+  }
+
+  .text-english {
+    font-family: 'Nunito', sans-serif;
+    direction: ltr;
+    unicode-bidi: embed;
+  }
+
+  .text-gold-shimmer {
+    background: linear-gradient(90deg, hsl(var(--gold-dark)), hsl(var(--gold)), hsl(var(--gold-light)), hsl(var(--gold)));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 3s linear infinite;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    33% { transform: translate(2%, -1%) rotate(1deg); }
+    66% { transform: translate(-1%, 2%) rotate(-0.5deg); }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.3); }
+    50% { box-shadow: 0 0 40px rgba(255, 215, 0, 0.6); }
+  }
+
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes confetti-fall {
+    0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+  }
+
+  .bounce-in {
+    animation: bounceIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  @keyframes bounceIn {
+    0% { transform: scale(0); opacity: 0; }
+    60% { transform: scale(1.15); }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  /* Fun card hover effect for kids */
+  .fun-card {
+    @apply glass-card rounded-3xl transition-all duration-300;
+    transform-style: preserve-3d;
+  }
+  .fun-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 16px 48px rgba(0, 122, 61, 0.15), 0 4px 12px rgba(255, 215, 0, 0.1);
+  }
+  .fun-card:active {
+    transform: translateY(-1px) scale(0.98);
+  }
+
+  /* Progress ring */
+  .progress-ring {
+    transform: rotate(-90deg);
+  }
+}
