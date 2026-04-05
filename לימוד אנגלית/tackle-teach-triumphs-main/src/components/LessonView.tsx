@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Timer, Clock } from 'lucide-react';
+import { ArrowRight, Clock } from 'lucide-react';
 import type { Lesson, User } from '@/lib/types';
 import LetterLesson from './lessons/LetterLesson';
 import WordLesson from './lessons/WordLesson';
@@ -18,17 +18,18 @@ interface Props {
   onBack: () => void;
 }
 
-const formatTime = (seconds: number) => {
-  const m = Math.floor(seconds / 60);
-  const s = seconds % 60;
-  return `${m}:${s.toString().padStart(2, '0')}`;
+// Session limit: 7 minutes per lesson — healthy screen time
+const SESSION_LIMIT_SECONDS = 7 * 60;
+
+const formatTime = (s: number) => {
+  const m = Math.floor(s / 60);
+  const sec = s % 60;
+  return `${m}:${sec.toString().padStart(2, '0')}`;
 };
 
 const LessonView = ({ lesson, user, onComplete, onBack }: Props) => {
-  const hasCountdown = !!lesson.content.timer_seconds;
   const [elapsed, setElapsed] = useState(0);
-  const [countdown, setCountdown] = useState(lesson.content.timer_seconds ?? 0);
-  const [timeUp, setTimeUp] = useState(false);
+  const [sessionEnded, setSessionEnded] = useState(false);
 
   const getTopicEmoji = () => {
     switch (lesson.topic_tag) {
@@ -39,46 +40,53 @@ const LessonView = ({ lesson, user, onComplete, onBack }: Props) => {
     }
   };
 
-  // Elapsed stopwatch (always runs)
   useEffect(() => {
-    const t = setInterval(() => setElapsed(e => e + 1), 1000);
-    return () => clearInterval(t);
-  }, []);
-
-  // Countdown (only if timer_seconds set)
-  useEffect(() => {
-    if (!hasCountdown) return;
     const t = setInterval(() => {
-      setCountdown(c => {
-        if (c <= 1) { clearInterval(t); setTimeUp(true); return 0; }
-        return c - 1;
+      setElapsed(e => {
+        const next = e + 1;
+        if (next >= SESSION_LIMIT_SECONDS) {
+          clearInterval(t);
+          setSessionEnded(true);
+        }
+        return next;
       });
     }, 1000);
     return () => clearInterval(t);
-  }, [hasCountdown]);
+  }, []);
 
-  // Time's up overlay
-  if (timeUp) {
+  const remaining = SESSION_LIMIT_SECONDS - elapsed;
+  const nearEnd = remaining <= 60;
+
+  // Gentle session-end screen — not scary, just a natural stop
+  if (sessionEnded) {
     return (
-      <div className="min-h-screen bg-background flex flex-col items-center justify-center px-6 text-center">
-        <div className="text-7xl mb-5">⏰</div>
-        <h2 className="font-rubik font-black text-kid-xl text-foreground mb-2">הזמן נגמר!</h2>
-        <p className="font-rubik text-muted-foreground mb-8">
-          עשית {formatTime(elapsed)} — כל הכבוד על המאמץ!
-        </p>
-        <button
+      <div className="min-h-screen bg-background flex flex-col items-center justify-center px-6 text-center gap-6">
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ type: 'spring', stiffness: 200 }}
+          className="text-8xl"
+        >
+          🌟
+        </motion.div>
+        <div>
+          <h2 className="font-rubik font-black text-kid-xl text-foreground mb-2">
+            כל הכבוד! סיימת 7 דקות של למידה!
+          </h2>
+          <p className="font-rubik text-muted-foreground text-kid">
+            עכשיו זמן מנוחה — תחזור מחר ותמשיך 💪
+          </p>
+        </div>
+        <motion.button
+          whileTap={{ scale: 0.97 }}
           onClick={onBack}
-          className="pitch-gradient text-primary-foreground font-rubik font-bold rounded-2xl px-8 py-4 text-kid"
+          className="pitch-gradient text-primary-foreground font-rubik font-bold rounded-3xl px-10 py-4 text-kid shadow-xl"
         >
           חזרה למפה 🗺️
-        </button>
+        </motion.button>
       </div>
     );
   }
-
-  const timerColor = hasCountdown
-    ? countdown < 30 ? 'text-destructive' : countdown < 60 ? 'text-secondary' : 'text-primary'
-    : 'text-muted-foreground';
 
   return (
     <div className="min-h-screen bg-background">
@@ -98,12 +106,10 @@ const LessonView = ({ lesson, user, onComplete, onBack }: Props) => {
           </p>
         </div>
 
-        {/* Timer display */}
-        <div className={`flex items-center gap-1.5 font-rubik font-bold text-kid ${timerColor}`}>
-          {hasCountdown ? <Timer size={18} /> : <Clock size={18} />}
-          <span className="tabular-nums">
-            {hasCountdown ? formatTime(countdown) : formatTime(elapsed)}
-          </span>
+        {/* Elapsed time — informational, not pressure */}
+        <div className={`flex items-center gap-1.5 font-rubik font-bold text-sm ${nearEnd ? 'text-secondary' : 'text-muted-foreground'}`}>
+          <Clock size={15} />
+          <span className="tabular-nums">{formatTime(elapsed)}</span>
         </div>
 
         <span className="text-2xl">{user.avatar_emoji}</span>
