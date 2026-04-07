@@ -105,7 +105,7 @@ const WordLesson = ({ words, onComplete }: Props) => {
             </motion.div>
             {!flipped ? (
               <>
-                <div className="text-kid-lg font-rubik mb-4">{word.hebrew}</div>
+                <div className="text-kid-2xl font-rubik font-black mb-2">{word.hebrew}</div>
                 <motion.button
                   whileTap={{ scale: 0.95 }}
                   onClick={handleFlip}
@@ -116,8 +116,11 @@ const WordLesson = ({ words, onComplete }: Props) => {
               </>
             ) : (
               <>
-                <div className="text-english text-kid-2xl font-nunito font-black mb-2">{word.english}</div>
-                <div className="text-kid font-rubik text-muted-foreground mb-4">{word.hebrew}</div>
+                <div className="text-english text-kid-2xl font-nunito font-black mb-1">{word.english}</div>
+                <div className="text-kid-xl font-rubik font-bold text-primary mb-1">{word.hebrew}</div>
+                <div className="text-sm font-rubik text-muted-foreground mb-3">
+                  בעברית: <span className="font-bold">{word.hebrew}</span> = <span className="text-english font-nunito font-bold">{word.english}</span> 🔁
+                </div>
                 <div className="flex gap-3 justify-center">
                   <motion.button
                     whileTap={{ scale: 0.95 }}

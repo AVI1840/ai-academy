@@ -18,9 +18,6 @@ interface Props {
   onBack: () => void;
 }
 
-// Session limit: 7 minutes per lesson — healthy screen time
-const SESSION_LIMIT_SECONDS = 7 * 60;
-
 const formatTime = (s: number) => {
   const m = Math.floor(s / 60);
   const sec = s % 60;
@@ -30,6 +27,10 @@ const formatTime = (s: number) => {
 const LessonView = ({ lesson, user, onComplete, onBack }: Props) => {
   const [elapsed, setElapsed] = useState(0);
   const [sessionEnded, setSessionEnded] = useState(false);
+
+  // Read the parent-chosen session limit from localStorage (0 = unlimited)
+  const limitMinutes = Number(localStorage.getItem('sessionLimitMinutes') ?? 7);
+  const SESSION_LIMIT_SECONDS = limitMinutes > 0 ? limitMinutes * 60 : Infinity;
 
   const getTopicEmoji = () => {
     switch (lesson.topic_tag) {
@@ -71,7 +72,7 @@ const LessonView = ({ lesson, user, onComplete, onBack }: Props) => {
         </motion.div>
         <div>
           <h2 className="font-rubik font-black text-kid-xl text-foreground mb-2">
-            כל הכבוד! סיימת 7 דקות של למידה!
+            כל הכבוד! סיימת {limitMinutes} דקות של למידה!
           </h2>
           <p className="font-rubik text-muted-foreground text-kid">
             עכשיו זמן מנוחה — תחזור מחר ותמשיך 💪

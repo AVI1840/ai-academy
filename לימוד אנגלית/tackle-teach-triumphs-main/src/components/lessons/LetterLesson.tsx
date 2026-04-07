@@ -109,11 +109,13 @@ const LetterLesson = ({ items, onComplete }: Props) => {
             <div className="text-english text-kid-3xl font-nunito font-black mb-2">
               {item.letter}
             </div>
-            <div className="text-english text-kid-xl font-nunito font-bold text-muted-foreground mb-2">
+            <div className="text-english text-kid-xl font-nunito font-bold mb-1">
               {item.word}
             </div>
-            <div className="text-sm font-rubik text-muted-foreground mb-6">
-              נשמע: "{item.pronunciation}"
+            {/* Big, colorful pronunciation in Hebrew */}
+            <div className="bg-primary/10 rounded-2xl px-5 py-3 mb-4 inline-block">
+              <span className="text-kid-xl font-rubik font-black text-primary">"{item.pronunciation}"</span>
+              <div className="text-sm font-rubik text-muted-foreground mt-1">ככה קוראים לאות הזו!</div>
             </div>
 
             {!tapped ? (

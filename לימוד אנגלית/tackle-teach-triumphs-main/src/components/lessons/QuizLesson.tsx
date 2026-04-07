@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { speak } from '@/lib/speech';
+import { Volume2 } from 'lucide-react';
+import { speak, speakSlow } from '@/lib/speech';
 import { getEncouragement, getAlmostMessage, getTryAgainMessage } from '@/lib/motivational';
 import type { QuizQuestion } from '@/lib/types';
 
@@ -23,9 +24,19 @@ const QuizLesson = ({ questions, onComplete }: Props) => {
 
   const question = questions[currentIndex];
 
-  // Delay showing options so kids read the question first
+  // Delay showing options + auto-speak the English word from the question
   useEffect(() => {
     setOptionsVisible(false);
+    // Extract the English word from the question to speak it aloud
+    // Questions like "How do you say שלום in English?" — speak the Hebrew via question audio
+    // But also speak the key English content word if it's an English question
+    const englishWords = question.question.match(/[A-Za-z]{3,}/g);
+    if (englishWords && englishWords.length > 0) {
+      // Speak the meaningful word (skip filler words)
+      const fillers = new Set(['how','do','you','say','the','what','does','letter','start','with','color','many','legs','kind','animal','king']);
+      const meaningful = englishWords.filter(w => !fillers.has(w.toLowerCase()));
+      if (meaningful.length > 0) setTimeout(() => speakSlow(meaningful[0]), 400);
+    }
     const t = setTimeout(() => setOptionsVisible(true), 900);
     return () => clearTimeout(t);
   }, [currentIndex]);
@@ -107,31 +118,58 @@ const QuizLesson = ({ questions, onComplete }: Props) => {
             >
               {question.emoji}
             </motion.span>
-            <p className="text-english text-kid-lg font-nunito font-bold">{question.question}</p>
+            <p className="text-kid-lg font-rubik font-bold mb-3 leading-relaxed">{question.question}</p>
+            <motion.button
+              whileTap={{ scale: 0.9 }}
+              onClick={() => {
+                const englishWords = question.question.match(/[A-Za-z]{3,}/g);
+                const fillers = new Set(['how','do','you','say','the','what','does','letter','start','with','color','many','legs','kind','animal','king']);
+                const meaningful = (englishWords || []).filter(w => !fillers.has(w.toLowerCase()));
+                if (meaningful.length > 0) speakSlow(meaningful[0]);
+              }}
+              className="mx-auto flex items-center gap-2 bg-primary/10 text-primary rounded-full px-4 py-2 text-sm font-rubik font-bold"
+            >
+              <Volume2 size={16} /> הקשב שוב 🔊
+            </motion.button>
           </div>
 
-          {/* Options appear after short delay so they read the question */}
+          {/* Options appear after short delay + speaker button on each */}
           <div className="space-y-3">
             {question.options.map((option, i) => (
-              <motion.button
+              <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 12 }}
                 animate={optionsVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
                 transition={{ delay: i * 0.15, duration: 0.3 }}
-                whileTap={selectedOption === null && optionsVisible ? { scale: 0.97 } : {}}
-                whileHover={selectedOption === null && optionsVisible ? { scale: 1.02, x: -3 } : {}}
-                onClick={() => handleSelect(i)}
-                disabled={selectedOption !== null || !optionsVisible}
-                className={`w-full rounded-2xl p-4 tap-target font-bold text-kid text-right transition-all ${
-                  selectedOption !== null && i === question.correct
-                    ? 'bg-success text-success-foreground shadow-lg scale-[1.02]'
-                    : selectedOption === i && i !== question.correct
-                    ? 'bg-destructive/15 text-destructive border-2 border-destructive/30'
-                    : 'fun-card'
-                }`}
+                className="flex gap-2 items-center"
               >
-                <span className="text-english font-nunito">{option}</span>
-              </motion.button>
+                {/* Speaker button — always visible so kids can hear the word */}
+                <motion.button
+                  whileTap={{ scale: 0.85 }}
+                  onClick={() => speak(option)}
+                  disabled={!optionsVisible}
+                  className="flex-shrink-0 bg-muted rounded-full p-2 tap-target"
+                  aria-label={`שמע ${option}`}
+                >
+                  <Volume2 size={20} className="text-muted-foreground" />
+                </motion.button>
+
+                <motion.button
+                  whileTap={selectedOption === null && optionsVisible ? { scale: 0.97 } : {}}
+                  whileHover={selectedOption === null && optionsVisible ? { scale: 1.02, x: -3 } : {}}
+                  onClick={() => handleSelect(i)}
+                  disabled={selectedOption !== null || !optionsVisible}
+                  className={`flex-1 rounded-2xl p-4 tap-target font-bold text-kid text-center transition-all ${
+                    selectedOption !== null && i === question.correct
+                      ? 'bg-success text-success-foreground shadow-lg scale-[1.02]'
+                      : selectedOption === i && i !== question.correct
+                      ? 'bg-destructive/15 text-destructive border-2 border-destructive/30'
+                      : 'fun-card'
+                  }`}
+                >
+                  <span className="text-english font-nunito text-kid-lg">{option}</span>
+                </motion.button>
+              </motion.div>
             ))}
           </div>
 

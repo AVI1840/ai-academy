@@ -1,6 +1,16 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Star, Flame, BookOpen, Medal, LogOut, Sparkles, TrendingUp, Heart } from 'lucide-react';
+import { Star, Flame, BookOpen, Medal, LogOut, Sparkles, TrendingUp, Heart, Timer } from 'lucide-react';
+
+const TIME_OPTIONS = [
+  { label: '5 דק׳', minutes: 5 },
+  { label: '7 דק׳', minutes: 7 },
+  { label: '10 דק׳', minutes: 10 },
+  { label: '15 דק׳', minutes: 15 },
+  { label: '∞', minutes: 0 },
+];
+
+const STORAGE_KEY = 'sessionLimitMinutes';
 import { supabase } from '@/integrations/supabase/client';
 import { getRandomWelcome, getDailyTip, getStreakMessage } from '@/lib/motivational';
 import type { User } from '@/lib/types';
@@ -30,6 +40,15 @@ const Dashboard = ({ user, onStartLesson, onAchievements, onLeaderboard, onLogou
   const [wordsLearned, setWordsLearned] = useState(0);
   const [lessonsCompleted, setLessonsCompleted] = useState(0);
   const [totalLessons, setTotalLessons] = useState(8);
+  const [selectedMinutes, setSelectedMinutes] = useState<number>(() => {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    return stored !== null ? Number(stored) : 7;
+  });
+
+  const handleSelectTime = (minutes: number) => {
+    setSelectedMinutes(minutes);
+    localStorage.setItem(STORAGE_KEY, String(minutes));
+  };
   const streakMsg = getStreakMessage(user.streak_days);
 
   useEffect(() => {
@@ -196,6 +215,38 @@ const Dashboard = ({ user, onStartLesson, onAchievements, onLeaderboard, onLogou
         <p className="font-rubik text-sm text-muted-foreground">{dailyTip}</p>
       </motion.div>
 
+      {/* Session time picker — for parents */}
+      <motion.div
+        initial={{ y: 10, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.42 }}
+        className="glass-card rounded-2xl p-4 mb-4"
+      >
+        <div className="flex items-center gap-2 mb-3">
+          <Timer size={18} className="text-primary" />
+          <span className="font-rubik font-bold text-kid">זמן אימון 🕐</span>
+        </div>
+        <div className="flex gap-2 justify-between">
+          {TIME_OPTIONS.map(opt => (
+            <motion.button
+              key={opt.minutes}
+              whileTap={{ scale: 0.92 }}
+              onClick={() => handleSelectTime(opt.minutes)}
+              className={`flex-1 rounded-2xl py-3 font-rubik font-bold text-sm tap-target transition-all ${
+                selectedMinutes === opt.minutes
+                  ? 'pitch-gradient text-primary-foreground shadow-md scale-[1.06]'
+                  : 'bg-muted text-muted-foreground'
+              }`}
+            >
+              {opt.label}
+            </motion.button>
+          ))}
+        </div>
+        <p className="text-xs font-rubik text-muted-foreground text-center mt-2">
+          {selectedMinutes === 0 ? 'ללא הגבלת זמן' : `השיעור ייסתם אחרי ${selectedMinutes} דקות`}
+        </p>
+      </motion.div>
+
       {/* Main CTA */}
       <motion.button
         initial={{ scale: 0.8, opacity: 0 }}
@@ -209,7 +260,7 @@ const Dashboard = ({ user, onStartLesson, onAchievements, onLeaderboard, onLogou
         <div className="flex items-center justify-center gap-3">
           <BookOpen size={28} />
           <span>!בואו נתאמן</span>
-          <motion.span 
+          <motion.span
             className="text-3xl"
             animate={{ rotate: [0, -15, 15, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
